@@ -1,0 +1,56 @@
+<td-layout-nav>
+  <toolbar-content layout="row" layout-align="center center" flex>
+    <span>Activity Dashboard</span>
+    <span flex></span>
+    <button md-icon-button (click)="help()"><md-icon class="md-24">help</md-icon></button>
+  </toolbar-content>
+  <md-content flex md-scroll-y>
+    <div layout="column" layout-gt-md="row" class="inset">
+      <div flex-gt-md="60">
+        <md-card>
+          <md-card-title>All Activity</md-card-title>
+          <md-card-subtitle>Total activity from all items</md-card-subtitle>
+          <md-divider></md-divider>
+          <md-nav-list>
+            <template let-item let-last="last" ngFor [ngForOf]="items">
+              <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
+                <md-icon md-list-avatar> {{item.icon}} </md-icon>
+                <h3 md-line> {{item.name}} </h3>
+                <p md-line> {{item.description}} </p>
+                <span flex></span>
+                <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
+              </a>
+              <md-divider *ngIf="!last" md-inset></md-divider>
+            </template>
+          </md-nav-list>
+        </md-card>
+      </div>
+      <div flex-gt-md="40">
+        <md-card>
+          <md-card-title>Users</md-card-title>
+          <md-card-subtitle>Latest system users</md-card-subtitle>
+          <md-divider></md-divider>
+          <md-list>
+            <template let-user let-last="last" ngFor [ngForOf]="users">
+              <md-list-item layout-align="row">
+                <md-icon md-list-avatar>person</md-icon>
+                <h3 md-line> {{user.display_name}} </h3>
+                <p md-line> {{user.id}} </p>
+              </md-list-item>
+              <md-divider *ngIf="!last" md-inset></md-divider>
+            </template>
+          </md-list>
+          <md-divider></md-divider>
+          <md-card-actions>
+            <a md-button color="accent" class="text-upper" [routerLink]="['/users']">
+              <span>View More</span>
+            </a>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </div>
+  </md-content>
+   <a md-fab color="accent" class="md-fab-bottom-right"> 
+     <md-icon>add</md-icon>
+   </a>
+</td-layout-nav>

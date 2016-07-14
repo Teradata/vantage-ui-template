@@ -1,0 +1,58 @@
+<td-layout-nav>
+  <toolbar-content layout="row" layout-align="center center" flex>
+    <span>User Management</span>
+    <span flex></span>
+  </toolbar-content>
+  <menu-items>
+    <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
+      <md-icon>{{item.icon}}</md-icon>
+      {{item.title}}
+    </a>
+  </menu-items>
+  <td-layout-manage-list #list title="Toolbar Title" logo="path/to/toolbar-logo.svg">
+    <list-items>
+      <a md-list-item>
+        <md-icon>folder</md-icon>
+        Filter Name
+      </a>
+      <a md-list-item>
+        <md-icon>people</md-icon>
+        Filter Name
+      </a>
+      <a md-list-item>
+        <md-icon>star</md-icon>
+        Filter Name
+      </a>
+      <a md-list-item>
+        <md-icon>delete</md-icon>
+        Filter Name
+      </a>
+    </list-items>
+    <toolbar-buttons layout="row" layout-align="start center" flex>
+      <span flex></span>
+      <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">settings</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
+    </toolbar-buttons>
+    <md-card>
+      <md-card-title>User List</md-card-title>
+      <md-card-subtitle>Users loaded from a .json file using a Service</md-card-subtitle>
+      <md-divider></md-divider>
+      <md-list>
+        <template let-user let-last="last" ngFor [ngForOf]="users">
+          <a md-list-item layout-align="row" (click)="userClick(user.id)">
+            <md-icon md-list-avatar>person</md-icon>
+            <h3 md-line> {{user.display_name}} </h3>
+            <p md-line> {{user.id}} </p>
+          </a>
+          <md-divider *ngIf="!last" md-inset></md-divider>
+        </template>
+      </md-list>
+      <md-divider></md-divider>
+      <md-card-actions>
+        <button md-button class="md-primary" (click)="goBack()">BACK</button>
+      </md-card-actions>
+    </md-card> 
+  </td-layout-manage-list>   
+</td-layout-nav>

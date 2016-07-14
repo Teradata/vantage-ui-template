@@ -1,0 +1,30 @@
+<div layout="column" layout-fill>
+  <md-toolbar color="accent" class="md-whiteframe-z1">
+    <span>Login</span>
+  </md-toolbar>
+  <md-content layout-padding flex>
+    <div layout-gt-xs="row" layout-align-gt-xs="center start" class="margin">
+      <div flex-gt-xs="50">
+        <md-card>
+          <md-card-title>Corporate Login</md-card-title>
+          <md-card-subtitle>sign in via your current corporate account</md-card-subtitle>
+          <md-divider></md-divider>
+          <md-card-content>
+            <form #loginForm="ngForm" layout="row" layout-align="center center" layout-margin>
+              <md-input flex placeholder="Username" type="text" name="username" [(ngModel)]="username" required>
+                <span md-prefix><md-icon>person</md-icon></span>
+              </md-input>
+              <md-input flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+                <span md-prefix><md-icon>lock</md-icon></span>
+              </md-input>
+            </form>
+          </md-card-content>
+          <md-divider></md-divider>
+          <md-card-actions>
+            <button md-raised-button color="primary" [disabled]="!loginForm.form.valid" (click)="login()">Sign In</button>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </div>    
+  </md-content>
+</div>

@@ -1,0 +1,124 @@
+// This theming is temporary!
+// Angular-Material has an upstream Angular blocker for SCSS variables to work https://github.com/angular/angular/issues/2567
+
+/* Variables */
+$md-primary: #0097A7;
+$md-primary-opacity: rgba(0, 151, 167, 0.12);
+$md-accent: #FF4081;
+$md-accent-opacity: rgba(255, 64, 129, 0.12);
+$md-warn: #FF9100;
+
+/* :host /deep/ lets shadowdom style child elements */
+:host /deep/ {
+    /* customize logo height and width */
+    .md-icon-logo {
+        height: 50px;
+        width: 45px;
+        margin-right: 5px;
+    }
+    md-toolbar,
+    [md-raised-button],
+    [md-fab], 
+    [md-mini-fab] {
+        &.md-primary {
+            background-color: $md-primary;
+        }
+        &.md-accent {
+            background-color: $md-accent;
+        }
+    }
+    [md-fab], 
+    [md-mini-fab],
+    .md-radio-checked .md-radio-inner-circle,
+    .md-checkbox-checked .md-checkbox-background {
+        background-color: $md-accent;
+    }
+    .md-radio-checked  {
+        .md-radio-outer-circle {
+            border-color: $md-accent;
+        }
+    }
+    [md-button],
+    [md-icon-button] {
+        &.md-primary {
+            color: $md-primary;
+        }
+        &.md-accent {
+            color: $md-accent;
+        }
+    }
+    [md-button]:hover {
+        &.md-primary::after {
+            background-color: $md-primary-opacity;
+        }
+        &.md-accent::after{
+            background-color: $md-accent-opacity;
+        }
+    }
+    .md-radio-focused,
+    .md-checkbox-focused {
+        .md-ink-ripple {
+            background-color: $md-accent-opacity;
+        }
+    }
+    .md-input-placeholder.md-focused {
+        color: $md-primary !important;
+    }
+    .md-progress-bar-fill::after,
+    .md-input-underline .md-input-ripple {
+        background-color: $md-primary !important;
+    }
+    .md-progress-bar-buffer {
+        background-color: lighten($md-primary, 40%) !important;
+    }
+    md-progress-bar[color='accent'] {
+        .md-progress-bar-fill::after,
+        .md-input-underline .md-input-ripple {
+            background-color: $md-accent !important;
+        }
+        .md-progress-bar-buffer {
+            background-color: lighten($md-accent, 40%) !important;
+        }
+    }
+    md-progress-bar[color='warn'] {
+        .md-progress-bar-fill::after,
+        .md-input-underline .md-input-ripple {
+            background-color: $md-warn !important;
+        }
+        .md-progress-bar-buffer {
+            background-color: lighten($md-warn, 40%) !important;
+        }
+    }
+    md-progress-circle,
+    md-spinner {
+        path {
+            stroke: $md-primary;
+        }
+        &[color='accent'] {
+            path {
+                stroke: $md-accent;
+            }
+        }
+        &[color='warn'] {
+            path {
+                stroke: $md-warn;
+            }
+        }
+    }
+    md-ink-bar {
+        background-color: $md-primary !important;
+    }
+    .md-tab-label:focus {
+        background-color: $md-primary-opacity !important;
+    }
+    md-slide-toggle {
+        &.md-checked {
+            .md-slide-toggle-thumb {
+                background-color: $md-accent;
+            }
+            .md-slide-toggle-bar {
+                background-color: $md-accent-opacity;
+            }
+        }
+    }
+}
