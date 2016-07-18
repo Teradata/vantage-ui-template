@@ -15,7 +15,8 @@
     "typings": "typings install --global",
     "postinstall": "npm run typings",
     "pretest": "rm -rf ./dist && ng build",
-    "test": "karma start ./config/karma.conf.js"
+    "test": "karma start ./config/karma.conf.js",
+    "ghpages-deploy": "bash scripts/ghpages-deploy"
   },
   "engines": {
     "node": ">4.4 < 5"
