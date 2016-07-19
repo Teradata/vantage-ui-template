@@ -1,6 +1,6 @@
 import {
   beforeEach,
-  beforeEachProviders,
+  addProviders,
   describe,
   expect,
   it,
@@ -8,24 +8,20 @@ import {
 } from '@angular/core/testing';
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component, DebugElement } from '@angular/core';
-import { Router } from '@angular/router';
 import { By } from '@angular/platform-browser';
 import { UsersComponent } from './users.component';
 
 import { UsersService } from '../../services';
 
-import { TD_LAYOUT_PROVIDERS } from '@covalent/core';
-
 describe('Component: Users', () => {
   let builder: TestComponentBuilder;
-  class Mock {}
 
-  beforeEachProviders(() => [
-    UsersComponent,
-    UsersService,
-    TD_LAYOUT_PROVIDERS,
-    {provide: Router, useClass: Mock},
-  ]);
+  beforeEach(() => {
+    addProviders([
+      UsersComponent,
+      UsersService,
+    ]);
+  });
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder): void {
     builder = tcb;
   }));
@@ -54,4 +50,3 @@ describe('Component: Users', () => {
 })
 class UsersTestControllerComponent {
 }
-

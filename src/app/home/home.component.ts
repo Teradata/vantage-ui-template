@@ -48,14 +48,26 @@ export class HomeComponent implements OnInit {
         title: 'Covalent Documentation',
         link: 'https://teradata.github.io/covalent/',
         icon: 'chrome_reader_mode',
-        color: 'orange-600',
+        color: 'purple-700',
         description: 'Detailed docs to use this quickstart app',
       }, {
         title: 'Covalent Github Repo',
         link: 'https://github.com/Teradata/covalent',
         icon: 'code',
-        color: 'orange-700',
+        color: 'blue-700',
         description: 'Submit bugs, feature requests and view progress',
+      }, {
+        title: 'Quickstart Github Repo',
+        link: 'https://github.com/Teradata/covalent-quickstart',
+        icon: 'flash_on',
+        color: 'green-700',
+        description: 'Clone this repo to start building your app',
+      }, {
+        title: 'Covalent Sketch Template',
+        link: 'https://dribbble.com/shots/2846624-Covalent-Material-Design-Sketch-Template-Free-download',
+        icon: 'view_quilt',
+        color: 'orange-700',
+        description: 'Covalent Material Design UI Kit for Sketch',
       },
     ];
   }

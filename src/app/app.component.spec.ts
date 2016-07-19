@@ -1,5 +1,6 @@
 import {
-  beforeEachProviders,
+  beforeEach,
+  addProviders,
   describe,
   expect,
   it,
@@ -7,7 +8,11 @@ import {
 } from '@angular/core/testing';
 import { AppComponent } from '../app/app.component';
 
-beforeEachProviders(() => [AppComponent]);
+beforeEach(() => {
+  addProviders([
+    AppComponent,
+  ]);
+});
 
 describe('App: ', () => {
   it('should create the app',

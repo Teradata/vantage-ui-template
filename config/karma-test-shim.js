@@ -37,7 +37,8 @@ System.import('system-config.js').then(function() {
     System.import('@angular/router'),
     System.import('@angular/http'),
     System.import('@angular/forms'),
-    System.import('@angular2-material/icon')
+    System.import('@angular2-material/icon'),
+    System.import('@covalent/core')
   ]).then(function (providers) {
     var testing = providers[0];
     var testingBrowser = providers[1];
@@ -45,18 +46,23 @@ System.import('system-config.js').then(function() {
     var testingHttp = providers[3];
     var testingForms = providers[4];
     var testingIcon = providers[5];
+    var testingCovalentCore = providers[6];
     testing.setBaseTestProviders(testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
       testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
       );
-    testing.beforeEachProviders(function(){
-      return [
+    testing.beforeEach(function(){
+      testing.addProviders([
         testingRouter.ROUTER_DIRECTIVES,
         testingRouter.RouterOutletMap,
         testingHttp.HTTP_PROVIDERS,
         testingForms.disableDeprecatedForms(),
         testingForms.provideForms(),
-        testingIcon.MdIconRegistry
-      ];
+        testingIcon.MdIconRegistry,
+        { provide: testingRouter.Router, useValue: {} },
+        { provide: testingRouter.ActivatedRoute, useValue: {} },
+        testingCovalentCore.TD_LAYOUT_PROVIDERS,
+        testingCovalentCore.TD_MEDIA_PROVIDERS
+      ]);
     });
   });
 }).then(function() {
