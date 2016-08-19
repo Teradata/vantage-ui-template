@@ -3,12 +3,6 @@
     <span>User Management</span>
     <span flex></span>
   </toolbar-content>
-  <md-nav-list menu-items>
-    <a *ngFor="let item of routes" md-list-item [routerLink]="[item.route]" (click)="layout.close()">
-      <md-icon>{{item.icon}}</md-icon>
-      {{item.title}}
-    </a>
-  </md-nav-list>
   <td-layout-manage-list #list title="Toolbar Title" logo="path/to/toolbar-logo.svg">
     <md-nav-list list-items>
       <a md-list-item>
