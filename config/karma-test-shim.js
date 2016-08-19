@@ -61,7 +61,8 @@ System.import('system-config.js').then(function() {
         { provide: testingRouter.Router, useValue: {} },
         { provide: testingRouter.ActivatedRoute, useValue: {} },
         testingCovalentCore.TD_LAYOUT_PROVIDERS,
-        testingCovalentCore.TD_MEDIA_PROVIDERS
+        testingCovalentCore.TD_MEDIA_PROVIDERS,
+        testingCovalentCore.TdLoadingService
       ]);
     });
   });

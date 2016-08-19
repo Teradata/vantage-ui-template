@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES} from '@angular/router';
 
+import { TdLoadingService, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
+
 @Component({
   moduleId: module.id,
   selector: 'qs-app',
@@ -9,6 +11,8 @@ import { ROUTER_DIRECTIVES} from '@angular/router';
   directives: [
     ROUTER_DIRECTIVES,
   ],
+  providers: [ TdLoadingService ],
+  precompile: [ TD_LOADING_ENTRY_COMPONENTS ],
 })
 export class AppComponent {
 

@@ -26,9 +26,12 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  '@covalent/chips',
   '@covalent/core',
-  '@covalent/file-upload',
   '@covalent/highlight',
+  '@covalent/http',
+  '@covalent/file-upload',
+  '@covalent/json-formatter',
   '@covalent/markdown',
   // App specific barrels.
   'app',
