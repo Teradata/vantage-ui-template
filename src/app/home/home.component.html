@@ -63,6 +63,12 @@
         </div>
       </div>
       <md-card>
+        <md-card-title>Covalent Modules</md-card-title>
+        <md-card-subtitle>Currently available modules</md-card-subtitle>
+        <md-divider></md-divider>
+        <td-chips [(ngModel)]="covalentModules" readOnly="true"></td-chips>
+      </md-card>
+      <md-card>
         <md-card-title>Covalent Resources</md-card-title>
         <md-card-subtitle>Docs and info to help get started</md-card-subtitle>
         <md-divider></md-divider>
@@ -77,7 +83,7 @@
             <md-divider *ngIf="!last" md-inset></md-divider>
           </template>
         </md-nav-list>
-        </md-card>
+      </md-card>
       <div layout="row" layout-align="start center" layout-padding>
         <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
         <span flex></span>

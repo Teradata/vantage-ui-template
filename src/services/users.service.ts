@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
+import { HttpInterceptorService } from '@covalent/http';
 
 @Injectable()
 export class UsersService {
 
-  constructor(private http: Http) {}
+  constructor(private http: HttpInterceptorService) {}
 
   query(): any {
    return this.http.get('data/users.json')

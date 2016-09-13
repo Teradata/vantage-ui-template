@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   items: Object[];
   resources: Object[];
+  covalentModules: string[];
 
   ngOnInit(): void {
     this.items = [{
@@ -50,6 +51,15 @@ export class HomeComponent implements OnInit {
         color: 'orange-700',
         description: 'Covalent Material Design UI Kit for Sketch',
       },
+    ];
+    this.covalentModules = [
+      'core',
+      'chips',
+      'file-upload',
+      'highlight',
+      'http',
+      'json-formatter',
+      'markdown',
     ];
   }
 }
