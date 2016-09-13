@@ -2,8 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
-import { CovalentHttpModule } from '@covalent/http';
 import { CovalentChipsModule } from '@covalent/chips';
+import { CovalentFileModule } from '@covalent/file-upload';
+import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentJsonFormatterModule } from '@covalent/json-formatter';
+import { CovalentMarkdownModule } from '@covalent/markdown';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -29,8 +33,12 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
   imports: [
     BrowserModule,
     CovalentCoreModule.forRoot(),
-    CovalentHttpModule.forRoot([RequestInterceptor]),
     CovalentChipsModule.forRoot(),
+    CovalentFileModule.forRoot(),
+    CovalentHttpModule.forRoot([RequestInterceptor]),
+    CovalentHighlightModule.forRoot(),
+    CovalentJsonFormatterModule.forRoot(),
+    CovalentMarkdownModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module
   providers: [
