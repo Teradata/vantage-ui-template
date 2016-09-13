@@ -1,10 +1,10 @@
 <td-layout-nav>
-  <toolbar-content layout="row" layout-align="center center" flex>
+  <div toolbar-content layout="row" layout-align="center center" flex>
     <span>Activity Dashboard</span>
     <span flex></span>
     <button md-icon-button (click)="help()"><md-icon class="md-24">help</md-icon></button>
-  </toolbar-content>
-  <md-content flex md-scroll-y>
+  </div>
+  <div class="md-content" flex md-scroll-y>
     <div layout="column" layout-gt-md="row" class="inset">
       <div flex-gt-md="60">
         <md-card>
@@ -49,7 +49,7 @@
         </md-card>
       </div>
     </div>
-  </md-content>
+  </div>
    <a md-fab color="accent" class="md-fab-bottom-right"> 
      <md-icon>add</md-icon>
    </a>

@@ -1,18 +1,20 @@
 <td-layout-nav>
-  <toolbar-content layout="row" layout-align="center center" flex>
+  <div toolbar-content layout="row" layout-align="center center" flex>
     <span *ngIf="item">Activity > {{item.name}}</span>
     <span flex></span>
-  </toolbar-content>
+  </div>
   <td-layout-card-over  *ngIf="item">
        <md-card-title>{{item.name}}'s Activity Stream</md-card-title>
     <md-card-subtitle>Last activity: {{item.description}}</md-card-subtitle>
     <md-divider></md-divider>
     <md-list>
-      <md-list-item layout-align="row" *ngFor="#number of [0,1,2,3,4]">
-          <md-icon md-list-avatar> receipt </md-icon>
-          <h3 md-line> {{item.name}} </h3>
-          <p md-line> activity description </p>            
-        </md-list-item>
+      <template ngFor [ngForOf]="[0,1,2,3,4]">
+        <md-list-item layout-align="row">
+            <md-icon md-list-avatar> receipt </md-icon>
+            <h3 md-line> {{item.name}} </h3>
+            <p md-line> activity description </p>            
+          </md-list-item>
+      </template>
     </md-list>
     <md-divider></md-divider>
     <md-card-actions>
