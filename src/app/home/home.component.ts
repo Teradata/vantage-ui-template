@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     this._loadingService.register('main');
     setTimeout(() => {
       this._loadingService.resolve('main');
-    }, 2000);
+    }, 1000);
     this.items = [{
         title: 'Activity Dashboard',
         route: '/dashboard',
