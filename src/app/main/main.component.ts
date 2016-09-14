@@ -1,33 +1,26 @@
 import { Component } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-
-import { MdIcon } from '@angular2-material/icon';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-
-import { TD_LAYOUT_DIRECTIVES } from '@covalent/core';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
   selector: 'qs-main',
   templateUrl: 'main.component.html',
   styleUrls: ['main.component.css'],
-  directives: [
-    ROUTER_DIRECTIVES,
-    MdIcon,
-    MD_LIST_DIRECTIVES,
-    TD_LAYOUT_DIRECTIVES,
-  ],
 })
 export class MainComponent {
 
   routes: Object[] = [{
-      title: 'Home',
+      title: 'Dashboard',
       route: '/',
-      icon: 'home',
+      icon: 'dashboard',
     }, {
-      title: 'Activity Dashboard',
-      route: '/dashboard',
-      icon: 'list',
+      title: 'Product Dashboard',
+      route: '/dashboard-product',
+      icon: 'view_quilt',
+    }, {
+      title: 'Logs',
+      route: '/logs',
+      icon: 'receipt',
     }, {
       title: 'Manage Users',
       route: '/users',
@@ -35,9 +28,9 @@ export class MainComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private _router: Router) {}
 
   logout(): void {
-    this.router.navigate(['/login']);
+    this._router.navigate(['/login']);
   }
 }

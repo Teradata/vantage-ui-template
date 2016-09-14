@@ -1,0 +1,51 @@
+import { Component, AfterViewInit } from '@angular/core';
+
+import { TdLoadingService } from '@covalent/core';
+
+import { ItemsService, UsersService, ProductsService } from '../../services';
+
+@Component({
+  moduleId: module.id,
+  selector: 'logs',
+  templateUrl: 'logs.component.html',
+  styleUrls: ['logs.component.css'],
+  viewProviders: [ ItemsService, UsersService, ProductsService ],
+})
+export class LogsComponent implements AfterViewInit {
+
+  items: Object[];
+  users: Object[];
+  products: Object[];
+
+  constructor(private _itemsService: ItemsService,
+              private _userService: UsersService,
+              private _productsService: ProductsService,
+              private _loadingService: TdLoadingService) {
+
+  }
+
+  ngAfterViewInit(): void {
+    this._loadingService.register('items.load');
+    this._itemsService.query().subscribe((items: Object[]) => {
+      this.items = items;
+      setTimeout(() => {
+        this._loadingService.resolve('items.load');
+      }, 2000);
+    });
+    this._loadingService.register('products.load');
+    this._productsService.query().subscribe((products: Object[]) => {
+      this.products = products;
+      setTimeout(() => {
+        this._loadingService.resolve('products.load');
+      }, 2000);
+    });
+    this._loadingService.register('users.load');
+    this._userService.query().subscribe((users: Object[]) => {
+      this.users = users;
+      setTimeout(() => {
+        this._loadingService.resolve('users.load');
+      }, 2000);
+    });
+  }
+
+}
