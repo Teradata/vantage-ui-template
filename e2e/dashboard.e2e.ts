@@ -9,7 +9,7 @@ describe('basic e2e test with loading', function(): void {
       .then(() => {
 
         // checks if elements were rendered
-        expect(element(by.id('home-items-cards')).isPresent()).toBe(true);
+        expect(element(by.id('dashboard-favorites-card')).isPresent()).toBe(true);
       });
     });
   });
