@@ -14,6 +14,7 @@ module.exports = function(defaults) {
       '@angular/**/*.js',
       '@angular2-material/**/*.+(js|css)',
       '@covalent/**/*',
+      'highlight.js/lib/**',
       'showdown/dist/showdown.js'
     ],
     polyfills: [
@@ -21,7 +22,10 @@ module.exports = function(defaults) {
       'vendor/reflect-metadata/Reflect.js',
       'vendor/systemjs/dist/system.src.js',
       'vendor/zone.js/dist/zone.js',
-      'vendor/@covalent/core/styles/**/*',
+      'vendor/@angular/**/*.js',
+      'vendor/@angular2-material/**/*.+(js|css)',
+      'vendor/@covalent/**/*',
+      'vendor/highlight.js/lib/**',
       'vendor/showdown/dist/showdown.js'
     ]
   });
