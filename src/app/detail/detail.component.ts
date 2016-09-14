@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ItemsService } from '../../services';
 
 @Component({
+  moduleId: module.id,
   selector: 'qs-detail',
   templateUrl: 'detail.component.html',
   styleUrls: ['detail.component.css'],
