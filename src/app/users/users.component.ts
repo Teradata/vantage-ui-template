@@ -14,10 +14,10 @@ export class UsersComponent implements OnInit {
 
   users: Object[];
 
-  constructor(private router: Router, private usersService: UsersService) {}
+  constructor(private _router: Router, private _usersService: UsersService) {}
 
   goBack(route: string): void {
-    this.router.navigate(['/']);
+    this._router.navigate(['/']);
   }
 
   userClick(id: string): void {
@@ -29,7 +29,7 @@ export class UsersComponent implements OnInit {
   }
 
   loadUsers(): void {
-    this.usersService.query().subscribe((users: Object[]) => {
+    this._usersService.query().subscribe((users: Object[]) => {
       this.users = users;
     });
   }

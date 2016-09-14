@@ -24,9 +24,9 @@ export class MainComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private _router: Router) {}
 
   logout(): void {
-    this.router.navigate(['/login']);
+    this._router.navigate(['/login']);
   }
 }
