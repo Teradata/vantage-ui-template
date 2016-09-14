@@ -10,7 +10,7 @@
         </template>
     </md-nav-list>
     <div class="md-padding">
-      <div layout="row" layout-wrap>
+      <div id="home-items-cards" layout="row" layout-wrap>
         <template let-item let-last="last" ngFor [ngForOf]="items">
           <div flex-md="100" flex-gt-md="50" layout="column">
             <md-card href [routerLink]="[item.route]" class="md-card-colored" flex>
