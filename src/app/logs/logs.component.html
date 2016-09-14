@@ -1,0 +1,43 @@
+<td-layout-nav-list logo="assets/icons/covalent.svg" title="Logs">
+    <md-nav-list list-items>
+        <template let-item let-last="last" ngFor [ngForOf]="products">
+          <a md-list-item [routerLink]="[item.route]">
+            <md-icon md-list-avatar>{{item.icon}}</md-icon>
+            <h3 md-line> {{item.name}} </h3>
+            <p md-line> product logs </p>
+          </a>
+          <md-divider *ngIf="!last" md-inset></md-divider>
+        </template>
+    </md-nav-list>
+    <div nav-toolbar-content layout="row" layout-align="center center" flex>
+      <span>All Product Logs</span>
+      <span flex></span>
+    </div>
+    <div class="md-padding">
+      <md-card>
+        <div [tdToggle]="toggleFilters" class="md-padding md-input-search">
+          <div layout="row" class="md-input-search">
+            <md-input #search placeholder="search" flex>
+              <span md-prefix><md-icon>search</md-icon></span>
+            </md-input>
+            <md-icon class="clear-search" *ngIf="search.value" (click)="search.value = ''">cancel</md-icon>
+          </div>
+        </div>
+        <template tdLoading="items.load">
+          <md-list class="will-load" >
+            <div class="md-padding" *ngIf="!items || items.length === 0" layout="row" layout-align="center center">
+              <h3>No logs to display.</h3>
+            </div>
+            <template let-item let-last="last" ngFor [ngForOf]="items">
+              <md-list-item [title]="item.description">
+                <md-icon md-list-icon> {{item.icon}} </md-icon>
+                <h3 md-line> {{item.description}} <span class="md-caption tc-grey-600">({{item.created}})</span> </h3>
+                <p md-line > {{item.name}} </p>
+              </md-list-item>
+              <md-divider *ngIf="!last"></md-divider>
+            </template>
+          </md-list>
+        </template>
+      </md-card>
+    </div>
+  </td-layout-nav-list>

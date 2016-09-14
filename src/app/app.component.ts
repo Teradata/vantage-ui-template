@@ -1,19 +1,21 @@
-import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES} from '@angular/router';
+import { Component, ViewContainerRef } from '@angular/core';
 
-import { TdLoadingService, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
+import { TdLoadingService, LoadingType, ILoadingOptions } from '@covalent/core';
 
 @Component({
   moduleId: module.id,
   selector: 'qs-app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [
-    ROUTER_DIRECTIVES,
-  ],
-  providers: [ TdLoadingService ],
-  precompile: [ TD_LOADING_ENTRY_COMPONENTS ],
 })
 export class AppComponent {
+
+  constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
+    let options: ILoadingOptions = {
+      name: 'main',
+      type: LoadingType.Circular,
+    };
+    this._loadingService.createOverlayComponent(options, viewContainerRef);
+  }
 
 }

@@ -8,20 +8,26 @@ module.exports = function(defaults) {
       'systemjs/dist/system-polyfills.js',
       'systemjs/dist/system.src.js',
       'zone.js/dist/*.js',
-      'es6-shim/es6-shim.js',
-      'reflect-metadata/*.js',
+      'core-js/client/core.js',
       'rxjs/**/*.js',
+      'hammerjs/*.min.js',
       '@angular/**/*.js',
-      '@angular2-material/**/**.js',
+      '@angular2-material/**/*.+(js|css)',
       '@covalent/**/*',
+      'highlight.js/lib/**',
       'showdown/dist/showdown.js'
     ],
     polyfills: [
-      'vendor/es6-shim/es6-shim.js',
-      'vendor/reflect-metadata/Reflect.js',
+      'vendor/systemjs/dist/system-polyfills.js',
       'vendor/systemjs/dist/system.src.js',
-      'vendor/zone.js/dist/zone.js',
-      'vendor/@covalent/core/styles/**/*',
+      'vendor/zone.js/dist/*.js',
+      'vendor/core-js/client/core.js',
+      'vendor/rxjs/**/*.js',
+      'vendor/hammerjs/*.min.js',
+      'vendor/@angular/**/*.js',
+      'vendor/@angular2-material/**/*.+(js|css)',
+      'vendor/@covalent/**/*',
+      'vendor/highlight.js/lib/**',
       'vendor/showdown/dist/showdown.js'
     ]
   });

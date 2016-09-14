@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { MdIcon } from '@angular2-material/icon';
-import { Router, ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-
-import { TD_LAYOUT_DIRECTIVES } from '@covalent/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { ItemsService } from '../../services';
 
@@ -14,30 +8,22 @@ import { ItemsService } from '../../services';
   selector: 'qs-detail',
   templateUrl: 'detail.component.html',
   styleUrls: ['detail.component.css'],
-  directives: [
-    MD_LIST_DIRECTIVES,
-    ROUTER_DIRECTIVES,
-    MdIcon,
-    TD_LAYOUT_DIRECTIVES,
-    MD_CARD_DIRECTIVES,
-    MD_BUTTON_DIRECTIVES,
-  ],
   viewProviders: [ ItemsService ],
 })
 export class DetailComponent implements OnInit {
 
   item: Object = {};
 
-  constructor(private router: Router, private itemsService: ItemsService, private route: ActivatedRoute) {}
+  constructor(private _router: Router, private _itemsService: ItemsService, private _route: ActivatedRoute) {}
 
   goBack(): void {
-    this.router.navigate(['/dashboard']);
+    this._router.navigate(['/dashboard-product']);
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: {id: string}) => {
+    this._route.params.subscribe((params: {id: string}) => {
       let itemId: string = params.id;
-      this.itemsService.get(itemId).subscribe((item: Object) => {
+      this._itemsService.get(itemId).subscribe((item: Object) => {
         this.item = item;
       }, (error: Error) => {
         this.itemsService.staticGet(itemId).subscribe((item: Object) => {

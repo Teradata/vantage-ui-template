@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
+import { HttpInterceptorService } from '@covalent/http';
 
 @Injectable()
 export class ItemsService {
@@ -7,7 +8,7 @@ export class ItemsService {
   private staticData: string = 'data/items.json';
   private mockApiData: string = 'http://localhost:8080/items';
 
-  constructor(private http: Http) {}
+  constructor(private _http: HttpInterceptorService) {}
 
   staticQuery(): any {
     return this.http.get(this.staticData)

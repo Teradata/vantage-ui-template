@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdIcon } from '@angular2-material/icon';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { TD_LAYOUT_DIRECTIVES } from '@covalent/core';
+import { Router } from '@angular/router';
 
 import { UsersService } from '../../services';
 
@@ -13,23 +8,16 @@ import { UsersService } from '../../services';
   selector: 'qs-users',
   templateUrl: 'users.component.html',
   styleUrls: ['users.component.css'],
-  directives: [
-    MD_LIST_DIRECTIVES,
-    ROUTER_DIRECTIVES,
-    MdIcon,
-    TD_LAYOUT_DIRECTIVES,
-    MD_CARD_DIRECTIVES,
-  ],
   viewProviders: [ UsersService ],
 })
 export class UsersComponent implements OnInit {
 
   users: Object[];
 
-  constructor(private router: Router, private usersService: UsersService) {}
+  constructor(private _router: Router, private _usersService: UsersService) {}
 
   goBack(route: string): void {
-    this.router.navigate(['/']);
+    this._router.navigate(['/']);
   }
 
   userClick(id: string): void {
@@ -41,7 +29,7 @@ export class UsersComponent implements OnInit {
   }
 
   loadUsers(): void {
-    this.usersService.query().subscribe((users: Object[]) => {
+    this._usersService.query().subscribe((users: Object[]) => {
       this.users = users;
     }, (error: Error) => {
       this.usersService.staticQuery().subscribe((users: Object[]) => {

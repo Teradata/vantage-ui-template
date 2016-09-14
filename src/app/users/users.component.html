@@ -1,38 +1,50 @@
-<td-layout-nav>
-  <toolbar-content layout="row" layout-align="center center" flex>
-    <span>User Management</span>
+<td-layout-nav logo="assets/icons/covalent.svg">
+  <div toolbar-content layout="row" layout-align="center center" flex>
+    <span>Product Name</span>
     <span flex></span>
-  </toolbar-content>
-  <td-layout-manage-list #list title="Toolbar Title" logo="path/to/toolbar-logo.svg">
+    <a md-icon-button md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
+  </div>
+  <td-layout-manage-list #list>
     <md-nav-list list-items>
       <a md-list-item>
-        <md-icon>folder</md-icon>
-        Filter Name
+        <md-icon md-list-icon>account_circle</md-icon>
+        All Users
       </a>
       <a md-list-item>
-        <md-icon>people</md-icon>
-        Filter Name
+        <md-icon md-list-icon>star</md-icon>
+        Favorites
       </a>
       <a md-list-item>
-        <md-icon>star</md-icon>
-        Filter Name
+        <md-icon md-list-icon>verified_user</md-icon>
+        Administrators
       </a>
       <a md-list-item>
-        <md-icon>delete</md-icon>
-        Filter Name
+        <md-icon md-list-icon>supervisor_account</md-icon>
+        Non-Admins
+      </a>
+      <a md-list-item>
+        <md-icon md-list-icon>inbox</md-icon>
+        Archived
       </a>
     </md-nav-list>
-    <toolbar-buttons layout="row" layout-align="start center" flex>
+    <div toolbar-buttons layout="row" layout-align="start center" flex>
+      <span>Users</span>
       <span flex></span>
       <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">settings</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
-    </toolbar-buttons>
+    </div>
     <md-card>
-      <md-card-title>User List</md-card-title>
-      <md-card-subtitle>Users loaded from a .json file using a Service</md-card-subtitle>
-      <md-divider></md-divider>
+      <div [tdToggle]="toggleFilters" class="md-padding md-input-search">
+        <div layout="row" class="md-input-search">
+          <md-input #search placeholder="search" flex>
+            <span md-prefix><md-icon>search</md-icon></span>
+          </md-input>
+          <md-icon class="clear-search" *ngIf="search.value" (click)="search.value = ''">cancel</md-icon>
+        </div>
+      </div>
       <md-list>
         <template let-user let-last="last" ngFor [ngForOf]="users">
           <a md-list-item layout-align="row" (click)="userClick(user.id)">
