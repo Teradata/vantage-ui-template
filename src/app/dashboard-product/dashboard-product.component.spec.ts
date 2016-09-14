@@ -9,16 +9,20 @@ import { XHRBackend, Response, ResponseOptions } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 import { CovalentCoreModule, TdLoadingService } from '@covalent/core';
 import { CovalentHttpModule } from '@covalent/http';
-import { DashboardComponent } from './dashboard.component';
+import { DashboardProductComponent } from './dashboard-product.component';
+import { ChartComponent } from '../../components/chart/chart.component';
 
-describe('Component: Dashboard', () => {
+describe('Component: DashboardProduct', () => {
 
   let noop: () => void = () => {
     // noop method
   };
 
   let generalResponses: Map<string, Response> = new Map<string, Response>();
-  generalResponses.set('app/assets/icons/teradata.svg', new Response(new ResponseOptions({
+  generalResponses.set('assets/icons/covalent.svg', new Response(new ResponseOptions({
+    status: 200, body: '<svg></svg>',
+  })));
+  generalResponses.set('assets/icons/github.svg', new Response(new ResponseOptions({
     status: 200, body: '<svg></svg>',
   })));
 
@@ -30,7 +34,8 @@ describe('Component: Dashboard', () => {
         RouterTestingModule,
       ],
       declarations: [
-        DashboardComponent,
+        DashboardProductComponent,
+        ChartComponent,
       ],
       providers: [
         MockBackend,
@@ -85,8 +90,8 @@ describe('Component: Dashboard', () => {
       }]),
     })));
 
-    let fixture: ComponentFixture<any> = TestBed.createComponent(DashboardComponent);
-    let testComponent: DashboardComponent = fixture.debugElement.componentInstance;
+    let fixture: ComponentFixture<any> = TestBed.createComponent(DashboardProductComponent);
+    let testComponent: DashboardProductComponent = fixture.debugElement.componentInstance;
     let element: HTMLElement = fixture.nativeElement;
 
     expect(element.querySelector('.item-list')).toBeTruthy();
