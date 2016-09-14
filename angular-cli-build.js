@@ -18,10 +18,12 @@ module.exports = function(defaults) {
       'showdown/dist/showdown.js'
     ],
     polyfills: [
-      'vendor/es6-shim/es6-shim.js',
-      'vendor/reflect-metadata/Reflect.js',
+      'vendor/systemjs/dist/system-polyfills.js',
       'vendor/systemjs/dist/system.src.js',
-      'vendor/zone.js/dist/zone.js',
+      'vendor/zone.js/dist/*.js',
+      'vendor/core-js/client/core.js',
+      'vendor/rxjs/**/*.js',
+      'vendor/hammerjs/*.min.js',
       'vendor/@angular/**/*.js',
       'vendor/@angular2-material/**/*.+(js|css)',
       'vendor/@covalent/**/*',
