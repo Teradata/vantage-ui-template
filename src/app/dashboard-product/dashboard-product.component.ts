@@ -17,7 +17,7 @@ export class DashboardProductComponent implements AfterViewInit {
   users: Object[];
 
   constructor(private _itemsService: ItemsService,
-              private _userService: UsersService,
+              private _usersService: UsersService,
               private _loadingService: TdLoadingService) {
 
   }
@@ -29,13 +29,27 @@ export class DashboardProductComponent implements AfterViewInit {
       setTimeout(() => {
         this._loadingService.resolve('items.load');
       }, 2000);
+    }, (error: Error) => {
+      this._itemsService.staticQuery().subscribe((items: Object[]) => {
+        this.items = items;
+        setTimeout(() => {
+          this._loadingService.resolve('items.load');
+        }, 2000);
+      });
     });
     this._loadingService.register('users.load');
-    this._userService.query().subscribe((users: Object[]) => {
+    this._usersService.query().subscribe((users: Object[]) => {
       this.users = users;
       setTimeout(() => {
         this._loadingService.resolve('users.load');
       }, 2000);
+    }, (error: Error) => {
+      this._usersService.staticQuery().subscribe((users: Object[]) => {
+        this.users = users;
+        setTimeout(() => {
+          this._loadingService.resolve('users.load');
+        }, 2000);
+      });
     });
   }
 }

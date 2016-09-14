@@ -32,7 +32,7 @@ export class DashboardComponent implements AfterViewInit {
         this._loadingService.resolve('items.load');
       }, 2000);
     }, (error: Error) => {
-      this._itemsService.staticQuery().subscribe((items:Object[]) => {
+      this._itemsService.staticQuery().subscribe((items: Object[]) => {
         this.items = items;
         setTimeout(() => {
           this._loadingService.resolve('items.load');
