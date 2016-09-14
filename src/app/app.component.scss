@@ -10,12 +10,26 @@ $md-warn: #FF9100;
 
 /* :host /deep/ lets shadowdom style child elements */
 :host /deep/ {
-    /* customize logo height and width */
+     /* customize logo height and width */
     .md-icon-logo {
         height: 50px;
         width: 45px;
         margin-right: 5px;
     }
+
+    /* error validation classes */
+    md-input {
+      &.ng-invalid:not(.ng-pristine) {
+        label {
+          color: $md-warn;
+        }
+        .md-input-underline {
+          border-top: 1px solid $md-warn;
+        }
+      }
+    }
+    /* end error validation classes */
+    
     md-toolbar,
     [md-raised-button],
     [md-fab], 
@@ -136,10 +150,47 @@ $md-warn: #FF9100;
     }
     md-nav-list {
         [md-list-item].active {
-            md-icon {
+            md-icon[md-list-avatar] {
                 background-color: $md-accent;
                 color: white;
             }
+            md-icon[md-list-icon] {
+                color: $md-accent;
+            }
+        }
+    }
+    /* Manage list custom styles */
+    .md-list-items {
+        min-height: 80px;
+    }
+    .md-sort-item {
+        /deep/ {
+            .md-list-item {
+            padding: 0;
+            }
+        }
+    }
+    .md-input-search {
+        /deep/ {
+            .md-input-prefix {
+                width: 45px;
+                text-align: center;
+            }
+        }
+        md-icon.clear-search {
+            top: 15px;
+            position: relative;
+        }
+    }
+    .md-sort-icon {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    .md-sort-header {
+        padding: 10px;
+        &:hover {
+            background-color: #EEEEEE;
+            cursor: pointer;
         }
     }
 }
