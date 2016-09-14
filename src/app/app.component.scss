@@ -159,38 +159,4 @@ $md-warn: #FF9100;
             }
         }
     }
-    /* Manage list custom styles */
-    .md-list-items {
-        min-height: 80px;
-    }
-    .md-sort-item {
-        /deep/ {
-            .md-list-item {
-            padding: 0;
-            }
-        }
-    }
-    .md-input-search {
-        /deep/ {
-            .md-input-prefix {
-                width: 45px;
-                text-align: center;
-            }
-        }
-        md-icon.clear-search {
-            top: 15px;
-            position: relative;
-        }
-    }
-    .md-sort-icon {
-        font-size: 15px;
-        margin-right: 10px;
-    }
-    .md-sort-header {
-        padding: 10px;
-        &:hover {
-            background-color: #EEEEEE;
-            cursor: pointer;
-        }
-    }
 }
