@@ -31,14 +31,23 @@ export class DashboardComponent implements OnInit {
   items: Object[];
   users: Object[];
 
-  constructor(private itemsService: ItemsService, private userService: UsersService) {}
+  constructor(private itemsService: ItemsService, private usersService: UsersService) {}
 
   ngOnInit(): void {
+    this.usersService.query().subscribe((users: Object[]) => {
+      this.users = users;
+    }, (error: Error) => {
+      this.usersService.staticQuery().subscribe((users:Object[]) => {
+        this.users = users
+      }); 
+    }); 
+
     this.itemsService.query().subscribe((items: Object[]) => {
       this.items = items;
-    });
-    this.userService.query().subscribe((users: Object[]) => {
-      this.users = users;
-    });
+    }, (error: Error) => {
+      this.itemsService.staticQuery().subscribe((items:Object[]) => {
+        this.items = items; 
+      }); 
+    }); 
   }
 }

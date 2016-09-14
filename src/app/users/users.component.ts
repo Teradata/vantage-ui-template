@@ -43,6 +43,10 @@ export class UsersComponent implements OnInit {
   loadUsers(): void {
     this.usersService.query().subscribe((users: Object[]) => {
       this.users = users;
+    }, (error: Error) => {
+      this.usersService.staticQuery().subscribe((users: Object[]) => {
+        this.users = users;
+      });
     });
   }
 }

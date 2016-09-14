@@ -11,7 +11,6 @@ import { TD_LAYOUT_DIRECTIVES } from '@covalent/core';
 import { ItemsService } from '../../services';
 
 @Component({
-  moduleId: module.id,
   selector: 'qs-detail',
   templateUrl: 'detail.component.html',
   styleUrls: ['detail.component.css'],
@@ -40,6 +39,10 @@ export class DetailComponent implements OnInit {
       let itemId: string = params.id;
       this.itemsService.get(itemId).subscribe((item: Object) => {
         this.item = item;
+      }, (error: Error) => {
+        this.itemsService.staticGet(itemId).subscribe((item: Object) => {
+          this.item = item;
+        });
       });
     });
   }
