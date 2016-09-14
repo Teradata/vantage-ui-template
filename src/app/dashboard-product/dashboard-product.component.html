@@ -67,7 +67,7 @@
             <md-card-title>All Activity</md-card-title>
             <md-card-subtitle>for this product</md-card-subtitle>
             <md-divider></md-divider>
-            <md-nav-list class="will-load">
+            <md-nav-list class="will-load item-list">
               <template tdLoading="items.load">
                 <template let-item let-last="last" ngFor [ngForOf]="items">
                   <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
@@ -88,7 +88,7 @@
             <md-card-title>Customers</md-card-title>
             <md-card-subtitle>for this product</md-card-subtitle>
             <md-divider></md-divider>
-            <md-list class="will-load">
+            <md-list class="will-load user-list">
               <template tdLoading="users.load">
                 <template let-user let-last="last" ngFor [ngForOf]="users">
                   <md-list-item layout-align="row">
