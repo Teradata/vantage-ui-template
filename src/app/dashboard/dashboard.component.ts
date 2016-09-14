@@ -32,7 +32,7 @@ export class DashboardComponent implements AfterViewInit {
         this._loadingService.resolve('items.load');
       }, 2000);
     }, (error: Error) => {
-      this.itemsService.staticQuery().subscribe((items:Object[]) => {
+      this._itemsService.staticQuery().subscribe((items:Object[]) => {
         this.items = items;
         setTimeout(() => {
           this._loadingService.resolve('items.load');
@@ -67,7 +67,7 @@ export class DashboardComponent implements AfterViewInit {
         this._loadingService.resolve('users.load');
       }, 2000);
     }, (error: Error) => {
-      this.usersService.staticQuery().subscribe((users: Object[]) => {
+      this._usersService.staticQuery().subscribe((users: Object[]) => {
         this.users = users;
         setTimeout(() => {
           this._loadingService.resolve('users.load');

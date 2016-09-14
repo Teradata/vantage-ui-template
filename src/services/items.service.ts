@@ -11,14 +11,14 @@ export class ItemsService {
   constructor(private _http: HttpInterceptorService) {}
 
   staticQuery(): any {
-    return this.http.get(this.staticData)
+    return this._http.get(this.staticData)
     .map((res: Response) => {
       return res.json();
     });
   }
 
   staticGet(id: string): any {
-    return this.http.get(this.staticData)
+    return this._http.get(this.staticData)
     .map((res: Response) => {
       let item: any;
       res.json().forEach((s: any) => {
@@ -31,14 +31,14 @@ export class ItemsService {
   }
 
   query(): any {
-    return this.http.get(this.mockApiData)
+    return this._http.get(this.mockApiData)
     .map((res: Response) => {
       return res.json();
     });
   }
 
   get(id: string): any {
-    return this.http.get(this.mockApiData)
+    return this._http.get(this.mockApiData)
     .map((res: Response) => {
       let item: any;
       res.json().forEach((s: any) => {

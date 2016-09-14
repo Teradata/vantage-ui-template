@@ -32,7 +32,7 @@ export class UsersComponent implements OnInit {
     this._usersService.query().subscribe((users: Object[]) => {
       this.users = users;
     }, (error: Error) => {
-      this.usersService.staticQuery().subscribe((users: Object[]) => {
+      this._usersService.staticQuery().subscribe((users: Object[]) => {
         this.users = users;
       });
     });

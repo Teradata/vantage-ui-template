@@ -11,14 +11,14 @@ export class UsersService {
   constructor(private _http: HttpInterceptorService) {}
 
   staticQuery(): any {
-    return this.http.get(this.staticApiData)
+    return this._http.get(this.staticApiData)
     .map((res: Response) => {
       return res.json();
     });
   }
 
   query(): any {
-    return this.http.get(this.mockApiData)
+    return this._http.get(this.mockApiData)
     .map((res: Response) => {
       return res.json();
     });

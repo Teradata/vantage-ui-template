@@ -26,7 +26,7 @@ export class DetailComponent implements OnInit {
       this._itemsService.get(itemId).subscribe((item: Object) => {
         this.item = item;
       }, (error: Error) => {
-        this.itemsService.staticGet(itemId).subscribe((item: Object) => {
+        this._itemsService.staticGet(itemId).subscribe((item: Object) => {
           this.item = item;
         });
       });
