@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TdLoadingService } from '@covalent/core';
+
 @Component({
   moduleId: module.id,
   selector: 'qs-home',
@@ -11,7 +13,14 @@ export class HomeComponent implements OnInit {
   resources: Object[];
   covalentModules: string[];
 
+  constructor(private _loadingService: TdLoadingService) {
+  }
+
   ngOnInit(): void {
+    this._loadingService.register('main');
+    setTimeout(() => {
+      this._loadingService.resolve('main');
+    }, 2000);
     this.items = [{
         title: 'Activity Dashboard',
         route: '/dashboard',
