@@ -5,10 +5,10 @@ import { HttpInterceptorService } from '@covalent/http';
 @Injectable()
 export class UsersService {
 
-  constructor(private http: HttpInterceptorService) {}
+  constructor(private _http: HttpInterceptorService) {}
 
   query(): any {
-   return this.http.get('data/users.json')
+   return this._http.get('data/users.json')
    .map((res: Response) => {
      return res.json();
    });

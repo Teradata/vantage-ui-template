@@ -15,16 +15,16 @@ export class DetailComponent implements OnInit {
 
   item: Object = {};
 
-  constructor(private router: Router, private itemsService: ItemsService, private route: ActivatedRoute) {}
+  constructor(private _router: Router, private _itemsService: ItemsService, private _route: ActivatedRoute) {}
 
   goBack(): void {
-    this.router.navigate(['/dashboard-product']);
+    this._router.navigate(['/dashboard-product']);
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: {id: string}) => {
+    this._route.params.subscribe((params: {id: string}) => {
       let itemId: string = params.id;
-      this.itemsService.get(itemId).subscribe((item: Object) => {
+      this._itemsService.get(itemId).subscribe((item: Object) => {
         this.item = item;
       });
     });

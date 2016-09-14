@@ -12,10 +12,10 @@ export class LoginComponent {
   username: string;
   password: string;
 
-  constructor(private router: Router) {}
+  constructor(private _router: Router) {}
 
   login(): void {
     alert('Mock log in as ' + this.username);
-    this.router.navigate(['/']);
+    this._router.navigate(['/']);
   }
 }

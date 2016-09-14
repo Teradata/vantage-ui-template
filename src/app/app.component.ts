@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+
+import { TdLoadingService, LoadingType, ILoadingOptions } from '@covalent/core';
 
 @Component({
   moduleId: module.id,
@@ -7,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.css'],
 })
 export class AppComponent {
+
+  constructor(private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
+    let options: ILoadingOptions = {
+      name: 'main',
+      type: LoadingType.Circular,
+    };
+    this._loadingService.createOverlayComponent(options, viewContainerRef);
+  }
 
 }

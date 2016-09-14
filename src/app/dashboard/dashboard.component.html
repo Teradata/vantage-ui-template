@@ -71,7 +71,7 @@
           <md-card-title>Customer Activity</md-card-title>
           <md-card-subtitle>Recent activity from select members</md-card-subtitle>
           <md-divider></md-divider>
-          <md-nav-list class="will-load">
+          <md-nav-list class="will-load item-list">
             <template tdLoading="items.load">
               <template let-item let-last="last" ngFor [ngForOf]="items">
                 <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
@@ -92,7 +92,7 @@
           <md-card-title>Alerts</md-card-title>
           <md-card-subtitle>Items requiring attention</md-card-subtitle>
           <md-divider></md-divider>
-          <md-list class="will-load">
+          <md-list class="will-load alert-list">
             <template tdLoading="alerts.load">
               <template let-item let-last="last" ngFor [ngForOf]="alerts">
                 <md-list-item layout-align="row">
@@ -115,7 +115,7 @@
           <md-card-title>Favorites</md-card-title>
           <md-card-subtitle>Your favorite products</md-card-subtitle>
           <md-divider></md-divider>
-          <md-list class="will-load">
+          <md-list class="will-load favorite-list">
             <template tdLoading="favorites.load">
               <template let-item let-last="last" ngFor [ngForOf]="products">
                 <md-list-item layout-align="row">

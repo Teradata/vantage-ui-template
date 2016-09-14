@@ -1,8 +1,16 @@
-describe('hello, protractor', function() {
-  describe('index', function() {
+describe('basic e2e test with loading', function(): void {
+  let EC = protractor.ExpectedConditions;
+  describe('home', function(): void {
     browser.get('/');
-    it('should have a title', function() {
+    it('should load home page', function(): void {
       expect(browser.getTitle()).toBe('Covalent QuickStart');
+      // Waits for the element 'td-loading' to not be present on the dom.
+      browser.wait(EC.not(EC.presenceOf($('td-loading'))), 10000)
+      .then(() => {
+
+        // checks if elements were rendered
+        expect(element(by.id('home-items-cards')).isPresent()).toBe(true);
+      });
     });
   });
 });
