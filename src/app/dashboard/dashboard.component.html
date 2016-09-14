@@ -1,17 +1,77 @@
-<td-layout-nav>
+<td-layout-nav logo="assets/icons/covalent.svg">
   <div toolbar-content layout="row" layout-align="center center" flex>
-    <span>Activity Dashboard</span>
+    <span>Dashboard</span>
     <span flex></span>
-    <button md-icon-button (click)="help()"><md-icon class="md-24">help</md-icon></button>
+    <a md-icon-button md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
   </div>
   <div class="md-content" flex md-scroll-y>
-    <div layout="column" layout-gt-md="row" class="inset">
-      <div flex-gt-md="60">
+    <div layout="column" layout-gt-sm="row" class="inset">
+      <div flex-gt-sm="60">
         <md-card>
-          <md-card-title>All Activity</md-card-title>
-          <md-card-subtitle>Total activity from all items</md-card-subtitle>
+            <md-card-title>Products Usage</md-card-title>
+            <md-card-subtitle>usage stats for our products</md-card-subtitle>
+            <md-tab-group [selectedIndex]="2">
+              <md-tab>
+                <template md-tab-label>1 WEEK</template>
+                <template md-tab-content>
+                  <chart-component></chart-component>
+                </template>
+              </md-tab>
+              <md-tab>
+                <template md-tab-label>1 MONTH</template>
+                <template md-tab-content>
+                  <chart-component></chart-component>
+                </template>
+              </md-tab>
+              <md-tab>
+                <template md-tab-label>1 YEAR</template>
+                <template md-tab-content>
+                  <chart-component></chart-component>
+                </template>
+              </md-tab>
+            </md-tab-group>
+          </md-card>
+        <div layout="row">
+          <div flex="33" layout="column">
+            <md-card class="md-card-colored" flex>
+              <md-card-content class="text-center">
+                <div class="md-headline">{{ '2341'| digits }} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
+                <div layout="column" layout-padding>
+                  <div class="md-subhead">Active Users</div>
+                  <div class="md-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+          <div flex="33" layout="column">
+            <md-card class="md-card-colored" flex>
+              <md-card-content class="text-center">
+                <div class="md-headline">{{ '72452903343' | bytes }} <md-icon class="tc-red-500 text-sm">arrow_downward</md-icon></div>
+                <div layout="column" layout-padding>
+                  <div class="md-subhead">User Disk Usage</div>
+                  <div class="md-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+          <div flex="33" layout="column">
+            <md-card class="md-card-colored" flex>
+              <md-card-content class="text-center">
+                <div class="md-headline">{{ '324523' | digits}} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
+                <div layout="column" layout-padding>
+                  <div class="md-subhead">Visitors</div>
+                  <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+        </div>
+        <md-card>
+          <md-card-title>Customer Activity</md-card-title>
+          <md-card-subtitle>Recent activity from select members</md-card-subtitle>
           <md-divider></md-divider>
-          <md-nav-list class="items-list">
+          <md-nav-list class="will-load">
             <template tdLoading="items.load">
               <template let-item let-last="last" ngFor [ngForOf]="items">
                 <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
@@ -27,18 +87,18 @@
           </md-nav-list>
         </md-card>
       </div>
-      <div flex-gt-md="40">
+      <div flex-gt-sm="40">
         <md-card>
-          <md-card-title>Users</md-card-title>
-          <md-card-subtitle>Latest system users</md-card-subtitle>
+          <md-card-title>Alerts</md-card-title>
+          <md-card-subtitle>Items requiring attention</md-card-subtitle>
           <md-divider></md-divider>
-          <md-list class="user-list">
-            <template tdLoading="users.load">
-              <template let-user let-last="last" ngFor [ngForOf]="users">
+          <md-list class="will-load">
+            <template tdLoading="alerts.load">
+              <template let-item let-last="last" ngFor [ngForOf]="alerts">
                 <md-list-item layout-align="row">
-                  <md-icon md-list-avatar>person</md-icon>
-                  <h3 md-line> {{user.display_name}} </h3>
-                  <p md-line> {{user.id}} </p>
+                  <md-icon md-list-avatar class="bgc-amber-800">{{item.icon}}</md-icon>
+                  <h3 md-line> {{item.description}} </h3>
+                  <p md-line> {{item.name}} </p>
                 </md-list-item>
                 <md-divider *ngIf="!last" md-inset></md-divider>
               </template>
@@ -46,15 +106,40 @@
           </md-list>
           <md-divider></md-divider>
           <md-card-actions>
-            <a md-button color="accent" class="text-upper" [routerLink]="['/users']">
+            <a md-button color="accent" class="text-upper" [routerLink]="['/logs']">
+              <span>View More</span>
+            </a>
+          </md-card-actions>
+        </md-card>
+        <md-card class="push-top">
+          <md-card-title>Favorites</md-card-title>
+          <md-card-subtitle>Your favorite products</md-card-subtitle>
+          <md-divider></md-divider>
+          <md-list class="will-load">
+            <template tdLoading="favorites.load">
+              <template let-item let-last="last" ngFor [ngForOf]="products">
+                <md-list-item layout-align="row">
+                  <md-icon md-list-icon>{{item.icon}}</md-icon>
+                  <h3 md-line> {{item.name}} </h3>
+                  <p md-line> {{item.description}} </p>
+                </md-list-item>
+                <md-divider *ngIf="!last" md-inset></md-divider>
+              </template>
+            </template>
+          </md-list>
+          <md-divider></md-divider>
+          <md-card-actions>
+            <a md-button color="accent" class="text-upper" [routerLink]="['/dashboard-product']">
               <span>View More</span>
             </a>
           </md-card-actions>
         </md-card>
       </div>
     </div>
+    <div layout="row" layout-align="start center" layout-padding>
+      <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
+      <span flex></span>
+      <md-icon class="md-icon-ux" svgSrc="assets/icons/teradata-ux.svg"></md-icon>
+    </div>
   </div>
-   <a md-fab color="accent" class="md-fab-bottom-right"> 
-     <md-icon>add</md-icon>
-   </a>
 </td-layout-nav>

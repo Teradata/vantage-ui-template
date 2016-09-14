@@ -4,9 +4,9 @@
 /* Variables */
 $md-primary: #0097A7;
 $md-primary-opacity: rgba(0, 151, 167, 0.12);
-$md-accent: #FF4081;
-$md-accent-opacity: rgba(255, 64, 129, 0.12);
-$md-warn: #FF9100;
+$md-accent: #FF9100;
+$md-accent-opacity: rgba(255, 145, 0, 0.12);
+$md-warn: #E53935;
 
 /* :host /deep/ lets shadowdom style child elements */
 :host /deep/ {
@@ -140,6 +140,55 @@ $md-warn: #FF9100;
                 background-color: $md-accent;
                 color: white;
             }
+        }
+    }
+    /* Manage list custom styles */
+    .will-load {
+        min-height: 80px;
+    }
+    .md-sort-item {
+        /deep/ {
+            .md-list-item {
+            padding: 0;
+            }
+        }
+    }
+    .md-input-search {
+        /deep/ {
+            .md-input-prefix {
+            width: 45px;
+            text-align: center;
+        }
+    }
+    md-icon.clear-search {
+        top: 15px;
+        position: relative;
+    }
+    }
+    .md-sort-icon {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    .md-sort-header {
+        padding: 10px;
+        &:hover {
+            background-color: #EEEEEE;
+            cursor: pointer;
+        }
+    }
+    a[md-icon-button] {
+        line-height: 36px;
+    }
+    .md-tab-label {
+        flex-grow: 1;
+    }
+    .md-hint {
+        position: absolute;
+        font-size: 75%;
+        bottom: -0.5em;
+
+        &.md-right {
+            right: 0;
         }
     }
 }

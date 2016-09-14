@@ -10,13 +10,17 @@ import { Router } from '@angular/router';
 export class MainComponent {
 
   routes: Object[] = [{
-      title: 'Home',
+      title: 'Dashboard',
       route: '/',
-      icon: 'home',
+      icon: 'dashboard',
     }, {
-      title: 'Activity Dashboard',
-      route: '/dashboard',
-      icon: 'list',
+      title: 'Product Dashboard',
+      route: '/dashboard-product',
+      icon: 'view_quilt',
+    }, {
+      title: 'Logs',
+      route: '/logs',
+      icon: 'receipt',
     }, {
       title: 'Manage Users',
       route: '/users',

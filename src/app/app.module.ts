@@ -11,12 +11,16 @@ import { CovalentMarkdownModule } from '@covalent/markdown';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
+import { LogsComponent } from './logs/logs.component';
+import { FormComponent } from './form/form.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardProductComponent } from './dashboard-product/dashboard-product.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
+
+import { ChartComponent } from './components/chart/chart.component';
 
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
@@ -24,11 +28,14 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
   declarations: [
     AppComponent,
     MainComponent,
-    HomeComponent,
+    DashboardComponent,
+    DashboardProductComponent,
     UsersComponent,
+    LogsComponent,
+    FormComponent,
     DetailComponent,
     LoginComponent,
-    DashboardComponent,
+    ChartComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,

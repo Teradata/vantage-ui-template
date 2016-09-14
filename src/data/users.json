@@ -1,24 +1,8 @@
 [
   {
-    "display_name" : "Suzy Cuningham",
-    "id" : "suzy.cuningham",
-    "email" : "suzy.cuningham@gmail.com",
-    "created" : "10/01/2015 11:05 AM",
-    "last_access" : "12/23/2015 11:05 AM",
-    "site_admin": 1
-  },
-  {
     "display_name" : "Bobby Daniels",
     "id" : "bobbyD",
     "email" : "bobbyD@outlook.com",
-    "created" : "10/01/2015 11:05 AM",
-    "last_access" : "12/23/2015 11:05 AM",
-    "site_admin": 0
-  },
-  {
-    "display_name" : "John Walker",
-    "id" : "johnnyWalker",
-    "email" : "johnnyWalker@blue.com",
     "created" : "10/01/2015 11:05 AM",
     "last_access" : "12/23/2015 11:05 AM",
     "site_admin": 0
@@ -30,6 +14,23 @@
      "created" : "10/01/2015 11:05 AM",
      "last_access" : "12/23/2015 11:05 AM",
      "site_admin": 0
+  },
+  {
+    "display_name" : "Suzy Cuningham",
+    "id" : "suzy.cuningham",
+    "email" : "suzy.cuningham@gmail.com",
+    "created" : "10/01/2015 11:05 AM",
+    "last_access" : "12/23/2015 11:05 AM",
+    "site_admin": 1
+  },
+  
+  {
+    "display_name" : "John Walker",
+    "id" : "johnnyWalker",
+    "email" : "johnnyWalker@blue.com",
+    "created" : "10/01/2015 11:05 AM",
+    "last_access" : "12/23/2015 11:05 AM",
+    "site_admin": 0
   },
   {
      "display_name" : "Jan Williams",
