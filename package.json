@@ -38,13 +38,13 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/chips": "0.6.0-exp1",
-    "@covalent/core": "0.6.0-exp1",
-    "@covalent/file-upload": "0.6.0-exp1",
-    "@covalent/highlight": "0.6.0-exp1",
-    "@covalent/http": "0.6.0-exp1",
-    "@covalent/json-formatter": "0.6.0-exp1",
-    "@covalent/markdown": "0.6.0-exp1"
+    "@covalent/chips": "0.7.0",
+    "@covalent/core": "0.7.0",
+    "@covalent/file-upload": "0.7.0",
+    "@covalent/highlight": "0.7.0",
+    "@covalent/http": "0.7.0",
+    "@covalent/json-formatter": "0.7.0",
+    "@covalent/markdown": "0.7.0"
   },
   "devDependencies": {
     "@angular/compiler-cli": "0.6.1",
