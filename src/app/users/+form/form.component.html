@@ -29,7 +29,7 @@
       </a>
     </md-nav-list>
     <div toolbar-buttons layout="row" layout-align="start center" flex>
-      <span>Users</span>
+      <span>Add User</span>
       <span flex></span>
       <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
@@ -37,31 +37,17 @@
       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
     </div>
     <md-card>
-      <div [tdToggle]="toggleFilters" class="md-padding md-input-search">
-        <div layout="row" class="md-input-search">
-          <md-input #search placeholder="search" flex>
-            <span md-prefix><md-icon>search</md-icon></span>
-          </md-input>
-          <md-icon class="clear-search" *ngIf="search.value" (click)="search.value = ''">cancel</md-icon>
-        </div>
+    <md-card-content class="md-padding">
+      <div layout="row" layout-wrap>
+        <md-input maxlength="100" flex="100" type="text" [(ngModel)]="display_name" required placeholder="Display Name"></md-input>
+        <md-input maxlength="100" flex="100" type="text" [(ngModel)]="email" required placeholder="Email"></md-input>
+        <md-slide-toggle color="primary" [(ngModel)]="admin">Admin</md-slide-toggle>
       </div>
-      <md-list>
-        <template let-user let-last="last" ngFor [ngForOf]="users">
-          <a md-list-item layout-align="row" (click)="userClick(user.id)">
-            <md-icon md-list-avatar>person</md-icon>
-            <h3 md-line> {{user.display_name}} </h3>
-            <p md-line> {{user.id}} </p>
-          </a>
-          <md-divider *ngIf="!last" md-inset></md-divider>
-        </template>
-      </md-list>
-      <md-divider></md-divider>
-      <md-card-actions>
-        <button md-button class="md-primary" (click)="goBack()">BACK</button>
-      </md-card-actions>
-    </md-card> 
-  </td-layout-manage-list>   
+    </md-card-content>
+    <md-card-actions>
+      <button md-button class="md-primary"(click)="save()">SAVE</button>
+      <button md-button class="md-accent" (click)="goBack()">CANCEL</button>
+    </md-card-actions>
+    </md-card>
+  </td-layout-manage-list>
 </td-layout-nav>
-<a md-fab class="md-fab-position-bottom-right" [routerLink]="['form']">
-  <md-icon>add</md-icon>
-</a>
