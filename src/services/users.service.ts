@@ -33,11 +33,37 @@ export class UsersService {
     });
   }
 
-  add(user: IUser): any {
+  get(id: string): any {
+    return this._http.get(this.mockApiData)
+    .map((res: Response) => {
+      let user: any;
+      res.json().forEach((s: any) => {
+        if (s.id === id) {
+          user = s;
+        }
+      });
+      return user;
+    });
+  }
+
+  update(user: IUser, action: string): any {
     let body = JSON.stringify(user);
-    let headers: any = new Headers({ 'Content-Type': 'application/json' });
-    let options: any = new RequestOptions({ headers: headers });
-    return this._http.post(this.mockApiData, body, options)
+    if (action == "add") {
+      return this._http.post(this.mockApiData, body)
+      .map((res: Response) => {
+        return res.json();
+      });
+    };
+    if (action == "edit") {
+      return this._http.put(this.mockApiData + "/" + user.id, body)
+      .map((res: Response) => {
+        return res.json();
+      });
+    };
+  }
+
+  deleteUser(id: string): any {
+    return this._http.delete(this.mockApiData + "/" + id)
     .map((res: Response) => {
       return res.json();
     });
