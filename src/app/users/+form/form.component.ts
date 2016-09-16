@@ -30,12 +30,10 @@ export class UsersFormComponent implements OnInit  {
     });
     this._route.params.subscribe((params: {id: string}) => {
       let userId: string = params.id;
-        console.log(userId);
       this._usersService.get(userId).subscribe((user: any) => {
         this.display_name = user.display_name;
         this.email = user.email;
         this.admin = (user.site_admin == 1 ? true : false);
-        console.log(this.display_name);
       });
     });
   }
