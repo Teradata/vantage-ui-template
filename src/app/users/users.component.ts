@@ -20,14 +20,6 @@ export class UsersComponent implements OnInit {
     this._router.navigate(['/']);
   }
 
-  userClick(id: string): void {
-    alert('clicked on user: ' + id);
-  }
-
-  ngOnInit(): void {
-    this.loadUsers();
-  }
-
   loadUsers(): void {
     this._usersService.query().subscribe((users: Object[]) => {
       this.users = users;
@@ -37,4 +29,14 @@ export class UsersComponent implements OnInit {
       });
     });
   }
+
+  deleteUser(id: string): void {
+    this._usersService.deleteUser(id).subscribe();
+    this.loadUsers();
+  }
+
+  ngOnInit(): void {
+    this.loadUsers();
+  }
+
 }

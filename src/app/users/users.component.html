@@ -47,11 +47,17 @@
       </div>
       <md-list>
         <template let-user let-last="last" ngFor [ngForOf]="users">
-          <a md-list-item layout-align="row" (click)="userClick(user.id)">
-            <md-icon md-list-avatar>person</md-icon>
-            <h3 md-line> {{user.display_name}} </h3>
-            <p md-line> {{user.id}} </p>
-          </a>
+            <a md-list-item layout-align="row">
+              <md-icon md-list-avatar>person</md-icon>
+              <h3 md-line> {{user.display_name}} </h3>
+              <p md-line> {{user.id}} </p>
+              <button md-button class="md-icon-button" [routerLink]="[user.id + '/edit']">
+                <md-icon class="md-24">edit</md-icon>
+              </button>
+              <button md-button class="md-icon-button" (click)="deleteUser(user.id)">
+                <md-icon class="md-24">delete</md-icon>
+              </button>
+            </a>
           <md-divider *ngIf="!last" md-inset></md-divider>
         </template>
       </md-list>
@@ -62,6 +68,6 @@
     </md-card> 
   </td-layout-manage-list>   
 </td-layout-nav>
-<a md-fab class="md-fab-position-bottom-right" [routerLink]="['form']">
+<a md-fab class="md-fab-position-bottom-right" [routerLink]="['add']">
   <md-icon>add</md-icon>
 </a>
