@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 import { StepState, IStepChangeEvent } from '@covalent/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'product-form',
   templateUrl: 'form.component.html',
-  styleUrls: ['form.component.css'],
+  styleUrls: ['form.component.scss'],
 })
 export class FormComponent {
 

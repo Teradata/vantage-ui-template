@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 import { UsersService } from '../../services';
 
 @Component({
-  moduleId: module.id,
   selector: 'qs-users',
   templateUrl: 'users.component.html',
-  styleUrls: ['users.component.css'],
+  styleUrls: ['users.component.scss'],
   viewProviders: [ UsersService ],
 })
 export class UsersComponent implements OnInit {

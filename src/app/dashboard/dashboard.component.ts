@@ -5,10 +5,9 @@ import { TdLoadingService } from '@covalent/core';
 import { ItemsService, UsersService, ProductsService, AlertsService } from '../../services';
 
 @Component({
-  moduleId: module.id,
   selector: 'dashboard',
   templateUrl: 'dashboard.component.html',
-  styleUrls: ['dashboard.component.css'],
+  styleUrls: ['dashboard.component.scss'],
   viewProviders: [ ItemsService, UsersService, ProductsService, AlertsService ],
 })
 export class DashboardComponent implements AfterViewInit {

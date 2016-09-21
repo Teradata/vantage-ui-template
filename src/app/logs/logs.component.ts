@@ -5,10 +5,9 @@ import { TdLoadingService } from '@covalent/core';
 import { ItemsService, UsersService, ProductsService } from '../../services';
 
 @Component({
-  moduleId: module.id,
   selector: 'logs',
   templateUrl: 'logs.component.html',
-  styleUrls: ['logs.component.css'],
+  styleUrls: ['logs.component.scss'],
   viewProviders: [ ItemsService, UsersService, ProductsService ],
 })
 export class LogsComponent implements AfterViewInit {
