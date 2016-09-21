@@ -1,3 +1,5 @@
+import { browser, element, by, $, protractor } from 'protractor/globals';
+
 describe('basic e2e test with loading', function(): void {
   let EC = protractor.ExpectedConditions;
   describe('home', function(): void {
