@@ -46,7 +46,8 @@
     "@covalent/highlight": "0.7.0",
     "@covalent/http": "0.7.0",
     "@covalent/json-formatter": "0.7.0",
-    "@covalent/markdown": "0.7.0"
+    "@covalent/markdown": "0.7.0",
+    "@covalent/data": "0.1.0"
   },
   "devDependencies": {
     "@angular/compiler-cli": "0.6.1",
@@ -62,7 +63,6 @@
     "@types/selenium-webdriver": "^2.44.20-alpha",
     "angular-cli": "1.0.0-beta.10",
     "codelyzer": "0.0.25",
-    "covalent-data": "^0.1.1",
     "del": "2.2.0",
     "ember-cli-inject-live-reload": "1.4.0",
     "jasmine-core": "2.4.1",
