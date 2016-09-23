@@ -16,6 +16,7 @@ export class UsersFormComponent implements OnInit  {
   constructor(private _usersService: UsersService, private _route: ActivatedRoute) {}
   display_name: string;
   email: string;
+	id: string;
   admin: boolean;
   user: IUser;
   action: string;
@@ -34,6 +35,7 @@ export class UsersFormComponent implements OnInit  {
         this.display_name = user.display_name;
         this.email = user.email;
         this.admin = (user.site_admin == 1 ? true : false);
+				this.id = user.id;
       });
     });
   }
@@ -45,16 +47,11 @@ export class UsersFormComponent implements OnInit  {
       display_name: this.display_name,
       email: this.email,
       site_admin: site_admin,
-      id: this.display_name.replace(/\s+/g, '.'),
+      id: this.id || this.display_name.replace(/\s+/g, '.'),
       created: now,
       last_access: now,  
     }
     this._usersService.update(this.user, this.action).subscribe();
-    this.goBack();
-  }
-
-  deleteUser(id: string): void {
-    this._usersService.deleteUser(id).subscribe();
     this.goBack();
   }
 }

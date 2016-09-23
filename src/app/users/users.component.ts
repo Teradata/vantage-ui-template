@@ -32,8 +32,8 @@ export class UsersComponent implements OnInit {
 
   deleteUser(id: string): void {
     this._usersService.deleteUser(id).subscribe();
-    this.loadUsers();
-  }
+   	setTimeout(this.loadUsers(), 1000);
+	}
 
   ngOnInit(): void {
     this.loadUsers();
