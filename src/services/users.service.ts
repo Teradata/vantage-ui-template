@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Subscriber } from 'rxjs/Subscriber';
 
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 
@@ -21,29 +20,6 @@ export class UsersService extends RESTService<IUser> {
     super(_http, {
       baseUrl: 'http://localhost:8080',
       path: '/users',
-    });
-  }
-
-  public delete(id: string | number): Observable<any> {
-    let request: Observable<Response> = this.http.delete(this.buildUrl(id), this.buildRequestOptions());
-    return request.map((res: Response) => {
-      if (res.status === 200) {
-        try {
-          return this.transform(res);
-        } catch (e) {
-          return res;
-        }
-      } else {
-        return res;
-      }
-    }).catch<any>((error: Response) => {
-      return new Observable<any>((subscriber: Subscriber<any>) => {
-        try {
-          subscriber.error(this.transform(error));
-        } catch (err) {
-          subscriber.error(error);
-        }
-      });
     });
   }
 

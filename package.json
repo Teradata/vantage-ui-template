@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "0.6.1",
+    "@covalent/data": "^0.1.0",
     "@types/glob": "^5.0.29",
     "@types/gulp": "^3.8.29",
     "@types/hammerjs": "^2.0.30",
@@ -62,7 +63,6 @@
     "@types/selenium-webdriver": "^2.44.20-alpha",
     "angular-cli": "1.0.0-beta.10",
     "codelyzer": "0.0.25",
-    "covalent-data": "^0.1.1",
     "del": "2.2.0",
     "ember-cli-inject-live-reload": "1.4.0",
     "jasmine-core": "2.4.1",
