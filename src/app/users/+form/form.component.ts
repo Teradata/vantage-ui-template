@@ -13,6 +13,8 @@ import { UsersService, IUser } from '../../../services';
 })
 export class UsersFormComponent implements OnInit  {
 
+  EMAIL_PATTERN: string = `[a-z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?`;
+
   display_name: string;
   email: string;
   id: string;

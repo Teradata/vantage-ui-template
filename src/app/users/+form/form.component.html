@@ -38,14 +38,37 @@
     </div>
     <md-card>
     <md-card-content class="md-padding">
-      <div layout="row" layout-wrap>
-        <md-input maxlength="100" flex="100" type="text" [(ngModel)]="display_name" required placeholder="Display Name"></md-input>
-        <md-input maxlength="100" flex="100" type="text" [(ngModel)]="email" required placeholder="Email"></md-input>
-        <md-slide-toggle color="primary" [(ngModel)]="admin">Admin</md-slide-toggle>
-      </div>
+      <form #userForm="ngForm">
+        <div layout="row" layout-wrap>
+          <md-input #displayNameElement
+                    flex="100" 
+                    type="text" 
+                    placeholder="Display Name" 
+                    [(ngModel)]="display_name" 
+                    name="display_name" 
+                    maxlength="20" 
+                    required>
+            <md-hint align="end">{{displayNameElement.characterCount}} / 20</md-hint>
+          </md-input>
+          <md-input #emailElement
+                    #emailControl="ngModel"
+                    flex="100" 
+                    type="text" 
+                    placeholder="Email" 
+                    [(ngModel)]="email" 
+                    name="email"
+                    maxlength="30"
+                    [pattern]="EMAIL_PATTERN"
+                    required>
+            <md-hint align="start" [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">Pattern for e-mail is not matched.</md-hint>
+            <md-hint align="end">{{emailElement.characterCount}} / 30</md-hint>
+          </md-input>
+          <md-slide-toggle color="primary" [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>
+        </div>
+      </form>
     </md-card-content>
     <md-card-actions>
-      <button md-button class="md-primary"(click)="save()">SAVE</button>
+      <button md-button [disabled]="!userForm.valid" class="md-primary" (click)="save()">SAVE</button>
       <button md-button class="md-accent" (click)="goBack()">CANCEL</button>
     </md-card-actions>
     </md-card>
