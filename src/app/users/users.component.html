@@ -7,23 +7,23 @@
   </div>
   <td-layout-manage-list #list>
     <md-nav-list list-items>
-      <a md-list-item>
+      <a md-list-item (click)="list.toggle()">
         <md-icon md-list-icon>account_circle</md-icon>
         All Users
       </a>
-      <a md-list-item>
+      <a md-list-item (click)="list.toggle()">
         <md-icon md-list-icon>star</md-icon>
         Favorites
       </a>
-      <a md-list-item>
+      <a md-list-item (click)="list.toggle()">
         <md-icon md-list-icon>verified_user</md-icon>
         Administrators
       </a>
-      <a md-list-item>
+      <a md-list-item (click)="list.toggle()">
         <md-icon md-list-icon>supervisor_account</md-icon>
         Non-Admins
       </a>
-      <a md-list-item>
+      <a md-list-item (click)="list.toggle()">
         <md-icon md-list-icon>inbox</md-icon>
         Archived
       </a>
@@ -36,7 +36,7 @@
       <button md-button class="md-icon-button"><md-icon class="md-24">settings</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
     </div>
-    <md-card>
+    <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <div [tdToggle]="toggleFilters" class="md-padding md-input-search">
         <div layout="row" class="md-input-search">
           <md-input #search placeholder="search" flex>
@@ -47,15 +47,15 @@
       </div>
       <md-list>
         <template let-user let-last="last" ngFor [ngForOf]="users">
-            <a md-list-item layout-align="row">
+            <a md-list-item>
               <md-icon md-list-avatar>person</md-icon>
               <h3 md-line> {{user.display_name}} </h3>
               <p md-line> {{user.id}} </p>
-              <button md-button class="md-icon-button" [routerLink]="[user.id + '/edit']">
-                <md-icon class="md-24">edit</md-icon>
+              <button md-icon-button [routerLink]="[user.id + '/edit']">
+                <md-icon>edit</md-icon>
               </button>
-              <button md-button class="md-icon-button" (click)="deleteUser(user.id)">
-                <md-icon class="md-24">delete</md-icon>
+              <button md-icon-button (click)="deleteUser(user.id)">
+                <md-icon>delete</md-icon>
               </button>
             </a>
           <md-divider *ngIf="!last" md-inset></md-divider>
