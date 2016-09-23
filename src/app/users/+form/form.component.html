@@ -1,0 +1,76 @@
+<td-layout-nav logo="assets/icons/covalent.svg">
+  <div toolbar-content layout="row" layout-align="center center" flex>
+    <span>Product Name</span>
+    <span flex></span>
+    <a md-icon-button md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
+  </div>
+  <td-layout-manage-list #list>
+    <md-nav-list list-items>
+      <a md-list-item>
+        <md-icon md-list-icon>account_circle</md-icon>
+        All Users
+      </a>
+      <a md-list-item>
+        <md-icon md-list-icon>star</md-icon>
+        Favorites
+      </a>
+      <a md-list-item>
+        <md-icon md-list-icon>verified_user</md-icon>
+        Administrators
+      </a>
+      <a md-list-item>
+        <md-icon md-list-icon>supervisor_account</md-icon>
+        Non-Admins
+      </a>
+      <a md-list-item>
+        <md-icon md-list-icon>inbox</md-icon>
+        Archived
+      </a>
+    </md-nav-list>
+    <div toolbar-buttons layout="row" layout-align="start center" flex>
+      <span>{{action}} user</span>
+      <span flex></span>
+      <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">settings</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
+    </div>
+    <md-card>
+    <md-card-content class="md-padding">
+      <form #userForm="ngForm">
+        <div layout="row" layout-wrap>
+          <md-input #displayNameElement
+                    flex="100" 
+                    type="text" 
+                    placeholder="Display Name" 
+                    [(ngModel)]="display_name" 
+                    name="display_name" 
+                    maxlength="20" 
+                    required>
+            <md-hint align="end">{{displayNameElement.characterCount}} / 20</md-hint>
+          </md-input>
+          <md-input #emailElement
+                    #emailControl="ngModel"
+                    flex="100" 
+                    type="text" 
+                    placeholder="Email" 
+                    [(ngModel)]="email" 
+                    name="email"
+                    maxlength="30"
+                    pattern="\S*@\S+"
+                    required>
+            <md-hint align="start" [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">Pattern for e-mail is not matched.</md-hint>
+            <md-hint align="end">{{emailElement.characterCount}} / 30</md-hint>
+          </md-input>
+          <md-slide-toggle color="primary" [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>
+        </div>
+      </form>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button [disabled]="!userForm.valid" class="md-primary" (click)="save()">SAVE</button>
+      <button md-button class="md-accent" (click)="goBack()">CANCEL</button>
+    </md-card-actions>
+    </md-card>
+  </td-layout-manage-list>
+</td-layout-nav>

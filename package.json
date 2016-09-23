@@ -10,9 +10,18 @@
   ],
   "scripts": {
     "e2e": "protractor",
+<<<<<<< HEAD
     "e2e-test": "protractor ./tests/protractor.conf.js",
     "tslint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
     "postinstall": "webdriver-manager update",
+=======
+    "e2e-test": "protractor ./config/protractor.conf.js",
+    "tslint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\"",
+    "typings": "typings install --global",
+    "start-api": "cd mock-api && covalent-data &",
+    "stop-api": "pkill covalent-data",
+    "postinstall": "npm run typings && webdriver-manager update",
+>>>>>>> develop
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "pretest": "rm -rf ./dist && ng build",
     "test": "npm run karma",
@@ -44,6 +53,7 @@
     "@covalent/http": "0.7.0",
     "@covalent/json-formatter": "0.7.0",
     "@covalent/markdown": "0.7.0",
+    "@covalent/data": "0.1.0",
     "ts-helpers": "^1.1.1"
   },
   "devDependencies": {
