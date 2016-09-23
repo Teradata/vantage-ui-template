@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
+import { UsersFormComponent } from './users/+form/form.component';
 import { LogsComponent } from './logs/logs.component';
 import { FormComponent } from './form/form.component';
 import { DetailComponent } from './detail/detail.component';
@@ -31,6 +32,7 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
     DashboardComponent,
     DashboardProductComponent,
     UsersComponent,
+    UsersFormComponent,
     LogsComponent,
     FormComponent,
     DetailComponent,

@@ -1,24 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
-import { HttpInterceptorService } from '@covalent/http';
+import { Observable } from 'rxjs/Observable';
+
+import { HttpInterceptorService, RESTService } from '@covalent/http';
+
+export interface IUser {
+  display_name: string;
+  id: string;
+  email: string;
+  created: Date;
+  last_access: Date;
+  site_admin: number;
+}
 
 @Injectable()
-export class UsersService {
+export class UsersService extends RESTService<IUser> {
 
-  private staticApiData: string = 'data/users.json';
-  private mockApiData: string = 'http://localhost:8080/users';
-
-  constructor(private _http: HttpInterceptorService) {}
-
-  staticQuery(): any {
-    return this._http.get(this.staticApiData)
-    .map((res: Response) => {
-      return res.json();
+  constructor(private _http: HttpInterceptorService) {
+    super(_http, {
+      baseUrl: 'http://localhost:8080',
+      path: '/users',
     });
   }
 
-  query(): any {
-    return this._http.get(this.mockApiData)
+  staticQuery(): Observable<IUser[]> {
+    return this._http.get('data/users.json')
     .map((res: Response) => {
       return res.json();
     });
