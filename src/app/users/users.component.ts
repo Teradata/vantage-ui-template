@@ -15,6 +15,7 @@ import { UsersService, IUser } from '../../services';
 export class UsersComponent implements AfterViewInit {
 
   users: IUser[];
+  filteredUsers: IUser[];
 
   constructor(private _router: Router,
               private _loadingService: TdLoadingService,
@@ -28,10 +29,17 @@ export class UsersComponent implements AfterViewInit {
     this.loadUsers();
   }
 
+  filterUsers(displayName: string = ''): void {
+    this.filteredUsers = this.users.filter((user: IUser) => {
+      return user.display_name.toLowerCase().indexOf(displayName.toLowerCase()) > -1;
+    });
+  }
+
   loadUsers(): void {
     this._loadingService.register('users.list');
     this._usersService.query().subscribe((users: IUser[]) => {
       this.users = users;
+      this.filteredUsers = users;
       this._loadingService.resolve('users.list');
     }, (error: Error) => {
       this._usersService.staticQuery().subscribe((users: IUser[]) => {
