@@ -46,7 +46,8 @@
     "@covalent/highlight": "0.7.0",
     "@covalent/http": "0.7.0",
     "@covalent/json-formatter": "0.7.0",
-    "@covalent/markdown": "0.7.0"
+    "@covalent/markdown": "0.7.0",
+    "@covalent/data": "0.1.0"
   },
   "devDependencies": {
     "@angular/compiler-cli": "0.6.1",
