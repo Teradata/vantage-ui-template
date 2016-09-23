@@ -10,18 +10,11 @@
   ],
   "scripts": {
     "e2e": "protractor",
-<<<<<<< HEAD
     "e2e-test": "protractor ./tests/protractor.conf.js",
     "tslint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
     "postinstall": "webdriver-manager update",
-=======
-    "e2e-test": "protractor ./config/protractor.conf.js",
-    "tslint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\"",
-    "typings": "typings install --global",
     "start-api": "cd mock-api && covalent-data &",
     "stop-api": "pkill covalent-data",
-    "postinstall": "npm run typings && webdriver-manager update",
->>>>>>> develop
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "pretest": "rm -rf ./dist && ng build",
     "test": "npm run karma",
