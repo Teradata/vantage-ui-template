@@ -51,7 +51,6 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "0.6.1",
-    "@covalent/data": "^0.1.0",
     "@types/glob": "^5.0.29",
     "@types/gulp": "^3.8.29",
     "@types/hammerjs": "^2.0.30",
