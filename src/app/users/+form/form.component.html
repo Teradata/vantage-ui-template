@@ -58,7 +58,7 @@
                     [(ngModel)]="email" 
                     name="email"
                     maxlength="30"
-                    [pattern]="EMAIL_PATTERN"
+                    pattern="\S*@\S+"
                     required>
             <md-hint align="start" [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">Pattern for e-mail is not matched.</md-hint>
             <md-hint align="end">{{emailElement.characterCount}} / 30</md-hint>
