@@ -54,6 +54,9 @@ export class UsersComponent implements AfterViewInit {
       this.users = this.users.filter((user: IUser) => {
         return user.id !== id;
       });
+      this.filteredUsers = this.filteredUsers.filter((user: IUser) => {
+        return user.id !== id;
+      });
       this._loadingService.resolve('users.list');
     }, (error: Error) => {
       this._loadingService.resolve('users.list');
