@@ -43,6 +43,7 @@ export class UsersComponent implements AfterViewInit {
     }, (error: Error) => {
       this._usersService.staticQuery().subscribe((users: IUser[]) => {
         this.users = users;
+        this.filteredUsers = users;
         this._loadingService.resolve('users.list');
       });
     });
