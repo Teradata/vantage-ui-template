@@ -8,7 +8,7 @@ import { UsersService, IUser } from '../../../services';
   moduleId: module.id,
   selector: 'source-form',
   templateUrl: 'form.component.html',
-  styleUrls: ['form.component.css'],
+  styleUrls: ['form.component.scss'],
   viewProviders: [ UsersService ],
 })
 export class UsersFormComponent implements OnInit  {
