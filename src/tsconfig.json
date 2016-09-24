@@ -13,8 +13,5 @@
     "typeRoots": [
       "../node_modules/@types"
     ]
-  },
-  "exclude": [
-    "**/*.spec.*"
-  ]
+  }
 }
