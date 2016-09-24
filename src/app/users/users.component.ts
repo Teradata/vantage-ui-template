@@ -6,10 +6,9 @@ import { TdLoadingService } from '@covalent/core';
 import { UsersService, IUser } from '../../services';
 
 @Component({
-  moduleId: module.id,
   selector: 'qs-users',
   templateUrl: 'users.component.html',
-  styleUrls: ['users.component.css'],
+  styleUrls: ['users.component.scss'],
   viewProviders: [ UsersService ],
 })
 export class UsersComponent implements AfterViewInit {
@@ -44,6 +43,7 @@ export class UsersComponent implements AfterViewInit {
     }, (error: Error) => {
       this._usersService.staticQuery().subscribe((users: IUser[]) => {
         this.users = users;
+        this.filteredUsers = users;
         this._loadingService.resolve('users.list');
       });
     });
@@ -53,6 +53,9 @@ export class UsersComponent implements AfterViewInit {
     this._loadingService.register('users.list');
     this._usersService.delete(id).subscribe(() => {
       this.users = this.users.filter((user: IUser) => {
+        return user.id !== id;
+      });
+      this.filteredUsers = this.filteredUsers.filter((user: IUser) => {
         return user.id !== id;
       });
       this._loadingService.resolve('users.list');

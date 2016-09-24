@@ -10,7 +10,7 @@ $md-warn: #E53935;
 
 /* :host /deep/ lets shadowdom style child elements */
 :host /deep/ {
-     /* customize logo height and width */
+         /* customize logo height and width */
     .md-icon-logo {
         height: 50px;
         width: 45px;
@@ -114,16 +114,16 @@ $md-warn: #E53935;
     md-progress-circle,
     md-spinner {
         path {
-            stroke: $md-primary;
+            stroke: $md-primary !important;
         }
         &[color='accent'] {
             path {
-                stroke: $md-accent;
+                stroke: $md-accent !important;
             }
         }
         &[color='warn'] {
             path {
-                stroke: $md-warn;
+                stroke: $md-warn !important;
             }
         }
     }
@@ -136,17 +136,24 @@ $md-warn: #E53935;
     md-slide-toggle {
         &.md-checked {
             .md-slide-toggle-thumb {
-                background-color: $md-accent;
+                background-color: $md-accent !important;
             }
             .md-slide-toggle-bar {
-                background-color: $md-accent-opacity;
+                background-color: $md-accent-opacity !important;
             }
         }
         &.md-slide-toggle-focused {
             .md-ink-ripple {
-                background-color: $md-accent-opacity;
+                background-color: $md-accent-opacity !important;
             }
         }
+    }
+    .md-slider-thumb::after {
+        background-color: $md-accent;
+        border-color: $md-accent;
+    }
+    .md-slider-track-fill {
+        background-color: $md-accent;
     }
     md-nav-list {
         [md-list-item].active {
@@ -159,7 +166,7 @@ $md-warn: #E53935;
             }
         }
     }
-    /* Manage list custom styles */
+     /* Manage list custom styles */
     .will-load {
         min-height: 80px;
     }

@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 import { TdLoadingService } from '@covalent/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'qs-login',
   templateUrl: 'login.component.html',
-  styleUrls: ['login.component.css'],
+  styleUrls: ['login.component.scss'],
 })
 export class LoginComponent {
 
