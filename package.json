@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "e2e": "protractor",
-    "e2e-test": "protractor ./tests/protractor.conf.js",
+    "e2e-test": "protractor ./protractor.conf.js",
     "tslint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
     "postinstall": "webdriver-manager update",
     "start-api": "cd mock-api && covalent-data &",
@@ -18,7 +18,7 @@
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "pretest": "rm -rf ./dist && ng build",
     "test": "npm run karma",
-    "karma": "karma start ./tests/karma.conf.js --single-run",
+    "karma": "karma start ./karma.conf.js --single-run",
     "ghpages-deploy": "bash scripts/ghpages-deploy"
   },
   "engines": {
