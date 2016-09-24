@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { UsersService, IUser } from '../../../services';
 
 @Component({
-  moduleId: module.id,
   selector: 'source-form',
   templateUrl: 'form.component.html',
   styleUrls: ['form.component.scss'],
