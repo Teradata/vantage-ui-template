@@ -27,7 +27,7 @@ export class DashboardComponent implements AfterViewInit {
               private _loadingService: TdLoadingService) {}
 
   ngAfterViewInit(): void {
-    this._titleService.setTitle( 'Covalent QuickStart' );
+    this._titleService.setTitle( 'Covalent Quickstart' );
 
     this._loadingService.register('items.load');
     this._itemsService.query().subscribe((items: Object[]) => {

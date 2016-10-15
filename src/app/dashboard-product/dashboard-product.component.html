@@ -11,7 +11,7 @@
     </md-toolbar>
     <md-nav-list list-items>
       <a md-list-item 
-        md-ripple class="relative"
+        md-ripple class="block relative"
         (click)="list.toggle()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
@@ -20,7 +20,7 @@
         Dashboard
       </a>
       <a md-list-item 
-        md-ripple class="relative"
+        md-ripple class="block relative"
         (click)="list.toggle()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
@@ -28,16 +28,16 @@
         <md-icon md-list-icon>insert_chart</md-icon>
         Stats
       </a>
-      <a md-list-item (click)="list.toggle()" md-ripple class="relative">
+      <a md-list-item (click)="list.toggle()" md-ripple class="block relative">
         <md-icon md-list-icon>people</md-icon>
         Customers
       </a>
       <h3 md-subheader>Admin Menu</h3>
-      <a md-list-item (click)="list.toggle()" md-ripple class="relative">
+      <a md-list-item (click)="list.toggle()" md-ripple class="block relative">
         <md-icon md-list-icon>receipt</md-icon>
         Log
       </a>
-      <a md-list-item (click)="list.toggle()" md-ripple class="relative">
+      <a md-list-item (click)="list.toggle()" md-ripple class="block relative">
         <md-icon md-list-icon>settings</md-icon>
         Settings
       </a>
