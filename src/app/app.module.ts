@@ -21,6 +21,7 @@ import { FormComponent } from './form/form.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardProductComponent } from './dashboard-product/dashboard-product.component';
+import { StatsComponent } from './dashboard-product/stats/stats.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { ChartComponent } from '../components/chart/chart.component';
@@ -33,6 +34,7 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
     MainComponent,
     DashboardComponent,
     DashboardProductComponent,
+    StatsComponent,
     UsersComponent,
     UsersFormComponent,
     LogsComponent,
