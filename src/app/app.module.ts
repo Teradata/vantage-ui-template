@@ -8,6 +8,8 @@ import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentJsonFormatterModule } from '@covalent/json-formatter';
 import { CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentChartsModule } from '@covalent/charts';
+import { CovalentDataTableModule } from '@covalent/data-table';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -42,7 +44,9 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
   imports: [
     BrowserModule,
     CovalentCoreModule.forRoot(),
+    CovalentChartsModule.forRoot(),
     CovalentChipsModule.forRoot(),
+    CovalentDataTableModule.forRoot(),
     CovalentFileModule.forRoot(),
     CovalentHttpModule.forRoot([RequestInterceptor]),
     CovalentHighlightModule.forRoot(),
