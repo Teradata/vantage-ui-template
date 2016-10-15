@@ -1,11 +1,5 @@
 /* :host /deep/ lets shadowdom style child elements */
 :host /deep/ {
-         /* customize logo height and width */
-    .md-icon-logo {
-        height: 50px;
-        width: 45px;
-        margin-right: 5px;
-    }
     // md-divider has a bug in angular-material that doesn't apply color
     md-divider {
         border-top-color: rgba(black, 0.12);

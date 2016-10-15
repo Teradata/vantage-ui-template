@@ -17,7 +17,7 @@ export class MainComponent {
       route: '/dashboard-product',
       icon: 'view_quilt',
     }, {
-      title: 'Logs',
+      title: 'Product Logs',
       route: '/logs',
       icon: 'receipt',
     }, {
