@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 import { Title }     from '@angular/platform-browser';
 
@@ -7,12 +7,13 @@ import { Title }     from '@angular/platform-browser';
   templateUrl: 'dashboard-product.component.html',
   styleUrls: ['dashboard-product.component.scss'],
 })
-export class DashboardProductComponent implements OnInit {
+export class DashboardProductComponent implements AfterViewInit {
 
   title: string;
   constructor(private _titleService: Title) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    this._titleService.setTitle( 'Product Dashboard' );
     this.title = this._titleService.getTitle();
   }
 }
