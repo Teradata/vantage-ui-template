@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title }  from '@angular/platform-browser';
 
 import { CovalentCoreModule, TD_LOADING_ENTRY_COMPONENTS } from '@covalent/core';
 import { CovalentChipsModule } from '@covalent/chips';
@@ -21,7 +21,8 @@ import { FormComponent } from './form/form.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardProductComponent } from './dashboard-product/dashboard-product.component';
-import { StatsComponent } from './dashboard-product/stats/stats.component';
+import { ProductOverviewComponent } from './dashboard-product/overview/overview.component';
+import { ProductStatsComponent } from './dashboard-product/stats/stats.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { ChartComponent } from '../components/chart/chart.component';
@@ -34,7 +35,8 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
     MainComponent,
     DashboardComponent,
     DashboardProductComponent,
-    StatsComponent,
+    ProductOverviewComponent,
+    ProductStatsComponent,
     UsersComponent,
     UsersFormComponent,
     LogsComponent,
@@ -58,6 +60,7 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
+    Title,
   ], // additional providers needed for this module
   entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ],
   bootstrap: [ AppComponent ],

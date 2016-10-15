@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService } from '@covalent/core';
 
@@ -16,7 +17,8 @@ export class UsersComponent implements AfterViewInit {
   users: IUser[];
   filteredUsers: IUser[];
 
-  constructor(private _router: Router,
+  constructor(private _titleService: Title,
+              private _router: Router,
               private _loadingService: TdLoadingService,
               private _usersService: UsersService) {}
 
@@ -25,6 +27,7 @@ export class UsersComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this._titleService.setTitle( 'Covalent Users' );
     this.loadUsers();
   }
 

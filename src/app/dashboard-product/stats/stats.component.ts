@@ -1,69 +1,143 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
 
-import { TdLoadingService } from '@covalent/core';
+import { TdDataTableSortingOrder } from '@covalent/data-table';
 
-import { ItemsService, UsersService } from '../../../services';
+const NUMBER_FORMAT: any = (v: {value: number}) => v.value;
+const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
 
 @Component({
-  selector: 'stats',
+  selector: 'product-stats',
   templateUrl: 'stats.component.html',
   styleUrls: ['stats.component.scss'],
-  viewProviders: [ ItemsService, UsersService ],
 })
-export class StatsComponent implements AfterViewInit {
+export class ProductStatsComponent implements AfterViewInit {
+  columns: any[] = [
+    { name: 'name',  label: 'Dessert (100g serving)' },
+    { name: 'type', label: 'Type' },
+    { name: 'calories', label: 'Calories', numeric: true, format: NUMBER_FORMAT },
+    { name: 'fat', label: 'Fat (g)', numeric: true, format: DECIMAL_FORMAT },
+    { name: 'carbs', label: 'Carbs (g)', numeric: true, format: NUMBER_FORMAT },
+    { name: 'protein', label: 'Protein (g)', numeric: true, format: DECIMAL_FORMAT },
+    { name: 'sodium', label: 'Sodium (mg)', numeric: true, format: NUMBER_FORMAT },
+    { name: 'calcium', label: 'Calcium (%)', numeric: true, format: NUMBER_FORMAT },
+    { name: 'iron', label: 'Iron (%)', numeric: true, format: NUMBER_FORMAT },
+  ];
 
-  items: Object[];
-  users: Object[];
+  sorting: boolean = true;
+  pagination: boolean = true;
+  pageSize: number = 5;
 
-  jsonData: any = [
-    {'x': 'Ingest', 'y': 70},
-    {'x': 'Monitoring', 'y': 190},
-    {'x': 'Deployment', 'y': 220},
-    {'x': 'Containers', 'y': 160},
-    {'x': 'Compute', 'y': 240},
-    {'x': 'Deep Storage', 'y': 70},
-    {'x': 'Data Warehouse', 'y': 190},
-    {'x': 'Alerting', 'y': 210},
-    {'x': 'Trends', 'y': 150},
-    {'x': 'Orchestration', 'y': 170},
-    {'x': 'Apps', 'y': 150},
-    {'x': 'Registry', 'y': 260}];
+  data: any[] = [
+      {
+        'name': 'Frozen yogurt',
+        'type': 'Ice cream',
+        'calories': { 'value': 159.0 },
+        'fat': { 'value': 6.0 },
+        'carbs': { 'value': 24.0 },
+        'protein': { 'value': 4.0 },
+        'sodium': { 'value': 87.0 },
+        'calcium': { 'value': 14.0 },
+        'iron': { 'value': 1.0 },
+      }, {
+        'name': 'Ice cream sandwich',
+        'type': 'Ice cream',
+        'calories': { 'value': 237.0 },
+        'fat': { 'value': 9.0 },
+        'carbs': { 'value': 37.0 },
+        'protein': { 'value': 4.3 },
+        'sodium': { 'value': 129.0 },
+        'calcium': { 'value': 8.0 },
+        'iron': { 'value': 1.0 },
+      }, {
+        'name': 'Eclair',
+        'type': 'Pastry',
+        'calories': { 'value':  262.0 },
+        'fat': { 'value': 16.0 },
+        'carbs': { 'value': 24.0 },
+        'protein': { 'value':  6.0 },
+        'sodium': { 'value': 337.0 },
+        'calcium': { 'value':  6.0 },
+        'iron': { 'value': 7.0 },
+      }, {
+        'name': 'Cupcake',
+        'type': 'Pastry',
+        'calories': { 'value':  305.0 },
+        'fat': { 'value': 3.7 },
+        'carbs': { 'value': 67.0 },
+        'protein': { 'value': 4.3 },
+        'sodium': { 'value': 413.0 },
+        'calcium': { 'value': 3.0 },
+        'iron': { 'value': 8.0 },
+      }, {
+        'name': 'Jelly bean',
+        'type': 'Candy',
+        'calories': { 'value':  375.0 },
+        'fat': { 'value': 0.0 },
+        'carbs': { 'value': 94.0 },
+        'protein': { 'value': 0.0 },
+        'sodium': { 'value': 50.0 },
+        'calcium': { 'value': 0.0 },
+        'iron': { 'value': 0.0 },
+      }, {
+        'name': 'Lollipop',
+        'type': 'Candy',
+        'calories': { 'value': 392.0 },
+        'fat': { 'value': 0.2 },
+        'carbs': { 'value': 98.0 },
+        'protein': { 'value': 0.0 },
+        'sodium': { 'value': 38.0 },
+        'calcium': { 'value': 0.0 },
+        'iron': { 'value': 2.0 },
+      }, {
+        'name': 'Honeycomb',
+        'type': 'Other',
+        'calories': { 'value': 408.0 },
+        'fat': { 'value': 3.2 },
+        'carbs': { 'value': 87.0 },
+        'protein': { 'value': 6.5 },
+        'sodium': { 'value': 562.0 },
+        'calcium': { 'value': 0.0 },
+        'iron': { 'value': 45.0 },
+      }, {
+        'name': 'Donut',
+        'type': 'Pastry',
+        'calories': { 'value': 452.0 },
+        'fat': { 'value': 25.0 },
+        'carbs': { 'value': 51.0 },
+        'protein': { 'value': 4.9 },
+        'sodium': { 'value': 326.0 },
+        'calcium': { 'value': 2.0 },
+        'iron': { 'value': 22.0 },
+      }, {
+        'name': 'KitKat',
+        'type': 'Candy',
+        'calories': { 'value': 518.0 },
+        'fat': { 'value': 26.0 },
+        'carbs': { 'value': 65.0 },
+        'protein': { 'value': 7.0 },
+        'sodium': { 'value': 54.0 },
+        'calcium': { 'value': 12.0 },
+        'iron': { 'value': 6.0 },
+      },
+    ];
 
-  constructor(private _itemsService: ItemsService,
-              private _usersService: UsersService,
-              private _loadingService: TdLoadingService) {
+  sortBy: string = 'name';
+  sortOrder: string = 'ASC';
 
+  rowSelection: boolean = false;
+  multiple: boolean = true;
+
+  constructor(private _titleService: Title) { }
+
+  sortChanged(changes: any): void {
+    const { column, order }: any = changes;
+
+    this.sortBy = column.name;
+    this.sortOrder = order === TdDataTableSortingOrder.Ascending ? 'ASC' : 'DESC';
   }
 
   ngAfterViewInit(): void {
-    this._loadingService.register('items.load');
-    this._itemsService.query().subscribe((items: Object[]) => {
-      this.items = items;
-      setTimeout(() => {
-        this._loadingService.resolve('items.load');
-      }, 2000);
-    }, (error: Error) => {
-      this._itemsService.staticQuery().subscribe((items: Object[]) => {
-        this.items = items;
-        setTimeout(() => {
-          this._loadingService.resolve('items.load');
-        }, 2000);
-      });
-    });
-    this._loadingService.register('users.load');
-    this._usersService.query().subscribe((users: Object[]) => {
-      this.users = users;
-      setTimeout(() => {
-        this._loadingService.resolve('users.load');
-      }, 2000);
-    }, (error: Error) => {
-      this._usersService.staticQuery().subscribe((users: Object[]) => {
-        this.users = users;
-        setTimeout(() => {
-          this._loadingService.resolve('users.load');
-        }, 2000);
-      });
-    });
+    this._titleService.setTitle( 'Product Stats' );
   }
-
 }

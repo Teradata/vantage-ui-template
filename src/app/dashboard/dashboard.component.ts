@@ -1,11 +1,13 @@
 import { Component, AfterViewInit } from '@angular/core';
 
+import { Title }     from '@angular/platform-browser';
+
 import { TdLoadingService } from '@covalent/core';
 
 import { ItemsService, UsersService, ProductsService, AlertsService } from '../../services';
 
 @Component({
-  selector: 'dashboard',
+  selector: 'covalent-dashboard',
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.scss'],
   viewProviders: [ ItemsService, UsersService, ProductsService, AlertsService ],
@@ -17,13 +19,16 @@ export class DashboardComponent implements AfterViewInit {
   products: Object[];
   alerts: Object[];
 
-  constructor(private _itemsService: ItemsService,
+  constructor(private _titleService: Title,
+              private _itemsService: ItemsService,
               private _usersService: UsersService,
               private _alertsService: AlertsService,
               private _productsService: ProductsService,
               private _loadingService: TdLoadingService) {}
 
   ngAfterViewInit(): void {
+    this._titleService.setTitle( 'Covalent QuickStart' );
+
     this._loadingService.register('items.load');
     this._itemsService.query().subscribe((items: Object[]) => {
       this.items = items;
