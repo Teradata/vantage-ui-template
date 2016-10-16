@@ -15,11 +15,9 @@
               <md-tab>
                 <template md-tab-label>1 WEEK</template>
                 <template md-tab-content>
-                  <td-charts
-                            [margin]="{top: 60, bottom: 50}"
+                  <td-charts [margin]="{top: 60, bottom: 50}"
                             chartHeight="325"
-                            [shadowDepth]="['125%', 2, 0, 2]"
-                            shadowColor="rgba(0, 0, 0, 0.54)">
+                            [shadow]="true">
                     <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
                     <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
                     <td-chart-line #chartLine 
@@ -39,11 +37,8 @@
               <md-tab>
                 <template md-tab-label>1 MONTH</template>
                 <template md-tab-content>
-                  <td-charts
-                            [margin]="{top: 60, bottom: 50}"
-                            chartHeight="325"
-                            [shadowDepth]="['125%', 2, 0, 2]"
-                            shadowColor="rgba(0, 0, 0, 0.54)">
+                  <td-charts [margin]="{top: 60, bottom: 50}"
+                            chartHeight="325">
                     <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
                     <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
                     <td-chart-line #chartLine 
@@ -65,9 +60,7 @@
                 <template md-tab-content>
                   <td-charts
                             [margin]="{top: 60, bottom: 50}"
-                            chartHeight="325"
-                            [shadowDepth]="['125%', 2, 0, 2]"
-                            shadowColor="rgba(0, 0, 0, 0.54)">
+                            chartHeight="325">
                     <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
                     <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
                     <td-chart-line #chartLine 

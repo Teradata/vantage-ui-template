@@ -3,10 +3,8 @@
         <div flex-gt-xs="50">
             <md-card>
                 <md-card-title>Compute Usage</md-card-title>
-                <td-charts
-                        [margin]="{left:90}"
-                        [shadowDepth]="['125%', 2, 0, 2]"
-                        shadowColor="rgba(0, 0, 0, 0.54)"
+                <td-charts [margin]="{left:90}"
+                        [shadow]="true"
                         fillOpacity="0.75">
                     <td-axis-x [link]="chartArea1" [ticks]="true" [show]="true" [grid]="false"></td-axis-x>
                     <td-axis-y-left [link]="chartArea1" [ticks]="true" [show]="true" [grid]="true"></td-axis-y-left>
@@ -24,9 +22,7 @@
         <div flex-gt-xs="50">
             <md-card>
                 <md-card-title>Ingest Usage</md-card-title>
-                <td-charts
-                        [shadowDepth]="['125%', 2, 0, 2]"
-                        shadowColor="rgba(0, 0, 0, 0.54)"
+                <td-charts [shadow]="true"
                         fillOpacity="0.95">
                     <td-axis-x [link]="chartBar1" [ticks]="true" [show]="true" [grid]="false"></td-axis-x>
                     <td-axis-y-right [link]="chartBar1" [show]="true" [grid]="true"></td-axis-y-right>

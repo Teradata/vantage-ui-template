@@ -7,8 +7,7 @@
                         [margin]="{top:0}"
                         class="pull-top"
                         chartHeight="250"
-                        [shadowDepth]="['125%', 2, 0, 2]"
-                        shadowColor="rgba(0, 0, 0, 0.54)">
+                        [shadow]="true">
                     <td-axis-x [link]="chartLine3" [ticks]="false" [show]="true" [grid]="false"></td-axis-x>
                     <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="true"></td-axis-y-left>
                     <td-chart-line #chartLine3 dataSrc="data/data.tsv"
