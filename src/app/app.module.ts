@@ -24,6 +24,7 @@ import { DashboardProductComponent } from './dashboard-product/dashboard-product
 import { ProductOverviewComponent } from './dashboard-product/overview/overview.component';
 import { ProductStatsComponent } from './dashboard-product/stats/stats.component';
 import { ProductFeaturesComponent } from './dashboard-product/features/features.component';
+import { FeaturesFormComponent } from './dashboard-product/features/+form/form.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { ChartComponent } from '../components/chart/chart.component';
@@ -39,6 +40,7 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
     ProductOverviewComponent,
     ProductStatsComponent,
     ProductFeaturesComponent,
+    FeaturesFormComponent,
     UsersComponent,
     UsersFormComponent,
     LogsComponent,

@@ -6,6 +6,7 @@ import { DashboardProductComponent } from './dashboard-product/dashboard-product
 import { ProductOverviewComponent } from './dashboard-product/overview/overview.component';
 import { ProductStatsComponent } from './dashboard-product/stats/stats.component';
 import { ProductFeaturesComponent } from './dashboard-product/features/features.component';
+import { FeaturesFormComponent } from './dashboard-product/features/+form/form.component';
 import { UsersComponent } from './users/users.component';
 import { UsersFormComponent } from './users/+form/form.component';
 import { LogsComponent } from './logs/logs.component';
@@ -22,7 +23,12 @@ const routes: Routes = [
     {path: 'product', component: DashboardProductComponent, children: [
       {path: '', component: ProductOverviewComponent},
       {path: 'stats', component: ProductStatsComponent},
-      {path: 'features', component: ProductFeaturesComponent},
+      {path: 'features', children: [
+        {path: '', component: ProductFeaturesComponent},
+        {path: 'add', component: FeaturesFormComponent},
+        {path: ':id/delete', component: FeaturesFormComponent},
+        {path: ':id/edit', component: FeaturesFormComponent},
+      ]},
     ]},
     {path: 'item/:id', component: DetailComponent},
     {path: 'logs', component: LogsComponent},

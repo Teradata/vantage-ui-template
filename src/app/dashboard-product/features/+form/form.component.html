@@ -1,0 +1,50 @@
+<md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+  <md-card-title>
+    <div layout="row" layout-align="start center">
+      <button md-icon-button (click)="goBack()"><md-icon>arrow_back</md-icon></button>
+      <span>Feature Form</span>
+    </div>
+  </md-card-title>
+  <md-divider></md-divider>
+  <md-card-content class="md-padding">
+    <form #featureForm="ngForm">
+      <div layout="row" layout-wrap>
+        <md-input 
+                  #titleElement
+                  #titleControl="ngModel"
+                  flex="100" 
+                  type="text" 
+                  placeholder="Feature Title" 
+                  [(ngModel)]="title" 
+                  name="title" 
+                  maxlength="20" 
+                  required>
+          <md-hint align="start" [hidden]="titleControl.pristine" class="tc-red-600">
+            <span [hidden]="!titleControl.errors?.required">Required</span>
+          </md-hint>
+          <md-hint align="end">{{titleElement.characterCount}} / 20</md-hint>
+        </md-input>
+        <md-input #userElement
+                  #userControl="ngModel"
+                  flex="100" 
+                  type="text" 
+                  placeholder="User" 
+                  [(ngModel)]="user" 
+                  name="user"
+                  maxlength="30"
+                  required>
+          <md-hint align="start" [hidden]="userControl.pristine" class="tc-red-600">
+            <span [hidden]="!userControl.errors?.required">Required</span>
+          </md-hint>
+          <md-hint align="end">{{userElement.characterCount}} / 30</md-hint>
+        </md-input>
+        <md-slide-toggle color="primary" [(ngModel)]="enabled" name="enabled">Enabled</md-slide-toggle>
+      </div>
+    </form>
+    </md-card-content>
+    <md-divider></md-divider>
+    <md-card-actions>
+      <button md-button [disabled]="!featureForm.valid" class="md-primary" (click)="save()">SAVE</button>
+      <button md-button class="md-accent" (click)="goBack()">CANCEL</button>
+    </md-card-actions>
+  </md-card>

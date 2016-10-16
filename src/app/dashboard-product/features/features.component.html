@@ -27,7 +27,7 @@
                         <md-icon>more_vert</md-icon>
                         </button>
                         <md-menu x-position="before" #menu="mdMenu">
-                            <button md-menu-item>Edit</button>
+                            <a [routerLink]="[item.id + '/edit']" md-menu-item>Edit</a>
                             <button (click)="openConfirm(item.id)" md-menu-item>Delete</button>
                         </md-menu>
                     </span>
@@ -38,6 +38,6 @@
         </template>
     </md-card>
 </div>
-<a md-fab color="accent" class="md-fab-position-bottom-right" [routerLink]="['/form']"> 
+<a md-fab color="accent" class="md-fab-position-bottom-right" [routerLink]="['add']"> 
     <md-icon>add</md-icon>
 </a>
