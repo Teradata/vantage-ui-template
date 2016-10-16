@@ -28,6 +28,15 @@
         <md-icon md-list-icon>insert_chart</md-icon>
         Stats
       </a>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['features']">
+        <md-icon md-list-icon>star</md-icon>
+        Features
+      </a>
       <a md-list-item (click)="list.toggle()" md-ripple class="block relative">
         <md-icon md-list-icon>people</md-icon>
         Customers
