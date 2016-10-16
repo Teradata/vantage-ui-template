@@ -1,8 +1,9 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Title }     from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
+import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
 
-import { TdLoadingService } from '@covalent/core';
+import { TdLoadingService, TdDialogService } from '@covalent/core';
 
 import { UsersService, IUser } from '../../services';
 
@@ -14,13 +15,20 @@ import { UsersService, IUser } from '../../services';
 })
 export class UsersComponent implements AfterViewInit {
 
+  private _snackBarConfig: MdSnackBarConfig;
+
   users: IUser[];
   filteredUsers: IUser[];
 
   constructor(private _titleService: Title,
               private _router: Router,
               private _loadingService: TdLoadingService,
-              private _usersService: UsersService) {}
+              private _dialogService: TdDialogService,
+              private _snackBarService: MdSnackBar,
+              private _usersService: UsersService,
+              viewContainerRef: ViewContainerRef) {
+    this._snackBarConfig = new MdSnackBarConfig(viewContainerRef);
+  }
 
   goBack(route: string): void {
     this._router.navigate(['/']);
@@ -53,18 +61,26 @@ export class UsersComponent implements AfterViewInit {
   }
 
   deleteUser(id: string): void {
-    this._loadingService.register('users.list');
-    this._usersService.delete(id).subscribe(() => {
-      this.users = this.users.filter((user: IUser) => {
-        return user.id !== id;
+    this._dialogService
+      .openConfirm({message: 'Are you sure you want to delete this user?'})
+      .afterClosed().subscribe((confirm: boolean) => {
+        if (confirm) {
+          this._loadingService.register('users.list');
+          this._usersService.delete(id).subscribe(() => {
+            this.users = this.users.filter((user: IUser) => {
+              return user.id !== id;
+            });
+            this.filteredUsers = this.filteredUsers.filter((user: IUser) => {
+              return user.id !== id;
+            });
+            this._loadingService.resolve('users.list');
+            this._snackBarService.open('User deleted', 'Ok', this._snackBarConfig);
+          }, (error: Error) => {
+            this._dialogService.openAlert({message: 'There was an error'});
+            this._loadingService.resolve('users.list');
+          });
+        }
       });
-      this.filteredUsers = this.filteredUsers.filter((user: IUser) => {
-        return user.id !== id;
-      });
-      this._loadingService.resolve('users.list');
-    }, (error: Error) => {
-      this._loadingService.resolve('users.list');
-    });
   }
 
 }
