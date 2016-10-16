@@ -34,13 +34,13 @@ export class DashboardComponent implements AfterViewInit {
       this.items = items;
       setTimeout(() => {
         this._loadingService.resolve('items.load');
-      }, 2000);
+      }, 750);
     }, (error: Error) => {
       this._itemsService.staticQuery().subscribe((items: Object[]) => {
         this.items = items;
         setTimeout(() => {
           this._loadingService.resolve('items.load');
-        }, 2000);
+        }, 750);
       });
     });
     this._loadingService.register('alerts.load');
@@ -48,34 +48,34 @@ export class DashboardComponent implements AfterViewInit {
       this.alerts = alerts;
       setTimeout(() => {
         this._loadingService.resolve('alerts.load');
-      }, 2000);
+      }, 750);
     });
     this._loadingService.register('products.load');
     this._productsService.query().subscribe((products: Object[]) => {
       this.products = products;
       setTimeout(() => {
         this._loadingService.resolve('products.load');
-      }, 2000);
+      }, 750);
     });
     this._loadingService.register('favorites.load');
     this._productsService.query().subscribe((products: Object[]) => {
       this.products = products;
       setTimeout(() => {
         this._loadingService.resolve('favorites.load');
-      }, 2000);
+      }, 750);
     });
     this._loadingService.register('users.load');
     this._usersService.query().subscribe((users: Object[]) => {
       this.users = users;
       setTimeout(() => {
         this._loadingService.resolve('users.load');
-      }, 2000);
+      }, 750);
     }, (error: Error) => {
       this._usersService.staticQuery().subscribe((users: Object[]) => {
         this.users = users;
         setTimeout(() => {
           this._loadingService.resolve('users.load');
-        }, 2000);
+        }, 750);
       });
     });
   }

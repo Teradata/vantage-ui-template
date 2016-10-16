@@ -1,21 +1,24 @@
-<div class="md-content" class="inset push-bottom-xxl">
+<div class="md-content" class="push-bottom-xxl">
     <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
         <template tdLoading="features.load">
         <div class="md-padding md-input-search">
             <div layout="row" class="md-input-search">
                 <md-input #search placeholder="search" (keyup)="filterFeatures(search.value)" flex>
-                <span md-prefix><md-icon>search</md-icon></span>
+                    <span md-prefix><md-icon>search</md-icon></span>
                 </md-input>
                 <md-icon class="clear-search" *ngIf="search.value" (click)="filterFeatures() || search.value = ''">cancel</md-icon>
             </div>
         </div>
         <md-list class="will-load">
-            <template let-item let-last="last" ngFor [ngForOf]="features">
+            <div class="md-padding" *ngIf="!filteredFeatures || filteredFeatures.length === 0" layout="row" layout-align="center center">
+                <h3>No feature to display.</h3>
+            </div>
+            <template let-item let-last="last" ngFor [ngForOf]="filteredFeatures">
                 <md-list-item>
                     <md-slide-toggle md-list-icon [(ngModel)]="item.enabled"></md-slide-toggle>
                     <h3 md-line> {{item.title}} </h3>
                     <span flex></span>
-                    <span flex-gt-xs="60" flex-xs="30" layout-gt-xs="row">
+                    <span flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
                         <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ item.user }} </div>
                         <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ item.modified | timeAgo }} </div>
                     </span>
@@ -25,7 +28,7 @@
                         </button>
                         <md-menu x-position="before" #menu="mdMenu">
                             <button md-menu-item>Edit</button>
-                            <button (click)="openConfirm()" md-menu-item>Delete</button>
+                            <button (click)="openConfirm(item.id)" md-menu-item>Delete</button>
                         </md-menu>
                     </span>
                 </md-list-item>

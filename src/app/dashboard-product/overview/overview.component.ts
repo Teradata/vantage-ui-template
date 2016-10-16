@@ -17,18 +17,13 @@ export class ProductOverviewComponent implements AfterViewInit {
   users: Object[];
 
   jsonData: any = [
-    {'x': 'Ingest', 'y': 70},
-    {'x': 'Monitoring', 'y': 190},
-    {'x': 'Deployment', 'y': 220},
-    {'x': 'Containers', 'y': 160},
-    {'x': 'Compute', 'y': 240},
-    {'x': 'Deep Storage', 'y': 70},
-    {'x': 'Data Warehouse', 'y': 190},
-    {'x': 'Alerting', 'y': 210},
-    {'x': 'Trends', 'y': 150},
-    {'x': 'Orchestration', 'y': 170},
-    {'x': 'Apps', 'y': 150},
-    {'x': 'Registry', 'y': 260}];
+    {'x': 'Ingest', 'y': 69},
+    {'x': 'Monitoring', 'y': 47},
+    {'x': 'Deployment', 'y': 48},
+    {'x': 'Containers', 'y': 63},
+    {'x': 'Compute', 'y': 82},
+    {'x': 'Data Lake', 'y': 52},
+    {'x': 'Alerting', 'y': 89}];
 
   constructor(private _titleService: Title,
               private _itemsService: ItemsService,

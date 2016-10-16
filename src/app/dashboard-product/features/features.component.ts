@@ -24,16 +24,16 @@ export class ProductFeaturesComponent implements AfterViewInit {
               private _loadingService: TdLoadingService) {
 
   }
-  openConfirm(): void {
+  openConfirm(id: string): void {
     this._dialogService.openConfirm({
-      message: 'Are you sure you want to delete this item? It\'s used on other items.',
+      message: 'Are you sure you want to delete this feature? It\'s being used!',
       viewContainerRef: this._viewContainerRef,
       title: 'Confirm',
       cancelButton: 'No, Cancel',
       acceptButton: 'Yes, Delete',
     }).afterClosed().subscribe((accept: boolean) => {
       if (accept) {
-        // DO SOMETHING
+        this.deleteFeature(id);
       } else {
         // DO SOMETHING ELSE
       }
@@ -43,9 +43,9 @@ export class ProductFeaturesComponent implements AfterViewInit {
     this._titleService.setTitle( 'Product Features' );
     this.loadFeatures();
   }
-  filterFeatures(title: string = ''): void {
+  filterFeatures(filterTitle: string = ''): void {
     this.filteredFeatures = this.features.filter((feature: IFeature) => {
-      return feature.title.toLowerCase().indexOf(title.toLowerCase()) > -1;
+      return feature.title.toLowerCase().indexOf(filterTitle.toLowerCase()) > -1;
     });
   }
 
@@ -61,6 +61,20 @@ export class ProductFeaturesComponent implements AfterViewInit {
         this.filteredFeatures = features;
         this._loadingService.resolve('features.list');
       });
+    });
+  }
+  deleteFeature(id): void {
+    this._loadingService.register('features.list');
+    this._featuresService.delete(id).subscribe(() => {
+      this.features = this.features.filter((feature: IFeature) => {
+        return feature.id !== id;
+      });
+      this.filteredFeatures = this.filteredFeatures.filter((feature: IFeature) => {
+        return feature.id !== id;
+      });
+      this._loadingService.resolve('features.list');
+    }, (error: Error) => {
+      this._loadingService.resolve('features.list');
     });
   }
 }

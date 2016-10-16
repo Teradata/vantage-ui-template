@@ -2,41 +2,44 @@
     <div layout="column" layout-gt-xs="row">
         <div flex-gt-xs="50">
             <md-card>
-            <td-charts title="Product Usage"
+                <md-card-title>Compute Usage</md-card-title>
+                <td-charts
+                        [margin]="{left:90}"
                         [shadowDepth]="['125%', 2, 0, 2]"
-                        shadowColor="rgba(0, 0, 0, 0.54)">
-                <td-axis-x [link]="chartLine3" [ticks]="false" [show]="true" [grid]="false" legend="Day Offset"></td-axis-x>
-                <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="false" legend="Temperature"></td-axis-y-left>
-                <td-chart-line #chartLine3 dataSrc="data/data.tsv"
-                            bottomAxis="col1"
-                            [columns]="['col2', 'col3','col4']"
-                            [titles]="['New York','San Francisco', 'Austin']"
-                            [colors]="['#304FFE', '#00B8D4', '#FF3D00']"
-                            [transition]="true"
-                            transitionDuration="1000"
-                            transitionDelay="2000">
-                </td-chart-line>
-            </td-charts>
+                        shadowColor="rgba(0, 0, 0, 0.54)"
+                        fillOpacity="0.75">
+                    <td-axis-x [link]="chartArea1" [ticks]="true" [show]="true" [grid]="false"></td-axis-x>
+                    <td-axis-y-left [link]="chartArea1" [ticks]="true" [show]="true" [grid]="true"></td-axis-y-left>
+                    <td-chart-area #chartArea1 [colors]="['#FF6D00', '#E65100']"
+                        dataSrc="data/data.json"
+                        bottomAxis="x"
+                        columns="y"
+                        [transition]="true"
+                        transitionDuration="1000"
+                        transitionDelay="500">
+                    </td-chart-area>
+                </td-charts>
             </md-card>
         </div>
         <div flex-gt-xs="50">
             <md-card>
-            <td-charts title="Popular Products"
+                <md-card-title>Ingest Usage</md-card-title>
+                <td-charts
                         [shadowDepth]="['125%', 2, 0, 2]"
                         shadowColor="rgba(0, 0, 0, 0.54)"
                         fillOpacity="0.95">
-                <td-axis-x [link]="chartBar1" [ticks]="true" [show]="true" [grid]="true"  legend="Day Offset"></td-axis-x>
-                <td-axis-y-left [link]="chartBar1" [show]="true" [grid]="false" legend="Sales"></td-axis-y-left>
-                <td-chart-bar #chartBar1 [colors]="['pink', 'deepPurple']"
-                            [data]="jsonData"
-                            [padding]="0.1"
-                            bottomAxis="x"
-                            columns="y"
-                            [transition]="true"
-                            transitionDuration="1000"
-                            transitionDelay="3000">
-                </td-chart-bar>
-            </td-charts>
+                    <td-axis-x [link]="chartBar1" [ticks]="true" [show]="true" [grid]="false"></td-axis-x>
+                    <td-axis-y-right [link]="chartBar1" [show]="true" [grid]="true"></td-axis-y-right>
+                    <td-chart-bar #chartBar1 [colors]="['lightBlue', 'deepOrange']"
+                        [data]="jsonData"
+                        [padding]="0.25"
+                        bottomAxis="x"
+                        columns="y"
+                        [transition]="true"
+                        transitionDuration="1000"
+                        transitionDelay="500">
+                    </td-chart-bar>
+                </td-charts>
             </md-card>
         </div>
         </div>
