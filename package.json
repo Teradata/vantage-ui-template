@@ -1,6 +1,6 @@
 {
   "name": "covalent-quickstart",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "description": "Quickstart App with @covalent packages",
   "keywords": [
@@ -39,18 +39,20 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/chips": "0.7.0",
-    "@covalent/core": "0.7.0",
-    "@covalent/file-upload": "0.7.0",
-    "@covalent/highlight": "0.7.0",
-    "@covalent/http": "0.7.0",
-    "@covalent/json-formatter": "0.7.0",
-    "@covalent/markdown": "0.7.0",
-    "@covalent/data": "0.1.0",
+    "@covalent/chips": "0.8.1",
+    "@covalent/core": "0.8.1",
+    "@covalent/charts": "0.8.1",
+    "@covalent/data-table": "0.8.1",
+    "@covalent/file-upload": "0.8.1",
+    "@covalent/highlight": "0.8.1",
+    "@covalent/http": "0.8.1",
+    "@covalent/json-formatter": "0.8.1",
+    "@covalent/markdown": "0.8.1",
+    "@covalent/data": "0.2.0",
     "ts-helpers": "^1.1.1"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "0.6.1",
+    "@angular/compiler-cli": "^2.0.0",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "^2.2.31",
     "@types/node": "^6.0.34",

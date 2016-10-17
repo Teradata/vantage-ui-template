@@ -1,0 +1,48 @@
+<div class="md-content" class="inset">
+    <div layout="column" layout-gt-xs="row">
+        <div flex-gt-xs="100">
+            <md-card>
+                <md-card-title>Product Usage</md-card-title>
+                <td-charts
+                        [margin]="{top:0}"
+                        class="pull-top"
+                        chartHeight="250"
+                        [shadow]="true">
+                    <td-axis-x [link]="chartLine3" [ticks]="false" [show]="true" [grid]="false"></td-axis-x>
+                    <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="true"></td-axis-y-left>
+                    <td-chart-line #chartLine3 dataSrc="data/data.tsv"
+                        bottomAxis="col1"
+                        [columns]="['col2', 'col3','col4']"
+                        [titles]="['Compute','Ingest', 'Alerting']"
+                        [colors]="['#00B0FF', '#FF6D00', '#FF3D00']"
+                        [transition]="true"
+                        transitionDuration="1000"
+                        transitionDelay="400">
+                    </td-chart-line>
+                </td-charts>
+            </md-card>
+        </div>
+    </div>
+    <div layout="column" layout-gt-sm="row">
+        <div flex-gt-sm="100">
+            <md-card>
+                <md-card-content>
+                    <td-data-table
+                        [data]="data"
+                        [columns]="columns"
+                        [pagination]="pagination"
+                        [pageSize]="pageSize"
+                        [rowSelection]="rowSelection"
+                        [multiple]="multiple"
+                        [sorting]="sorting"
+                        [sortBy]="sortBy"
+                        [sortOrder]="sortOrder"
+                        search="true"
+                        title="Product Stats"
+                        (sortChanged)="sortChanged($event)">
+                    </td-data-table>
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</div>

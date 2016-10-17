@@ -1,6 +1,6 @@
 <td-layout-nav logo="assets/icons/covalent.svg">
   <div toolbar-content layout="row" layout-align="center center" flex>
-    <span>Dashboard</span>
+    <span>Quickstart</span>
     <span flex></span>
     <a md-icon-button md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
     <a md-icon-button md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
@@ -9,25 +9,72 @@
     <div layout="column" layout-gt-sm="row" class="inset">
       <div flex-gt-sm="60">
         <md-card>
-            <md-card-title>Products Usage</md-card-title>
+            <md-card-title>Products Sales</md-card-title>
             <md-card-subtitle>usage stats for our products</md-card-subtitle>
-            <md-tab-group [selectedIndex]="2">
+            <md-tab-group>
               <md-tab>
                 <template md-tab-label>1 WEEK</template>
                 <template md-tab-content>
-                  <chart-component></chart-component>
+                  <td-charts [margin]="{top: 60, bottom: 50}"
+                            chartHeight="325"
+                            [shadow]="true">
+                    <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                    <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                    <td-chart-line #chartLine 
+                            dataSrc="data/datatime.csv"
+                            timeSeries="true"
+                            bottomAxis="date"
+                            [columns]="['close']"
+                            [titles]="['close']"
+                            [colors]="['#FF6D00']"
+                            [transition]="true"
+                            transitionDuration="900"
+                            transitionDelay="500">
+                    </td-chart-line>
+                  </td-charts>
                 </template>
               </md-tab>
               <md-tab>
                 <template md-tab-label>1 MONTH</template>
                 <template md-tab-content>
-                  <chart-component></chart-component>
+                  <td-charts [margin]="{top: 60, bottom: 50}"
+                            chartHeight="325">
+                    <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                    <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                    <td-chart-line #chartLine 
+                            dataSrc="data/datatime.csv"
+                            timeSeries="true"
+                            bottomAxis="date"
+                            [columns]="['close']"
+                            [titles]="['close']"
+                            [colors]="['#FF6D00']"
+                            [transition]="true"
+                            transitionDuration="900"
+                            transitionDelay="500">
+                    </td-chart-line>
+                  </td-charts>
                 </template>
               </md-tab>
               <md-tab>
                 <template md-tab-label>1 YEAR</template>
                 <template md-tab-content>
-                  <chart-component></chart-component>
+                  <td-charts
+                            [margin]="{top: 60, bottom: 50}"
+                            chartHeight="325">
+                    <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                    <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                    <td-chart-line #chartLine 
+                            dataSrc="data/datatime.csv"
+                            timeSeries="true"
+                            bottomAxis="date"
+                            [columns]="['close']"
+                            [titles]="['close']"
+                            [colors]="['#FF6D00']"
+                            [transition]="true"
+                            transitionDuration="900"
+                            transitionDelay="500">
+                    </td-chart-line>
+                  </td-charts>
                 </template>
               </md-tab>
             </md-tab-group>
@@ -37,7 +84,8 @@
             <md-card class="md-card-colored" flex>
               <md-card-content class="text-center">
                 <div class="md-headline">{{ '2341'| digits }} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
-                <div layout="column" layout-padding>
+                <md-icon class="icon tc-indigo-700">perm_contact_calendar</md-icon>
+                <div layout="column">
                   <div class="md-subhead">Active Users</div>
                   <div class="md-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
                 </div>
@@ -48,7 +96,8 @@
             <md-card class="md-card-colored" flex>
               <md-card-content class="text-center">
                 <div class="md-headline">{{ '72452903343' | bytes }} <md-icon class="tc-red-500 text-sm">arrow_downward</md-icon></div>
-                <div layout="column" layout-padding>
+                <md-icon class="icon tc-light-blue-700">sd_storage</md-icon>
+                <div layout="column">
                   <div class="md-subhead">User Disk Usage</div>
                   <div class="md-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
                 </div>
@@ -59,8 +108,9 @@
             <md-card class="md-card-colored" flex>
               <md-card-content class="text-center">
                 <div class="md-headline">{{ '324523' | digits}} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
-                <div layout="column" layout-padding>
-                  <div class="md-subhead">Visitors</div>
+                <md-icon class="icon tc-cyan-700">receipt</md-icon>
+                <div layout="column">
+                  <div class="md-subhead">Pages Viewed</div>
                   <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
                 </div>
               </md-card-content>
@@ -77,7 +127,7 @@
                 <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
                   <md-icon md-list-avatar> {{item.icon}} </md-icon>
                   <h3 md-line> {{item.name}} </h3>
-                  <p md-line> {{item.description}} </p>
+                  <p md-line> {{item.description | truncate:50 }} </p>
                   <span flex></span>
                   <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
                 </a>
@@ -115,27 +165,28 @@
           <md-card-title>Favorites</md-card-title>
           <md-card-subtitle>Your favorite products</md-card-subtitle>
           <md-divider></md-divider>
-          <md-list class="will-load favorite-list">
+          <md-nav-list class="will-load favorite-list">
             <template tdLoading="favorites.load">
               <template let-item let-last="last" ngFor [ngForOf]="products">
-                <md-list-item layout-align="row">
-                  <md-icon md-list-icon>{{item.icon}}</md-icon>
+                <md-list-item layout-align="row" [routerLink]="['/product']">
+                  <md-icon md-list-avatar>{{item.icon}}</md-icon>
                   <h3 md-line> {{item.name}} </h3>
                   <p md-line> {{item.description}} </p>
                 </md-list-item>
                 <md-divider *ngIf="!last" md-inset></md-divider>
               </template>
             </template>
-          </md-list>
+          </md-nav-list>
           <md-divider></md-divider>
           <md-card-actions>
-            <a md-button color="accent" class="text-upper" [routerLink]="['/dashboard-product']">
+            <a md-button color="accent" class="text-upper" [routerLink]="['/product']">
               <span>View More</span>
             </a>
           </md-card-actions>
         </md-card>
       </div>
     </div>
+    <md-divider></md-divider>
     <div layout="row" layout-align="start center" layout-padding>
       <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
       <span flex></span>

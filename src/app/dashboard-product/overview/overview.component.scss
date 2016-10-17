@@ -1,0 +1,9 @@
+.md-fab-position-bottom-right {
+    position: fixed;
+    bottom: 10px;
+}
+:host /deep/ {
+    .tick text {
+        font-size: 24px;
+    }
+}

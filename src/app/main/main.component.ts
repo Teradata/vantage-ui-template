@@ -14,10 +14,10 @@ export class MainComponent {
       icon: 'dashboard',
     }, {
       title: 'Product Dashboard',
-      route: '/dashboard-product',
+      route: '/product',
       icon: 'view_quilt',
     }, {
-      title: 'Logs',
+      title: 'Product Logs',
       route: '/logs',
       icon: 'receipt',
     }, {

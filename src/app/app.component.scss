@@ -1,193 +1,43 @@
-// This theming is temporary!
-// Angular-Material has an upstream Angular blocker for SCSS variables to work https://github.com/angular/angular/issues/2567
-
-/* Variables */
-$md-primary: #0097A7;
-$md-primary-opacity: rgba(0, 151, 167, 0.12);
-$md-accent: #FF9100;
-$md-accent-opacity: rgba(255, 145, 0, 0.12);
-$md-warn: #E53935;
-
 /* :host /deep/ lets shadowdom style child elements */
 :host /deep/ {
-         /* customize logo height and width */
-    .md-icon-logo {
-        height: 50px;
-        width: 45px;
-        margin-right: 5px;
+    /**
+    * CSS Overrides for bug fixes
+    */
+    // md-divider has a bug in angular-material that doesn't apply color
+    md-divider {
+        border-top-color: rgba(black, 0.12);
     }
+    // sidenav content doesn't fill the horizontal space
+    .md-sidenav-content {
+        flex-grow: 1;
+    }
+    // td-step has a bug with the vertical line when closing the step (0.8.1)
+    div.td-line-wrapper {
+      min-height: 1px;
+    }
+    /**
+    * END CSS Overrides for bug fixes
+    */
 
-    /* error validation classes */
-    md-input {
-      &.ng-invalid:not(.ng-pristine) {
-        label {
-          color: $md-warn;
-        }
-        .md-input-underline {
-          border-top: 1px solid $md-warn;
-        }
-      }
-    }
-    /* end error validation classes */
-    
-    md-toolbar,
-    [md-raised-button],
-    [md-fab], 
-    [md-mini-fab] {
-        &.md-primary {
-            background-color: $md-primary;
-        }
-        &.md-accent {
-            background-color: $md-accent;
-        }
-    }
-    [md-fab], 
-    [md-mini-fab],
-    .md-radio-checked .md-radio-inner-circle,
-    .md-checkbox-checked .md-checkbox-background {
-        background-color: $md-accent;
-    }
-    .md-radio-checked  {
-        .md-radio-outer-circle {
-            border-color: $md-accent;
-        }
-    }
-    [md-button],
-    [md-icon-button] {
-        &.md-primary {
-            color: $md-primary;
-        }
-        &.md-accent {
-            color: $md-accent;
-        }
-    }
-    [md-button]:hover {
-        &.md-primary::after {
-            background-color: $md-primary-opacity;
-        }
-        &.md-accent::after{
-            background-color: $md-accent-opacity;
-        }
-    }
-    .md-radio-focused,
-    .md-checkbox-focused {
-        .md-ink-ripple {
-            background-color: $md-accent-opacity;
-        }
-    }
-    .md-input-placeholder.md-focused {
-        color: $md-primary !important;
-    }
-    .md-progress-bar-fill::after {
-        background-color: $md-primary !important;
-    }
-    .md-input-underline .md-input-ripple {
-        background-color: $md-primary !important;
-        &.md-accent {
-            background-color: $md-accent !important;
-        }
-        &.md-warn {
-            background-color: $md-warn !important;
-        }
-    }
-    .md-progress-bar-buffer {
-        background-color: lighten($md-primary, 40%) !important;
-    }
-    md-progress-bar[color='accent'] {
-        .md-progress-bar-fill::after,
-        .md-input-underline .md-input-ripple {
-            background-color: $md-accent !important;
-        }
-        .md-progress-bar-buffer {
-            background-color: lighten($md-accent, 40%) !important;
-        }
-    }
-    md-progress-bar[color='warn'] {
-        .md-progress-bar-fill::after,
-        .md-input-underline .md-input-ripple {
-            background-color: $md-warn !important;
-        }
-        .md-progress-bar-buffer {
-            background-color: lighten($md-warn, 40%) !important;
-        }
-    }
-    md-progress-circle,
-    md-spinner {
-        path {
-            stroke: $md-primary !important;
-        }
-        &[color='accent'] {
-            path {
-                stroke: $md-accent !important;
-            }
-        }
-        &[color='warn'] {
-            path {
-                stroke: $md-warn !important;
-            }
-        }
-    }
-    md-ink-bar {
-        background-color: $md-primary !important;
-    }
-    .md-tab-label:focus {
-        background-color: $md-primary-opacity !important;
-    }
-    md-slide-toggle {
-        &.md-checked {
-            .md-slide-toggle-thumb {
-                background-color: $md-accent !important;
-            }
-            .md-slide-toggle-bar {
-                background-color: $md-accent-opacity !important;
-            }
-        }
-        &.md-slide-toggle-focused {
-            .md-ink-ripple {
-                background-color: $md-accent-opacity !important;
-            }
-        }
-    }
-    .md-slider-thumb::after {
-        background-color: $md-accent;
-        border-color: $md-accent;
-    }
-    .md-slider-track-fill {
-        background-color: $md-accent;
-    }
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-avatar] {
-                background-color: $md-accent;
-                color: white;
-            }
-            md-icon[md-list-icon] {
-                color: $md-accent;
-            }
-        }
-    }
-     /* Manage list custom styles */
-    .will-load {
-        min-height: 80px;
-    }
+    /* Manage list custom styles */
     .md-sort-item {
         /deep/ {
             .md-list-item {
-            padding: 0;
+                padding: 0;
             }
         }
     }
     .md-input-search {
         /deep/ {
             .md-input-prefix {
-            width: 45px;
-            text-align: center;
+                width: 45px;
+                text-align: center;
+            }
         }
-    }
-    md-icon.clear-search {
-        top: 15px;
-        position: relative;
-    }
+        md-icon.clear-search {
+            top: 15px;
+            position: relative;
+        }
     }
     .md-sort-icon {
         font-size: 15px;
@@ -198,21 +48,6 @@ $md-warn: #E53935;
         &:hover {
             background-color: #EEEEEE;
             cursor: pointer;
-        }
-    }
-    a[md-icon-button] {
-        line-height: 36px;
-    }
-    .md-tab-label {
-        flex-grow: 1;
-    }
-    .md-hint {
-        position: absolute;
-        font-size: 75%;
-        bottom: -0.5em;
-
-        &.md-right {
-            right: 0;
         }
     }
 }
