@@ -4,28 +4,28 @@
     md-divider {
         border-top-color: rgba(black, 0.12);
     }
-     /* Manage list custom styles */
-    .will-load {
-        min-height: 80px;
+    // sidenav content doesn't fill the horizontal space
+    .md-sidenav-content {
+        flex-grow: 1;
     }
     .md-sort-item {
         /deep/ {
             .md-list-item {
-            padding: 0;
+                padding: 0;
             }
         }
     }
     .md-input-search {
         /deep/ {
             .md-input-prefix {
-            width: 45px;
-            text-align: center;
+                width: 45px;
+                text-align: center;
+            }
         }
-    }
-    md-icon.clear-search {
-        top: 15px;
-        position: relative;
-    }
+        md-icon.clear-search {
+            top: 15px;
+            position: relative;
+        }
     }
     .md-sort-icon {
         font-size: 15px;
