@@ -168,7 +168,7 @@
           <md-nav-list class="will-load favorite-list">
             <template tdLoading="favorites.load">
               <template let-item let-last="last" ngFor [ngForOf]="products">
-                <md-list-item layout-align="row" [routerLink]="['/dashboard-product']">
+                <md-list-item layout-align="row" [routerLink]="['/product']">
                   <md-icon md-list-avatar>{{item.icon}}</md-icon>
                   <h3 md-line> {{item.name}} </h3>
                   <p md-line> {{item.description}} </p>
@@ -179,13 +179,14 @@
           </md-nav-list>
           <md-divider></md-divider>
           <md-card-actions>
-            <a md-button color="accent" class="text-upper" [routerLink]="['/dashboard-product']">
+            <a md-button color="accent" class="text-upper" [routerLink]="['/product']">
               <span>View More</span>
             </a>
           </md-card-actions>
         </md-card>
       </div>
     </div>
+    <md-divider></md-divider>
     <div layout="row" layout-align="start center" layout-padding>
       <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
       <span flex></span>
