@@ -1,5 +1,8 @@
 /* :host /deep/ lets shadowdom style child elements */
 :host /deep/ {
+    /**
+    * CSS Overrides for bug fixes
+    */
     // md-divider has a bug in angular-material that doesn't apply color
     md-divider {
         border-top-color: rgba(black, 0.12);
@@ -8,6 +11,15 @@
     .md-sidenav-content {
         flex-grow: 1;
     }
+    // td-step has a bug with the vertical line when closing the step (0.8.1)
+    div.td-line-wrapper {
+      min-height: 1px;
+    }
+    /**
+    * END CSS Overrides for bug fixes
+    */
+
+    /* Manage list custom styles */
     .md-sort-item {
         /deep/ {
             .md-list-item {
