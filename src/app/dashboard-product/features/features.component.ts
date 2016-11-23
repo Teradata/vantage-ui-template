@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewContainerRef } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService } from '@covalent/core';
@@ -19,7 +19,6 @@ export class ProductFeaturesComponent implements AfterViewInit {
 
   constructor(private _titleService: Title,
               private _dialogService: TdDialogService,
-              private _viewContainerRef: ViewContainerRef,
               private _featuresService: FeaturesService,
               private _loadingService: TdLoadingService) {
 
@@ -27,7 +26,6 @@ export class ProductFeaturesComponent implements AfterViewInit {
   openConfirm(id: string): void {
     this._dialogService.openConfirm({
       message: 'Are you sure you want to delete this feature? It\'s being used!',
-      viewContainerRef: this._viewContainerRef,
       title: 'Confirm',
       cancelButton: 'No, Cancel',
       acceptButton: 'Yes, Delete',
