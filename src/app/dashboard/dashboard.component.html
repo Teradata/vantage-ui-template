@@ -17,9 +17,9 @@
                 <td-charts [margin]="{top: 60, bottom: 50}"
                           chartHeight="325"
                           [shadow]="true">
-                  <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
-                  <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                  <td-chart-line #chartLine 
+                  <td-axis-x [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                  <td-axis-y-left [link]="chartLine1" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                  <td-chart-line #chartLine1
                           dataSrc="data/datatime.csv"
                           timeSeries="true"
                           bottomAxis="date"
@@ -36,9 +36,9 @@
                 <template md-tab-label>1 MONTH</template>
                 <td-charts [margin]="{top: 60, bottom: 50}"
                           chartHeight="325">
-                  <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
-                  <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                  <td-chart-line #chartLine 
+                  <td-axis-x [link]="chartLine2" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                  <td-axis-y-left [link]="chartLine2" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                  <td-chart-line #chartLine2 
                           dataSrc="data/datatime.csv"
                           timeSeries="true"
                           bottomAxis="date"
@@ -56,9 +56,9 @@
                 <td-charts
                           [margin]="{top: 60, bottom: 50}"
                           chartHeight="325">
-                  <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
-                  <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                  <td-chart-line #chartLine 
+                  <td-axis-x [link]="chartLine3" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                  <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                  <td-chart-line #chartLine3 
                           dataSrc="data/datatime.csv"
                           timeSeries="true"
                           bottomAxis="date"
