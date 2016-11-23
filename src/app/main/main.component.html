@@ -1,4 +1,4 @@
-<td-layout #layout logo="assets/icons/covalent.svg" title="Quickstart" displayName="Firstname Lastname" (logout)="logout()">
+<td-layout #layout logo="assets/icons/covalent.svg" sidenavTitle="Quickstart" displayName="Firstname Lastname" (logout)="logout()">
   <md-nav-list menu-items>
     <template let-item let-last="last" ngFor [ngForOf]="routes">
       <a md-list-item [routerLink]="[item.route]" (click)="layout.close()"><md-icon>{{item.icon}}</md-icon>{{item.title}}</a>
