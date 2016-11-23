@@ -27,18 +27,6 @@
             }
         }
     }
-    .md-input-search {
-        /deep/ {
-            .md-input-prefix {
-                width: 45px;
-                text-align: center;
-            }
-        }
-        md-icon.clear-search {
-            top: 15px;
-            position: relative;
-        }
-    }
     .md-sort-icon {
         font-size: 15px;
         margin-right: 10px;

@@ -37,14 +37,8 @@
       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
     </div>
     <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']" class="push-bottom-xxl">
-      <div [tdToggle]="toggleFilters" class="md-padding md-input-search">
-        <div layout="row" class="md-input-search">
-          <md-input #search placeholder="search" (keyup)="filterUsers(search.value)" flex>
-            <span md-prefix><md-icon>search</md-icon></span>
-          </md-input>
-          <md-icon class="clear-search" *ngIf="search.value" (click)="filterUsers() || search.value = ''">cancel</md-icon>
-        </div>
-      </div>
+      <td-search-box class="md-padding" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
+      <md-divider></md-divider>
       <template tdLoading="users.list">
         <md-list class="will-load">
           <div class="md-padding" *ngIf="!filteredUsers || filteredUsers.length === 0" layout="row" layout-align="center center">
