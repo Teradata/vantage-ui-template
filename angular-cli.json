@@ -1,13 +1,16 @@
 {
   "project": {
-    "version": "1.0.0-beta.15",
+    "version": "1.0.0-beta.19-3",
     "name": "covalent-quickstart"
   },
   "apps": [
     {
       "root": "src",
       "outDir": "dist",
-      "assets": "assets",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
@@ -17,8 +20,7 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "../node_modules/@covalent/core/styles/platform.css",
-        "../node_modules/@angular/material/core/overlay/overlay.css"
+        "../node_modules/@covalent/core/styles/platform.css"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
