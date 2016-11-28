@@ -3,6 +3,7 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { HttpInterceptorService, RESTService } from '@covalent/http';
+import { MOCK_API } from '../config/api.config';
 
 export interface IFeature {
   title: string;
@@ -19,7 +20,7 @@ export class FeaturesService extends RESTService<IFeature> {
 
   constructor(private _http: HttpInterceptorService) {
     super(_http, {
-      baseUrl: 'http://localhost:8080',
+      baseUrl: MOCK_API,
       path: '/features',
     });
   }

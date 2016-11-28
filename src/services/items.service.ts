@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpInterceptorService } from '@covalent/http';
+import { MOCK_API } from '../config/api.config';
 
 @Injectable()
 export class ItemsService {
 
-  private staticData: string = 'https://whispering-beyond-86495.herokuapp.com/items';
-  private mockApiData: string = 'http://localhost:8080/items';
+  private staticData: string = 'data/items.json';
+  private mockApiData: string = MOCK_API;
 
   constructor(private _http: HttpInterceptorService) {}
 

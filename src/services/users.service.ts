@@ -3,6 +3,7 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { HttpInterceptorService, RESTService } from '@covalent/http';
+import { MOCK_API } from '../config/api.config';
 
 export interface IUser {
   display_name: string;
@@ -18,13 +19,13 @@ export class UsersService extends RESTService<IUser> {
 
   constructor(private _http: HttpInterceptorService) {
     super(_http, {
-      baseUrl: 'http://localhost:8080',
+      baseUrl: MOCK_API,
       path: '/users',
     });
   }
 
   staticQuery(): Observable<IUser[]> {
-    return this._http.get('https://whispering-beyond-86495.herokuapp.com/users')
+    return this._http.get('data/users.json')
     .map((res: Response) => {
       return res.json();
     });
