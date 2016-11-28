@@ -2,6 +2,15 @@
 echo 'Checking out develop branch to base deployment from it.'
 git checkout develop
 
+echo 'Replace api endpoint with heroku'
+
+cat <<'EOF' >> api.config.ts
+export const MOCK_API: string = "https://whispering-beyond-86495.herokuapp.com";
+EOF
+
+mv src/config/api.config.ts api.config.ts.default
+mv api.config.ts src/config/api.config.ts
+
 echo 'Started building process.'
 ng build -prod
 
