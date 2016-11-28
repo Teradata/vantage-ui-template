@@ -25,7 +25,7 @@ export class FeaturesService extends RESTService<IFeature> {
   }
 
   staticQuery(): Observable<IFeature[]> {
-    return this._http.get('data/features.json')
+    return this._http.get('https://whispering-beyond-86495.herokuapp.com/features')
     .map((res: Response) => {
       return res.json();
     });
