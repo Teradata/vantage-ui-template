@@ -1,45 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
-import { HttpInterceptorService } from '@covalent/http';
+import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { MOCK_API } from '../config/api.config';
 
 @Injectable()
-export class ItemsService {
+export class ItemsService extends RESTService<any> {
 
-  private staticData: string = 'data/items.json';
-  private mockApiData: string = MOCK_API;
-
-  constructor(private _http: HttpInterceptorService) {}
+  constructor(private _http: HttpInterceptorService) {
+    super(_http, {
+      baseUrl: MOCK_API,
+      path: '/items',
+    }); 
+  }
 
   staticQuery(): any {
-    return this._http.get(this.staticData)
+    return this._http.get('data/items.json')
     .map((res: Response) => {
       return res.json();
-    });
+    }); 
   }
 
   staticGet(id: string): any {
-    return this._http.get(this.staticData)
-    .map((res: Response) => {
-      let item: any;
-      res.json().forEach((s: any) => {
-        if (s.item_id === id) {
-          item = s;
-        }
-      });
-      return item;
-    });
-  }
-
-  query(): any {
-    return this._http.get(this.mockApiData)
-    .map((res: Response) => {
-      return res.json();
-    });
-  }
-
-  get(id: string): any {
-    return this._http.get(this.mockApiData)
+    return this._http.get('data/items.json')
     .map((res: Response) => {
       let item: any;
       res.json().forEach((s: any) => {
