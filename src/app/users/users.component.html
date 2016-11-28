@@ -6,6 +6,9 @@
     <a md-icon-button buttonDisableFix md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
   </div>
   <td-layout-manage-list #list>
+    <md-toolbar list-items>
+      <span>Users</span>
+    </md-toolbar>
     <md-nav-list list-items>
       <a md-list-item (click)="list.toggle()">
         <md-icon md-list-icon>account_circle</md-icon>
@@ -29,15 +32,18 @@
       </a>
     </md-nav-list>
     <div toolbar-buttons layout="row" layout-align="start center" flex>
-      <span>Users</span>
+      <span>All Users</span>
       <span flex></span>
       <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">settings</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
     </div>
-    <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']" class="push-bottom-xxl">
-      <td-search-box class="md-padding" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
+    <div class="md-content">
+
+    </div>
+    <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
       <md-divider></md-divider>
       <template tdLoading="users.list">
         <md-list class="will-load">
@@ -73,7 +79,7 @@
       <md-card-actions>
         <button md-button class="md-primary" (click)="goBack()">BACK</button>
       </md-card-actions>
-    </md-card> 
+    </md-card>
   </td-layout-manage-list>   
 </td-layout-nav>
 <a md-fab buttonDisableFix color="accent" class="md-fab-position-bottom-right" [routerLink]="['add']">

@@ -26,3 +26,8 @@ a[md-icon-button] {
 .md-tab-label {
     flex-grow: 1;
 }
+
+// Manage List layout overflow is too short
+td-layout-manage-list .md-sidenav-content > .md-content > .md-content {
+    padding-bottom: 140px;
+}
