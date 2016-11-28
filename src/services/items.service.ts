@@ -5,7 +5,7 @@ import { HttpInterceptorService } from '@covalent/http';
 @Injectable()
 export class ItemsService {
 
-  private staticData: string = 'data/items.json';
+  private staticData: string = 'https://whispering-beyond-86495.herokuapp.com/items';
   private mockApiData: string = 'http://localhost:8080/items';
 
   constructor(private _http: HttpInterceptorService) {}

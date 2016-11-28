@@ -24,7 +24,7 @@ export class UsersService extends RESTService<IUser> {
   }
 
   staticQuery(): Observable<IUser[]> {
-    return this._http.get('data/users.json')
+    return this._http.get('https://whispering-beyond-86495.herokuapp.com/users')
     .map((res: Response) => {
       return res.json();
     });
