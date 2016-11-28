@@ -30,6 +30,7 @@ import { FeaturesFormComponent } from './dashboard-product/features/+form/form.c
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { ChartComponent } from '../components/chart/chart.component';
+import { ButtonDisableFix } from '../directives/button-disable-fix.directive';
 
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
@@ -50,6 +51,8 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
     DetailComponent,
     LoginComponent,
     ChartComponent,
+    // Bugfix for disabled anchor button in material.alpha-10 (remove in alpha-11)
+    ButtonDisableFix,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,
