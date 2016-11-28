@@ -50,7 +50,6 @@
     "@covalent/markdown": "0.9.1",
     "@covalent/paging": "0.9.1",
     "@covalent/search": "0.9.1",
-    "@covalent/data": "0.4.0",
     "ts-helpers": "^1.1.1"
   },
   "devDependencies": {
@@ -77,5 +76,8 @@
     "ts-node": "1.2.1",
     "tslint": "^3.14.0",
     "typescript": "^2.0.2"
+  },
+  "optionalDependencies": {
+    "@covalent/data": "0.4.0"
   }
 }
