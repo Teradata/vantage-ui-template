@@ -3,18 +3,7 @@
     /**
     * CSS Overrides for bug fixes
     */
-    // md-divider has a bug in angular-material that doesn't apply color
-    md-divider {
-        border-top-color: rgba(black, 0.12);
-    }
-    // sidenav content doesn't fill the horizontal space
-    .md-sidenav-content {
-        flex-grow: 1;
-    }
-    // td-step has a bug with the vertical line when closing the step (0.8.1)
-    div.td-line-wrapper {
-      min-height: 1px;
-    }
+
     /**
     * END CSS Overrides for bug fixes
     */
@@ -25,18 +14,6 @@
             .md-list-item {
                 padding: 0;
             }
-        }
-    }
-    .md-input-search {
-        /deep/ {
-            .md-input-prefix {
-                width: 45px;
-                text-align: center;
-            }
-        }
-        md-icon.clear-search {
-            top: 15px;
-            position: relative;
         }
     }
     .md-sort-icon {

@@ -2,8 +2,8 @@
   <div toolbar-content layout="row" layout-align="center center" flex>
     <span>Product Name</span>
     <span flex></span>
-    <a md-icon-button md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
+    <a md-icon-button buttonDisableFix md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button buttonDisableFix md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
   </div>
   <td-layout-manage-list #list>
     <md-nav-list list-items>
@@ -25,7 +25,7 @@
       </a>
     </md-nav-list>
     <div toolbar-buttons layout="row" layout-align="start center" flex>
-      <a md-icon-button [routerLink]="['/dashboard-product']"><md-icon>arrow_back</md-icon></a>
+      <a md-icon-button buttonDisableFix [routerLink]="['/dashboard-product']"><md-icon>arrow_back</md-icon></a>
       <span>New Item</span>
       <span flex></span>
     </div>
@@ -34,43 +34,37 @@
         <md-card>
           <td-steps (stepChange)="stepChange($event)">
             <td-step #step1 label="Step 1" sublabel="simple metadata" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
-              <template td-step-content>
-                <div layout-gt-xs="row">
-                  <div class="pad">
-                    <md-input placeholder="Entry name (10 max)" maxlength="10" #inputHint>
-                      <md-hint align="end">{{inputHint.characterCount}} / 10</md-hint>
-                    </md-input>
-                  </div>
-                  <div class="pad">
-                    <md-input placeholder="Budget" align="end">
-                      <span md-prefix>$&nbsp;</span>
-                      <span md-suffix>.00</span>
-                    </md-input>
-                  </div>
+              <div layout-gt-xs="row">
+                <div class="pad">
+                  <md-input placeholder="Entry name (10 max)" maxlength="10" #inputHint>
+                    <md-hint align="end">{{inputHint.characterCount}} / 10</md-hint>
+                  </md-input>
                 </div>
-              </template>
+                <div class="pad">
+                  <md-input placeholder="Budget" align="end">
+                    <span md-prefix>$&nbsp;</span>
+                    <span md-suffix>.00</span>
+                  </md-input>
+                </div>
+              </div>
             </td-step>
             <td-step #step2 label="Step 2" sublabel="this step must be validated" [state]="stateStep2" [disabled]="disabled">
-              <template td-step-content>
-                <md-radio-group>
-                  <md-radio-button value="option_1">A New Hope</md-radio-button>
-                  <md-radio-button value="option_2">Empire Strikes Back</md-radio-button>
-                </md-radio-group> 
-                <md-slide-toggle [checked]="isChecked">
-                  Include Awesome
-                </md-slide-toggle>
-              </template>
+              <md-radio-group>
+                <md-radio-button value="option_1">A New Hope</md-radio-button>
+                <md-radio-button value="option_2">Empire Strikes Back</md-radio-button>
+              </md-radio-group> 
+              <md-slide-toggle [checked]="isChecked">
+                Include Awesome
+              </md-slide-toggle>
               <template td-step-actions>
                 <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Validate &amp; Proceed</button>
                 <button md-button (click)="step2.active = false">Cancel</button>
               </template>
             </td-step>
             <td-step #step3 label="Step 3" sublabel="this step will toggle complete" [state]="stateStep3" [disabled]="disabled">
-              <template td-step-content>
-                <md-checkbox [checked]="true">
-                  I agree to spread the word about Covalent
-                </md-checkbox>
-              </template>
+              <md-checkbox [checked]="true">
+                I agree to spread the word about Covalent
+              </md-checkbox>
               <template td-step-actions>
                 <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Complete Step</button>
                 <button md-button (click)="step3.active = false">Cancel</button>

@@ -1,7 +1,7 @@
-import { Component, AfterViewInit, ViewContainerRef } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
+import { MdSnackBar } from '@angular/material';
 
 import { TdLoadingService, TdDialogService } from '@covalent/core';
 
@@ -15,8 +15,6 @@ import { UsersService, IUser } from '../../services';
 })
 export class UsersComponent implements AfterViewInit {
 
-  private _snackBarConfig: MdSnackBarConfig;
-
   users: IUser[];
   filteredUsers: IUser[];
 
@@ -25,9 +23,7 @@ export class UsersComponent implements AfterViewInit {
               private _loadingService: TdLoadingService,
               private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar,
-              private _usersService: UsersService,
-              viewContainerRef: ViewContainerRef) {
-    this._snackBarConfig = new MdSnackBarConfig(viewContainerRef);
+              private _usersService: UsersService) {
   }
 
   goBack(route: string): void {
@@ -74,7 +70,7 @@ export class UsersComponent implements AfterViewInit {
               return user.id !== id;
             });
             this._loadingService.resolve('users.list');
-            this._snackBarService.open('User deleted', 'Ok', this._snackBarConfig);
+            this._snackBarService.open('User deleted', 'Ok');
           }, (error: Error) => {
             this._dialogService.openAlert({message: 'There was an error'});
             this._loadingService.resolve('users.list');

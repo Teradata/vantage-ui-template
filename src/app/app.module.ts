@@ -10,6 +10,8 @@ import { CovalentJsonFormatterModule } from '@covalent/json-formatter';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentChartsModule } from '@covalent/charts';
 import { CovalentDataTableModule } from '@covalent/data-table';
+import { CovalentPagingModule } from '@covalent/paging';
+import { CovalentSearchModule } from '@covalent/search';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -28,6 +30,7 @@ import { FeaturesFormComponent } from './dashboard-product/features/+form/form.c
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { ChartComponent } from '../components/chart/chart.component';
+import { ButtonDisableFix } from '../directives/button-disable-fix.directive';
 
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
@@ -48,6 +51,8 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
     DetailComponent,
     LoginComponent,
     ChartComponent,
+    // Bugfix for disabled anchor button in material.alpha-10 (remove in alpha-11)
+    ButtonDisableFix,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,
@@ -60,6 +65,8 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
     CovalentHighlightModule.forRoot(),
     CovalentJsonFormatterModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
+    CovalentPagingModule.forRoot(),
+    CovalentSearchModule.forRoot(),
     appRoutes,
   ], // modules needed to run this module
   providers: [

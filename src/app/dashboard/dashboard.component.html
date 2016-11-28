@@ -2,8 +2,8 @@
   <div toolbar-content layout="row" layout-align="center center" flex>
     <span>Quickstart</span>
     <span flex></span>
-    <a md-icon-button md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
+    <a md-icon-button buttonDisableFix md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button buttonDisableFix md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
   </div>
   <div class="md-content" flex md-scroll-y>
     <div layout="column" layout-gt-sm="row" class="inset">
@@ -14,68 +14,62 @@
             <md-tab-group>
               <md-tab>
                 <template md-tab-label>1 WEEK</template>
-                <template md-tab-content>
-                  <td-charts [margin]="{top: 60, bottom: 50}"
-                            chartHeight="325"
-                            [shadow]="true">
-                    <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
-                    <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                    <td-chart-line #chartLine 
-                            dataSrc="data/datatime.csv"
-                            timeSeries="true"
-                            bottomAxis="date"
-                            [columns]="['close']"
-                            [titles]="['close']"
-                            [colors]="['#FF6D00']"
-                            [transition]="true"
-                            transitionDuration="900"
-                            transitionDelay="500">
-                    </td-chart-line>
-                  </td-charts>
-                </template>
+                <td-charts [margin]="{top: 60, bottom: 50}"
+                          chartHeight="325"
+                          [shadow]="true">
+                  <td-axis-x [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                  <td-axis-y-left [link]="chartLine1" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                  <td-chart-line #chartLine1
+                          dataSrc="data/datatime.csv"
+                          timeSeries="true"
+                          bottomAxis="date"
+                          [columns]="['close']"
+                          [titles]="['close']"
+                          [colors]="['#FF6D00']"
+                          [transition]="true"
+                          transitionDuration="900"
+                          transitionDelay="500">
+                  </td-chart-line>
+                </td-charts>
               </md-tab>
               <md-tab>
                 <template md-tab-label>1 MONTH</template>
-                <template md-tab-content>
-                  <td-charts [margin]="{top: 60, bottom: 50}"
-                            chartHeight="325">
-                    <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
-                    <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                    <td-chart-line #chartLine 
-                            dataSrc="data/datatime.csv"
-                            timeSeries="true"
-                            bottomAxis="date"
-                            [columns]="['close']"
-                            [titles]="['close']"
-                            [colors]="['#FF6D00']"
-                            [transition]="true"
-                            transitionDuration="900"
-                            transitionDelay="500">
-                    </td-chart-line>
-                  </td-charts>
-                </template>
+                <td-charts [margin]="{top: 60, bottom: 50}"
+                          chartHeight="325">
+                  <td-axis-x [link]="chartLine2" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                  <td-axis-y-left [link]="chartLine2" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                  <td-chart-line #chartLine2 
+                          dataSrc="data/datatime.csv"
+                          timeSeries="true"
+                          bottomAxis="date"
+                          [columns]="['close']"
+                          [titles]="['close']"
+                          [colors]="['#FF6D00']"
+                          [transition]="true"
+                          transitionDuration="900"
+                          transitionDelay="500">
+                  </td-chart-line>
+                </td-charts>
               </md-tab>
               <md-tab>
                 <template md-tab-label>1 YEAR</template>
-                <template md-tab-content>
-                  <td-charts
-                            [margin]="{top: 60, bottom: 50}"
-                            chartHeight="325">
-                    <td-axis-x [link]="chartLine" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
-                    <td-axis-y-left [link]="chartLine" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                    <td-chart-line #chartLine 
-                            dataSrc="data/datatime.csv"
-                            timeSeries="true"
-                            bottomAxis="date"
-                            [columns]="['close']"
-                            [titles]="['close']"
-                            [colors]="['#FF6D00']"
-                            [transition]="true"
-                            transitionDuration="900"
-                            transitionDelay="500">
-                    </td-chart-line>
-                  </td-charts>
-                </template>
+                <td-charts
+                          [margin]="{top: 60, bottom: 50}"
+                          chartHeight="325">
+                  <td-axis-x [link]="chartLine3" [ticks]="true" [show]="true" [grid]="false" legend="Year"></td-axis-x>
+                  <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
+                  <td-chart-line #chartLine3 
+                          dataSrc="data/datatime.csv"
+                          timeSeries="true"
+                          bottomAxis="date"
+                          [columns]="['close']"
+                          [titles]="['close']"
+                          [colors]="['#FF6D00']"
+                          [transition]="true"
+                          transitionDuration="900"
+                          transitionDelay="500">
+                  </td-chart-line>
+                </td-charts>
               </md-tab>
             </md-tab-group>
           </md-card>
@@ -156,7 +150,7 @@
           </md-list>
           <md-divider></md-divider>
           <md-card-actions>
-            <a md-button color="accent" class="text-upper" [routerLink]="['/logs']">
+            <a md-button buttonDisableFix color="accent" class="text-upper" [routerLink]="['/logs']">
               <span>View More</span>
             </a>
           </md-card-actions>
@@ -179,7 +173,7 @@
           </md-nav-list>
           <md-divider></md-divider>
           <md-card-actions>
-            <a md-button color="accent" class="text-upper" [routerLink]="['/product']">
+            <a md-button buttonDisableFix color="accent" class="text-upper" [routerLink]="['/product']">
               <span>View More</span>
             </a>
           </md-card-actions>

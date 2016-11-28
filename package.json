@@ -1,6 +1,6 @@
 {
   "name": "covalent-quickstart",
-  "version": "0.8.0",
+  "version": "0.9.1",
   "private": true,
   "description": "Quickstart App with @covalent packages",
   "keywords": [
@@ -22,7 +22,7 @@
     "ghpages-deploy": "bash scripts/ghpages-deploy"
   },
   "engines": {
-    "node": ">4.4 < 5",
+    "node": ">4.4 < 7",
     "npm": ">3"
   },
   "repository": {
@@ -39,25 +39,27 @@
     "Jeremy Wilken <jeremy.wilken@teradata.com>"
   ],
   "dependencies": {
-    "@covalent/chips": "0.8.1",
-    "@covalent/core": "0.8.1",
-    "@covalent/charts": "0.8.1",
-    "@covalent/data-table": "0.8.1",
-    "@covalent/file-upload": "0.8.1",
-    "@covalent/highlight": "0.8.1",
-    "@covalent/http": "0.8.1",
-    "@covalent/json-formatter": "0.8.1",
-    "@covalent/markdown": "0.8.1",
-    "@covalent/data": "0.2.0",
+    "@covalent/chips": "0.9.1",
+    "@covalent/core": "0.9.1",
+    "@covalent/charts": "0.9.1",
+    "@covalent/data-table": "0.9.1",
+    "@covalent/file-upload": "0.9.1",
+    "@covalent/highlight": "0.9.1",
+    "@covalent/http": "0.9.1",
+    "@covalent/json-formatter": "0.9.1",
+    "@covalent/markdown": "0.9.1",
+    "@covalent/paging": "0.9.1",
+    "@covalent/search": "0.9.1",
+    "@covalent/data": "0.4.0",
     "ts-helpers": "^1.1.1"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^2.0.0",
+    "@angular/compiler-cli": "^2.2.1",
     "@types/hammerjs": "^2.0.30",
     "@types/jasmine": "^2.2.31",
     "@types/node": "^6.0.34",
     "@types/selenium-webdriver": "^2.52.0",
-    "angular-cli": "1.0.0-beta.15",
+    "angular-cli": "1.0.0-beta.19-3",
     "codelyzer": "~0.0.26",
     "ember-cli-inject-live-reload": "1.4.0",
     "jasmine-core": "2.4.1",
