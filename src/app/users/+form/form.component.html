@@ -6,6 +6,9 @@
     <a md-icon-button buttonDisableFix md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
   </div>
   <td-layout-manage-list #list>
+    <md-toolbar list-items>
+      <span>Users</span>
+    </md-toolbar>
     <md-nav-list list-items>
       <a md-list-item>
         <md-icon md-list-icon>account_circle</md-icon>
@@ -29,48 +32,56 @@
       </a>
     </md-nav-list>
     <div toolbar-buttons layout="row" layout-align="start center" flex>
-      <span>{{action}} user</span>
-      <span flex></span>
-      <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
-      <button md-button class="md-icon-button"><md-icon class="md-24">sort</md-icon></button>
-      <button md-button class="md-icon-button"><md-icon class="md-24">settings</md-icon></button>
-      <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
+      <span class="text-capital">{{action}} user</span>
     </div>
-    <md-card>
-    <md-card-content class="md-padding">
-      <form #userForm="ngForm">
-        <div layout="row" layout-wrap>
-          <md-input #displayNameElement
-                    flex="100" 
-                    type="text" 
-                    placeholder="Display Name" 
-                    [(ngModel)]="display_name" 
-                    name="display_name" 
-                    maxlength="20" 
-                    required>
-            <md-hint align="end">{{displayNameElement.characterCount}} / 20</md-hint>
-          </md-input>
-          <md-input #emailElement
-                    #emailControl="ngModel"
-                    flex="100" 
-                    type="text" 
-                    placeholder="Email" 
-                    [(ngModel)]="email" 
-                    name="email"
-                    maxlength="30"
-                    pattern="\S*@\S+"
-                    required>
-            <md-hint align="start" [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">Pattern for e-mail is not matched.</md-hint>
-            <md-hint align="end">{{emailElement.characterCount}} / 30</md-hint>
-          </md-input>
-          <md-slide-toggle color="primary" [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>
-        </div>
-      </form>
-    </md-card-content>
-    <md-card-actions>
-      <button md-button [disabled]="!userForm.valid" class="md-primary" (click)="save()">SAVE</button>
-      <button md-button class="md-accent" (click)="goBack()">CANCEL</button>
-    </md-card-actions>
+    <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <md-card-title>User Form</md-card-title>
+      <md-divider></md-divider>
+      <md-card-content class="push-bottom-none">
+        <form #userForm="ngForm">
+          <div layout="row">
+            <md-input #displayNameElement
+                      #displayNameControl="ngModel"
+                      flex
+                      type="text" 
+                      placeholder="Display Name" 
+                      [(ngModel)]="display_name" 
+                      name="display_name" 
+                      maxlength="20" 
+                      required>
+              <md-hint align="start">
+                <span [hidden]="!displayNameControl.errors?.required" class="tc-red-600">Display Name is required!</span>
+              </md-hint>
+              <md-hint align="end">{{displayNameElement.characterCount}} / 20</md-hint>
+            </md-input>
+          </div>
+          <div layout="row" class="push-top">
+            <md-input #emailElement
+                      #emailControl="ngModel"
+                      flex 
+                      type="text" 
+                      placeholder="Email" 
+                      [(ngModel)]="email" 
+                      name="email"
+                      maxlength="30"
+                      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                      required>
+              <md-hint align="start">
+                <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">That's not an email!</span>
+              </md-hint>
+              <md-hint align="end">{{emailElement.characterCount}} / 30</md-hint>
+            </md-input>
+          </div>
+          <div layout="row">
+            <md-slide-toggle [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>
+          </div>
+        </form>
+      </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions>
+        <button md-button [disabled]="!userForm.form.valid" color="primary" (click)="save()">SAVE</button>
+        <button md-button (click)="goBack()">CANCEL</button>
+      </md-card-actions>
     </md-card>
   </td-layout-manage-list>
 </td-layout-nav>

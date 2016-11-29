@@ -1,50 +1,50 @@
 <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
   <md-card-title>
-    <div layout="row" layout-align="start center">
-      <button md-icon-button (click)="goBack()"><md-icon>arrow_back</md-icon></button>
-      <span>Feature Form</span>
-    </div>
+    Feature Form
   </md-card-title>
   <md-divider></md-divider>
-  <md-card-content class="md-padding">
+  <md-card-content class="push-bottom-none">
     <form #featureForm="ngForm">
-      <div layout="row" layout-wrap>
-        <md-input 
-                  #titleElement
+      <div layout="row">
+        <md-input #titleElement
                   #titleControl="ngModel"
-                  flex="100" 
+                  flex 
                   type="text" 
                   placeholder="Feature Title" 
                   [(ngModel)]="title" 
                   name="title" 
                   maxlength="20" 
                   required>
-          <md-hint align="start" [hidden]="titleControl.pristine" class="tc-red-600">
-            <span [hidden]="!titleControl.errors?.required">Required</span>
+          <md-hint align="start">
+            <span [hidden]="titleControl.pristine || !titleControl.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
           <md-hint align="end">{{titleElement.characterCount}} / 20</md-hint>
         </md-input>
+      </div>
+      <div layout="row" class="push-top">
         <md-input #userElement
                   #userControl="ngModel"
-                  flex="100" 
+                  flex
                   type="text" 
                   placeholder="User" 
                   [(ngModel)]="user" 
                   name="user"
                   maxlength="30"
                   required>
-          <md-hint align="start" [hidden]="userControl.pristine" class="tc-red-600">
-            <span [hidden]="!userControl.errors?.required">Required</span>
+          <md-hint align="start">
+            <span [hidden]="userControl.pristine || !userControl.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
           <md-hint align="end">{{userElement.characterCount}} / 30</md-hint>
         </md-input>
-        <md-slide-toggle color="primary" [(ngModel)]="enabled" name="enabled">Enabled</md-slide-toggle>
+      </div>
+      <div layout="row">
+        <md-slide-toggle [(ngModel)]="enabled" name="enabled">Enabled</md-slide-toggle>
       </div>
     </form>
     </md-card-content>
     <md-divider></md-divider>
     <md-card-actions>
-      <button md-button [disabled]="!featureForm.valid" class="md-primary" (click)="save()">SAVE</button>
-      <button md-button class="md-accent" (click)="goBack()">CANCEL</button>
+      <button md-button [disabled]="!featureForm.valid" color="primary" (click)="save()">SAVE</button>
+      <button md-button (click)="goBack()">CANCEL</button>
     </md-card-actions>
   </md-card>
