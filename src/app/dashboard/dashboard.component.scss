@@ -9,3 +9,9 @@
 .icon {
   font-size: 48px;
 }
+// Chart font size
+:host /deep/ {
+    .tick text {
+        font-size: 14px;
+    }
+}

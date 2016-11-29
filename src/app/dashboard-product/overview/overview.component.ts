@@ -19,7 +19,6 @@ export class ProductOverviewComponent implements AfterViewInit {
   jsonData: any = [
     {'x': 'Ingest', 'y': 69},
     {'x': 'Monitoring', 'y': 47},
-    {'x': 'Deployment', 'y': 48},
     {'x': 'Containers', 'y': 63},
     {'x': 'Compute', 'y': 82},
     {'x': 'Data Lake', 'y': 52},

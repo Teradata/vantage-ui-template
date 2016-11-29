@@ -27,6 +27,11 @@ a[md-icon-button] {
     flex-grow: 1;
 }
 
+// Capitalize
+.text-capital {
+  text-transform: capitalize;
+}
+
 // Manage List layout overflow is too short
 td-layout-manage-list .md-sidenav-content > .md-content > .md-content {
     padding-bottom: 140px;
