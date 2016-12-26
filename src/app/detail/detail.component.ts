@@ -6,8 +6,8 @@ import { ItemsService } from '../../services';
 
 @Component({
   selector: 'qs-detail',
-  templateUrl: 'detail.component.html',
-  styleUrls: ['detail.component.scss'],
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.scss'],
   viewProviders: [ ItemsService ],
 })
 export class DetailComponent implements OnInit {

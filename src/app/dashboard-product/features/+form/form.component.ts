@@ -6,8 +6,8 @@ import { FeaturesService, IFeature } from '../../../../services';
 
 @Component({
   selector: 'feature-form',
-  templateUrl: 'form.component.html',
-  styleUrls: ['form.component.scss'],
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss'],
   viewProviders: [ FeaturesService ],
 })
 export class FeaturesFormComponent implements OnInit  {

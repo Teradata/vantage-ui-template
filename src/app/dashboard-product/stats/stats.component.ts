@@ -9,8 +9,8 @@ const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
 
 @Component({
   selector: 'product-stats',
-  templateUrl: 'stats.component.html',
-  styleUrls: ['stats.component.scss'],
+  templateUrl: './stats.component.html',
+  styleUrls: ['./stats.component.scss'],
 })
 export class ProductStatsComponent implements AfterViewInit {
   columns: any[] = [

@@ -9,8 +9,8 @@ import { UsersService, IUser } from '../../services';
 
 @Component({
   selector: 'qs-users',
-  templateUrl: 'users.component.html',
-  styleUrls: ['users.component.scss'],
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.scss'],
   viewProviders: [ UsersService ],
 })
 export class UsersComponent implements AfterViewInit {

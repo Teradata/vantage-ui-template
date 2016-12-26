@@ -4,8 +4,8 @@ import { StepState, IStepChangeEvent } from '@covalent/core';
 
 @Component({
   selector: 'product-form',
-  templateUrl: 'form.component.html',
-  styleUrls: ['form.component.scss'],
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
 
