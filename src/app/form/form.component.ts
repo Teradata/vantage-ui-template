@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { StepState, IStepChangeEvent } from '@covalent/core';
+import { StepState } from '@covalent/core';
 
 @Component({
   selector: 'product-form',
@@ -9,7 +9,6 @@ import { StepState, IStepChangeEvent } from '@covalent/core';
 })
 export class FormComponent {
 
-  stepChangeMsg: string = 'No change detected yet.';
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
   stateStep3: StepState = StepState.Complete;
@@ -21,14 +20,6 @@ export class FormComponent {
 
   toggleCompleteStep3(): void {
     this.stateStep3 = (this.stateStep3 === StepState.Complete ? StepState.None : StepState.Complete);
-  }
-
-  stepChange(event: IStepChangeEvent): void {
-    if (event.prevStep === undefined) {
-      this.stepChangeMsg = `Started at step: ${event.newStep}`;
-    } else {
-      this.stepChangeMsg = `Changed from step: ${event.prevStep} to step: ${event.newStep}`;
-    }
   }
 
   toggleDisabled(): void {
