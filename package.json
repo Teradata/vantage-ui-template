@@ -16,9 +16,7 @@
     "start-api": "cd mock-api && covalent-data &",
     "stop-api": "pkill covalent-data",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
-    "pretest": "rm -rf ./dist && ng build",
-    "test": "npm run karma",
-    "karma": "karma start ./karma.conf.js --single-run",
+    "test": "ng test --code-coverage --single-run",
     "ghpages-deploy": "bash scripts/ghpages-deploy"
   },
   "engines": {
