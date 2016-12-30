@@ -1,6 +1,6 @@
 {
   "project": {
-    "version": "1.0.0-beta.19-3",
+    "version": "1.0.0-beta.24",
     "name": "covalent-quickstart"
   },
   "apps": [
@@ -20,7 +20,7 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "../node_modules/@covalent/core/styles/platform.css"
+        "../node_modules/@covalent/core/common/platform.css"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",
