@@ -6,9 +6,10 @@
   <md-card-content class="push-bottom-none">
     <form #featureForm="ngForm">
       <div layout="row">
-        <md-input #titleElement
-                  #titleControl="ngModel"
-                  flex 
+        <md-input-container flex>
+          <input md-input
+                  #titleElement
+                  #titleControl="ngModel" 
                   type="text" 
                   placeholder="Feature Title" 
                   [(ngModel)]="title" 
@@ -18,13 +19,14 @@
           <md-hint align="start">
             <span [hidden]="titleControl.pristine || !titleControl.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
-          <md-hint align="end">{{titleElement.characterCount}} / 20</md-hint>
-        </md-input>
+          <md-hint align="end">{{titleElement.value.length}} / 20</md-hint>
+        </md-input-container>
       </div>
       <div layout="row" class="push-top">
-        <md-input #userElement
+        <md-input-container flex>
+          <input md-input
+                  #userElement
                   #userControl="ngModel"
-                  flex
                   type="text" 
                   placeholder="User" 
                   [(ngModel)]="user" 
@@ -34,8 +36,8 @@
           <md-hint align="start">
             <span [hidden]="userControl.pristine || !userControl.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
-          <md-hint align="end">{{userElement.characterCount}} / 30</md-hint>
-        </md-input>
+          <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
+        </md-input-container>
       </div>
       <div layout="row">
         <md-slide-toggle [(ngModel)]="enabled" name="enabled">Enabled</md-slide-toggle>
