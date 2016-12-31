@@ -17,7 +17,7 @@
     "stop-api": "pkill covalent-data",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "test": "ng test --code-coverage --single-run",
-    "ghpages-deploy": "bash scripts/ghpages-deploy"
+    "ghpages-deploy": "ng build --base-href /covalent-quickstart/ --aot -prod && bash scripts/ghpages-deploy"
   },
   "engines": {
     "node": ">4.4 < 7",

@@ -1,7 +1,4 @@
 #!/bin/bash
-echo 'Checking out develop branch to base deployment from it.'
-git checkout develop
-
 echo 'Replace api endpoint with heroku'
 
 cat <<'EOF' >> api.config.ts
@@ -10,9 +7,6 @@ EOF
 
 mv src/config/api.config.ts api.config.ts.default
 mv api.config.ts src/config/api.config.ts
-
-echo 'Started building process with base-href of /covalent-quickstart/.'
-ng build --base-href /covalent-quickstart/ --aot -prod
 
 git branch -f gh-pages
 git checkout gh-pages
