@@ -8,8 +8,8 @@ import { FeaturesService, IFeature } from '../../../services';
 
 @Component({
   selector: 'product-features',
-  templateUrl: 'features.component.html',
-  styleUrls: ['features.component.scss'],
+  templateUrl: './features.component.html',
+  styleUrls: ['./features.component.scss'],
   viewProviders: [ FeaturesService ],
 })
 export class ProductFeaturesComponent implements AfterViewInit {

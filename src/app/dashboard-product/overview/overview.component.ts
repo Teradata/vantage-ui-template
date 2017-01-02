@@ -7,8 +7,8 @@ import { ItemsService, UsersService } from '../../../services';
 
 @Component({
   selector: 'product-overview',
-  templateUrl: 'overview.component.html',
-  styleUrls: ['overview.component.scss'],
+  templateUrl: './overview.component.html',
+  styleUrls: ['./overview.component.scss'],
   viewProviders: [ ItemsService, UsersService ],
 })
 export class ProductOverviewComponent implements AfterViewInit {

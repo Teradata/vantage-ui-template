@@ -1,16 +1,16 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 
-import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent } from '@covalent/data-table';
-import { IPageChangeEvent } from '@covalent/paging';
+import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent } from '@covalent/core';
+import { IPageChangeEvent } from '@covalent/core';
 
 const NUMBER_FORMAT: any = (v: {value: number}) => v.value;
 const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
 
 @Component({
   selector: 'product-stats',
-  templateUrl: 'stats.component.html',
-  styleUrls: ['stats.component.scss'],
+  templateUrl: './stats.component.html',
+  styleUrls: ['./stats.component.scss'],
 })
 export class ProductStatsComponent implements AfterViewInit {
   columns: any[] = [

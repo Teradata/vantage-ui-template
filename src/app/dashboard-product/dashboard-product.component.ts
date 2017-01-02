@@ -4,8 +4,8 @@ import { Title }     from '@angular/platform-browser';
 
 @Component({
   selector: 'dashboard-product',
-  templateUrl: 'dashboard-product.component.html',
-  styleUrls: ['dashboard-product.component.scss'],
+  templateUrl: './dashboard-product.component.html',
+  styleUrls: ['./dashboard-product.component.scss'],
 })
 export class DashboardProductComponent implements AfterViewInit {
 

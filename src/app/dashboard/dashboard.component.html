@@ -1,9 +1,9 @@
-<td-layout-nav logo="assets/icons/covalent.svg">
+<td-layout-nav logo="assets:covalent">
   <div toolbar-content layout="row" layout-align="center center" flex>
     <span>Quickstart</span>
     <span flex></span>
-    <a md-icon-button buttonDisableFix md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button buttonDisableFix md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
+    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
   <div class="md-content" flex md-scroll-y>
     <div layout="column" layout-gt-sm="row" class="inset">
@@ -11,7 +11,7 @@
         <md-card>
             <md-card-title>Products Sales</md-card-title>
             <md-card-subtitle>usage stats for our products</md-card-subtitle>
-            <md-tab-group>
+            <md-tab-group md-stretch-tabs>
               <md-tab>
                 <template md-tab-label>1 WEEK</template>
                 <td-charts [margin]="{top: 60, bottom: 50}"
@@ -152,7 +152,7 @@
           </md-list>
           <md-divider></md-divider>
           <md-card-actions>
-            <a md-button buttonDisableFix color="accent" class="text-upper" [routerLink]="['/logs']">
+            <a md-button color="accent" class="text-upper" [routerLink]="['/logs']">
               <span>View More</span>
             </a>
           </md-card-actions>
@@ -175,18 +175,19 @@
           </md-nav-list>
           <md-divider></md-divider>
           <md-card-actions>
-            <a md-button buttonDisableFix color="accent" class="text-upper" [routerLink]="['/product']">
+            <a md-button color="accent" class="text-upper" [routerLink]="['/product']">
               <span>View More</span>
             </a>
           </md-card-actions>
         </md-card>
       </div>
     </div>
-    <md-divider></md-divider>
+  </div>
+  <td-layout-footer>
     <div layout="row" layout-align="start center" layout-padding>
       <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
       <span flex></span>
-      <md-icon class="md-icon-ux" svgSrc="assets/icons/teradata-ux.svg"></md-icon>
+      <md-icon class="md-icon-ux" svgIcon="assets:teradata-ux"></md-icon>
     </div>
-  </div>
+  </td-layout-footer>
 </td-layout-nav>

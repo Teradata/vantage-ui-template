@@ -1,7 +1,4 @@
 #!/bin/bash
-echo 'Checking out develop branch to base deployment from it.'
-git checkout develop
-
 echo 'Replace api endpoint with heroku'
 
 cat <<'EOF' >> api.config.ts
@@ -11,9 +8,6 @@ EOF
 mv src/config/api.config.ts api.config.ts.default
 mv api.config.ts src/config/api.config.ts
 
-echo 'Started building process.'
-ng build -prod
-
 git branch -f gh-pages
 git checkout gh-pages
 echo 'Created and Checked out gh-pages branch'
@@ -21,8 +15,7 @@ echo 'Created and Checked out gh-pages branch'
 git reset --hard origin/develop
 
 cp -r dist/* .
-sed -i '' 's:<base href=\"/\">:<base href=\"/covalent-quickstart/\">:' index.html
-echo 'Copied dist/ directory into root dir and replaced <base href="/"> with <base href="/covalent-quickstart/"> in index.html'
+echo 'Copied dist/ directory into root dir'
 
 echo 'Tracking files'
 git add -A .

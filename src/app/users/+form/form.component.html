@@ -1,9 +1,9 @@
-<td-layout-nav logo="assets/icons/covalent.svg">
+<td-layout-nav logo="assets:covalent">
   <div toolbar-content layout="row" layout-align="center center" flex>
     <span>Product Name</span>
     <span flex></span>
-    <a md-icon-button buttonDisableFix md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button buttonDisableFix md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
+    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
   <td-layout-manage-list #list>
     <md-toolbar list-items>
@@ -40,9 +40,10 @@
       <md-card-content class="push-bottom-none">
         <form #userForm="ngForm">
           <div layout="row">
-            <md-input #displayNameElement
+            <md-input-container flex> 
+              <input md-input
+                      #displayNameElement
                       #displayNameControl="ngModel"
-                      flex
                       type="text" 
                       placeholder="Display Name" 
                       [(ngModel)]="display_name" 
@@ -50,27 +51,28 @@
                       maxlength="20" 
                       required>
               <md-hint align="start">
-                <span [hidden]="!displayNameControl.errors?.required" class="tc-red-600">Display Name is required!</span>
+                <span [hidden]="displayNameControl.pristine || !displayNameControl.errors?.required" class="tc-red-600">Display Name is required!</span>
               </md-hint>
-              <md-hint align="end">{{displayNameElement.characterCount}} / 20</md-hint>
-            </md-input>
+              <md-hint align="end">{{displayNameElement.value.length}} / 20</md-hint>
+            </md-input-container>
           </div>
           <div layout="row" class="push-top">
-            <md-input #emailElement
+            <md-input-container flex> 
+              <input md-input
+                      #emailElement
                       #emailControl="ngModel"
-                      flex 
                       type="text" 
                       placeholder="Email" 
                       [(ngModel)]="email" 
                       name="email"
                       maxlength="30"
-                      pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                      pattern="^\w+@\w+$"
                       required>
               <md-hint align="start">
                 <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">That's not an email!</span>
               </md-hint>
-              <md-hint align="end">{{emailElement.characterCount}} / 30</md-hint>
-            </md-input>
+              <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
+            </md-input-container>
           </div>
           <div layout="row">
             <md-slide-toggle [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>

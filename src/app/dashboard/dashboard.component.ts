@@ -8,8 +8,8 @@ import { ItemsService, UsersService, ProductsService, AlertsService } from '../.
 
 @Component({
   selector: 'covalent-dashboard',
-  templateUrl: 'dashboard.component.html',
-  styleUrls: ['dashboard.component.scss'],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
   viewProviders: [ ItemsService, UsersService, ProductsService, AlertsService ],
 })
 export class DashboardComponent implements AfterViewInit {

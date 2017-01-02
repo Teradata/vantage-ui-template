@@ -7,8 +7,8 @@ import { ItemsService, UsersService, ProductsService } from '../../services';
 
 @Component({
   selector: 'logs',
-  templateUrl: 'logs.component.html',
-  styleUrls: ['logs.component.scss'],
+  templateUrl: './logs.component.html',
+  styleUrls: ['./logs.component.scss'],
   viewProviders: [ ItemsService, UsersService, ProductsService ],
 })
 export class LogsComponent implements AfterViewInit {

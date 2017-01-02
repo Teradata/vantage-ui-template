@@ -1,9 +1,9 @@
-<td-layout-nav class="white" logo="assets/icons/covalent.svg">
+<td-layout-nav class="white" logo="assets:covalent">
   <div toolbar-content layout="row" layout-align="center center" flex>
     <span>Product Name</span>
     <span flex></span>
-    <a md-icon-button buttonDisableFix md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button buttonDisableFix md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
+    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
   <td-layout-manage-list #list>
     <md-nav-list list-items>
@@ -25,26 +25,28 @@
       </a>
     </md-nav-list>
     <div toolbar-buttons layout="row" layout-align="start center" flex>
-      <a md-icon-button buttonDisableFix [routerLink]="['/dashboard-product']"><md-icon>arrow_back</md-icon></a>
+      <a md-icon-button [routerLink]="['/dashboard-product']"><md-icon>arrow_back</md-icon></a>
       <span>New Item</span>
       <span flex></span>
     </div>
     <div class="md-content" class="inset">
       <form>
         <md-card>
-          <td-steps (stepChange)="stepChange($event)">
+          <td-steps>
             <td-step #step1 label="Step 1" sublabel="simple metadata" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
               <div layout-gt-xs="row">
                 <div class="pad">
-                  <md-input placeholder="Entry name (10 max)" maxlength="10" #inputHint>
-                    <md-hint align="end">{{inputHint.characterCount}} / 10</md-hint>
-                  </md-input>
+                  <md-input-container> 
+                    <input md-input placeholder="Entry name (10 max)" maxlength="10" #inputHint>
+                    <md-hint align="end">{{inputHint.value.length}} / 10</md-hint>
+                  </md-input-container>
                 </div>
                 <div class="pad">
-                  <md-input placeholder="Budget" align="end">
+                  <md-input-container> 
+                    <input md-input type="number" placeholder="Budget" align="end">
                     <span md-prefix>$&nbsp;</span>
                     <span md-suffix>.00</span>
-                  </md-input>
+                  </md-input-container>
                 </div>
               </div>
             </td-step>

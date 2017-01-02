@@ -1,9 +1,9 @@
-<td-layout-nav logo="assets/icons/covalent.svg">
+<td-layout-nav logo="assets:covalent">
   <div toolbar-content layout="row" layout-align="center center" flex>
     <span>Product Name</span>
     <span flex></span>
-    <a md-icon-button buttonDisableFix md-tooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button buttonDisableFix md-tooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgSrc="assets/icons/github.svg"></md-icon></a>
+    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
+    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
   <td-layout-manage-list #list>
     <md-toolbar list-items>
@@ -82,6 +82,6 @@
     </md-card>
   </td-layout-manage-list>   
 </td-layout-nav>
-<a md-fab buttonDisableFix color="accent" class="md-fab-position-bottom-right" [routerLink]="['add']">
+<a md-fab color="accent" class="md-fab-position-bottom-right" [routerLink]="['add']">
   <md-icon>add</md-icon>
 </a>
