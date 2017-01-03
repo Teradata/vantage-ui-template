@@ -7,16 +7,22 @@
   $color-text-lighter: #fff;
 
 :host /deep/ {
-
+    // NGX Charts
     text {
         fill: $color-text-med;
+    }
+    .gridline-path {
+        stroke: $color-bg-med;
+    }
+    // Hide X axis grid lines
+    .gridline-path-vertical {
+        display: none;
     }
     .number-card {
         p {
             color: $color-text-light;
         }
     }
-
     .gauge {
         .background-arc{
             path {

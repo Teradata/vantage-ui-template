@@ -43,7 +43,7 @@ $theme: md-light-theme($primary, $accent, $warn);
 }
 .dark-grey-blue {
     $primary3: md-palette($md-blue-grey, 800);
-    $accent3:  md-palette($md-orange, 800);
+    $accent3:  md-palette($md-teal, 500);
     $warn3:    md-palette($md-red, 600);
 
     $dark-grey-blue: md-dark-theme($primary3, $accent3, $warn3);

@@ -25,7 +25,11 @@ export class DashboardTemplateComponent {
   yAxisLabel: string = 'Sales';
 
   colorScheme: any = {
-    domain: ['#1565C0', '#2196F3', '#81D4FA', '#FF9800', '#EF6C00'],
+    domain: ['#9575CD', '#4FC3F7', '#4DD0E1', '#4DB6AC', '#66BB6A', '#9CCC65'],
+  };
+
+  colorSchemeDark: any = {
+    domain: ['#4527A0', '#0277BD', '#00695C', '#558B2F', '#9E9D24'],
   };
 
   // line, area
