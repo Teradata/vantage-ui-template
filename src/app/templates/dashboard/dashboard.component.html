@@ -17,10 +17,22 @@
             <p md-line>a landing page template</p>
           </a>
           <md-divider></md-divider>
-          <a md-list-item [routerLink]="['/templates']">
+          <a md-list-item [routerLink]="['/templates/dashboard']">
             <md-icon md-list-avatar>dashboard</md-icon>
             <h4 md-line><span class="text-wrap">Dashboard</span></h4>
             <p md-line>an ngx-charts dashboard template</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item [routerLink]="['/templates/email']">
+            <md-icon md-list-avatar>email</md-icon>
+            <h4 md-line><span class="text-wrap">Email App</span></h4>
+            <p md-line>an email app template</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item [routerLink]="['/templates/editor']">
+            <md-icon md-list-avatar>view_array</md-icon>
+            <h4 md-line><span class="text-wrap">IDE Editor</span></h4>
+            <p md-line>an IDE text editor app template</p>
           </a>
         </md-nav-list>
         <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates" target="_blank">

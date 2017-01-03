@@ -108,8 +108,6 @@
                         <div layout="row" layout-align="start center" class="bgc-grey-900">
                             <span class="md-subhead push-left-sm">Connection Filters</span>
                             <span flex></span>
-                            <button md-icon-button><md-icon>sort</md-icon></button>
-                            <button md-icon-button><md-icon>settings</md-icon></button>
                             <button md-icon-button><md-icon>more_vert</md-icon></button>
                         </div>
                         <div layout="column" layout-margin class="md-content">
@@ -152,8 +150,6 @@
                         <div layout="row" layout-align="start center" class="bgc-grey-900">
                             <span class="md-subhead push-left-sm">Visualization Options</span>
                             <span flex></span>
-                            <button md-icon-button><md-icon>sort</md-icon></button>
-                            <button md-icon-button><md-icon>settings</md-icon></button>
                             <button md-icon-button><md-icon>more_vert</md-icon></button>
                         </div>
                         <div layout="column" layout-margin class="md-content">
@@ -208,6 +204,44 @@
                                 </a>
                             </nav>
                             <span flex></span>
+                            <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+                                <td-notification-count color="accent" [notifications]="6">
+                                    <md-icon>apps</md-icon>
+                                </td-notification-count>
+                                </button>
+                                <md-menu #notificationsMenu="mdMenu" x-position="before">
+                                    <td-menu>
+                                        <div td-menu-header class="md-subhead">Templates</div>
+                                        <md-nav-list dense>
+                                        <a md-list-item [routerLink]="['/templates']">
+                                            <md-icon md-list-avatar>system_update_alt</md-icon>
+                                            <h4 md-line><span class="text-wrap">Landing Page</span></h4>
+                                            <p md-line>a landing page template</p>
+                                        </a>
+                                        <md-divider></md-divider>
+                                        <a md-list-item [routerLink]="['/templates/dashboard']">
+                                            <md-icon md-list-avatar>dashboard</md-icon>
+                                            <h4 md-line><span class="text-wrap">Dashboard</span></h4>
+                                            <p md-line>an ngx-charts dashboard template</p>
+                                        </a>
+                                        <md-divider></md-divider>
+                                        <a md-list-item [routerLink]="['/templates/email']">
+                                            <md-icon md-list-avatar>email</md-icon>
+                                            <h4 md-line><span class="text-wrap">Email App</span></h4>
+                                            <p md-line>an email app template</p>
+                                        </a>
+                                        <md-divider></md-divider>
+                                        <a md-list-item [routerLink]="['/templates/editor']">
+                                            <md-icon md-list-avatar>view_array</md-icon>
+                                            <h4 md-line><span class="text-wrap">IDE Editor</span></h4>
+                                            <p md-line>an IDE text editor app template</p>
+                                        </a>
+                                        </md-nav-list>
+                                        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates" target="_blank">
+                                        View Code
+                                        </a>
+                                    </td-menu>
+                                </md-menu>
                             <button md-icon-button><md-icon>more_vert</md-icon></button>
                         </div>
                         <td-highlight lang="sql" flex class="md-content">
