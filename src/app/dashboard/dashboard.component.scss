@@ -4,7 +4,7 @@
   right: 10px;
 }
 .md-icon-ux {
-    width: 165px;
+    width: 100px;
 }
 .icon {
   font-size: 48px;
@@ -13,5 +13,19 @@
 :host /deep/ {
     .tick text {
         font-size: 14px;
+    }
+    ngx-charts-chart {
+        & > div {
+            display: flex;
+            flex-direction: row;
+        }
+        .ngx-charts {
+            flex-grow: 1;
+        }
+    }
+    .chart-legend {
+        &, & > div, .legend-wrap {
+            width: 140px !important;
+        }
     }
 }

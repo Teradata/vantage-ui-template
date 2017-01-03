@@ -21,7 +21,8 @@
       "styles": [
         "styles.scss",
         "theme.scss",
-        "../node_modules/@covalent/core/common/platform.css"
+        "../node_modules/@covalent/core/common/platform.css",
+        "../node_modules/@swimlane/ngx-charts/release/ngx-charts.css"
       ],
       "scripts": [
         "../node_modules/hammerjs/hammer.min.js",

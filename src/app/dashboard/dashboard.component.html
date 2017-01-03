@@ -8,73 +8,29 @@
   <div class="md-content" flex md-scroll-y>
     <div layout="column" layout-gt-sm="row" class="inset">
       <div flex-gt-sm="60">
-        <md-card>
+        <div layout="column">
+          <md-card>
             <md-card-title>Products Sales</md-card-title>
             <md-card-subtitle>usage stats for our products</md-card-subtitle>
-            <md-tab-group md-stretch-tabs>
-              <md-tab>
-                <template md-tab-label>1 WEEK</template>
-                <td-charts [margin]="{top: 60, bottom: 50}"
-                          chartHeight="325"
-                          [shadow]="true">
-                  <td-axis-x [link]="chartLine1" [ticks]="true" [show]="true" [grid]="false" legend=""></td-axis-x>
-                  <td-axis-y-left [link]="chartLine1" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                  <td-chart-line #chartLine1
-                          dataSrc="data/datatime.csv"
-                          timeSeries="true"
-                          bottomAxis="date"
-                          [columns]="['close']"
-                          [titles]="['close']"
-                          [colors]="['#FF6D00']"
-                          [transition]="true"
-                          transitionDuration="900"
-                          transitionDelay="500">
-                  </td-chart-line>
-                </td-charts>
-              </md-tab>
-              <md-tab>
-                <template md-tab-label>1 MONTH</template>
-                <td-charts [margin]="{top: 60, bottom: 50}"
-                          chartHeight="325"
-                          [shadow]="true">
-                  <td-axis-x [link]="chartLine2" [ticks]="true" [show]="true" [grid]="false" legend=""></td-axis-x>
-                  <td-axis-y-left [link]="chartLine2" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                  <td-chart-line #chartLine2 
-                          dataSrc="data/datatime.csv"
-                          timeSeries="true"
-                          bottomAxis="date"
-                          [columns]="['close']"
-                          [titles]="['close']"
-                          [colors]="['#FF6D00']"
-                          [transition]="true"
-                          transitionDuration="900"
-                          transitionDelay="500">
-                  </td-chart-line>
-                </td-charts>
-              </md-tab>
-              <md-tab>
-                <template md-tab-label>1 YEAR</template>
-                <td-charts
-                          [margin]="{top: 60, bottom: 50}"
-                          chartHeight="325"
-                          [shadow]="true">
-                  <td-axis-x [link]="chartLine3" [ticks]="true" [show]="true" [grid]="false" legend=""></td-axis-x>
-                  <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="true" legend="Sales($)"></td-axis-y-left>
-                  <td-chart-line #chartLine3 
-                          dataSrc="data/datatime.csv"
-                          timeSeries="true"
-                          bottomAxis="date"
-                          [columns]="['close']"
-                          [titles]="['close']"
-                          [colors]="['#FF6D00']"
-                          [transition]="true"
-                          transitionDuration="900"
-                          transitionDelay="500">
-                  </td-chart-line>
-                </td-charts>
-              </md-tab>
-            </md-tab-group>
+            <md-card-content class="relative">
+              <ngx-charts-line-chart
+                [view]="view"
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [autoScale]="autoScale">
+              </ngx-charts-line-chart>
+            </md-card-content>
           </md-card>
+        </div>
+        
         <div layout="row">
           <div flex="33" layout="column">
             <md-card class="md-card-colored" flex>
