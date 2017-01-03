@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { FormComponent } from './form/form.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { DashboardTemplateComponent } from './templates/dashboard/dashboard.component';
+import { EmailTemplateComponent } from './templates/email/email.component';
+import { EditorTemplateComponent } from './templates/editor/editor.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -44,6 +46,8 @@ const routes: Routes = [
     {path: 'templates', children: [
       {path: '', component: TemplatesComponent},
       {path: 'dashboard', component: DashboardTemplateComponent},
+      {path: 'email', component: EmailTemplateComponent},
+      {path: 'editor', component: EditorTemplateComponent},
     ]},
   ]},
 ];

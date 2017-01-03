@@ -23,6 +23,8 @@ import { ProductFeaturesComponent } from './dashboard-product/features/features.
 import { FeaturesFormComponent } from './dashboard-product/features/+form/form.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { DashboardTemplateComponent } from './templates/dashboard/dashboard.component';
+import { EmailTemplateComponent } from './templates/email/email.component';
+import { EditorTemplateComponent } from './templates/editor/editor.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { ChartComponent } from '../components/chart/chart.component';
@@ -54,6 +56,8 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     ChartComponent,
     TemplatesComponent,
     DashboardTemplateComponent,
+    EmailTemplateComponent,
+    EditorTemplateComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,

@@ -17,10 +17,22 @@
             <p md-line>a landing page template</p>
           </a>
           <md-divider></md-divider>
-          <a md-list-item [routerLink]="['/templates']">
+          <a md-list-item [routerLink]="['/templates/dashboard']">
             <md-icon md-list-avatar>dashboard</md-icon>
             <h4 md-line><span class="text-wrap">Dashboard</span></h4>
             <p md-line>an ngx-charts dashboard template</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item [routerLink]="['/templates/email']">
+            <md-icon md-list-avatar>email</md-icon>
+            <h4 md-line><span class="text-wrap">Email App</span></h4>
+            <p md-line>an email app template</p>
+          </a>
+          <md-divider></md-divider>
+          <a md-list-item [routerLink]="['/templates/editor']">
+            <md-icon md-list-avatar>view_array</md-icon>
+            <h4 md-line><span class="text-wrap">IDE Editor</span></h4>
+            <p md-line>an IDE text editor app template</p>
           </a>
         </md-nav-list>
         <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates" target="_blank">
@@ -42,12 +54,12 @@
         Dashboard
       </a>
       <a md-tab-link
-        [routerLink]="['/templates/dashboard']">
+        [routerLink]="['/templates/email']">
         Email App
       </a>
       <a md-tab-link
-        [routerLink]="['/templates/dashboard']">
-        Forum
+        [routerLink]="['/templates/editor']">
+        IDE Editor
       </a>
     </nav>
   </md-toolbar>
@@ -69,9 +81,9 @@
 
    <section class="bgc-light-blue-600 tc-light-blue-50"  tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl']">
      <div layout-gt-xs="row" layout-align-gt-xs="center center">
-       <div flex-gt-xs="75" layout="column" layout-align="center center">
+       <div flex-gt-xs="80" layout="column" layout-align="center center">
         <h2 class="md-display-1 text-upper tc-grey-50 push-bottom">Covalent Templates</h2>
-        <div flex-gt-xs="75" layout="row" layout-margin layout-padding layout-wrap>
+        <div layout="row">
           <div class="text-center" flex-xs="50" flex-gt-xs="25">
               <md-icon class="tc-grey-50 md-display-2">system_update_alt</md-icon>
               <div class="pad-bottom-md"> Landing Page Template</div>
@@ -81,29 +93,12 @@
               <div class="pad-bottom-md">Dashboard Template</div>
           </div>
           <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">flight_takeoff</md-icon>
-              <div class="pad-bottom-md">Rapid and easy procurement</div>
-          </div>
-
-          <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">room_service</md-icon>
-              <div class="pad-bottom-md">Self-service deployment</div>
+              <md-icon class="tc-grey-50 md-display-2">email</md-icon>
+              <div class="pad-bottom-md">Email App Template</div>
           </div>
           <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">credit_card</md-icon>
-              <div class="pad-bottom-md">Pay-as-you-go flexibility</div>
-          </div>
-          <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">important_devices</md-icon>
-              <div class="pad-bottom-md">Quick proofs of concept</div>
-          </div>
-          <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">hourglass_empty</md-icon>
-              <div class="pad-bottom-md">Hourly or annual subscriptions</div>
-          </div>
-          <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">storage</md-icon>
-              <div class="pad-bottom-md">Infrastructure maintained</div>
+              <md-icon class="tc-grey-50 md-display-2">view_array</md-icon>
+              <div class="pad-bottom-md">IDE Editor Template</div>
           </div>
         </div>
       </div>
