@@ -29,7 +29,7 @@ export class DashboardTemplateComponent {
   };
 
   colorSchemeDark: any = {
-    domain: ['#4527A0', '#0277BD', '#00695C', '#558B2F', '#9E9D24'],
+    domain: ['#5E35B1', '#0277BD', '#00695C', '#558B2F', '#9E9D24'],
   };
 
   // line, area
