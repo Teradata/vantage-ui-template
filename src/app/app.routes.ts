@@ -13,6 +13,8 @@ import { LogsComponent } from './logs/logs.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
 import { FormComponent } from './form/form.component';
+import { TemplatesComponent } from './templates/templates.component';
+import { DashboardTemplateComponent } from './templates/dashboard/dashboard.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -38,6 +40,10 @@ const routes: Routes = [
       {path: 'add', component: UsersFormComponent},
       {path: ':id/delete', component: UsersFormComponent},
       {path: ':id/edit', component: UsersFormComponent},
+    ]},
+    {path: 'templates', children: [
+      {path: '', component: TemplatesComponent},
+      {path: 'dashboard', component: DashboardTemplateComponent},
     ]},
   ]},
 ];

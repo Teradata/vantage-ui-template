@@ -31,7 +31,7 @@ export class DashboardComponent implements AfterViewInit {
   showXAxis: boolean = true;
   showYAxis: boolean = true;
   gradient: boolean = false;
-  showLegend: boolean = true;
+  showLegend: boolean = false;
   showXAxisLabel: boolean = true;
   xAxisLabel: string = '';
   showYAxisLabel: boolean = true;

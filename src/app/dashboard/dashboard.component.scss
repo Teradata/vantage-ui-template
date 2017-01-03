@@ -9,23 +9,3 @@
 .icon {
   font-size: 48px;
 }
-// Chart font size
-:host /deep/ {
-    .tick text {
-        font-size: 14px;
-    }
-    ngx-charts-chart {
-        & > div {
-            display: flex;
-            flex-direction: row;
-        }
-        .ngx-charts {
-            flex-grow: 1;
-        }
-    }
-    .chart-legend {
-        &, & > div, .legend-wrap {
-            width: 140px !important;
-        }
-    }
-}
