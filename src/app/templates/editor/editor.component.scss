@@ -1,0 +1,24 @@
+:host /deep/ {
+    md-sidenav .cdk-focus-trap-content > * {
+        height: 100%;
+    }
+}
+
+// Charts
+// NGX Chart theme
+  $color-bg-med: #2f3646;
+  $color-text-med: #a8b2c7;
+
+:host /deep/ {
+    // NGX Charts
+    text {
+        fill: $color-text-med;
+    }
+    .gridline-path {
+        stroke: $color-bg-med;
+    }
+    // Hide X axis grid lines
+    .gridline-path-vertical {
+        display: none;
+    }
+}

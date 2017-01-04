@@ -29,3 +29,35 @@ $theme: md-light-theme($primary, $accent, $warn);
 @include covalent-markdown-theme($theme);
 @include covalent-charts-theme($theme);
 @include covalent-highlight-theme();
+
+// Custom theme examples
+.white-orange {
+    $primary2: md-palette($md-grey, 50);
+    $accent2:  md-palette($md-orange, 800);
+    $warn2:    md-palette($md-red, 600);
+
+    $white-orange: md-light-theme($primary2, $accent2, $warn2);
+
+    @include angular-material-theme($white-orange);
+    @include covalent-theme($white-orange);
+}
+.dark-grey-blue {
+    $primary3: md-palette($md-blue-grey, 800);
+    $accent3:  md-palette($md-teal, 500);
+    $warn3:    md-palette($md-red, 600);
+
+    $dark-grey-blue: md-dark-theme($primary3, $accent3, $warn3);
+
+    @include angular-material-theme($dark-grey-blue);
+    @include covalent-theme($dark-grey-blue);
+}
+.light-blue-red {
+    $primary4: md-palette($md-light-blue, 700);
+    $accent4:  md-palette($md-red, 700);
+    $warn4:    md-palette($md-deep-orange, 800);
+
+    $light-blue-red: md-light-theme($primary4, $accent4, $warn4);
+
+    @include angular-material-theme($light-blue-red);
+    @include covalent-theme($light-blue-red);
+}

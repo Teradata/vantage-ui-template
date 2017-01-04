@@ -4,14 +4,8 @@
   right: 10px;
 }
 .md-icon-ux {
-    width: 165px;
+    width: 100px;
 }
 .icon {
   font-size: 48px;
-}
-// Chart font size
-:host /deep/ {
-    .tick text {
-        font-size: 14px;
-    }
 }

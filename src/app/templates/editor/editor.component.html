@@ -1,0 +1,381 @@
+<div layout="column" layout-fill class="dark-grey-blue">
+    <div flex layout="row" class="content md-content">
+        <div>test</div>
+        <md-sidenav-container fullscreen class="td-layout-manage-list md-content" flex layout="row">
+            <md-sidenav opened="true" align="start" mode="side" class="md-sidenav-left">
+                <div layout="column">
+                    <div flex layout="column">
+                        <div layout="row" layout-align="start center" class="bgc-grey-900">
+                            <span class="md-subhead push-left-sm">Data Sources</span>
+                            <span flex></span>
+                            <button md-icon-button><md-icon>sort</md-icon></button>
+                            <button md-icon-button><md-icon>settings</md-icon></button>
+                            <button md-icon-button><md-icon>more_vert</md-icon></button>
+                        </div>
+                        <div layout="column" layout-margin class="md-content">
+                            <md-nav-list dense>
+                                <h3 md-subheader>Database Connections</h3>
+                                <a md-list-item class="active">
+                                    <md-icon md-list-icon>folder_open</md-icon>
+                                    Teradata Databases
+                                </a>
+                                <md-nav-list dense class="push-left">
+                                    <a md-list-item>
+                                        <md-icon md-list-icon>dns</md-icon>
+                                        DBC
+                                    </a>
+                                    <a md-list-item class="active">
+                                        <md-icon md-list-icon>dns</md-icon>
+                                        PROD_DATA
+                                    </a>
+                                    <a md-list-item>
+                                        <md-icon md-list-icon>dns</md-icon>
+                                        store_locals
+                                    </a>
+                                    <a md-list-item>
+                                        <md-icon md-list-icon>dns</md-icon>
+                                        sales_trending_reports
+                                    </a>
+                                </md-nav-list>
+                                <a md-list-item>
+                                    <md-icon md-list-icon>folder</md-icon>
+                                    Presto Databases
+                                </a>
+                                <a md-list-item>
+                                    <md-icon md-list-icon>folder</md-icon>
+                                    Aster Databases
+                                </a>
+                                <a md-list-item>
+                                    <md-icon md-list-icon>folder</md-icon>
+                                    Hadoop Databases
+                                </a>
+                            </md-nav-list>
+                        </div>
+                    </div>
+                    <div flex layout="column">
+                        <div layout="row" layout-align="start center" class="bgc-grey-900">
+                            <span class="md-subhead push-left-sm">File Explorer</span>
+                            <span flex></span>
+                            <button md-icon-button><md-icon>sort</md-icon></button>
+                            <button md-icon-button><md-icon>settings</md-icon></button>
+                            <button md-icon-button><md-icon>more_vert</md-icon></button>
+                        </div>
+                        <div layout="column" layout-margin class="md-content">
+                            <md-nav-list dense>
+                                <a md-list-item>
+                                    <md-icon md-list-icon>folder</md-icon>
+                                    Backup Queries
+                                </a>
+                                <a md-list-item>
+                                    <md-icon md-list-icon>folder</md-icon>
+                                    Downloads
+                                </a>
+                                <a md-list-item class="active">
+                                    <md-icon md-list-icon>folder_open</md-icon>
+                                    My Queries
+                                </a>
+                                <md-nav-list dense class="push-left">
+                                    <a md-list-item>
+                                        <md-icon md-list-icon>description</md-icon>
+                                        DBC
+                                    </a>
+                                    <a md-list-item class="active">
+                                        <md-icon md-list-icon>description</md-icon>
+                                        PROD_DATA
+                                    </a>
+                                    <a md-list-item>
+                                        <md-icon md-list-icon>description</md-icon>
+                                        store_locals
+                                    </a>
+                                    <a md-list-item>
+                                        <md-icon md-list-icon>description</md-icon>
+                                        sales_trending_reports
+                                    </a>
+                                </md-nav-list>
+                            </md-nav-list>
+                        </div>
+                    </div>
+                    <div class="td-layout-footer bgc-black pad-xs" layout="row">
+                        <button md-icon-button><md-icon>add</md-icon></button>
+                        <span flex></span>
+                        <button md-icon-button><md-icon>refresh</md-icon></button>
+                    </div>
+                </div>
+            </md-sidenav>
+            <md-sidenav opened align="end" mode="side" class="md-sidenav-right">
+                <div layout="column">
+                    <div flex layout="column">
+                        <div layout="row" layout-align="start center" class="bgc-grey-900">
+                            <span class="md-subhead push-left-sm">Connection Filters</span>
+                            <span flex></span>
+                            <button md-icon-button><md-icon>more_vert</md-icon></button>
+                        </div>
+                        <div layout="column" layout-margin class="md-content">
+                            <md-tab-group md-stretch-tabs>
+                                <md-tab>
+                                    <template md-tab-label>
+                                        Selection
+                                    </template>
+                                    <div layout="row" class="push-top-sm">
+                                        <md-select placeholder="Select option" flex>
+                                            <md-option value="1">
+                                                Include selected options
+                                            </md-option>
+                                            <md-option value="2">
+                                                Include non-selected options
+                                            </md-option>
+                                        </md-select>
+                                    </div>
+                                    <div class="pad">
+                                        <md-slide-toggle color="accent">appcenter-apps</md-slide-toggle>
+                                        <md-slide-toggle color="accent" checked="true">employee%</md-slide-toggle>
+                                        <md-slide-toggle color="accent">jsonDefault</md-slide-toggle>
+                                        <md-slide-toggle color="accent" checked="true">jsonTable</md-slide-toggle>
+                                        <md-slide-toggle color="accent" checked="true">listener_data</md-slide-toggle>
+                                        <md-slide-toggle color="accent">retailWebClicksData</md-slide-toggle>
+                                        <md-slide-toggle color="accent">rowdatasave</md-slide-toggle>
+                                    </div>
+                                </md-tab>
+                                <md-tab>
+                                    <template md-tab-label>
+                                        Expression
+                                    </template>
+                                    <h1>Terrible sushi restaurants</h1>
+                                    <p>...</p>
+                                </md-tab>
+                            </md-tab-group>
+                        </div>
+                    </div>
+                    <div flex layout="column">
+                        <div layout="row" layout-align="start center" class="bgc-grey-900">
+                            <span class="md-subhead push-left-sm">Visualization Options</span>
+                            <span flex></span>
+                            <button md-icon-button><md-icon>more_vert</md-icon></button>
+                        </div>
+                        <div layout="column" layout-margin class="md-content">
+                            <div layout="row">
+                                <md-select placeholder="Select type" flex>
+                                    <md-option value="1">
+                                        Vertical Bar
+                                    </md-option>
+                                    <md-option value="2">
+                                        Horizontal Bar
+                                    </md-option>
+                                </md-select>
+                            </div>
+                            <div class="pad" layout="column">
+                                <md-checkbox checked="true" class="push-bottom-sm">Show X Axis</md-checkbox>
+                                <md-checkbox checked="true" class="push-bottom-sm">Show Y Axis</md-checkbox>
+                                <md-checkbox checked="true" class="push-bottom-sm">Show Grid Lines</md-checkbox>
+                                <md-checkbox class="push-bottom-sm">Use Gradients</md-checkbox>
+                                <md-checkbox class="push-bottom-sm">Show Legend</md-checkbox>
+                                <md-checkbox checked="true" class="push-bottom-sm">Show X Axis Label</md-checkbox>
+                                <md-checkbox class="push-bottom-sm">Show Y Axis Label</md-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="td-layout-footer bgc-black pad-xs" layout="row">
+                        <button md-icon-button><md-icon>add</md-icon></button>
+                        <span flex></span>
+                        <button md-icon-button><md-icon>refresh</md-icon></button>
+                    </div>
+                </div>
+            </md-sidenav>
+            <div layout="column" flex layout-fill>
+                <div flex layout="column">
+                    <div flex layout="column">
+                        <div layout="row" layout-align="start center" class="bgc-grey-900">
+                            <nav md-tab-nav-bar>
+                                <a md-tab-link>
+                                    <div layout="row" layout-align="start center">
+                                        <md-icon class="text-md">description</md-icon>
+                                        <span class="text-md">filename.sql</span>
+                                        <span flex></span>
+                                        <md-icon class="text-md">close</md-icon>
+                                    </div>
+                                </a>
+                                <a md-tab-link>
+                                    <div layout="row" layout-align="start center">
+                                        <md-icon class="text-md">description</md-icon>
+                                        <span class="text-md">filename.sql</span>
+                                        <span flex></span>
+                                        <md-icon class="text-md">close</md-icon>
+                                    </div>
+                                </a>
+                            </nav>
+                            <span flex></span>
+                            <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
+                                <td-notification-count color="accent" [notifications]="4">
+                                    <md-icon>apps</md-icon>
+                                </td-notification-count>
+                                </button>
+                                <md-menu #notificationsMenu="mdMenu" x-position="before">
+                                    <td-menu>
+                                        <div td-menu-header class="md-subhead">Templates</div>
+                                        <md-nav-list dense>
+                                        <a md-list-item [routerLink]="['/templates']">
+                                            <md-icon md-list-avatar>system_update_alt</md-icon>
+                                            <h4 md-line><span class="text-wrap">Landing Page</span></h4>
+                                            <p md-line>a landing page template</p>
+                                        </a>
+                                        <md-divider></md-divider>
+                                        <a md-list-item [routerLink]="['/templates/dashboard']">
+                                            <md-icon md-list-avatar>dashboard</md-icon>
+                                            <h4 md-line><span class="text-wrap">Dashboard</span></h4>
+                                            <p md-line>an ngx-charts dashboard template</p>
+                                        </a>
+                                        <md-divider></md-divider>
+                                        <a md-list-item [routerLink]="['/templates/email']">
+                                            <md-icon md-list-avatar>email</md-icon>
+                                            <h4 md-line><span class="text-wrap">Email App</span></h4>
+                                            <p md-line>an email app template</p>
+                                        </a>
+                                        <md-divider></md-divider>
+                                        <a md-list-item [routerLink]="['/templates/editor']">
+                                            <md-icon md-list-avatar>view_array</md-icon>
+                                            <h4 md-line><span class="text-wrap">IDE Editor</span></h4>
+                                            <p md-line>an IDE text editor app template</p>
+                                        </a>
+                                        </md-nav-list>
+                                        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates" target="_blank">
+                                        View Code
+                                        </a>
+                                    </td-menu>
+                                </md-menu>
+                            <button md-icon-button><md-icon>more_vert</md-icon></button>
+                        </div>
+                        <td-highlight lang="sql" flex class="md-content">
+                            While EXISTS(SELECT * From @documents WHERE @lastidprocessed < P_Id)
+                            Begin
+                            Select Top 1 @id = P_Id, @document = Content From @documents WHERE @lastidprocessed < P_Id
+                            set @istart = 1; 
+                                set @len = LEN(@document);
+                            
+                            -- For every word within a document 
+                                While (@istart <= @len)
+                                Begin 
+                            --pos := instr(@document, sep, @istart); 
+                            set @pos = CHARINDEX ( @sep ,@document, @istart )
+                            if (@pos = 0)
+                            begin
+                                set @word = SUBSTRING(@document, @istart, @len); 
+                                insert into @t values ( @wordcounter, @word )
+                                set @istart = @len + 1; 
+                                set @wordcounter = @wordcounter + 1;
+                            end
+                            else
+                            begin 
+                                set @word = SUBSTRING(@document, @istart, @pos - @istart); 
+                                insert into @t values ( @wordcounter, @word )
+                                set @istart = @pos + 1; 
+                                set @wordcounter = @wordcounter + 1;
+                            end
+                            End 
+                            
+                            --Delete #tmpTable Where Indx = @id
+                            set @lastidprocessed = @id
+
+                            if (@word <> @previousword)
+                            begin
+                            If (@previousword <> '')
+                            begin
+                            insert into @t values ( @previousword, @wordoccurrences );
+                            end
+                            set @wordoccurrences = 1;
+                            end
+                            else
+                            begin 
+                            set @wordoccurrences = @wordoccurrences + 1;
+                            end 
+                                
+                            set @previousword = @word;
+                            set @lastidprocessed = @id
+                            End
+                        </td-highlight>
+                    </div>
+                    <div flex layout="column">
+                        <div layout="row" layout-align="start center" class="bgc-grey-900">
+                            <span class="md-subhead push-left-sm">Result Set</span>
+                            <span flex></span>
+                            <button md-icon-button><md-icon>view_module</md-icon></button>
+                            <button md-icon-button><md-icon>sort</md-icon></button>
+                            <button md-icon-button><md-icon>settings</md-icon></button>
+                            <button md-icon-button><md-icon>more_vert</md-icon></button>
+                        </div>
+                        <div layout="column" layout-margin class="md-content">
+                            <div style="height:250px;" class="pad-top">
+                                <ngx-charts-line-chart
+                                [scheme]="colorScheme"
+                                [results]="multi"
+                                [gradient]="gradient"
+                                [xAxis]="showXAxis"
+                                [yAxis]="showYAxis"
+                                [legend]="showLegend"
+                                [showXAxisLabel]="showXAxisLabel"
+                                [showYAxisLabel]="showYAxisLabel"
+                                [xAxisLabel]="xAxisLabel"
+                                [yAxisLabel]="yAxisLabel"
+                                [autoScale]="autoScale">
+                                </ngx-charts-line-chart>
+                            </div>
+                        </div>
+                    </div>
+                    <div flex layout="column">
+                        <div layout="row" layout-align="start center" class="bgc-grey-900">
+                            <span *ngIf="!searchBox.searchVisible">
+                                <span class="md-subhead push-left-sm">Data Preview</span>
+                            </span>
+                            <td-search-box #searchBox backIcon="arrow_back" class="pull-top-sm pull-bottom-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+                            </td-search-box>
+                            <button md-icon-button><md-icon>view_module</md-icon></button>
+                            <button md-icon-button><md-icon>sort</md-icon></button>
+                            <button md-icon-button><md-icon>settings</md-icon></button>
+                            <button md-icon-button><md-icon>more_vert</md-icon></button>
+                        </div>
+                        <td-data-table
+                            [data]="filteredData"
+                            [columns]="columns"
+                            [sortable]="true"
+                            [sortBy]="sortBy"
+                            [sortOrder]="sortOrder"
+                            (sortChange)="sort($event)"
+                            flex class="md-content">
+                        </td-data-table>
+                        <td-paging-bar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)"></td-paging-bar>
+                    </div>
+                </div>
+                <div class="td-layout-footer pad-xs">
+                    <div layout="row" layout-align="start center">
+                        <span class="push-left">
+                            <md-icon class="text-md">description</md-icon>
+                            <span>local/my queries/filename.sql</span>
+                        </span>
+                        <span flex></span>
+                        <span class="push-left">
+                            <md-icon class="text-md">warning</md-icon>
+                            <span>8</span>
+                        </span>
+                        <span class="push-left">
+                            <md-icon class="text-md">error</md-icon>
+                            <span>2</span>
+                        </span>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+            </div>
+        </md-sidenav-container>
+    </div>
+    <div class="td-layout-footer pad-sm">
+        <div layout="row" layout-align="start center">
+            <span class="tc-green-600">
+                <md-icon class="text-md">check</md-icon>
+                <span>No Issues</span>
+            </span>
+            <span flex></span>
+            <span class="push-left tc-blue-600">
+                <md-icon class="text-md">system_update_alt</md-icon>
+                <span>2 Updates</span>
+            </span>
+        </div>
+    </div>
+</div>

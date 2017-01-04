@@ -21,11 +21,17 @@ import { ProductOverviewComponent } from './dashboard-product/overview/overview.
 import { ProductStatsComponent } from './dashboard-product/stats/stats.component';
 import { ProductFeaturesComponent } from './dashboard-product/features/features.component';
 import { FeaturesFormComponent } from './dashboard-product/features/+form/form.component';
+import { TemplatesComponent } from './templates/templates.component';
+import { DashboardTemplateComponent } from './templates/dashboard/dashboard.component';
+import { EmailTemplateComponent } from './templates/email/email.component';
+import { EditorTemplateComponent } from './templates/editor/editor.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { ChartComponent } from '../components/chart/chart.component';
 
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
   RequestInterceptor,
@@ -48,6 +54,10 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     DetailComponent,
     LoginComponent,
     ChartComponent,
+    TemplatesComponent,
+    DashboardTemplateComponent,
+    EmailTemplateComponent,
+    EditorTemplateComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,
@@ -61,6 +71,7 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     CovalentHighlightModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
     appRoutes,
+    NgxChartsModule,
   ], // modules needed to run this module
   providers: [
     appRoutingProviders,
