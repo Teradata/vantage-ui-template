@@ -1,9 +1,9 @@
 <td-layout-nav logo="assets:covalent" class="white-orange">
   <div toolbar-content layout="row" layout-align="start center" flex>
-    <span>App Templates</span>
+    <span hide-xs>App Templates</span>
     <span flex ></span>
     <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
-      <td-notification-count color="accent" [notifications]="6">
+      <td-notification-count color="accent" [notifications]="4">
         <md-icon>apps</md-icon>
       </td-notification-count>
     </button>
@@ -79,31 +79,28 @@
     </div>
   </section>
 
-   <section class="bgc-light-blue-600 tc-light-blue-50"  tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl']">
-     <div layout-gt-xs="row" layout-align-gt-xs="center center">
-       <div flex-gt-xs="80" layout="column" layout-align="center center">
-        <h2 class="md-display-1 text-upper tc-grey-50 push-bottom">Covalent Templates</h2>
-        <div layout="row">
-          <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">system_update_alt</md-icon>
-              <div class="pad-bottom-md"> Landing Page Template</div>
-          </div>
-          <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2 ">dashboard</md-icon>
-              <div class="pad-bottom-md">Dashboard Template</div>
-          </div>
-          <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">email</md-icon>
-              <div class="pad-bottom-md">Email App Template</div>
-          </div>
-          <div class="text-center" flex-xs="50" flex-gt-xs="25">
-              <md-icon class="tc-grey-50 md-display-2">view_array</md-icon>
-              <div class="pad-bottom-md">IDE Editor Template</div>
-          </div>
+  <section class="bgc-light-blue-600 tc-light-blue-50"  tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl']">
+    <h2 class="md-headline text-upper text-center tc-grey-50 push-bottom">Covalent Templates</h2>
+    <div layout="row" layout-align-gt-xs="center center">
+      <div flex-gt-xs="80" layout="row" layout-wrap>
+        <div class="text-center" flex-xs="50" flex-gt-xs="25">
+          <md-icon class="tc-grey-50 md-display-2">system_update_alt</md-icon>
+          <div class="pad-bottom-md"> Landing Page Template</div>
+        </div>
+        <div class="text-center" flex-xs="50" flex-gt-xs="25">
+          <md-icon class="tc-grey-50 md-display-2 ">dashboard</md-icon>
+          <div class="pad-bottom-md">Dashboard Template</div>
+        </div>
+        <div class="text-center" flex-xs="50" flex-gt-xs="25">
+          <md-icon class="tc-grey-50 md-display-2">email</md-icon>
+          <div class="pad-bottom-md">Email App Template</div>
+        </div>
+        <div class="text-center" flex-xs="50" flex-gt-xs="25">
+          <md-icon class="tc-grey-50 md-display-2">view_array</md-icon>
+          <div class="pad-bottom-md">IDE Editor Template</div>
         </div>
       </div>
-     </div>
-    
+    </div>
   </section>
 <!--Product Card code starts here-->
   <section class="bgc-blue-grey-50" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl']">

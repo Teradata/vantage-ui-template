@@ -163,7 +163,7 @@ export class EditorTemplateComponent implements AfterViewInit {
                }
 
   ngAfterViewInit(): void {
-    this._titleService.setTitle( 'Covalent Editor' );
+    this._titleService.setTitle( 'Teradata Studio Express 2017' );
     this.filter();
   }
 
