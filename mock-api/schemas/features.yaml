@@ -3,11 +3,13 @@
 ---
 initial_entries: 12
 randomize: true
-id: _uuid_
-user: _firstname_ _lastname_
-title: _features_ _modifiers_
-icon: _icon_
-created:  _itemtimestamp_
-modified:  _itemtimestamp_
-enabled:  _boolean_
+search_index: id
+
+id: {{.uuid}}
+user: {{.firstname}} {{.lastname}}
+title: {{.features}} {{.modifiers}}
+icon: {{.icon}}
+created: {{.itemtimestamp}}
+modified: {{.itemtimestamp}}
+enabled: {{.boolean}}
 ...

@@ -3,9 +3,11 @@
 ---
 initial_entries: 10
 randomize: false
-item_id: _uuid_
-name: _firstname_ _lastname_
-description: _activity_
-icon: _icon_
-created:  _itemtimestamp_
+search_index: item_id
+
+item_id: {{.uuid}}
+name: {{.firstname}} {{.lastname}}
+description: {{.activity}}
+icon: {{.icon}}
+created: {{.itemtimestamp}}
 ...
