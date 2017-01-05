@@ -1,0 +1,13 @@
+# this is a sample schema file for a user object.
+
+---
+initial_entries: 7
+randomize: false
+search_index: item_id
+
+item_id: {{uuid()}}
+name: {{.firstname}} {{.lastname}}
+description: {{.activity}}
+icon: {{.icon}}
+created: {{.itemtimestamp}}
+...

@@ -64,7 +64,7 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     CovalentCoreModule.forRoot(),
     CovalentChartsModule.forRoot(),
     CovalentHttpModule.forRoot({
-      inteceptors: [{
+      interceptors: [{
         interceptor: RequestInterceptor, paths: ['**'],
       }],
     }),

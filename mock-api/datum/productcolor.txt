@@ -1,0 +1,6 @@
+pink-A200
+green-700
+purple-600
+light-blue-600
+orange-700
+indigo-600
