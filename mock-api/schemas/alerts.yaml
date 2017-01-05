@@ -1,7 +1,7 @@
 # this is a sample schema file for a user object.
 
 ---
-initial_entries: 10
+initial_entries: 5
 randomize: false
 search_index: item_id
 
