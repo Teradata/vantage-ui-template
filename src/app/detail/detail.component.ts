@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { ItemsService } from '../../services';
+import { ActivitiesService } from '../../services';
 
 @Component({
   selector: 'qs-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
-  viewProviders: [ ItemsService ],
+  viewProviders: [ ActivitiesService ],
 })
 export class DetailComponent implements OnInit {
 
-  item: Object = {};
+  activity: Object = {};
 
-  constructor(private _router: Router, private _itemsService: ItemsService, private _route: ActivatedRoute) {}
+  constructor(private _router: Router, private _activitiesService: ActivitiesService, private _route: ActivatedRoute) {}
 
   goBack(): void {
     this._router.navigate(['/dashboard-product']);
@@ -22,12 +22,12 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.params.subscribe((params: {id: string}) => {
-      let itemId: string = params.id;
-      this._itemsService.get(itemId).subscribe((item: Object) => {
-        this.item = item;
+      let activityId: string = params.id;
+      this._activitiesService.get(activityId).subscribe((activity: Object) => {
+        this.activity = activity;
       }, (error: Error) => {
-        this._itemsService.staticGet(itemId).subscribe((item: Object) => {
-          this.item = item;
+        this._activitiesService.staticGet(activityId).subscribe((activity: Object) => {
+          this.activity = activity;
         });
       });
     });

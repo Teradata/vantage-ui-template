@@ -3,17 +3,17 @@ import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService } from '@covalent/core';
 
-import { ItemsService, UsersService } from '../../../services';
+import { ActivitiesService, UsersService } from '../../../services';
 
 @Component({
   selector: 'product-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
-  viewProviders: [ ItemsService, UsersService ],
+  viewProviders: [ ActivitiesService, UsersService ],
 })
 export class ProductOverviewComponent implements AfterViewInit {
 
-  items: Object[];
+  activities: Object[];
   users: Object[];
 
   jsonData: any = [
@@ -25,7 +25,7 @@ export class ProductOverviewComponent implements AfterViewInit {
     {'x': 'Alerting', 'y': 89}];
 
   constructor(private _titleService: Title,
-              private _itemsService: ItemsService,
+              private _activitiesService: ActivitiesService,
               private _usersService: UsersService,
               private _loadingService: TdLoadingService) {
 
@@ -34,17 +34,17 @@ export class ProductOverviewComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this._titleService.setTitle( 'Product Name' );
 
-    this._loadingService.register('items.load');
-    this._itemsService.query().subscribe((items: Object[]) => {
-      this.items = items;
+    this._loadingService.register('activities.load');
+    this._activitiesService.query().subscribe((activities: Object[]) => {
+      this.activities = activities;
       setTimeout(() => {
-        this._loadingService.resolve('items.load');
+        this._loadingService.resolve('activities.load');
       }, 2000);
     }, (error: Error) => {
-      this._itemsService.staticQuery().subscribe((items: Object[]) => {
-        this.items = items;
+      this._activitiesService.staticQuery().subscribe((activities: Object[]) => {
+        this.activities = activities;
         setTimeout(() => {
-          this._loadingService.resolve('items.load');
+          this._loadingService.resolve('activities.load');
         }, 2000);
       });
     });

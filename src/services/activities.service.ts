@@ -4,32 +4,32 @@ import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { MOCK_API } from '../config/api.config';
 
 @Injectable()
-export class ItemsService extends RESTService<any> {
+export class ActivitiesService extends RESTService<any> {
 
   constructor(private _http: HttpInterceptorService) {
     super(_http, {
       baseUrl: MOCK_API,
-      path: '/items',
+      path: '/activities',
     }); 
   }
 
   staticQuery(): any {
-    return this._http.get('data/items.json')
+    return this._http.get('data/activities.json')
     .map((res: Response) => {
       return res.json();
     }); 
   }
 
   staticGet(id: string): any {
-    return this._http.get('data/items.json')
+    return this._http.get('data/activities.json')
     .map((res: Response) => {
-      let item: any;
+      let activity: any;
       res.json().forEach((s: any) => {
         if (s.item_id === id) {
-          item = s;
+          activity = s;
         }
       });
-      return item;
+      return activity;
     });
   }
 }

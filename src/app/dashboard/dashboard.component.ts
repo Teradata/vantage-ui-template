@@ -4,7 +4,7 @@ import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService } from '@covalent/core';
 
-import { ItemsService, UsersService, ProductsService, AlertsService } from '../../services';
+import { ActivitiesService, UsersService, ProductsService, AlertsService } from '../../services';
 
 import { single, multi } from './data';
 
@@ -12,11 +12,11 @@ import { single, multi } from './data';
   selector: 'covalent-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  viewProviders: [ ItemsService, UsersService, ProductsService, AlertsService ],
+  viewProviders: [ ActivitiesService, UsersService, ProductsService, AlertsService ],
 })
 export class DashboardComponent implements AfterViewInit {
 
-  items: Object[];
+  activities: Object[];
   users: Object[];
   products: Object[];
   alerts: Object[];
@@ -46,7 +46,7 @@ export class DashboardComponent implements AfterViewInit {
 
 
   constructor(private _titleService: Title,
-              private _itemsService: ItemsService,
+              private _activitiesService: ActivitiesService,
               private _usersService: UsersService,
               private _alertsService: AlertsService,
               private _productsService: ProductsService,
@@ -64,17 +64,17 @@ export class DashboardComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this._titleService.setTitle( 'Covalent Quickstart' );
 
-    this._loadingService.register('items.load');
-    this._itemsService.query().subscribe((items: Object[]) => {
-      this.items = items;
+    this._loadingService.register('activities.load');
+    this._activitiesService.query().subscribe((activities: Object[]) => {
+      this.activities = activities;
       setTimeout(() => {
-        this._loadingService.resolve('items.load');
+        this._loadingService.resolve('activities.load');
       }, 750);
     }, (error: Error) => {
-      this._itemsService.staticQuery().subscribe((items: Object[]) => {
-        this.items = items;
+      this._activitiesService.staticQuery().subscribe((activities: Object[]) => {
+        this.activities = activities;
         setTimeout(() => {
-          this._loadingService.resolve('items.load');
+          this._loadingService.resolve('activities.load');
         }, 750);
       });
     });

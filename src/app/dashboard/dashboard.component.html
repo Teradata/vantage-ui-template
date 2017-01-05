@@ -72,15 +72,15 @@
           <md-card-title>Customer Activity</md-card-title>
           <md-card-subtitle>Recent activity from select members</md-card-subtitle>
           <md-divider></md-divider>
-          <md-nav-list class="will-load item-list">
-            <template tdLoading="items.load">
-              <template let-item let-last="last" ngFor [ngForOf]="items">
-                <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
-                  <md-icon md-list-avatar> {{item.icon}} </md-icon>
-                  <h3 md-line> {{item.name}} </h3>
-                  <p md-line> {{item.description | truncate:50 }} </p>
+          <md-nav-list class="will-load activity-list">
+            <template tdLoading="activities.load">
+              <template let-activity let-last="last" ngFor [ngForOf]="activities">
+                <a md-list-item layout-align="row" [routerLink]="['../activities', activity.item_id]">
+                  <md-icon md-list-avatar> {{activity.icon}} </md-icon>
+                  <h3 md-line> {{activity.name}} </h3>
+                  <p md-line> {{activity.description | truncate:50 }} </p>
                   <span flex></span>
-                  <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
+                  <span class="md-caption text-right" flex="20"> {{activity.created | timeAgo }} </span>
                 </a>
                 <md-divider *ngIf="!last" md-inset></md-divider>
               </template>

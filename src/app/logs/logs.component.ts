@@ -3,22 +3,22 @@ import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService } from '@covalent/core';
 
-import { ItemsService, UsersService, ProductsService } from '../../services';
+import { ActivitiesService, UsersService, ProductsService } from '../../services';
 
 @Component({
   selector: 'logs',
   templateUrl: './logs.component.html',
   styleUrls: ['./logs.component.scss'],
-  viewProviders: [ ItemsService, UsersService, ProductsService ],
+  viewProviders: [ ActivitiesService, UsersService, ProductsService ],
 })
 export class LogsComponent implements AfterViewInit {
 
-  items: Object[];
+  activities: Object[];
   users: Object[];
   products: Object[];
 
   constructor(private _titleService: Title,
-              private _itemsService: ItemsService,
+              private _activitiesService: ActivitiesService,
               private _usersService: UsersService,
               private _productsService: ProductsService,
               private _loadingService: TdLoadingService) {
@@ -28,17 +28,17 @@ export class LogsComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this._titleService.setTitle( 'Covalent Logs' );
 
-    this._loadingService.register('items.load');
-    this._itemsService.query().subscribe((items: Object[]) => {
-      this.items = items;
+    this._loadingService.register('activities.load');
+    this._activitiesService.query().subscribe((activities: Object[]) => {
+      this.activities = activities;
       setTimeout(() => {
-        this._loadingService.resolve('items.load');
+        this._loadingService.resolve('activities.load');
       }, 2000);
     }, (error: Error) => {
-      this._itemsService.staticQuery().subscribe((items: Object[]) => {
-        this.items = items;
+      this._activitiesService.staticQuery().subscribe((activities: Object[]) => {
+        this.activities = activities;
         setTimeout(() => {
-          this._loadingService.resolve('items.load');
+          this._loadingService.resolve('activities.load');
         }, 2000);
       });
     });
