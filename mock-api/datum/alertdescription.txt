@@ -1,0 +1,5 @@
+SIM card expiring
+Motherboard overheating
+RAM usage exceeded
+Signal strength nominal
+Battery level critically low

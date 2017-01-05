@@ -1,0 +1,5 @@
+Sim Card
+Motherboard Temp
+RAM Usage
+Wireless Signal
+Battery Level

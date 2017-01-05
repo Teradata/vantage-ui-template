@@ -1,0 +1,5 @@
+sim_card
+developer_board
+memory
+router
+battery_unknown
