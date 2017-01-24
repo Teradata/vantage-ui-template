@@ -10,14 +10,14 @@ export class ItemsService extends RESTService<any> {
     super(_http, {
       baseUrl: MOCK_API,
       path: '/items',
-    }); 
+    });
   }
 
   staticQuery(): any {
     return this._http.get('data/items.json')
     .map((res: Response) => {
       return res.json();
-    }); 
+    });
   }
 
   staticGet(id: string): any {

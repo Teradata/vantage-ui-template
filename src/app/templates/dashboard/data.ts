@@ -10,7 +10,7 @@ export var single: any = [
   {
     'name': 'France',
     'value': 7200000,
-  }
+  },
 ];
 
 export var multi: any = [
@@ -36,8 +36,8 @@ export var multi: any = [
       {
         'value': 3309,
         'name': '2016-09-12T18:48:58.925Z',
-      }
-    ]
+      },
+    ],
   },
   {
     'name': 'Alerts',
@@ -61,8 +61,8 @@ export var multi: any = [
       {
         'value': 5772,
         'name': '2016-09-12T18:48:58.925Z',
-      }
-    ]
+      },
+    ],
   },
   {
     'name': 'Streams',
@@ -86,8 +86,8 @@ export var multi: any = [
       {
         'value': 5415,
         'name': '2016-09-12T18:48:58.925Z',
-      }
-    ]
+      },
+    ],
   },
   {
     'name': 'Databases',
@@ -111,8 +111,8 @@ export var multi: any = [
       {
         'value': 5986,
         'name': '2016-09-12T18:48:58.925Z',
-      }
-    ]
+      },
+    ],
   },
   {
     'name': 'NoSQL',
@@ -136,7 +136,7 @@ export var multi: any = [
       {
         'value': 6427,
         'name': '2016-09-12T18:48:58.925Z',
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];

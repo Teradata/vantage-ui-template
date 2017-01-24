@@ -153,8 +153,8 @@ export class EditorTemplateComponent implements AfterViewInit {
   constructor(private _titleService: Title,
               private _dataTableService: TdDataTableService) {
                 // Chart
-                this.multi = multi.map(group => {
-                  group.series = group.series.map(dataItem => {
+                this.multi = multi.map((group: any) => {
+                  group.series = group.series.map((dataItem: any) => {
                     dataItem.name = new Date(dataItem.name);
                     return dataItem;
                   });
