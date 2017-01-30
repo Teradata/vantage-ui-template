@@ -35,13 +35,12 @@ export class DashboardTemplateComponent {
   // line, area
   autoScale: boolean = true;
 
-
   constructor() {
     // Cards
     Object.assign(this, {single});
     // Chart
-    this.multi = multi.map(group => {
-      group.series = group.series.map(dataItem => {
+    this.multi = multi.map((group: any) => {
+      group.series = group.series.map((dataItem: any) => {
         dataItem.name = new Date(dataItem.name);
         return dataItem;
       });

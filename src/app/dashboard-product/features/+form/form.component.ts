@@ -27,7 +27,7 @@ export class FeaturesFormComponent implements OnInit  {
   }
 
   ngOnInit(): void {
-    this._route.url.subscribe(url => {
+    this._route.url.subscribe((url: any) => {
       this.action = (url.length > 1 ? url[1].path : 'add');
     });
     this._route.params.subscribe((params: {id: string}) => {
