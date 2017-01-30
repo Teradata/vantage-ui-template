@@ -4,7 +4,6 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "mapRoot": "./",
     "lib": ["es6", "dom"],
     "module": "es6",
     "moduleResolution": "node",
@@ -16,6 +15,13 @@
     ],
     "types": [
       "jasmine", "hammerjs"
-    ]
-  }
+    ],
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode": false,
+    "pretty": true
+  },
+  "exclude": [
+    "**/*.spec.*"
+  ]
 }
