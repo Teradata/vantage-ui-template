@@ -41,7 +41,7 @@ export class UsersComponent implements AfterViewInit {
 
   filterUsers(displayName: string = ''): void {
     this.filteredUsers = this.users.filter((user: IUser) => {
-      return user.display_name.toLowerCase().indexOf(displayName.toLowerCase()) > -1;
+      return user.displayName.toLowerCase().indexOf(displayName.toLowerCase()) > -1;
     });
   }
 

@@ -71,7 +71,7 @@
                 <template let-user let-last="last" ngFor [ngForOf]="users">
                     <md-list-item layout-align="row">
                     <md-icon md-list-icon>account_box</md-icon>
-                    <h3 md-line> {{user.display_name}} </h3>
+                    <h3 md-line> {{user.displayName}} </h3>
                     <p md-line> {{user.id}} </p>
                     </md-list-item>
                     <md-divider *ngIf="!last" md-inset></md-divider>

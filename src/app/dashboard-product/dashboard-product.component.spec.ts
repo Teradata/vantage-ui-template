@@ -74,19 +74,19 @@ describe('Component: DashboardProduct', () => {
     })));
     responses.set('data/users.json', new Response(new ResponseOptions({
       status: 200, body: JSON.stringify([{
-        display_name : 'Suzy Cuningham',
+        displayName : 'Suzy Cuningham',
         id : 'suzy.cuningham',
         email : 'suzy.cuningham@gmail.com',
         created : '10/01/2015 11:05 AM',
-        last_access : '12/23/2015 11:05 AM',
-        site_admin: true,
+        lastAccess : '12/23/2015 11:05 AM',
+        siteAdmin: true,
       }, {
-        display_name : 'Bobby Daniels',
+        displayName : 'Bobby Daniels',
         id : 'bobbyD',
         email : 'bobbyD@outlook.com',
         created : '10/01/2015 11:05 AM',
-        last_access : '12/23/2015 11:05 AM',
-        site_admin: false,
+        lastAccess : '12/23/2015 11:05 AM',
+        siteAdmin: false,
       }]),
     })));
 
