@@ -33,7 +33,7 @@ import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
-const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
+const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
 ];
 
