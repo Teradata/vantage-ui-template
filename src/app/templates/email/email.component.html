@@ -1,8 +1,13 @@
-
-<td-layout-nav-list logo="assets:covalent" toolbarTitle="Email App" class="light-blue-red">
+<td-layout-nav-list #navList
+                    logo="assets:covalent"
+                    toolbarTitle="Email App"
+                    class="light-blue-red"
+                    [opened]="media.registerQuery('gt-sm') | async"
+                    [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
   <div td-toolbar-content layout="row" layout-align="start center" flex>
     <span flex *ngIf="!searchBox.searchVisible"></span>
-    <td-search-box #searchBox backIcon="arrow_back" class="pull-top-sm pull-bottom-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
+    <td-search-box #searchBox backIcon="arrow_back" class="pull-top-sm pull-bottom-sm" placeholder="Search here" flex>
     </td-search-box>
     <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="4">
@@ -44,10 +49,10 @@
     </md-menu>
     <a md-icon-button mdTooltip="View this code" href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
-  <a md-fab td-sidenav-content color="accent" class="md-fab-position-bottom-right" style="bottom:20px;"> 
+  <a md-fab td-sidenav-content color="accent" class="md-fab-position-bottom-right" style="bottom:20px; position: fixed;"> 
     <md-icon>add</md-icon>
   </a>
-  <md-nav-list td-sidenav-content>
+  <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
       <template let-item let-i="index" let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
         <a md-list-item>
           <img md-list-avatar src="http://lorempixel.com/40/40/people/{{i}}" />

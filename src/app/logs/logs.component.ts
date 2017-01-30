@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 
-import { TdLoadingService } from '@covalent/core';
+import { TdLoadingService, TdMediaService } from '@covalent/core';
 
 import { ItemsService, UsersService, ProductsService } from '../../services';
 
@@ -21,11 +21,15 @@ export class LogsComponent implements AfterViewInit {
               private _itemsService: ItemsService,
               private _usersService: UsersService,
               private _productsService: ProductsService,
-              private _loadingService: TdLoadingService) {
+              private _loadingService: TdLoadingService,
+              public media: TdMediaService) {
 
   }
 
   ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
+
     this._titleService.setTitle( 'Covalent Logs' );
 
     this._loadingService.register('items.load');
