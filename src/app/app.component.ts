@@ -1,8 +1,6 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdIconRegistry } from '@angular/material';
-
-import { TdLoadingService, LoadingType, ILoadingOptions } from '@covalent/core';
 
 @Component({
   selector: 'qs-app',
@@ -11,15 +9,8 @@ import { TdLoadingService, LoadingType, ILoadingOptions } from '@covalent/core';
 })
 export class AppComponent {
 
-  constructor(private _loadingService: TdLoadingService,
-              private _iconRegistry: MdIconRegistry,
-              private _domSanitizer: DomSanitizer,
-              viewContainerRef: ViewContainerRef) {
-    let options: ILoadingOptions = {
-      name: 'main',
-      type: LoadingType.Circular,
-    };
-    this._loadingService.createOverlayComponent(options, viewContainerRef);
+  constructor(private _iconRegistry: MdIconRegistry,
+              private _domSanitizer: DomSanitizer) {
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'github',

@@ -17,11 +17,11 @@ export class LoginComponent {
               private _loadingService: TdLoadingService) {}
 
   login(): void {
-    this._loadingService.register('main');
+    this._loadingService.register();
     alert('Mock log in as ' + this.username);
     setTimeout(() => {
       this._router.navigate(['/']);
-      this._loadingService.resolve('main');
+      this._loadingService.resolve();
     }, 2000);
   }
 }
