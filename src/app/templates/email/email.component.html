@@ -1,6 +1,6 @@
 
 <td-layout-nav-list logo="assets:covalent" toolbarTitle="Email App" class="light-blue-red">
-  <div nav-toolbar-content layout="row" layout-align="start center" flex>
+  <div td-toolbar-content layout="row" layout-align="start center" flex>
     <span flex *ngIf="!searchBox.searchVisible"></span>
     <td-search-box #searchBox backIcon="arrow_back" class="pull-top-sm pull-bottom-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
     </td-search-box>
