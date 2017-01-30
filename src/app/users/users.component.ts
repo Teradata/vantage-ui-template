@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MdSnackBar } from '@angular/material';
 
-import { TdLoadingService, TdDialogService } from '@covalent/core';
+import { TdLoadingService, TdDialogService, TdMediaService } from '@covalent/core';
 
 import { UsersService, IUser } from '../../services';
 
@@ -23,7 +23,8 @@ export class UsersComponent implements AfterViewInit {
               private _loadingService: TdLoadingService,
               private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar,
-              private _usersService: UsersService) {
+              private _usersService: UsersService,
+              public media: TdMediaService) {
   }
 
   goBack(route: string): void {
@@ -31,6 +32,9 @@ export class UsersComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
+
     this._titleService.setTitle( 'Covalent Users' );
     this.loadUsers();
   }

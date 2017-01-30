@@ -5,11 +5,14 @@
     <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
     <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
-  <td-layout-manage-list #list>
+  <td-layout-manage-list #manageList
+                        [opened]="media.registerQuery('gt-sm') | async"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
     <md-toolbar td-sidenav-content>
       <span>Users</span>
     </md-toolbar>
-    <md-nav-list td-sidenav-content>
+    <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
       <a md-list-item>
         <md-icon md-list-icon>account_circle</md-icon>
         All Users
