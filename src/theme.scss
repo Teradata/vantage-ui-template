@@ -30,6 +30,19 @@ $theme: md-light-theme($primary, $accent, $warn);
 @include covalent-charts-theme($theme);
 @include covalent-highlight-theme();
 
+// Active icon color in list nav
+md-nav-list {
+    [md-list-item].active {
+        md-icon[md-list-avatar] {
+            background-color: md-color($accent);
+            color: md-color($accent, default-contrast)
+        }
+        md-icon[md-list-icon] {
+            color: md-color($accent);
+        }
+    }
+}
+
 // Custom theme examples
 .white-orange {
     $primary2: md-palette($md-grey, 50);
