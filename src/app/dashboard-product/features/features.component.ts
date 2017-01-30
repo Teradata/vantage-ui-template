@@ -61,7 +61,7 @@ export class ProductFeaturesComponent implements AfterViewInit {
       });
     });
   }
-  deleteFeature(id): void {
+  deleteFeature(id: any): void {
     this._loadingService.register('features.list');
     this._featuresService.delete(id).subscribe(() => {
       this.features = this.features.filter((feature: IFeature) => {
