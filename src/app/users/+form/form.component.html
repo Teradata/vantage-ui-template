@@ -54,7 +54,9 @@
                       maxlength="20" 
                       required>
               <md-hint align="start">
-                <span [hidden]="displayNameControl.pristine || !displayNameControl.errors?.required" class="tc-red-600">Display Name is required!</span>
+                <span [hidden]="displayNameControl.pristine" class="tc-red-600">
+                  <span [hidden]="!displayNameControl.errors?.required">Required</span>
+                </span>
               </md-hint>
               <md-hint align="end">{{displayNameElement.value.length}} / 20</md-hint>
             </md-input-container>
@@ -69,10 +71,13 @@
                       [(ngModel)]="email" 
                       name="email"
                       maxlength="30"
-                      pattern="^\w+@\w+$"
+                      pattern="^[a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,15})$"
                       required>
               <md-hint align="start">
-                <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">That's not an email!</span>
+                <span [hidden]="emailControl.pristine" class="tc-red-600">
+                  <span [hidden]="!emailControl.errors?.required">Required</span>
+                  <span [hidden]="!emailControl.errors?.pattern">incorrect pattern</span>
+                </span>
               </md-hint>
               <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
             </md-input-container>
