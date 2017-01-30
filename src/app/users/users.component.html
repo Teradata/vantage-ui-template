@@ -56,13 +56,13 @@
           <template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
             <md-list-item>
               <md-icon md-list-avatar>person</md-icon>
-              <h3 md-line> {{user.display_name}} </h3>
+              <h3 md-line> {{user.displayName}} </h3>
               <p md-line> {{user.email}} </p>
-              <p md-line hide-gt-md class="md-caption"> last login: {{ user.last_access | timeAgo }} </p>
+              <p md-line hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
               <span flex></span>
               <span hide-xs hide-sm hide-md flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
                   <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.created | date }} </div>
-                  <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.last_access | timeAgo }} </div>
+                  <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.lastAccess | timeAgo }} </div>
               </span>
               <span>
                   <button md-icon-button [md-menu-trigger-for]="menu">

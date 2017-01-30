@@ -6,12 +6,12 @@ import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { MOCK_API } from '../config/api.config';
 
 export interface IUser {
-  display_name: string;
+  displayName: string;
   id: string;
   email: string;
   created: Date;
-  last_access: Date;
-  site_admin: number;
+  lastAccess: Date;
+  siteAdmin: number;
 }
 
 @Injectable()

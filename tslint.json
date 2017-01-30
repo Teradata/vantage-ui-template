@@ -184,8 +184,8 @@
       "check-type"
     ],
     // ANGULAR 2 Rules
-    "directive-selector": [true, "attribute", "td", "camelCase"],
-    "component-selector": [true, "element", "td", "kebab-case"],
+    "directive-selector": [true, "attribute", "qs", "camelCase"],
+    "component-selector": [true, "element", "qs", "kebab-case"],
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "use-input-property-decorator": true,

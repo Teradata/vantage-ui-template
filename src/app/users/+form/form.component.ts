@@ -7,14 +7,14 @@ import { TdMediaService } from '@covalent/core';
 import { UsersService, IUser } from '../../../services';
 
 @Component({
-  selector: 'source-form',
+  selector: 'qs-user-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
   viewProviders: [ UsersService ],
 })
 export class UsersFormComponent implements OnInit, AfterViewInit {
 
-  display_name: string;
+  displayName: string;
   email: string;
   id: string;
   admin: boolean;
@@ -41,24 +41,24 @@ export class UsersFormComponent implements OnInit, AfterViewInit {
     this._route.params.subscribe((params: {id: string}) => {
       let userId: string = params.id;
       this._usersService.get(userId).subscribe((user: any) => {
-        this.display_name = user.display_name;
+        this.displayName = user.displayName;
         this.email = user.email;
-        this.admin = (user.site_admin === 1 ? true : false);
+        this.admin = (user.siteAdmin === 1 ? true : false);
         this.id = user.id;
       });
     });
   }
 
   save(): void {
-    let site_admin: number = (this.admin ? 1 : 0);
+    let siteAdmin: number = (this.admin ? 1 : 0);
     let now: Date = new Date();
     this.user = {
-      display_name: this.display_name,
+      displayName: this.displayName,
       email: this.email,
-      site_admin: site_admin,
-      id: this.id || this.display_name.replace(/\s+/g, '.'),
+      siteAdmin: siteAdmin,
+      id: this.id || this.displayName.replace(/\s+/g, '.'),
       created: now,
-      last_access: now,
+      lastAccess: now,
     };
     if (this.action === 'add') {
       this._usersService.create(this.user).subscribe(() => {
