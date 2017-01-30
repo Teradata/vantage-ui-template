@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { single, multi } from './data';
 
 @Component({
-  selector: 'covalent-dashboard',
+  selector: 'qs-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })

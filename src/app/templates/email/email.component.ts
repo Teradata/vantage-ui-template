@@ -3,7 +3,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
 
 @Component({
-  selector: 'covalent-email',
+  selector: 'qs-email',
   templateUrl: './email.component.html',
   styleUrls: ['./email.component.scss'],
 })

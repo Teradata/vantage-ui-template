@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'covalent-templates',
+  selector: 'qs-templates',
   templateUrl: './templates.component.html',
   styleUrls: ['./templates.component.scss'],
 })

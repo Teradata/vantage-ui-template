@@ -9,7 +9,7 @@ import { ItemsService, UsersService, ProductsService, AlertsService } from '../.
 import { multi } from './data';
 
 @Component({
-  selector: 'covalent-dashboard',
+  selector: 'qs-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   viewProviders: [ ItemsService, UsersService, ProductsService, AlertsService ],

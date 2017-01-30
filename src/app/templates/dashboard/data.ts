@@ -1,4 +1,4 @@
-export var single: any = [
+export let single: any = [
   {
     'name': 'Germany',
     'value': 8940000,
@@ -13,7 +13,7 @@ export var single: any = [
   },
 ];
 
-export var multi: any = [
+export let multi: any = [
   {
     'name': 'Containers',
     'series': [

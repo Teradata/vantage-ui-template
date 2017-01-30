@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { TdMediaService } from '@covalent/core';
 
 @Component({
-  selector: 'dashboard-product',
+  selector: 'qs-dashboard-product',
   templateUrl: './dashboard-product.component.html',
   styleUrls: ['./dashboard-product.component.scss'],
 })
