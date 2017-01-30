@@ -1,30 +1,33 @@
 <td-layout-nav class="white" logo="assets:covalent">
-  <div toolbar-content layout="row" layout-align="center center" flex>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Product Name</span>
     <span flex></span>
     <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
     <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
-  <td-layout-manage-list #list>
-    <md-nav-list list-items>
-      <a md-list-item (click)="list.toggle()">
+  <td-layout-manage-list #manageList
+                        [opened]="media.registerQuery('gt-sm') | async"
+                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
+      <a md-list-item>
         <md-icon>dashboard</md-icon>
         Dashboard
       </a>
-      <a md-list-item (click)="list.toggle()">
+      <a md-list-item>
         <md-icon>people</md-icon>
         Customers
       </a>
-      <a md-list-item (click)="list.toggle()">
+      <a md-list-item>
         <md-icon>receipt</md-icon>
         Log
       </a>
-      <a md-list-item (click)="list.toggle()">
+      <a md-list-item>
         <md-icon>settings</md-icon>
         Settings
       </a>
     </md-nav-list>
-    <div toolbar-buttons layout="row" layout-align="start center" flex>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
       <a md-icon-button [routerLink]="['/dashboard-product']"><md-icon>arrow_back</md-icon></a>
       <span>New Item</span>
       <span flex></span>

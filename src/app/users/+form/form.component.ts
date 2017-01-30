@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
+
+import { TdMediaService } from '@covalent/core';
 
 import { UsersService, IUser } from '../../../services';
 
@@ -10,7 +12,7 @@ import { UsersService, IUser } from '../../../services';
   styleUrls: ['./form.component.scss'],
   viewProviders: [ UsersService ],
 })
-export class UsersFormComponent implements OnInit  {
+export class UsersFormComponent implements OnInit, AfterViewInit {
 
   display_name: string;
   email: string;
@@ -19,10 +21,17 @@ export class UsersFormComponent implements OnInit  {
   user: IUser;
   action: string;
 
-  constructor(private _usersService: UsersService, private _route: ActivatedRoute) {}
+  constructor(private _usersService: UsersService,
+              private _route: ActivatedRoute,
+              public media: TdMediaService) {}
 
   goBack(): void {
     window.history.back();
+  }
+
+  ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
   }
 
   ngOnInit(): void {

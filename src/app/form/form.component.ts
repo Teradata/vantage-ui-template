@@ -1,18 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
-import { StepState } from '@covalent/core';
+import { StepState, TdMediaService } from '@covalent/core';
 
 @Component({
   selector: 'product-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent {
+export class FormComponent implements AfterViewInit {
 
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
   stateStep3: StepState = StepState.Complete;
   disabled: boolean = false;
+
+  constructor(public media: TdMediaService) { }
+
+  ngAfterViewInit(): void {
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
+  }
 
   toggleRequiredStep2(): void {
     this.stateStep2 = (this.stateStep2 === StepState.Required ? StepState.None : StepState.Required);
