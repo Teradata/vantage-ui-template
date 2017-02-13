@@ -9,9 +9,8 @@
     "reusable"
   ],
   "scripts": {
-    "e2e": "protractor",
-    "e2e-test": "protractor ./protractor.conf.js",
-    "lint": "tslint -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
     "reinstall": "rm -rf node_modules tmp deploy dist && npm i",
     "postinstall": "webdriver-manager update",
     "start-api": "cd mock-api && covalent-data &",
