@@ -6,9 +6,9 @@ import { DashboardProductComponent } from './dashboard-product/dashboard-product
 import { ProductOverviewComponent } from './dashboard-product/overview/overview.component';
 import { ProductStatsComponent } from './dashboard-product/stats/stats.component';
 import { ProductFeaturesComponent } from './dashboard-product/features/features.component';
-import { FeaturesFormComponent } from './dashboard-product/features/+form/form.component';
+import { FeaturesFormComponent } from './dashboard-product/features/form/form.component';
 import { UsersComponent } from './users/users.component';
-import { UsersFormComponent } from './users/+form/form.component';
+import { UsersFormComponent } from './users/form/form.component';
 import { LogsComponent } from './logs/logs.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
