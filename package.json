@@ -63,6 +63,10 @@
     "rxjs": "^5.0.1",
     "showdown": "1.6.0",
     "zone.js": "^0.7.2",
+<<<<<<< HEAD
+=======
+    "@swimlane/ngx-charts": "^4.0.1",
+>>>>>>> 1ecfe697de13c6d6ac16aa34843918c7bb544d56
     "moment": "^2.17.1",
     "d3": "^4.4.0"
   },
