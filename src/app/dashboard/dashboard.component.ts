@@ -2,7 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 
 import { Title }     from '@angular/platform-browser';
 
-import { TdLoadingService } from '@covalent/core';
+import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
 import { ItemsService, UsersService, ProductsService, AlertsService } from '../../services';
 
@@ -111,5 +111,10 @@ export class DashboardComponent implements AfterViewInit {
         }, 750);
       });
     });
+  }
+
+  // ngx transform using covalent digits pipe
+  axisDigits(val: any): any {
+    return new TdDigitsPipe().transform(val);
   }
 }
