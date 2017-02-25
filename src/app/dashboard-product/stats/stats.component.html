@@ -2,25 +2,25 @@
     <div layout="column" layout-gt-xs="row">
         <div flex-gt-xs="100">
             <md-card>
-                <md-card-title>Product Usage</md-card-title>
-                <td-charts
-                        [margin]="{top:0}"
-                        class="pull-top"
-                        chartHeight="250"
-                        [shadow]="true">
-                    <td-axis-x [link]="chartLine3" [ticks]="false" [show]="true" [grid]="false"></td-axis-x>
-                    <td-axis-y-left [link]="chartLine3" [ticks]="true" [show]="true" [grid]="true"></td-axis-y-left>
-                    <td-chart-line #chartLine3 dataSrc="data/data.tsv"
-                        bottomAxis="col1"
-                        [columns]="['col2', 'col3','col4']"
-                        [titles]="['Compute','Ingest', 'Alerting']"
-                        [colors]="['#00B0FF', '#FF6D00', '#FF3D00']"
-                        [transition]="true"
-                        transitionDuration="1000"
-                        transitionDelay="400">
-                    </td-chart-line>
-                </td-charts>
-            </md-card>
+              <md-card-title>Product Usage</md-card-title>
+              <md-divider></md-divider>
+              <div class="chart-height push-top-sm pull-left-lg pull-bottom">
+                <ngx-charts-line-chart
+                  [scheme]="colorScheme"
+                  [results]="multi"
+                  [gradient]="gradient"
+                  [xAxis]="showXAxis"
+                  [yAxis]="showYAxis"
+                  [legend]="showLegend"
+                  [showXAxisLabel]="showXAxisLabel"
+                  [showYAxisLabel]="showYAxisLabel"
+                  [xAxisLabel]="xAxisLabel"
+                  [yAxisLabel]="yAxisLabel"
+                  [autoScale]="autoScale"
+                  [yAxisTickFormatting]="axisDigits">
+                </ngx-charts-line-chart>
+              </div>
+          </md-card>
         </div>
     </div>
     <div layout="column" layout-gt-sm="row">

@@ -1,45 +1,63 @@
 <div class="md-content" class="inset">
-    <div layout="column" layout-gt-xs="row">
+    <div layout-gt-xs="row">
         <div flex-gt-xs="50">
-            <md-card>
-                <md-card-title>Compute Usage</md-card-title>
-                <td-charts [margin]="{left:90}"
-                        [shadow]="true"
-                        fillOpacity="0.75">
-                    <td-axis-x [link]="chartArea1" [ticks]="true" [show]="true" [grid]="false"></td-axis-x>
-                    <td-axis-y-left [link]="chartArea1" [ticks]="true" [show]="true" [grid]="true"></td-axis-y-left>
-                    <td-chart-area #chartArea1 [colors]="['#FF6D00', '#E65100']"
-                        dataSrc="data/data.json"
-                        bottomAxis="x"
-                        columns="y"
-                        [transition]="true"
-                        transitionDuration="1000"
-                        transitionDelay="500">
-                    </td-chart-area>
-                </td-charts>
-            </md-card>
+          <md-card>
+              <md-card-title>Compute Usage</md-card-title>
+              <md-divider></md-divider>
+              <div class="chart-height push-top-sm pull-left-lg">
+                <ngx-charts-line-chart
+                  [scheme]="orangeColorScheme"
+                  [results]="multi"
+                  [gradient]="gradient"
+                  [xAxis]="showXAxis"
+                  [yAxis]="showYAxis"
+                  [legend]="showLegend"
+                  [showXAxisLabel]="showXAxisLabel"
+                  [showYAxisLabel]="showYAxisLabel"
+                  [xAxisLabel]="xAxisLabel"
+                  [yAxisLabel]="yAxisLabel"
+                  [autoScale]="autoScale"
+                  [yAxisTickFormatting]="axisDigits">
+                </ngx-charts-line-chart>
+              </div>
+              <md-divider></md-divider>
+              <md-card-actions>
+                <a md-button color="accent">
+                  <span class="text-upper">View Stats</span>
+                </a>
+              </md-card-actions>
+          </md-card>
         </div>
         <div flex-gt-xs="50">
-            <md-card>
-                <md-card-title>Ingest Usage</md-card-title>
-                <td-charts [shadow]="true"
-                        fillOpacity="0.95">
-                    <td-axis-x [link]="chartBar1" [ticks]="true" [show]="true" [grid]="false"></td-axis-x>
-                    <td-axis-y-right [link]="chartBar1" [show]="true" [grid]="true"></td-axis-y-right>
-                    <td-chart-bar #chartBar1 [colors]="['blue', 'deepOrange']"
-                        [data]="jsonData"
-                        [padding]="0.25"
-                        bottomAxis="x"
-                        columns="y"
-                        [transition]="true"
-                        transitionDuration="1000"
-                        transitionDelay="500">
-                    </td-chart-bar>
-                </td-charts>
-            </md-card>
+          <md-card>
+              <md-card-title>Ingest Usage</md-card-title>
+              <md-divider></md-divider>
+              <div class="chart-height push-top-sm pull-left-lg">
+                <ngx-charts-line-chart
+                  [scheme]="blueColorScheme"
+                  [results]="multi"
+                  [gradient]="gradient"
+                  [xAxis]="showXAxis"
+                  [yAxis]="showYAxis"
+                  [legend]="showLegend"
+                  [showXAxisLabel]="showXAxisLabel"
+                  [showYAxisLabel]="showYAxisLabel"
+                  [xAxisLabel]="xAxisLabel"
+                  [yAxisLabel]="yAxisLabel"
+                  [autoScale]="autoScale"
+                  [yAxisTickFormatting]="axisDigits">
+                </ngx-charts-line-chart>
+              </div>
+              <md-divider></md-divider>
+              <md-card-actions>
+                <a md-button color="accent">
+                  <span class="text-upper">View Stats</span>
+                </a>
+              </md-card-actions>
+          </md-card>
         </div>
-        </div>
-        <div layout="column" layout-gt-sm="row">
+    </div>
+    <div layout-gt-sm="row">
         <div flex-gt-sm="60">
             <md-card>
             <md-card-title>All Activity</md-card-title>

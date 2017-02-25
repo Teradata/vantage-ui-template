@@ -1,7 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
-
-import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent } from '@covalent/core';
+import { single, multi } from './data';
+import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent,
+          TdDigitsPipe } from '@covalent/core';
 import { IPageChangeEvent } from '@covalent/core';
 
 const NUMBER_FORMAT: any = (v: {value: number}) => v.value;
@@ -119,6 +120,25 @@ export class ProductStatsComponent implements AfterViewInit {
       },
     ];
 
+  // Chart
+  single: any[];
+  multi: any[];
+
+  // Generic Chart options
+  showXAxis: boolean = true;
+  showYAxis: boolean = true;
+  gradient: boolean = true;
+  autoScale: boolean = true;
+  showLegend: boolean = false;
+  showXAxisLabel: boolean = true;
+  showYAxisLabel: boolean = true;
+
+  colorScheme: any = {
+    domain: [
+      '#01579B', '#0091EA', '#FFB74D', '#E64A19',
+    ],
+  };
+
   filteredData: any[] = this.data;
   filteredTotal: number = this.data.length;
   searchTerm: string = '';
@@ -129,7 +149,18 @@ export class ProductStatsComponent implements AfterViewInit {
   sortOrder: TdDataTableSortingOrder = TdDataTableSortingOrder.Descending;
 
   constructor(private _titleService: Title,
-              private _dataTableService: TdDataTableService) { }
+              private _dataTableService: TdDataTableService) {
+                // Chart Single
+                Object.assign(this, {single});
+                // Chart Multi
+                this.multi = multi.map((group: any) => {
+                  group.series = group.series.map((dataItem: any) => {
+                    dataItem.name = new Date(dataItem.name);
+                    return dataItem;
+                  });
+                  return group;
+                });
+  }
 
   ngAfterViewInit(): void {
     this._titleService.setTitle( 'Product Stats' );
@@ -161,5 +192,9 @@ export class ProductStatsComponent implements AfterViewInit {
     newData = this._dataTableService.sortData(newData, this.sortBy, this.sortOrder);
     newData = this._dataTableService.pageData(newData, this.fromRow, this.currentPage * this.pageSize);
     this.filteredData = newData;
+  }
+  // ngx transform using covalent digits pipe
+  axisDigits(val: any): any {
+    return new TdDigitsPipe().transform(val);
   }
 }
