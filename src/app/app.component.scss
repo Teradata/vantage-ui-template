@@ -11,7 +11,7 @@
     /* Manage list custom styles */
     .md-sort-item {
         /deep/ {
-            .md-list-item {
+            .md-list-item-content {
                 padding: 0;
             }
         }
