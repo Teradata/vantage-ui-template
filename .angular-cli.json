@@ -45,7 +45,10 @@
       "project": "src/tsconfig.app.json"
     },
     {
-      "project": "e2e/tsconfig.spec.json"
+      "project": "src/tsconfig.spec.json"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json"
     }
   ],
   "test": {
