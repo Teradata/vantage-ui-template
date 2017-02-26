@@ -17,9 +17,6 @@
     "types": [
       "jasmine", "hammerjs", "node"
     ],
-    "paths": {
-      "@covalent/*": ["./platform/*"]
-    },
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
