@@ -1,7 +1,7 @@
-import { browser, by, protractor, $,element } from 'protractor';
+import { browser, by, protractor, $, element, ProtractorExpectedConditions } from 'protractor';
 
 describe('basic e2e test with loading', function(): void {
-  let EC = protractor.ExpectedConditions;
+  let EC: ProtractorExpectedConditions = protractor.ExpectedConditions;
   describe('home', function(): void {
     browser.get('/');
     it('should load home page', function(): void {
