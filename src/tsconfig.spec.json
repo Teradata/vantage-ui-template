@@ -1,28 +1,54 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+<<<<<<< HEAD
     "baseUrl": ".",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["es6", "dom"],
+=======
+    "baseUrl": "",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2016", "dom"],
+>>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "../dist/out-tsc",
     "sourceMap": true,
+<<<<<<< HEAD
     "target": "es5",
+=======
+    "target": "es6",
+>>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0
     "typeRoots": [
       "../node_modules/@types"
     ],
     "types": [
+<<<<<<< HEAD
       "jasmine", "hammerjs", "node"
+=======
+      "jasmine", "hammerjs"
+>>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0
     ],
     "noUnusedParameters": false,
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
     "pretty": true
   },
+<<<<<<< HEAD
   "include": [
     "**/*.spec.*"
   ]
 }
+=======
+  "files": [
+    "test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts"
+  ]
+}
+>>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0

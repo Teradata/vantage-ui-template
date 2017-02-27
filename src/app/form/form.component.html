@@ -28,7 +28,7 @@
       </a>
     </md-nav-list>
     <div td-toolbar-content layout="row" layout-align="start center" flex>
-      <a md-icon-button [routerLink]="['/dashboard-product']"><md-icon>arrow_back</md-icon></a>
+      <a md-icon-button [routerLink]="['/product']"><md-icon>arrow_back</md-icon></a>
       <span>New Item</span>
       <span flex></span>
     </div>
@@ -39,13 +39,13 @@
             <td-step #step1 label="Step 1" sublabel="simple metadata" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
               <div layout-gt-xs="row">
                 <div class="pad">
-                  <md-input-container> 
+                  <md-input-container>
                     <input mdInput placeholder="Entry name (10 max)" maxlength="10" #inputHint>
                     <md-hint align="end">{{inputHint.value.length}} / 10</md-hint>
                   </md-input-container>
                 </div>
                 <div class="pad">
-                  <md-input-container> 
+                  <md-input-container>
                     <input mdInput type="number" placeholder="Budget" align="end">
                     <span md-prefix>$&nbsp;</span>
                     <span md-suffix>.00</span>
@@ -57,7 +57,7 @@
               <md-radio-group>
                 <md-radio-button value="option_1">A New Hope</md-radio-button>
                 <md-radio-button value="option_2">Empire Strikes Back</md-radio-button>
-              </md-radio-group> 
+              </md-radio-group>
               <md-slide-toggle [checked]="isChecked">
                 Include Awesome
               </md-slide-toggle>
@@ -81,8 +81,8 @@
           </td-steps>
           <md-divider></md-divider>
           <md-card-actions>
-            <button md-raised-button color="accent" [routerLink]="['/dashboard-product']">Save &amp; Create</button>
-            <button md-button class="tc-grey-600"  [routerLink]="['/dashboard-product']">Cancel</button>
+            <button md-raised-button color="accent" [routerLink]="['/product']">Save &amp; Create</button>
+            <button md-button class="tc-grey-600"  [routerLink]="['/product']">Cancel</button>
           </md-card-actions>
         </md-card>
       </form>

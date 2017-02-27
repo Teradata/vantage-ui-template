@@ -41,34 +41,48 @@
     "@angular/common": "2.4.5",
     "@angular/compiler": "2.4.5",
     "@angular/core": "2.4.5",
+    "@angular/flex-layout": "2.0.0-beta.5",
     "@angular/forms": "2.4.5",
     "@angular/http": "2.4.5",
+<<<<<<< HEAD
     "@angular/flex-layout": "2.0.0-rc.1",
+=======
+>>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0
     "@angular/material": "2.0.0-beta.2",
     "@angular/platform-browser": "2.4.5",
     "@angular/platform-browser-dynamic": "2.4.5",
     "@angular/platform-server": "2.4.5",
     "@angular/router": "3.4.5",
-    "@covalent/core": "1.0.0-beta.2",
     "@covalent/charts": "1.0.0-beta.2",
+    "@covalent/core": "1.0.0-beta.2",
     "@covalent/dynamic-forms": "1.0.0-beta.2",
     "@covalent/highlight": "1.0.0-beta.2",
     "@covalent/http": "1.0.0-beta.2",
     "@covalent/markdown": "1.0.0-beta.2",
     "@swimlane/ngx-charts": "^4.1.3",
     "core-js": "^2.4.1",
+    "d3": "^4.6.0",
     "hammerjs": "^2.0.8",
     "highlight.js": "9.9.0",
+<<<<<<< HEAD
     "rxjs": "^5.1.0",
     "showdown": "1.6.0",
     "zone.js": "^0.7.6",
     "d3": "^4.6.0"
+=======
+    "intl": "^1.2.5",
+    "rxjs": "^5.1.0",
+    "showdown": "1.6.0",
+    "web-animations-js": "^2.2.2",
+    "zone.js": "^0.7.6"
+>>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-rc.0",
     "@angular/compiler-cli": "2.4.5",
     "@types/hammerjs": "2.0.30",
     "@types/jasmine": "2.5.38",
+<<<<<<< HEAD
     "@types/node": "~6.0.60",
     "@types/selenium-webdriver": "2.53.36",
     "codelyzer": "~2.0.0",
@@ -78,14 +92,30 @@
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
     "karma-jasmine": "^1.1.0",
+=======
+    "@types/node": "^6.0.60",
+    "@types/selenium-webdriver": "2.53.36",
+    "codelyzer": "2.0.0",
+    "jasmine-core": "2.5.2",
+    "jasmine-spec-reporter": "3.2.0",
+    "karma": "1.4.1",
+    "karma-chrome-launcher": "2.0.0",
+    "karma-cli": "1.0.1",
+    "karma-jasmine": "1.1.0",
+>>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-firefox-launcher": "1.0.0",
     "karma-phantomjs-launcher": "1.0.1",
     "phantomjs-prebuilt": "2.1.7",
     "protractor": "~5.1.0",
+<<<<<<< HEAD
     "ts-node": "~2.0.0",
     "tslint": "^4.4.2",
+=======
+    "ts-node": "2.0.0",
+    "tslint": "~4.4.2",
+>>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0
     "typescript": "2.1.5"
   },
   "optionalDependencies": {
