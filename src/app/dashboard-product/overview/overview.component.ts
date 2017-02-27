@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
-
-import { TdLoadingService } from '@covalent/core';
+import { single, multi } from './data';
+import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
 import { ItemsService, UsersService } from '../../../services';
 
@@ -16,19 +16,45 @@ export class ProductOverviewComponent implements AfterViewInit {
   items: Object[];
   users: Object[];
 
-  jsonData: any = [
-    {'x': 'Ingest', 'y': 69},
-    {'x': 'Monitoring', 'y': 47},
-    {'x': 'Containers', 'y': 63},
-    {'x': 'Compute', 'y': 82},
-    {'x': 'Data Lake', 'y': 52},
-    {'x': 'Alerting', 'y': 89}];
+  // Chart
+  single: any[];
+  multi: any[];
+
+  // Generic Chart options
+  showXAxis: boolean = true;
+  showYAxis: boolean = true;
+  gradient: boolean = true;
+  autoScale: boolean = true;
+  showLegend: boolean = false;
+  showXAxisLabel: boolean = true;
+  showYAxisLabel: boolean = true;
+
+  orangeColorScheme: any = {
+    domain: [
+      '#E64A19', '#E64A19', '#EF6C00', '#FF6D00', '#F57C00', '#FB8C00', '#FF9800', '#FF9100', '#FFA726', '#FFB74D', '#FFCC80', '#FFD180', '#FFE0B2',
+    ],
+  };
+
+  blueColorScheme: any = {
+    domain: [
+      '#01579B', '#0091EA', '#00B0FF', '#80D8FF', '#E1F5FE',
+    ],
+  };
 
   constructor(private _titleService: Title,
               private _itemsService: ItemsService,
               private _usersService: UsersService,
               private _loadingService: TdLoadingService) {
-
+                // Chart Single
+                Object.assign(this, {single});
+                // Chart Multi
+                this.multi = multi.map((group: any) => {
+                  group.series = group.series.map((dataItem: any) => {
+                    dataItem.name = new Date(dataItem.name);
+                    return dataItem;
+                  });
+                  return group;
+                });
   }
 
   ngAfterViewInit(): void {
@@ -63,5 +89,8 @@ export class ProductOverviewComponent implements AfterViewInit {
       });
     });
   }
-
+  // ngx transform using covalent digits pipe
+  axisDigits(val: any): any {
+    return new TdDigitsPipe().transform(val);
+  }
 }
