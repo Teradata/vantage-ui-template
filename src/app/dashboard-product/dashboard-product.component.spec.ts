@@ -6,11 +6,7 @@ import {
 } from '@angular/core/testing';
 import {APP_BASE_HREF} from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
-import { XHRBackend, Response, ResponseOptions } from '@angular/http';
-import { MockBackend } from '@angular/http/testing';
 import { CovalentCoreModule, TdMediaService } from '@covalent/core';
-import { CovalentHttpModule } from '@covalent/http';
-
 import { DashboardProductComponent } from './dashboard-product.component';
 
 describe('Component: DashboardProduct', () => {
@@ -23,15 +19,12 @@ describe('Component: DashboardProduct', () => {
     TestBed.configureTestingModule({
       imports: [
         CovalentCoreModule.forRoot(),
-        CovalentHttpModule.forRoot(),
         RouterTestingModule,
       ],
       declarations: [
         DashboardProductComponent,
       ],
       providers: [
-        MockBackend,
-        { provide: XHRBackend, useExisting: MockBackend },
         { provide: APP_BASE_HREF, useValue: '/' },
         { provide: TdMediaService, useValue: {
             registerQuery: noop,
@@ -49,7 +42,7 @@ describe('Component: DashboardProduct', () => {
     .compileComponents();
   }));
 
-  it('should create the component', (done) => {
+  it('should create the component', (done: any) => {
     let fixture: ComponentFixture<any> = TestBed.createComponent(DashboardProductComponent);
     let testComponent: DashboardProductComponent = fixture.debugElement.componentInstance;
     let element: HTMLElement = fixture.nativeElement;

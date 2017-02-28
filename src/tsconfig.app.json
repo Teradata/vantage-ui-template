@@ -15,11 +15,7 @@
       "../node_modules/@types"
     ],
     "types": [
-<<<<<<< HEAD:src/tsconfig.app.json
       "hammerjs"
-=======
-      "jasmine", "hammerjs", "node"
->>>>>>> Fix tests. Upgrade to cli 1.0.0-rc.0:src/tsconfig.app.json
     ],
     "noUnusedParameters": false,
     "noUnusedLocals": false,

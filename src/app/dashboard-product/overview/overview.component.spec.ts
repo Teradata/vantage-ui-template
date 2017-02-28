@@ -10,15 +10,8 @@ import { XHRBackend, Response, ResponseOptions } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 import { CovalentCoreModule, TdLoadingService } from '@covalent/core';
 import { CovalentHttpModule } from '@covalent/http';
-// import { CovalentChartsModule } from '@covalent/charts';
-
-import { ItemsService, UsersService } from '../../../services';
 
 import { ProductOverviewComponent } from './overview.component';
-// import { ProductStatsComponent } from '../stats/stats.component';
-// import { ProductFeaturesComponent } from '../features/features.component';
-// import { UsersComponent } from '../../users/users.component';
-// import { LogsComponent } from '../../logs/logs.component';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
@@ -59,26 +52,12 @@ describe('Component: ProductOverview', () => {
             resolve: noop,
           },
         },
-        { provide: ItemsService, useValue: {
-            createReplaceComponent: noop,
-            createOverlayComponent: noop,
-            register: noop,
-            resolve: noop,
-          },
-        },
-        { provide: UsersService, useValue: {
-            createReplaceComponent: noop,
-            createOverlayComponent: noop,
-            register: noop,
-            resolve: noop,
-          },
-        },
       ],
     });
     TestBed.compileComponents();
   }));
 
-  it('should create the component', (done) => {
+  it('should create the component', (done: any) => {
     inject([MockBackend], (mockBackend: MockBackend) => {
       let responses: Map<string, Response> = new Map<string, Response>(generalResponses);
       mockBackend.connections.subscribe((connection: any) => {
