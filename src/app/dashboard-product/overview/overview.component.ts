@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
-import { single, multi } from './data';
+import { single, multi, multi2 } from './data';
 import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
 import { ItemsService, UsersService } from '../../../services';
@@ -19,6 +19,7 @@ export class ProductOverviewComponent implements AfterViewInit {
   // Chart
   single: any[];
   multi: any[];
+  multi2: any[];
 
   // Generic Chart options
   showXAxis: boolean = true;
@@ -31,13 +32,13 @@ export class ProductOverviewComponent implements AfterViewInit {
 
   orangeColorScheme: any = {
     domain: [
-      '#E64A19', '#E64A19', '#EF6C00', '#FF6D00', '#F57C00', '#FB8C00', '#FF9800', '#FF9100', '#FFA726', '#FFB74D', '#FFCC80', '#FFD180', '#FFE0B2',
+      '#E64A19', '#F57C00', '#FFA726', '#FFB74D', '#FFCC80',
     ],
   };
 
   blueColorScheme: any = {
     domain: [
-      '#01579B', '#0091EA', '#00B0FF', '#80D8FF', '#E1F5FE',
+      '#01579B', '#00B0FF', '#80D8FF', '#E1F5FE',
     ],
   };
 
@@ -49,6 +50,14 @@ export class ProductOverviewComponent implements AfterViewInit {
                 Object.assign(this, {single});
                 // Chart Multi
                 this.multi = multi.map((group: any) => {
+                  group.series = group.series.map((dataItem: any) => {
+                    dataItem.name = new Date(dataItem.name);
+                    return dataItem;
+                  });
+                  return group;
+                });
+                // Chart Multi2
+                this.multi2 = multi2.map((group: any) => {
                   group.series = group.series.map((dataItem: any) => {
                     dataItem.name = new Date(dataItem.name);
                     return dataItem;
