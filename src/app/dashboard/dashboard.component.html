@@ -5,138 +5,133 @@
     <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
     <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
-  <div class="md-content" flex md-scroll-y>
-    <div layout="column" layout-gt-sm="row" class="inset">
-      <div flex-gt-sm="60">
-        <div layout="column">
-          <md-card>
-            <md-card-title>Products Sales</md-card-title>
-            <md-card-subtitle>usage stats for our products</md-card-subtitle>
-            <md-divider></md-divider>
-            <div style="height:300px;">
-              <ngx-charts-area-chart-stacked
-                [scheme]="colorScheme"
-                [results]="multi"
-                [gradient]="gradient"
-                [xAxis]="showXAxis"
-                [yAxis]="showYAxis"
-                [legend]="showLegend"
-                [showXAxisLabel]="showXAxisLabel"
-                [showYAxisLabel]="showYAxisLabel"
-                [xAxisLabel]="xAxisLabel"
-                [yAxisLabel]="yAxisLabel"
-                [yAxisTickFormatting]="axisDigits">
-              </ngx-charts-area-chart-stacked>
-            </div>
+  <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
+    <div flex-gt-sm="60">
+      <md-card>
+        <md-card-title>Products Sales</md-card-title>
+        <md-card-subtitle>usage stats for our products</md-card-subtitle>
+        <md-divider></md-divider>
+        <div class="chart-height push-top push-right-sm">
+          <ngx-charts-area-chart-stacked
+            [scheme]="colorScheme"
+            [results]="multi"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [yAxisTickFormatting]="axisDigits">
+          </ngx-charts-area-chart-stacked>
+        </div>
+      </md-card>
+      <div layout="row">
+        <div flex="33" layout="column">
+          <md-card class="md-card-colored" flex>
+            <md-card-content class="text-center">
+              <div class="md-headline">{{ '2341'| digits }} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
+              <md-icon class="icon tc-indigo-700">perm_contact_calendar</md-icon>
+              <div layout="column">
+                <div class="md-subhead">Active Users</div>
+                <div class="md-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
+              </div>
+            </md-card-content>
           </md-card>
         </div>
-        
-        <div layout="row">
-          <div flex="33" layout="column">
-            <md-card class="md-card-colored" flex>
-              <md-card-content class="text-center">
-                <div class="md-headline">{{ '2341'| digits }} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
-                <md-icon class="icon tc-indigo-700">perm_contact_calendar</md-icon>
-                <div layout="column">
-                  <div class="md-subhead">Active Users</div>
-                  <div class="md-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
-                </div>
-              </md-card-content>
-            </md-card>
-          </div>
-          <div flex="33" layout="column">
-            <md-card class="md-card-colored" flex>
-              <md-card-content class="text-center">
-                <div class="md-headline">{{ '72452903343' | bytes }} <md-icon class="tc-red-500 text-sm">arrow_downward</md-icon></div>
-                <md-icon class="icon tc-light-blue-700">sd_storage</md-icon>
-                <div layout="column">
-                  <div class="md-subhead">User Disk Usage</div>
-                  <div class="md-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
-                </div>
-              </md-card-content>
-            </md-card>
-          </div>
-          <div flex="33" layout="column">
-            <md-card class="md-card-colored" flex>
-              <md-card-content class="text-center">
-                <div class="md-headline">{{ '324523' | digits}} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
-                <md-icon class="icon tc-cyan-700">receipt</md-icon>
-                <div layout="column">
-                  <div class="md-subhead">Pages Viewed</div>
-                  <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
-                </div>
-              </md-card-content>
-            </md-card>
-          </div>
+        <div flex="33" layout="column">
+          <md-card class="md-card-colored" flex>
+            <md-card-content class="text-center">
+              <div class="md-headline">{{ '72452903343' | bytes }} <md-icon class="tc-red-500 text-sm">arrow_downward</md-icon></div>
+              <md-icon class="icon tc-light-blue-700">sd_storage</md-icon>
+              <div layout="column">
+                <div class="md-subhead">User Disk Usage</div>
+                <div class="md-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
+              </div>
+            </md-card-content>
+          </md-card>
         </div>
-        <md-card>
-          <md-card-title>Customer Activity</md-card-title>
-          <md-card-subtitle>Recent activity from select members</md-card-subtitle>
-          <md-divider></md-divider>
-          <md-nav-list class="will-load item-list">
-            <template tdLoading="items.load">
-              <template let-item let-last="last" ngFor [ngForOf]="items">
-                <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
-                  <md-icon md-list-avatar> {{item.icon}} </md-icon>
-                  <h3 md-line> {{item.name}} </h3>
-                  <p md-line> {{item.description | truncate:50 }} </p>
-                  <span flex></span>
-                  <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
-                </a>
-                <md-divider *ngIf="!last" md-inset></md-divider>
-              </template>
-            </template>
-          </md-nav-list>
-        </md-card>
+        <div flex="33" layout="column">
+          <md-card class="md-card-colored" flex>
+            <md-card-content class="text-center">
+              <div class="md-headline">{{ '324523' | digits}} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
+              <md-icon class="icon tc-cyan-700">receipt</md-icon>
+              <div layout="column">
+                <div class="md-subhead">Pages Viewed</div>
+                <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
+              </div>
+            </md-card-content>
+          </md-card>
+        </div>
       </div>
-      <div flex-gt-sm="40">
-        <md-card>
-          <md-card-title>Alerts</md-card-title>
-          <md-card-subtitle>Items requiring attention</md-card-subtitle>
-          <md-divider></md-divider>
-          <md-list class="will-load alert-list">
-            <template tdLoading="alerts.load">
-              <template let-item let-last="last" ngFor [ngForOf]="alerts">
-                <md-list-item layout-align="row">
-                  <md-icon md-list-avatar class="bgc-amber-800">{{item.icon}}</md-icon>
-                  <h3 md-line> {{item.description}} </h3>
-                  <p md-line> {{item.name}} </p>
-                </md-list-item>
-                <md-divider *ngIf="!last" md-inset></md-divider>
-              </template>
+      <md-card>
+        <md-card-title>Customer Activity</md-card-title>
+        <md-card-subtitle>Recent activity from select members</md-card-subtitle>
+        <md-divider></md-divider>
+        <md-nav-list class="will-load item-list">
+          <template tdLoading="items.load">
+            <template let-item let-last="last" ngFor [ngForOf]="items">
+              <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
+                <md-icon md-list-avatar> {{item.icon}} </md-icon>
+                <h3 md-line> {{item.name}} </h3>
+                <p md-line> {{item.description | truncate:50 }} </p>
+                <span flex></span>
+                <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
+              </a>
+              <md-divider *ngIf="!last" md-inset></md-divider>
             </template>
-          </md-list>
-          <md-divider></md-divider>
-          <md-card-actions>
-            <a md-button color="accent" class="text-upper" [routerLink]="['/logs']">
-              <span>View More</span>
-            </a>
-          </md-card-actions>
-        </md-card>
-        <md-card id="dashboard-favorites-card" class="push-top">
-          <md-card-title>Favorites</md-card-title>
-          <md-card-subtitle>Your favorite products</md-card-subtitle>
-          <md-divider></md-divider>
-          <md-nav-list class="will-load favorite-list">
-            <template tdLoading="favorites.load">
-              <template let-item let-last="last" ngFor [ngForOf]="products">
-                <md-list-item layout-align="row" [routerLink]="['/product']">
-                  <md-icon md-list-avatar>{{item.icon}}</md-icon>
-                  <h3 md-line> {{item.name}} </h3>
-                  <p md-line> {{item.description}} </p>
-                </md-list-item>
-                <md-divider *ngIf="!last" md-inset></md-divider>
-              </template>
+          </template>
+        </md-nav-list>
+      </md-card>
+    </div>
+    <div flex-gt-sm="40">
+      <md-card>
+        <md-card-title>Alerts</md-card-title>
+        <md-card-subtitle>Items requiring attention</md-card-subtitle>
+        <md-divider></md-divider>
+        <md-list class="will-load alert-list">
+          <template tdLoading="alerts.load">
+            <template let-item let-last="last" ngFor [ngForOf]="alerts">
+              <md-list-item layout-align="row">
+                <md-icon md-list-avatar class="bgc-amber-800">{{item.icon}}</md-icon>
+                <h3 md-line> {{item.description}} </h3>
+                <p md-line> {{item.name}} </p>
+              </md-list-item>
+              <md-divider *ngIf="!last" md-inset></md-divider>
             </template>
-          </md-nav-list>
-          <md-divider></md-divider>
-          <md-card-actions>
-            <a md-button color="accent" class="text-upper" [routerLink]="['/product']">
-              <span>View More</span>
-            </a>
-          </md-card-actions>
-        </md-card>
-      </div>
+          </template>
+        </md-list>
+        <md-divider></md-divider>
+        <md-card-actions>
+          <a md-button color="accent" class="text-upper" [routerLink]="['/logs']">
+            <span>View More</span>
+          </a>
+        </md-card-actions>
+      </md-card>
+      <md-card id="dashboard-favorites-card" class="push-top">
+        <md-card-title>Favorites</md-card-title>
+        <md-card-subtitle>Your favorite products</md-card-subtitle>
+        <md-divider></md-divider>
+        <md-nav-list class="will-load favorite-list">
+          <template tdLoading="favorites.load">
+            <template let-item let-last="last" ngFor [ngForOf]="products">
+              <md-list-item layout-align="row" [routerLink]="['/product']">
+                <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                <h3 md-line> {{item.name}} </h3>
+                <p md-line> {{item.description}} </p>
+              </md-list-item>
+              <md-divider *ngIf="!last" md-inset></md-divider>
+            </template>
+          </template>
+        </md-nav-list>
+        <md-divider></md-divider>
+        <md-card-actions>
+          <a md-button color="accent" class="text-upper" [routerLink]="['/product']">
+            <span>View More</span>
+          </a>
+        </md-card-actions>
+      </md-card>
     </div>
   </div>
   <td-layout-footer>
