@@ -17,7 +17,7 @@ export class DetailComponent implements OnInit {
   constructor(private _router: Router, private _itemsService: ItemsService, private _route: ActivatedRoute) {}
 
   goBack(): void {
-    this._router.navigate(['/dashboard-product']);
+    this._router.navigate(['/product']);
   }
 
   ngOnInit(): void {

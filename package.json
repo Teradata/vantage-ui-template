@@ -12,7 +12,7 @@
     "e2e": "ng e2e",
     "lint": "ng lint",
     "reinstall": "rm -rf node_modules tmp deploy dist && npm i",
-    "postinstall": "webdriver-manager update",
+    "postinstall": "webdriver-manager update && ./scripts/protractor.sh",
     "start-api": "cd mock-api && covalent-data &",
     "stop-api": "pkill covalent-data",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
@@ -23,10 +23,7 @@
     "node": ">4.4 < 7",
     "npm": ">3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/teradata/covalent-quickstart.git"
-  },
+  "repository": "https://github.com/teradata/covalent-quickstart.git",
   "license": "MIT",
   "author": "Teradata UX",
   "contributors": [
@@ -38,17 +35,17 @@
     "Ilsun Park <ilsun.park@teradata.com>"
   ],
   "dependencies": {
-    "@angular/common": "2.4.5",
-    "@angular/compiler": "2.4.5",
-    "@angular/core": "2.4.5",
-    "@angular/forms": "2.4.5",
-    "@angular/http": "2.4.5",
+    "@angular/common": "2.4.8",
+    "@angular/compiler": "2.4.8",
+    "@angular/core": "2.4.8",
+    "@angular/forms": "2.4.8",
+    "@angular/http": "2.4.8",
     "@angular/flex-layout": "2.0.0-rc.1",
     "@angular/material": "2.0.0-beta.2",
-    "@angular/platform-browser": "2.4.5",
-    "@angular/platform-browser-dynamic": "2.4.5",
-    "@angular/platform-server": "2.4.5",
-    "@angular/router": "3.4.5",
+    "@angular/platform-browser": "2.4.8",
+    "@angular/platform-browser-dynamic": "2.4.8",
+    "@angular/platform-server": "2.4.8",
+    "@angular/router": "3.4.8",
     "@covalent/core": "1.0.0-beta.2",
     "@covalent/charts": "1.0.0-beta.2",
     "@covalent/dynamic-forms": "1.0.0-beta.2",
@@ -66,14 +63,14 @@
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-rc.0",
-    "@angular/compiler-cli": "2.4.5",
+    "@angular/compiler-cli": "2.4.8",
     "@types/hammerjs": "2.0.30",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "@types/selenium-webdriver": "2.53.36",
     "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
-    "jasmine-spec-reporter": "2.5.0",
+    "jasmine-spec-reporter": "3.2.0",
     "karma": "~1.4.1",
     "karma-chrome-launcher": "~2.0.0",
     "karma-cli": "~1.0.1",
@@ -81,12 +78,11 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-firefox-launcher": "1.0.0",
-    "karma-phantomjs-launcher": "1.0.1",
     "phantomjs-prebuilt": "2.1.7",
     "protractor": "~5.1.0",
-    "ts-node": "~2.0.0",
-    "tslint": "^4.4.2",
-    "typescript": "2.1.5"
+    "ts-node": "~2.1.0",
+    "tslint": "^4.5.1",
+    "typescript": "~2.2.0"
   },
   "optionalDependencies": {
     "@covalent/data": "0.4.0"
