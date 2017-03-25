@@ -27,7 +27,7 @@ import { EmailTemplateComponent } from './templates/email/email.component';
 import { EditorTemplateComponent } from './templates/editor/editor.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
-import { ChartComponent } from '../components/chart/chart.component';
+import { ChartComponent } from './chart/chart.component';
 
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
