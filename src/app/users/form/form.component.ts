@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { TdMediaService } from '@covalent/core';
 
-import { UsersService, IUser } from '../../../services';
+import { UsersService, IUser } from '../../services';
 
 @Component({
   selector: 'qs-user-form',

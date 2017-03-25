@@ -3,7 +3,7 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { HttpInterceptorService, RESTService } from '@covalent/http';
-import { MOCK_API } from '../config/api.config';
+import { environment } from '../../environments/environment';
 
 export interface IUser {
   displayName: string;
@@ -19,7 +19,7 @@ export class UsersService extends RESTService<IUser> {
 
   constructor(private _http: HttpInterceptorService) {
     super(_http, {
-      baseUrl: MOCK_API,
+      baseUrl: environment.rootApi,
       path: '/users',
     });
   }

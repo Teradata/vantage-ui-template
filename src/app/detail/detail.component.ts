@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { ItemsService } from '../../services';
+import { ItemsService } from '../services';
 
 @Component({
   selector: 'qs-detail',

@@ -4,7 +4,7 @@ import { Title }     from '@angular/platform-browser';
 import { TdLoadingService } from '@covalent/core';
 import { TdDialogService } from '@covalent/core';
 
-import { FeaturesService, IFeature } from '../../../services';
+import { FeaturesService, IFeature } from '../../services';
 
 @Component({
   selector: 'qs-product-features',
