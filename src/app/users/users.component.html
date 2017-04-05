@@ -70,7 +70,7 @@
                   </button>
                   <md-menu x-position="before" #menu="mdMenu">
                       <a [routerLink]="[user.id + '/edit']" md-menu-item>Edit</a>
-                      <button (click)="deleteUser(user.id)" md-menu-item>Delete</button>
+                      <button md-menu-item>Delete</button>
                   </md-menu>
               </span>
             </md-list-item>
@@ -78,10 +78,6 @@
           </template>
         </md-list>
       </template>
-      <md-divider></md-divider>
-      <md-card-actions>
-        <button md-button class="md-primary" (click)="goBack()">BACK</button>
-      </md-card-actions>
     </md-card>
   </td-layout-manage-list>   
 </td-layout-nav>
