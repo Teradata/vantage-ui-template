@@ -1,5 +1,6 @@
 import { NgModule, Type } from '@angular/core';
 import { BrowserModule, Title }  from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CovalentCoreModule } from '@covalent/core';
 import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
@@ -57,6 +58,7 @@ const httpInterceptorProviders: Type<any>[] = [
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CovalentCoreModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
