@@ -62,7 +62,7 @@
     "d3": "^4.6.0"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.0",
+    "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "2.4.8",
     "@types/hammerjs": "2.0.30",
     "@types/jasmine": "2.5.38",
