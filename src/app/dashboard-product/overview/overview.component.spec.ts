@@ -32,7 +32,7 @@ describe('Component: ProductOverview', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule.forRoot(),
+        CovalentCoreModule,
         CovalentHttpModule.forRoot(),
         RouterTestingModule,
         NgxChartsModule,

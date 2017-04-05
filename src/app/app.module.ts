@@ -61,15 +61,14 @@ const httpInterceptorProviders: Type<any>[] = [
   ], // directives, components, and pipes owned by this NgModule
   imports: [
     BrowserModule,
-    CovalentCoreModule.forRoot(),
-    CovalentChartsModule.forRoot(),
+    CovalentCoreModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
         interceptor: RequestInterceptor, paths: ['**'],
       }],
     }),
-    CovalentHighlightModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentMarkdownModule,
     appRoutes,
     NgxChartsModule,
   ], // modules needed to run this module

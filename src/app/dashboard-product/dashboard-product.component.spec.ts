@@ -18,7 +18,7 @@ describe('Component: DashboardProduct', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule.forRoot(),
+        CovalentCoreModule,
         RouterTestingModule,
       ],
       declarations: [
