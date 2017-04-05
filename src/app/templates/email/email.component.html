@@ -53,7 +53,7 @@
     <md-icon>add</md-icon>
   </a>
   <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
-      <template let-item let-i="index" let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
+      <ng-template let-item let-i="index" let-last="last" ngFor [ngForOf]="[0,1,2,3,4,5,6,7,8,9]">
         <a md-list-item>
           <img md-list-avatar src="http://lorempixel.com/40/40/people/{{i}}" />
           <h3 md-line> Firstname Lastname </h3>
@@ -61,7 +61,7 @@
           <md-icon class="tc-amber-800">fiber_new</md-icon>
         </a>
         <md-divider *ngIf="!last" md-inset></md-divider>
-      </template>
+      </ng-template>
   </md-nav-list>
   <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
     <md-card-header>

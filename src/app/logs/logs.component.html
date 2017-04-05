@@ -5,14 +5,14 @@
                     [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                     [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '350px' : '100%'">
     <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && navList.close()">
-        <template let-item let-last="last" ngFor [ngForOf]="products">
+        <ng-template let-item let-last="last" ngFor [ngForOf]="products">
           <a md-list-item [routerLink]="['/logs']">
             <md-icon md-list-avatar>{{item.icon}}</md-icon>
             <h3 md-line> {{item.name}} </h3>
             <p md-line> product logs </p> 
           </a>
           <md-divider *ngIf="!last" md-inset></md-divider>
-        </template>
+        </ng-template>
     </md-nav-list>
     <div td-toolbar-content layout="row" layout-align="center center" flex>
       <span>All Product Logs</span>
@@ -21,20 +21,20 @@
     <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <md-card-title>Logs</md-card-title>
       <md-divider></md-divider>
-      <template tdLoading="items.load">
+      <ng-template tdLoading="items.load">
         <md-list class="will-load" >
           <div class="md-padding" *ngIf="!items || items.length === 0" layout="row" layout-align="center center">
             <h3>No logs to display.</h3>
           </div>
-          <template let-item let-last="last" ngFor [ngForOf]="items">
+          <ng-template let-item let-last="last" ngFor [ngForOf]="items">
             <md-list-item [title]="item.description">
               <md-icon md-list-icon> {{item.icon}} </md-icon>
               <h3 md-line> {{item.description}} <span class="md-caption tc-grey-600">({{item.created}})</span> </h3>
               <p md-line > {{item.name}} </p>
             </md-list-item>
             <md-divider *ngIf="!last"></md-divider>
-          </template>
+          </ng-template>
         </md-list>
-      </template>
+      </ng-template>
     </md-card>
   </td-layout-nav-list>
