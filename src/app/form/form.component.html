@@ -58,25 +58,25 @@
                 <md-radio-button value="option_1">A New Hope</md-radio-button>
                 <md-radio-button value="option_2">Empire Strikes Back</md-radio-button>
               </md-radio-group>
-              <md-slide-toggle [checked]="isChecked">
+              <md-slide-toggle [checked]="true">
                 Include Awesome
               </md-slide-toggle>
-              <template td-step-actions>
+              <ng-template td-step-actions>
                 <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Validate &amp; Proceed</button>
                 <button md-button (click)="step2.active = false">Cancel</button>
-              </template>
+              </ng-template>
             </td-step>
             <td-step #step3 label="Step 3" sublabel="this step will toggle complete" [state]="stateStep3" [disabled]="disabled">
               <md-checkbox [checked]="true">
                 I agree to spread the word about Covalent
               </md-checkbox>
-              <template td-step-actions>
+              <ng-template td-step-actions>
                 <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Complete Step</button>
                 <button md-button (click)="step3.active = false">Cancel</button>
-              </template>
-              <template td-step-summary>
+              </ng-template>
+              <ng-template td-step-summary>
                 You can add a summary that shows after a step is saved.
-              </template>
+              </ng-template>
             </td-step>
           </td-steps>
           <md-divider></md-divider>

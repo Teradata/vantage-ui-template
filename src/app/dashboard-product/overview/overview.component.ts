@@ -27,8 +27,10 @@ export class ProductOverviewComponent implements AfterViewInit {
   gradient: boolean = true;
   autoScale: boolean = true;
   showLegend: boolean = false;
-  showXAxisLabel: boolean = true;
-  showYAxisLabel: boolean = true;
+  showXAxisLabel: boolean = false;
+  showYAxisLabel: boolean = false;
+  xAxisLabel: string = 'X Axis';
+  yAxisLabel: string = 'Y Axis';
 
   orangeColorScheme: any = {
     domain: [

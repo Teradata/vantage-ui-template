@@ -113,9 +113,9 @@
                         <div layout="column" layout-margin class="md-content">
                             <md-tab-group md-stretch-tabs>
                                 <md-tab>
-                                    <template md-tab-label>
+                                    <ng-template md-tab-label>
                                         Selection
-                                    </template>
+                                    </ng-template>
                                     <div layout="row" class="push-top-sm">
                                         <md-select placeholder="Select option" flex>
                                             <md-option value="1">
@@ -137,9 +137,9 @@
                                     </div>
                                 </md-tab>
                                 <md-tab>
-                                    <template md-tab-label>
+                                    <ng-template md-tab-label>
                                         Expression
-                                    </template>
+                                    </ng-template>
                                     <h1>Terrible sushi restaurants</h1>
                                     <p>...</p>
                                 </md-tab>
@@ -333,6 +333,7 @@
                             <button md-icon-button><md-icon>more_vert</md-icon></button>
                         </div>
                         <td-data-table
+                            #dataTable
                             [data]="filteredData"
                             [columns]="columns"
                             [sortable]="true"
@@ -341,6 +342,9 @@
                             (sortChange)="sort($event)"
                             flex class="md-content">
                         </td-data-table>
+                        <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+                            <h3>No results to display.</h3>
+                        </div>
                         <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
                             <span td-paging-bar-label hide-xs>Row per page:</span>
                             {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>

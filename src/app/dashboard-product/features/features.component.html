@@ -1,12 +1,12 @@
 <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
-    <template tdLoading="features.load">
+    <ng-template tdLoading="features.load">
         <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterFeatures($event)"></td-search-box>
         <md-divider></md-divider>
         <md-list class="will-load">
             <div class="md-padding" *ngIf="!filteredFeatures || filteredFeatures.length === 0" layout="row" layout-align="center center">
                 <h3>No feature to display.</h3>
             </div>
-            <template let-item let-last="last" ngFor [ngForOf]="filteredFeatures">
+            <ng-template let-item let-last="last" ngFor [ngForOf]="filteredFeatures">
                 <md-list-item>
                     <md-slide-toggle md-list-icon [(ngModel)]="item.enabled"></md-slide-toggle>
                     <h3 md-line> {{item.title}} </h3>
@@ -26,9 +26,9 @@
                     </span>
                 </md-list-item>
                 <md-divider *ngIf="!last"></md-divider>
-            </template>
+            </ng-template>
         </md-list>
-    </template>
+    </ng-template>
 </md-card>
 <a md-fab color="accent" class="mat-fab-bottom-right fixed" [routerLink]="['add']"> 
     <md-icon>add</md-icon>
