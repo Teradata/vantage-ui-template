@@ -32,7 +32,6 @@ describe('Component: DashboardProduct', () => {
             broadcast: noop,
             createComponent: noop,
             createReplaceComponent: noop,
-            createOverlayComponent: noop,
             register: noop,
             resolve: noop,
           },

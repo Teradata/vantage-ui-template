@@ -47,7 +47,6 @@ describe('Component: ProductOverview', () => {
         { provide: TdLoadingService, useValue: {
             createComponent: noop,
             createReplaceComponent: noop,
-            createOverlayComponent: noop,
             register: noop,
             resolve: noop,
           },
