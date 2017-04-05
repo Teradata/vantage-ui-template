@@ -5,7 +5,6 @@ import { CovalentCoreModule } from '@covalent/core';
 import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
-import { CovalentChartsModule } from '@covalent/charts';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -26,8 +25,6 @@ import { DashboardTemplateComponent } from './templates/dashboard/dashboard.comp
 import { EmailTemplateComponent } from './templates/email/email.component';
 import { EditorTemplateComponent } from './templates/editor/editor.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
-
-import { ChartComponent } from '../components/chart/chart.component';
 
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
@@ -53,7 +50,6 @@ const httpInterceptorProviders: Type<any>[] = [
     FormComponent,
     DetailComponent,
     LoginComponent,
-    ChartComponent,
     TemplatesComponent,
     DashboardTemplateComponent,
     EmailTemplateComponent,
