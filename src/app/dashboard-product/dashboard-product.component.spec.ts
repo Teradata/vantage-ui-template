@@ -8,6 +8,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CovalentCoreModule, TdMediaService } from '@covalent/core';
 import { DashboardProductComponent } from './dashboard-product.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DashboardProduct', () => {
 
@@ -20,6 +21,7 @@ describe('Component: DashboardProduct', () => {
       imports: [
         CovalentCoreModule,
         RouterTestingModule,
+        NoopAnimationsModule,
       ],
       declarations: [
         DashboardProductComponent,
