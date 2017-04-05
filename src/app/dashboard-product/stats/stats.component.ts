@@ -132,6 +132,8 @@ export class ProductStatsComponent implements AfterViewInit {
   showLegend: boolean = false;
   showXAxisLabel: boolean = true;
   showYAxisLabel: boolean = true;
+  xAxisLabel: string = 'X Axis';
+  yAxisLabel: string = 'Y Axis';
 
   colorScheme: any = {
     domain: [

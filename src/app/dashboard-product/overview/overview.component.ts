@@ -29,6 +29,8 @@ export class ProductOverviewComponent implements AfterViewInit {
   showLegend: boolean = false;
   showXAxisLabel: boolean = true;
   showYAxisLabel: boolean = true;
+  xAxisLabel: string = 'X Axis';
+  yAxisLabel: string = 'Y Axis';
 
   orangeColorScheme: any = {
     domain: [
