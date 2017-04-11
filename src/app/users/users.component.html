@@ -48,12 +48,12 @@
     <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
       <md-divider></md-divider>
-      <template tdLoading="users.list">
+      <ng-template tdLoading="users.list">
         <md-list class="will-load">
           <div class="md-padding" *ngIf="!filteredUsers || filteredUsers.length === 0" layout="row" layout-align="center center">
             <h3>No users to display.</h3>
           </div>
-          <template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
+          <ng-template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
             <md-list-item>
               <md-icon md-list-avatar>person</md-icon>
               <h3 md-line> {{user.displayName}} </h3>
@@ -70,18 +70,14 @@
                   </button>
                   <md-menu x-position="before" #menu="mdMenu">
                       <a [routerLink]="[user.id + '/edit']" md-menu-item>Edit</a>
-                      <button (click)="deleteUser(user.id)" md-menu-item>Delete</button>
+                      <button md-menu-item>Delete</button>
                   </md-menu>
               </span>
             </md-list-item>
             <md-divider *ngIf="!last" md-inset></md-divider>
-          </template>
+          </ng-template>
         </md-list>
-      </template>
-      <md-divider></md-divider>
-      <md-card-actions>
-        <button md-button class="md-primary" (click)="goBack()">BACK</button>
-      </md-card-actions>
+      </ng-template>
     </md-card>
   </td-layout-manage-list>   
 </td-layout-nav>

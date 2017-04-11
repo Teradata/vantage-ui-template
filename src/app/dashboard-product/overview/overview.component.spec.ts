@@ -7,6 +7,7 @@ import {
 import {APP_BASE_HREF} from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { XHRBackend, Response, ResponseOptions } from '@angular/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockBackend } from '@angular/http/testing';
 import { CovalentCoreModule, TdLoadingService } from '@covalent/core';
 import { CovalentHttpModule } from '@covalent/http';
@@ -32,10 +33,11 @@ describe('Component: ProductOverview', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule.forRoot(),
+        CovalentCoreModule,
         CovalentHttpModule.forRoot(),
         RouterTestingModule,
         NgxChartsModule,
+        NoopAnimationsModule,
       ],
       declarations: [
         ProductOverviewComponent,
@@ -47,7 +49,6 @@ describe('Component: ProductOverview', () => {
         { provide: TdLoadingService, useValue: {
             createComponent: noop,
             createReplaceComponent: noop,
-            createOverlayComponent: noop,
             register: noop,
             resolve: noop,
           },

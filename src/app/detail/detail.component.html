@@ -8,13 +8,13 @@
     <md-card-subtitle>Last activity: {{item.description}}</md-card-subtitle>
     <md-divider></md-divider>
     <md-list>
-      <template ngFor [ngForOf]="[0,1,2,3,4]">
+      <ng-template ngFor [ngForOf]="[0,1,2,3,4]">
         <md-list-item layout-align="row">
             <md-icon md-list-avatar> receipt </md-icon>
             <h3 md-line> {{item.name}} </h3>
             <p md-line> activity description </p>            
           </md-list-item>
-      </template>
+      </ng-template>
     </md-list>
     <md-divider></md-divider>
     <md-card-actions>

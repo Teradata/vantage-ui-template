@@ -4,7 +4,7 @@
           <md-card>
               <md-card-title>Compute Usage</md-card-title>
               <md-divider></md-divider>
-              <div class="chart-height push-top-sm pull-left-lg">
+              <div class="chart-height push-top-sm">
                 <ngx-charts-line-chart
                   [scheme]="orangeColorScheme"
                   [results]="multi"
@@ -32,7 +32,7 @@
           <md-card>
               <md-card-title>Ingest Usage</md-card-title>
               <md-divider></md-divider>
-              <div class="chart-height push-top-sm pull-left-lg">
+              <div class="chart-height push-top-sm">
                 <ngx-charts-line-chart
                   [scheme]="blueColorScheme"
                   [results]="multi2"
@@ -64,8 +64,8 @@
             <md-card-subtitle>for this product</md-card-subtitle>
             <md-divider></md-divider>
             <md-nav-list class="will-load item-list">
-                <template tdLoading="items.load">
-                <template let-item let-last="last" ngFor [ngForOf]="items">
+                <ng-template tdLoading="items.load">
+                <ng-template let-item let-last="last" ngFor [ngForOf]="items">
                     <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
                     <md-icon md-list-avatar> {{item.icon}} </md-icon>
                     <h3 md-line> {{item.name}} </h3>
@@ -74,8 +74,8 @@
                     <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
                     </a>
                     <md-divider *ngIf="!last" md-inset></md-divider>
-                </template>
-                </template>
+                </ng-template>
+                </ng-template>
             </md-nav-list>
             </md-card>
         </div>
@@ -85,16 +85,16 @@
             <md-card-subtitle>for this product</md-card-subtitle>
             <md-divider></md-divider>
             <md-list class="will-load user-list">
-                <template tdLoading="users.load">
-                <template let-user let-last="last" ngFor [ngForOf]="users">
+                <ng-template tdLoading="users.load">
+                <ng-template let-user let-last="last" ngFor [ngForOf]="users">
                     <md-list-item layout-align="row">
                     <md-icon md-list-icon>account_box</md-icon>
                     <h3 md-line> {{user.displayName}} </h3>
                     <p md-line> {{user.id}} </p>
                     </md-list-item>
                     <md-divider *ngIf="!last" md-inset></md-divider>
-                </template>
-                </template>
+                </ng-template>
+                </ng-template>
             </md-list>
             <md-divider></md-divider>
             <md-card-actions>

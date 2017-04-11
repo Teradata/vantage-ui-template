@@ -8,6 +8,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CovalentCoreModule, TdMediaService } from '@covalent/core';
 import { DashboardProductComponent } from './dashboard-product.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DashboardProduct', () => {
 
@@ -18,8 +19,9 @@ describe('Component: DashboardProduct', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule.forRoot(),
+        CovalentCoreModule,
         RouterTestingModule,
+        NoopAnimationsModule,
       ],
       declarations: [
         DashboardProductComponent,
@@ -32,7 +34,6 @@ describe('Component: DashboardProduct', () => {
             broadcast: noop,
             createComponent: noop,
             createReplaceComponent: noop,
-            createOverlayComponent: noop,
             register: noop,
             resolve: noop,
           },
