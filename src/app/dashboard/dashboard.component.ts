@@ -4,7 +4,7 @@ import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
-import { ItemsService, UsersService, ProductsService, AlertsService } from '../../services';
+import { ItemsService, UsersService, ProductsService, AlertsService } from '../services';
 
 import { multi } from './data';
 

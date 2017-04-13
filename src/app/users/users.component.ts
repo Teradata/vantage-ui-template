@@ -5,7 +5,7 @@ import { MdSnackBar } from '@angular/material';
 
 import { TdLoadingService, TdDialogService, TdMediaService } from '@covalent/core';
 
-import { UsersService, IUser } from '../../services';
+import { UsersService, IUser } from '../services';
 
 @Component({
   selector: 'qs-users',

@@ -1,0 +1,26 @@
+.chart-container {
+    display: inline-block;
+    position: relative;
+    width: 95%;
+    padding-bottom: 55%;
+    vertical-align: top;
+    overflow: hidden;
+}
+.chart {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 20px;
+    .bar-1 {
+        fill: #EF6C00;
+    }
+    .bar-2 {
+        fill: #009688;
+    }
+    text {
+        fill: rgba(0, 0, 0, 0.54);
+        font: 10px sans-serif;
+        text-anchor: end;
+    }
+}

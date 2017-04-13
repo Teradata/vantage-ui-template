@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 
-import { FeaturesService, IFeature } from '../../../../services';
+import { FeaturesService, IFeature } from '../../../services';
 
 @Component({
   selector: 'qs-feature-form',
