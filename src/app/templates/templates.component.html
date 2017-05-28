@@ -1,7 +1,7 @@
 <td-layout-nav logo="assets:covalent" class="white-orange">
   <div td-toolbar-content layout="row" layout-align="start center" flex>
     <span hide-xs>App Templates</span>
-    <span flex ></span>
+    <span flex></span>
     <button md-icon-button [mdMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="4">
         <md-icon>apps</md-icon>
@@ -35,30 +35,29 @@
             <p md-line>an IDE text editor app template</p>
           </a>
         </md-nav-list>
-        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates" target="_blank">
+        <a md-button color="accent" td-menu-footer href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates"
+          target="_blank">
           View Code
         </a>
       </td-menu>
     </md-menu>
-    <a md-icon-button mdTooltip="View this code" href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+    <a md-icon-button mdTooltip="View this code" href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates"
+      target="_blank">
+      <md-icon svgIcon="assets:github"></md-icon>
+    </a>
   </div>
   <md-toolbar color="primary" class="pad-none pull-top">
     <nav md-tab-nav-bar class="pull-bottom">
-      <a md-tab-link
-        [routerLink]="['/templates']"
-        class="active">
+      <a md-button md-tab-link [routerLink]="['/templates']" class="active">
         Landing Page
       </a>
-      <a md-tab-link
-        [routerLink]="['/templates/dashboard']">
+      <a md-button md-tab-link [routerLink]="['/templates/dashboard']">
         Dashboard
       </a>
-      <a md-tab-link
-        [routerLink]="['/templates/email']">
+      <a md-button md-tab-link [routerLink]="['/templates/email']">
         Email App
       </a>
-      <a md-tab-link
-        [routerLink]="['/templates/editor']">
+      <a md-button md-tab-link [routerLink]="['/templates/editor']">
         IDE Editor
       </a>
     </nav>
@@ -70,7 +69,7 @@
         <div tdMediaToggle="gt-sm" [mediaClasses]="['push-lg']">
           <h1 class="md-display-1 tc-grey-800 push-top-xs push-bottom-sm">Awesome Landing Page Template</h1>
           <p class="md-title tc-grey-600">Covalent isn't just for web application interfaces. You can easily build a reponsive landing pages just like this!</p>
-            <button md-raised-button color="accent" class="push-bottom md-button-lg">Get Started</button>
+          <button md-raised-button color="accent" class="push-bottom md-button-lg">Get Started</button>
         </div>
         <div class="push-bottom-xl" hide-xs></div>
       </div>
@@ -78,33 +77,32 @@
       </div>
     </div>
   </section>
-
-  <section class="bgc-light-blue-600 tc-light-blue-50"  tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl']">
+  <section class="bgc-light-blue-600 tc-light-blue-50" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl']">
     <h2 class="md-headline text-upper text-center tc-grey-50 push-bottom">Covalent Templates</h2>
     <div layout="row" layout-align-gt-xs="center center">
       <div flex-gt-xs="80" layout="row" layout-wrap>
-        <div class="text-center" flex-xs="50" flex-gt-xs="25">
+        <a md-button [routerLink]="['/templates']" class="text-center" flex-xs="50" flex-gt-xs="25">
           <md-icon class="tc-grey-50 md-display-2">system_update_alt</md-icon>
           <div class="pad-bottom-md"> Landing Page Template</div>
-        </div>
-        <div class="text-center" flex-xs="50" flex-gt-xs="25">
+        </a>
+        <a md-button [routerLink]="['/templates/dashboard']" class="text-center" flex-xs="50" flex-gt-xs="25" >
           <md-icon class="tc-grey-50 md-display-2 ">dashboard</md-icon>
           <div class="pad-bottom-md">Dashboard Template</div>
-        </div>
-        <div class="text-center" flex-xs="50" flex-gt-xs="25">
+        </a>
+        <a md-button [routerLink]="['/templates/email']" class="text-center" flex-xs="50" flex-gt-xs="25">
           <md-icon class="tc-grey-50 md-display-2">email</md-icon>
           <div class="pad-bottom-md">Email App Template</div>
-        </div>
-        <div class="text-center" flex-xs="50" flex-gt-xs="25">
+        </a>
+        <a md-button [routerLink]="['/templates/editor']" class="text-center" flex-xs="50" flex-gt-xs="25">
           <md-icon class="tc-grey-50 md-display-2">view_array</md-icon>
           <div class="pad-bottom-md">IDE Editor Template</div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
-<!--Product Card code starts here-->
+  <!--Product Card code starts here-->
   <section class="bgc-blue-grey-50" tdMediaToggle="gt-xs" [mediaClasses]="['pad-top-xl', 'pad-bottom-xl']">
-    <div  layout-gt-xs="row" layout-align-gt-xs="center center">
+    <div layout-gt-xs="row" layout-align-gt-xs="center center">
       <div layout-gt-sm="row" flex-gt-xs="75" layout-margin>
         <div flex-gt-xs="25">
           <md-card>
@@ -116,23 +114,23 @@
             <md-list>
               <h3 md-subheader>Features</h3>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
             </md-list>
           </md-card>
@@ -148,23 +146,23 @@
             <md-list>
               <h3 md-subheader>Features</h3>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
             </md-list>
           </md-card>
@@ -180,23 +178,23 @@
             <md-list>
               <h3 md-subheader>Features</h3>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
             </md-list>
           </md-card>
@@ -211,23 +209,23 @@
             <md-list>
               <h3 md-subheader>Features</h3>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
               <md-divider md-inset></md-divider>
               <md-list-item>
-                  <md-icon md-list-icon class="fill-grey-700">description</md-icon>
-                  <h4 md-line>Feature Name</h4>
+                <md-icon md-list-icon class="fill-grey-700">description</md-icon>
+                <h4 md-line>Feature Name</h4>
               </md-list-item>
             </md-list>
           </md-card>
@@ -258,13 +256,13 @@
               <p md-line md-caption class="md-body-2">List Item</p>
             </md-list-item>
             <md-list-item>
-              <p md-line >List item</p>
+              <p md-line>List item</p>
             </md-list-item>
             <md-list-item>
-              <p md-line >List item</p>
+              <p md-line>List item</p>
             </md-list-item>
             <md-list-item>
-              <p md-line >List item</p>
+              <p md-line>List item</p>
             </md-list-item>
           </md-nav-list>
         </div>
@@ -272,22 +270,22 @@
           <md-nav-list>
             <h3 md-subheader class="text-upper tc-blue-grey-100">Menu Name</h3>
             <md-list-item>
-              <p md-line >List item</p>
+              <p md-line>List item</p>
             </md-list-item>
             <md-list-item>
-              <p md-line >List item</p>
+              <p md-line>List item</p>
             </md-list-item>
             <md-list-item>
-              <p md-line >List item</p>
+              <p md-line>List item</p>
             </md-list-item>
             <md-list-item>
-              <p md-line >List item</p>
+              <p md-line>List item</p>
             </md-list-item>
           </md-nav-list>
         </div>
         <div flex>
           <md-nav-list>
-            <h3 md-subheader class="text-upper tc-blue-grey-100">Menu Name</h3> 
+            <h3 md-subheader class="text-upper tc-blue-grey-100">Menu Name</h3>
             <md-list-item>
               <p md-line>List item</p>
             </md-list-item>
@@ -309,10 +307,11 @@
           <p class="text-sm">&copy; Copyright 2016 Company Name, Inc. All rights reserved.</p>
         </div>
       </div>
-    </div>  
+    </div>
   </section>
 </td-layout-nav>
 
-<a md-fab color="accent" class="md-fab-position-bottom-right" style="bottom:20px;" href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates" target="_blank"> 
+<a md-fab color="accent" class="md-fab-position-bottom-right" style="bottom:20px;" href="https://github.com/Teradata/covalent-quickstart/tree/develop/src/app/templates"
+  target="_blank">
   <md-icon>code</md-icon>
 </a>
