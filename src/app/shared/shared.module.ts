@@ -12,7 +12,8 @@ import {
   MdButtonModule, MdCardModule, MdIconModule,
   MdListModule, MdMenuModule, MdTooltipModule,
   MdSlideToggleModule, MdInputModule, MdCheckboxModule,
-  MdToolbarModule, MdSnackBarModule,
+  MdToolbarModule, MdSnackBarModule, MdSidenavModule,
+  MdTabsModule, MdSelectModule,
 } from '@angular/material';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
@@ -28,7 +29,8 @@ const MATERIAL_MODULES = [
   MdButtonModule, MdCardModule, MdIconModule,
   MdListModule, MdMenuModule, MdTooltipModule,
   MdSlideToggleModule, MdInputModule, MdCheckboxModule,
-  MdToolbarModule, MdSnackBarModule,
+  MdToolbarModule, MdSnackBarModule, MdSidenavModule,
+  MdTabsModule, MdSelectModule,
 ];
 
 const COVALENT_MODULES = [
