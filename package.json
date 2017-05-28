@@ -9,6 +9,7 @@
     "reusable"
   ],
   "scripts": {
+    "start": "ng serve",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "reinstall": "rm -rf node_modules tmp deploy dist && npm i",
