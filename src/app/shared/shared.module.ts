@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule, } from '@angular/core';
+import { CommonModule, } from '@angular/common';
+import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { FlexLayoutModule, } from '@angular/flex-layout';
 import {
   CovalentDataTableModule, CovalentMediaModule, CovalentLoadingModule,
@@ -15,17 +15,17 @@ import {
   MdToolbarModule, MdSnackBarModule, MdSidenavModule,
   MdTabsModule, MdSelectModule,
 } from '@angular/material';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { NgxChartsModule, } from '@swimlane/ngx-charts';
 
-const FLEX_LAYOUT_MODULES = [
+const FLEX_LAYOUT_MODULES: any[] = [
   FlexLayoutModule,
 ];
 
-const ANGULAR_MODULES = [
+const ANGULAR_MODULES: any[] = [
   FormsModule, ReactiveFormsModule,
 ];
 
-const MATERIAL_MODULES = [
+const MATERIAL_MODULES: any[] = [
   MdButtonModule, MdCardModule, MdIconModule,
   MdListModule, MdMenuModule, MdTooltipModule,
   MdSlideToggleModule, MdInputModule, MdCheckboxModule,
@@ -33,14 +33,14 @@ const MATERIAL_MODULES = [
   MdTabsModule, MdSelectModule,
 ];
 
-const COVALENT_MODULES = [
+const COVALENT_MODULES: any[] = [
   CovalentDataTableModule, CovalentMediaModule, CovalentLoadingModule,
   CovalentNotificationsModule, CovalentLayoutModule, CovalentMenuModule,
   CovalentPagingModule, CovalentSearchModule, CovalentStepsModule,
   CovalentCommonModule, CovalentDialogsModule,
 ];
 
-const CHART_MODULES = [
+const CHART_MODULES: any[] = [
   NgxChartsModule,
 ];
 
