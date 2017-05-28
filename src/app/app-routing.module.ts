@@ -134,12 +134,11 @@ const routes: Routes = [
     ]
 })
 export class AppRoutingModule { }
-export const routedComponents = [
+export const routedComponents: any[] = [
+    MainComponent, LoginComponent,
     TemplatesComponent, EditorTemplateComponent, EmailTemplateComponent, DashboardTemplateComponent,
     UsersComponent, UsersFormComponent,
-    MainComponent, DashboardComponent, DashboardProductComponent,
-    DetailComponent,
-    FeaturesFormComponent,
-    FormComponent, LoginComponent, LogsComponent,
-    ProductFeaturesComponent, ProductOverviewComponent, ProductStatsComponent
-]
+    DashboardComponent, DashboardProductComponent,
+    FormComponent, LogsComponent, DetailComponent,
+    FeaturesFormComponent, ProductFeaturesComponent, ProductOverviewComponent, ProductStatsComponent,
+];
