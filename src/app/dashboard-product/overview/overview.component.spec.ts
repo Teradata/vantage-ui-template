@@ -9,7 +9,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { XHRBackend, Response, ResponseOptions } from '@angular/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockBackend } from '@angular/http/testing';
-import { CovalentCoreModule, TdLoadingService } from '@covalent/core';
+import { SharedModule } from '../../shared/shared.module';
+import { TdLoadingService } from '@covalent/core';
 import { CovalentHttpModule } from '@covalent/http';
 
 import { ProductOverviewComponent } from './overview.component';
@@ -33,7 +34,7 @@ describe('Component: ProductOverview', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule,
+        SharedModule,
         CovalentHttpModule.forRoot(),
         RouterTestingModule,
         NgxChartsModule,

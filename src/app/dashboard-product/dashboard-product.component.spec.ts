@@ -6,7 +6,8 @@ import {
 } from '@angular/core/testing';
 import {APP_BASE_HREF} from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
-import { CovalentCoreModule, TdMediaService } from '@covalent/core';
+import { SharedModule } from '../shared/shared.module';
+import { TdMediaService } from '@covalent/core';
 import { DashboardProductComponent } from './dashboard-product.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -19,7 +20,7 @@ describe('Component: DashboardProduct', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CovalentCoreModule,
+        SharedModule,
         RouterTestingModule,
         NoopAnimationsModule,
       ],
