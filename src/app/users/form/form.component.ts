@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 
@@ -23,6 +23,7 @@ export class UsersFormComponent implements OnInit, AfterViewInit {
 
   constructor(private _usersService: UsersService,
               private _route: ActivatedRoute,
+              private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {}
 
   goBack(): void {
@@ -30,8 +31,11 @@ export class UsersFormComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
+    Promise.resolve(undefined).then(() => {
+      // broadcast to all listener observables when loading the page
+      this.media.broadcast();
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   ngOnInit(): void {

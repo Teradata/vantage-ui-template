@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService, TdMediaService } from '@covalent/core';
@@ -11,7 +11,7 @@ import { ItemsService, UsersService, ProductsService } from '../../services';
   styleUrls: ['./logs.component.scss'],
   viewProviders: [ ItemsService, UsersService, ProductsService ],
 })
-export class LogsComponent implements AfterViewInit {
+export class LogsComponent implements AfterViewInit, OnInit {
 
   items: Object[];
   users: Object[];
@@ -22,14 +22,12 @@ export class LogsComponent implements AfterViewInit {
               private _usersService: UsersService,
               private _productsService: ProductsService,
               private _loadingService: TdLoadingService,
+              private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
 
   }
 
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
-
+  ngOnInit(): void {
     this._titleService.setTitle( 'Covalent Logs' );
 
     this._loadingService.register('items.load');
@@ -66,6 +64,14 @@ export class LogsComponent implements AfterViewInit {
           this._loadingService.resolve('users.load');
         }, 2000);
       });
+    });
+  }
+
+  ngAfterViewInit(): void {
+    Promise.resolve(undefined).then(() => {
+      // broadcast to all listener observables when loading the page
+      this.media.broadcast();
+      this._changeDetectorRef.markForCheck();
     });
   }
 

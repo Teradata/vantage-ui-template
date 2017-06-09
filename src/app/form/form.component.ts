@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 
 import { StepState, TdMediaService } from '@covalent/core';
 
@@ -14,11 +14,15 @@ export class FormComponent implements AfterViewInit {
   stateStep3: StepState = StepState.Complete;
   disabled: boolean = false;
 
-  constructor(public media: TdMediaService) { }
+  constructor(public media: TdMediaService,
+              private _changeDetectorRef: ChangeDetectorRef) { }
 
   ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
+    Promise.resolve(undefined).then(() => {
+      // broadcast to all listener observables when loading the page
+      this.media.broadcast();
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   toggleRequiredStep2(): void {

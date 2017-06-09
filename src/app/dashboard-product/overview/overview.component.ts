@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { single, multi, multi2 } from './data';
 import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
@@ -11,7 +11,7 @@ import { ItemsService, UsersService } from '../../../services';
   styleUrls: ['./overview.component.scss'],
   viewProviders: [ ItemsService, UsersService ],
 })
-export class ProductOverviewComponent implements AfterViewInit {
+export class ProductOverviewComponent implements OnInit {
 
   items: Object[];
   users: Object[];
@@ -68,7 +68,7 @@ export class ProductOverviewComponent implements AfterViewInit {
                 });
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this._titleService.setTitle( 'Product Name' );
 
     this._loadingService.register('items.load');
