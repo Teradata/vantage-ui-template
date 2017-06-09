@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MdSnackBar } from '@angular/material';
@@ -13,7 +13,7 @@ import { UsersService, IUser } from '../../services';
   styleUrls: ['./users.component.scss'],
   viewProviders: [ UsersService ],
 })
-export class UsersComponent implements AfterViewInit {
+export class UsersComponent implements AfterViewInit, OnInit {
 
   users: IUser[];
   filteredUsers: IUser[];
@@ -24,6 +24,7 @@ export class UsersComponent implements AfterViewInit {
               private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar,
               private _usersService: UsersService,
+              private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
   }
 
@@ -31,12 +32,17 @@ export class UsersComponent implements AfterViewInit {
     this._router.navigate(['/']);
   }
 
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
-
+  ngOnInit(): void {
     this._titleService.setTitle( 'Covalent Users' );
     this.loadUsers();
+  }
+
+  ngAfterViewInit(): void {
+    Promise.resolve(undefined).then(() => {
+      // broadcast to all listener observables when loading the page
+      this.media.broadcast();
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   filterUsers(displayName: string = ''): void {

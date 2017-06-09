@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { single, multi } from './data';
 import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent,
@@ -13,7 +13,7 @@ const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.scss'],
 })
-export class ProductStatsComponent implements AfterViewInit {
+export class ProductStatsComponent implements OnInit {
   columns: any[] = [
     { name: 'name',  label: 'Product' },
     { name: 'type', label: 'Type' },
@@ -164,7 +164,7 @@ export class ProductStatsComponent implements AfterViewInit {
                 });
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this._titleService.setTitle( 'Product Stats' );
     this.filter();
   }

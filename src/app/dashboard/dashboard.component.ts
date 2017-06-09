@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Title }     from '@angular/platform-browser';
 
@@ -14,7 +14,7 @@ import { multi } from './data';
   styleUrls: ['./dashboard.component.scss'],
   viewProviders: [ ItemsService, UsersService, ProductsService, AlertsService ],
 })
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent implements OnInit {
 
   items: Object[];
   users: Object[];
@@ -60,7 +60,7 @@ export class DashboardComponent implements AfterViewInit {
                 });
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this._titleService.setTitle( 'Covalent Quickstart' );
     this._loadingService.register('items.load');
     this._itemsService.query().subscribe((items: Object[]) => {
