@@ -14,10 +14,6 @@ import { LogsComponent } from './logs/logs.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
 import { FormComponent } from './form/form.component';
-import { TemplatesComponent } from './templates/templates.component';
-import { DashboardTemplateComponent } from './templates/dashboard/dashboard.component';
-import { EmailTemplateComponent } from './templates/email/email.component';
-import { EditorTemplateComponent } from './templates/editor/editor.component';
 
 const routes: Routes = [
     {
@@ -100,27 +96,6 @@ const routes: Routes = [
                     },
                 ]
             },
-            {
-                path: 'templates',
-                children: [
-                    {
-                        path: '',
-                        component: TemplatesComponent
-                    },
-                    {
-                        path: 'dashboard',
-                        component: DashboardTemplateComponent
-                    },
-                    {
-                        path: 'email',
-                        component: EmailTemplateComponent
-                    },
-                    {
-                        path: 'editor',
-                        component: EditorTemplateComponent
-                    },
-                ]
-            },
         ]
     },
 ];
@@ -136,7 +111,6 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routedComponents: any[] = [
     MainComponent, LoginComponent,
-    TemplatesComponent, EditorTemplateComponent, EmailTemplateComponent, DashboardTemplateComponent,
     UsersComponent, UsersFormComponent,
     DashboardComponent, DashboardProductComponent,
     FormComponent, LogsComponent, DetailComponent,
