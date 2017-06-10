@@ -23,9 +23,9 @@ export class DashboardProductComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     // broadcast to all listener observables when loading the page
-    Promise.resolve(undefined).then(() => {
-      this.media.broadcast();
-      this._changeDetectorRef.markForCheck();
-    });
+    this.media.broadcast();
+    // force a new change detection cycle since change detections
+    // have finished when `ngAfterViewInit` is executed
+    this._changeDetectorRef.detectChanges();
   }
 }

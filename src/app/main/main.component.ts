@@ -24,10 +24,6 @@ export class MainComponent {
       title: 'Manage Users',
       route: '/users',
       icon: 'people',
-    }, {
-      title: 'Covalent Templates',
-      route: '/templates',
-      icon: 'view_module',
     },
   ];
 
