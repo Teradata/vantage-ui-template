@@ -38,11 +38,11 @@ export class UsersComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
-    Promise.resolve(undefined).then(() => {
-      // broadcast to all listener observables when loading the page
-      this.media.broadcast();
-      this._changeDetectorRef.markForCheck();
-    });
+    // broadcast to all listener observables when loading the page
+    this.media.broadcast();
+    // force a new change detection cycle since change detections
+    // have finished when `ngAfterViewInit` is executed
+    this._changeDetectorRef.detectChanges();
   }
 
   filterUsers(displayName: string = ''): void {
