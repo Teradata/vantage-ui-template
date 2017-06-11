@@ -66,8 +66,12 @@
                   <md-icon>more_vert</md-icon>
                   </button>
                   <md-menu x-position="before" #menu="mdMenu">
-                      <a [routerLink]="[user.id, 'edit']" md-menu-item>Edit</a>
-                      <button md-menu-item (click)="delete(user.id)">Delete</button>
+                      <a [routerLink]="[user.id, 'edit']" md-menu-item>
+                        <md-icon>edit</md-icon> Edit
+                      </a>
+                      <button md-menu-item (click)="delete(user.id)">
+                        <md-icon>delete</md-icon> Delete
+                      </button>
                   </md-menu>
               </span>
             </md-list-item>
