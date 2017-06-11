@@ -73,7 +73,7 @@ const routes: Routes = [
                 path: 'form',
                 component: FormComponent
             },
-            { path: 'users', loadChildren: './users/users.module#UsersModule' },
+            { path: '', loadChildren: './users/users.module#UsersModule' },
         ],
     },
 ];

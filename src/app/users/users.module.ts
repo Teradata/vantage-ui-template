@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { MdSnackBarModule, MdIconModule, MdListModule, MdTooltipModule, MdCardModule, MdButtonModule,
          MdToolbarModule, MdInputModule, MdSlideToggleModule, MdMenuModule } from '@angular/material';
@@ -26,6 +27,7 @@ export { UsersComponent, UsersFormComponent, UserService, IUser, USER_PROVIDER, 
     // angular modules
     CommonModule,
     FormsModule,
+    RouterModule,
     // material modules
     MdSnackBarModule,
     MdIconModule,
