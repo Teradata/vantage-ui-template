@@ -8,8 +8,6 @@ import { ProductOverviewComponent } from './dashboard-product/overview/overview.
 import { ProductStatsComponent } from './dashboard-product/stats/stats.component';
 import { ProductFeaturesComponent } from './dashboard-product/features/features.component';
 import { FeaturesFormComponent } from './dashboard-product/features/form/form.component';
-import { UsersComponent } from './users/users.component';
-import { UsersFormComponent } from './users/form/form.component';
 import { LogsComponent } from './logs/logs.component';
 import { DetailComponent } from './detail/detail.component';
 import { LoginComponent } from './login/login.component';
@@ -75,28 +73,8 @@ const routes: Routes = [
                 path: 'form',
                 component: FormComponent
             },
-            {
-                path: 'users',
-                children: [
-                    {
-                        path: '',
-                        component: UsersComponent
-                    },
-                    {
-                        path: 'add',
-                        component: UsersFormComponent
-                    },
-                    {
-                        path: ':id/delete',
-                        component: UsersFormComponent
-                    },
-                    {
-                        path: ':id/edit',
-                        component: UsersFormComponent
-                    },
-                ]
-            },
-        ]
+            { path: '', loadChildren: './users/users.module#UsersModule' },
+        ],
     },
 ];
 
@@ -111,7 +89,6 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const routedComponents: any[] = [
     MainComponent, LoginComponent,
-    UsersComponent, UsersFormComponent,
     DashboardComponent, DashboardProductComponent,
     FormComponent, LogsComponent, DetailComponent,
     FeaturesFormComponent, ProductFeaturesComponent, ProductOverviewComponent, ProductStatsComponent,

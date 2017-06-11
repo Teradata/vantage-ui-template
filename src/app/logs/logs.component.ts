@@ -3,23 +3,21 @@ import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService, TdMediaService } from '@covalent/core';
 
-import { ItemsService, UsersService, ProductsService } from '../../services';
+import { ItemsService, ProductsService } from '../../services';
 
 @Component({
   selector: 'qs-logs',
   templateUrl: './logs.component.html',
   styleUrls: ['./logs.component.scss'],
-  viewProviders: [ ItemsService, UsersService, ProductsService ],
+  viewProviders: [ ItemsService, ProductsService ],
 })
 export class LogsComponent implements AfterViewInit, OnInit {
 
   items: Object[];
-  users: Object[];
   products: Object[];
 
   constructor(private _titleService: Title,
               private _itemsService: ItemsService,
-              private _usersService: UsersService,
               private _productsService: ProductsService,
               private _loadingService: TdLoadingService,
               private _changeDetectorRef: ChangeDetectorRef,
@@ -50,20 +48,6 @@ export class LogsComponent implements AfterViewInit, OnInit {
       setTimeout(() => {
         this._loadingService.resolve('products.load');
       }, 2000);
-    });
-    this._loadingService.register('users.load');
-    this._usersService.query().subscribe((users: Object[]) => {
-      this.users = users;
-      setTimeout(() => {
-        this._loadingService.resolve('users.load');
-      }, 2000);
-    }, (error: Error) => {
-      this._usersService.staticQuery().subscribe((users: Object[]) => {
-        this.users = users;
-        setTimeout(() => {
-          this._loadingService.resolve('users.load');
-        }, 2000);
-      });
     });
   }
 

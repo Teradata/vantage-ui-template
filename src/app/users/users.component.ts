@@ -1,17 +1,17 @@
 import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MdSnackBar } from '@angular/material';
 
 import { TdLoadingService, TdDialogService, TdMediaService } from '@covalent/core';
 
-import { UsersService, IUser } from '../../services';
+import { UserService, IUser } from './services/user.service';
+
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'qs-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
-  viewProviders: [ UsersService ],
 })
 export class UsersComponent implements AfterViewInit, OnInit {
 
@@ -19,22 +19,17 @@ export class UsersComponent implements AfterViewInit, OnInit {
   filteredUsers: IUser[];
 
   constructor(private _titleService: Title,
-              private _router: Router,
               private _loadingService: TdLoadingService,
               private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar,
-              private _usersService: UsersService,
+              private _userService: UserService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
   }
 
-  goBack(route: string): void {
-    this._router.navigate(['/']);
-  }
-
   ngOnInit(): void {
-    this._titleService.setTitle( 'Covalent Users' );
-    this.loadUsers();
+    this._titleService.setTitle('Covalent Users');
+    this.load();
   }
 
   ngAfterViewInit(): void {
@@ -51,42 +46,44 @@ export class UsersComponent implements AfterViewInit, OnInit {
     });
   }
 
-  loadUsers(): void {
-    this._loadingService.register('users.list');
-    this._usersService.query().subscribe((users: IUser[]) => {
-      this.users = users;
-      this.filteredUsers = users;
+  async load(): Promise<void> {
+    try {
+      this._loadingService.register('users.list');
+      this.users = await this._userService.query().toPromise();
+    } catch (error) {
+      this.users = await this._userService.staticQuery().toPromise();
+    } finally {
+      this.filteredUsers = Object.assign([], this.users);
       this._loadingService.resolve('users.list');
-    }, (error: Error) => {
-      this._usersService.staticQuery().subscribe((users: IUser[]) => {
-        this.users = users;
-        this.filteredUsers = users;
-        this._loadingService.resolve('users.list');
-      });
-    });
+    }
   }
 
-  deleteUser(id: string): void {
+  delete(id: string): void {
     this._dialogService
       .openConfirm({message: 'Are you sure you want to delete this user?'})
-      .afterClosed().subscribe((confirm: boolean) => {
+      .afterClosed().toPromise().then((confirm: boolean) => {
         if (confirm) {
-          this._loadingService.register('users.list');
-          this._usersService.delete(id).subscribe(() => {
-            this.users = this.users.filter((user: IUser) => {
-              return user.id !== id;
-            });
-            this.filteredUsers = this.filteredUsers.filter((user: IUser) => {
-              return user.id !== id;
-            });
-            this._loadingService.resolve('users.list');
-            this._snackBarService.open('User deleted', 'Ok');
-          }, (error: Error) => {
-            this._dialogService.openAlert({message: 'There was an error'});
-            this._loadingService.resolve('users.list');
-          });
+          this._delete(id);
         }
       });
+  }
+
+  private async _delete(id: string): Promise<void> {
+    try {
+      this._loadingService.register('users.list');
+      await this._userService.delete(id).toPromise();
+      this.users = this.users.filter((user: IUser) => {
+        return user.id !== id;
+      });
+      this.filteredUsers = this.filteredUsers.filter((user: IUser) => {
+        return user.id !== id;
+      });
+      this._snackBarService.open('User Deleted', 'Ok');
+    } catch (error) {
+      this._dialogService.openAlert({message: 'There was an error trying to delete the user'});
+    } finally {
+      this._loadingService.resolve('users.list');
+    }
   }
 
 }

@@ -8,14 +8,21 @@ import { CovalentMarkdownModule } from '@covalent/markdown';
 
 import { AppComponent } from './app.component';
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
+import { MOCK_API } from '../config/api.config';
 
 import { routedComponents, AppRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
 
+import { USER_PROVIDER, USERS_API } from './users';
+
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
 ];
+
+export function getAPI(): string {
+  return MOCK_API;
+}
 
 @NgModule({
   declarations: [
@@ -37,7 +44,9 @@ const httpInterceptorProviders: Type<any>[] = [
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,
-    Title,
+    Title, {
+      provide: USERS_API, useFactory: getAPI,
+    }, USER_PROVIDER,
   ], // additional providers needed for this module
   entryComponents: [ ],
   bootstrap: [ AppComponent ],
