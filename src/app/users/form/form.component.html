@@ -5,41 +5,8 @@
     <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
     <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
-  <td-layout-manage-list #manageList
-                        [opened]="media.registerQuery('gt-sm') | async"
-                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
-                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-toolbar td-sidenav-content>
-      <span>Users</span>
-    </md-toolbar>
-    <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
-      <a md-list-item>
-        <md-icon md-list-icon>account_circle</md-icon>
-        All Users
-      </a>
-      <a md-list-item>
-        <md-icon md-list-icon>star</md-icon>
-        Favorites
-      </a>
-      <a md-list-item>
-        <md-icon md-list-icon>verified_user</md-icon>
-        Administrators
-      </a>
-      <a md-list-item>
-        <md-icon md-list-icon>supervisor_account</md-icon>
-        Non-Admins
-      </a>
-      <a md-list-item>
-        <md-icon md-list-icon>inbox</md-icon>
-        Archived
-      </a>
-    </md-nav-list>
-    <div td-toolbar-content layout="row" layout-align="start center" flex>
-      <span class="text-capital">{{action}} user</span>
-    </div>
-    <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
-      <md-card-title>User Form</md-card-title>
-      <md-divider></md-divider>
+  <td-layout-card-over cardTitle="User form" cardSubtitle="fill form to {{action}} user">
+    <ng-template tdLoading="user.form">
       <md-card-content class="push-bottom-none">
         <form #userForm="ngForm">
           <div layout="row">
@@ -55,7 +22,7 @@
                       required>
               <md-hint align="start">
                 <span [hidden]="displayNameControl.pristine" class="tc-red-600">
-                  <span [hidden]="!displayNameControl.errors?.required">Required</span>
+                  <span [hidden]="!displayNameControl.hasError('required')">Required</span>
                 </span>
               </md-hint>
               <md-hint align="end">{{displayNameElement.value.length}} / 20</md-hint>
@@ -75,8 +42,8 @@
                       required>
               <md-hint align="start">
                 <span [hidden]="emailControl.pristine" class="tc-red-600">
-                  <span [hidden]="!emailControl.errors?.required">Required</span>
-                  <span [hidden]="!emailControl.errors?.pattern">incorrect pattern</span>
+                  <span [hidden]="!emailControl.hasError('required')">Required</span>
+                  <span [hidden]="!emailControl.hasError('pattern')">incorrect pattern</span>
                 </span>
               </md-hint>
               <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
@@ -92,6 +59,6 @@
         <button md-button [disabled]="!userForm.form.valid" color="primary" (click)="save()">SAVE</button>
         <button md-button (click)="goBack()">CANCEL</button>
       </md-card-actions>
-    </md-card>
-  </td-layout-manage-list>
+    </ng-template>
+  </td-layout-card-over>
 </td-layout-nav>
