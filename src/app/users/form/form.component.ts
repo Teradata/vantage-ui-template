@@ -1,5 +1,7 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { MdSnackBar } from '@angular/material';
 
 import { TdDialogService, TdLoadingService } from '@covalent/core';
 
@@ -24,9 +26,9 @@ export class UsersFormComponent implements OnInit {
   constructor(private _userService: UserService,
               private _router: Router,
               private _route: ActivatedRoute,
+              private _snackBarService: MdSnackBar,
               private _loadingService: TdLoadingService,
-              private _dialogService: TdDialogService,
-              private _changeDetectorRef: ChangeDetectorRef) {}
+              private _dialogService: TdDialogService) {}
 
   goBack(): void {
     this._router.navigate(['/users']);
@@ -76,6 +78,7 @@ export class UsersFormComponent implements OnInit {
       } else {
         await this._userService.update(this.id, this.user).toPromise();
       }
+      this._snackBarService.open('User Saved', 'Ok');
       this.goBack();
     } catch (error) {
       this._dialogService.openAlert({message: 'There was an error saving the user'});
