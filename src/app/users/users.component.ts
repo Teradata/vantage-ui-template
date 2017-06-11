@@ -5,13 +5,12 @@ import { MdSnackBar } from '@angular/material';
 
 import { TdLoadingService, TdDialogService, TdMediaService } from '@covalent/core';
 
-import { UsersService, IUser } from '../../services';
+import { UserService, IUser } from './services/user.service';
 
 @Component({
   selector: 'qs-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
-  viewProviders: [ UsersService ],
 })
 export class UsersComponent implements AfterViewInit, OnInit {
 
@@ -23,7 +22,7 @@ export class UsersComponent implements AfterViewInit, OnInit {
               private _loadingService: TdLoadingService,
               private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar,
-              private _usersService: UsersService,
+              private _userService: UserService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
   }
@@ -33,7 +32,7 @@ export class UsersComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
-    this._titleService.setTitle( 'Covalent Users' );
+    this._titleService.setTitle('Covalent Users');
     this.loadUsers();
   }
 
@@ -53,12 +52,12 @@ export class UsersComponent implements AfterViewInit, OnInit {
 
   loadUsers(): void {
     this._loadingService.register('users.list');
-    this._usersService.query().subscribe((users: IUser[]) => {
+    this._userService.query().subscribe((users: IUser[]) => {
       this.users = users;
       this.filteredUsers = users;
       this._loadingService.resolve('users.list');
     }, (error: Error) => {
-      this._usersService.staticQuery().subscribe((users: IUser[]) => {
+      this._userService.staticQuery().subscribe((users: IUser[]) => {
         this.users = users;
         this.filteredUsers = users;
         this._loadingService.resolve('users.list');
@@ -72,7 +71,7 @@ export class UsersComponent implements AfterViewInit, OnInit {
       .afterClosed().subscribe((confirm: boolean) => {
         if (confirm) {
           this._loadingService.register('users.list');
-          this._usersService.delete(id).subscribe(() => {
+          this._userService.delete(id).subscribe(() => {
             this.users = this.users.filter((user: IUser) => {
               return user.id !== id;
             });
