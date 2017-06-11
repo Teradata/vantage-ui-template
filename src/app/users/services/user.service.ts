@@ -1,4 +1,4 @@
-import { Injectable, Provider, SkipSelf, Optional, InjectionToken } from '@angular/core';
+import { Provider, SkipSelf, Optional, InjectionToken } from '@angular/core';
 import { Response, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
@@ -13,7 +13,6 @@ export interface IUser {
   siteAdmin: number;
 }
 
-@Injectable()
 export class UserService extends RESTService<IUser> {
 
   constructor(private _http: HttpInterceptorService, api: string) {
