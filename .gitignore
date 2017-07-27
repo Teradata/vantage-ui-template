@@ -4,6 +4,7 @@
 /dist
 /deploy
 /tmp
+/mock-api/.tmp
 
 # dependencies
 /node_modules
