@@ -1,3 +1,5 @@
-export const environment: {production: boolean} = {
+import { EnvironmentValues } from './values';
+
+export const environment: EnvironmentValues = {
   production: true,
 };

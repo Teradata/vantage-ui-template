@@ -9,10 +9,10 @@ import { StepState, TdMediaService } from '@covalent/core';
 })
 export class FormComponent implements AfterViewInit {
 
-  activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
+  activeDeactiveStep1Msg = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
   stateStep3: StepState = StepState.Complete;
-  disabled: boolean = false;
+  disabled = false;
 
   constructor(public media: TdMediaService,
               private _changeDetectorRef: ChangeDetectorRef) { }

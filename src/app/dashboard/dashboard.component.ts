@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Title }     from '@angular/platform-browser';
-
+import { Title } from '@angular/platform-browser';
 import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
 import { UserService, IUser } from '../users';
-
 import { ItemsService, ProductsService, AlertsService } from '../../services';
-
 import { multi } from './data';
 
 @Component({
   selector: 'qs-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  viewProviders: [ ItemsService, ProductsService, AlertsService ],
+  viewProviders: [ItemsService, ProductsService, AlertsService],
 })
 export class DashboardComponent implements OnInit {
 
@@ -30,40 +26,40 @@ export class DashboardComponent implements OnInit {
   view: any[] = [700, 400];
 
   // options
-  showXAxis: boolean = true;
-  showYAxis: boolean = true;
-  gradient: boolean = false;
-  showLegend: boolean = false;
-  showXAxisLabel: boolean = true;
-  xAxisLabel: string = '';
-  showYAxisLabel: boolean = true;
-  yAxisLabel: string = 'Sales';
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = false;
+  showXAxisLabel = true;
+  xAxisLabel = '';
+  showYAxisLabel = true;
+  yAxisLabel = 'Sales';
 
   colorScheme: any = {
     domain: ['#1565C0', '#2196F3', '#81D4FA', '#FF9800', '#EF6C00'],
   };
 
   // line, area
-  autoScale: boolean = true;
+  autoScale = true;
 
   constructor(private _titleService: Title,
-              private _itemsService: ItemsService,
-              private _userService: UserService,
-              private _alertsService: AlertsService,
-              private _productsService: ProductsService,
-              private _loadingService: TdLoadingService) {
-                // Chart
-                this.multi = multi.map((group: any) => {
-                  group.series = group.series.map((dataItem: any) => {
-                    dataItem.name = new Date(dataItem.name);
-                    return dataItem;
-                  });
-                  return group;
-                });
+    private _itemsService: ItemsService,
+    private _userService: UserService,
+    private _alertsService: AlertsService,
+    private _productsService: ProductsService,
+    private _loadingService: TdLoadingService) {
+    // Chart
+    this.multi = multi.map((group: any) => {
+      group.series = group.series.map((dataItem: any) => {
+        dataItem.name = new Date(dataItem.name);
+        return dataItem;
+      });
+      return group;
+    });
   }
 
   ngOnInit(): void {
-    this._titleService.setTitle( 'Covalent Quickstart' );
+    this._titleService.setTitle('Covalent Quickstart');
     this._loadingService.register('items.load');
     this._itemsService.query().subscribe((items: Object[]) => {
       this.items = items;

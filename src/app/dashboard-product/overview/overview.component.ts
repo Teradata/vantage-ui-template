@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { single, multi, multi2 } from './data';
 import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
@@ -11,7 +11,7 @@ import { ItemsService } from '../../../services';
   selector: 'qs-product-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
-  viewProviders: [ ItemsService ],
+  viewProviders: [ItemsService],
 })
 export class ProductOverviewComponent implements OnInit {
 
@@ -24,15 +24,15 @@ export class ProductOverviewComponent implements OnInit {
   multi2: any[];
 
   // Generic Chart options
-  showXAxis: boolean = true;
-  showYAxis: boolean = true;
-  gradient: boolean = true;
-  autoScale: boolean = true;
-  showLegend: boolean = false;
-  showXAxisLabel: boolean = false;
-  showYAxisLabel: boolean = false;
-  xAxisLabel: string = 'X Axis';
-  yAxisLabel: string = 'Y Axis';
+  showXAxis = true;
+  showYAxis = true;
+  gradient = true;
+  autoScale = true;
+  showLegend = false;
+  showXAxisLabel = false;
+  showYAxisLabel = false;
+  xAxisLabel = 'X Axis';
+  yAxisLabel = 'Y Axis';
 
   orangeColorScheme: any = {
     domain: [
@@ -47,31 +47,31 @@ export class ProductOverviewComponent implements OnInit {
   };
 
   constructor(private _titleService: Title,
-              private _itemsService: ItemsService,
-              private _userService: UserService,
-              private _loadingService: TdLoadingService) {
-                // Chart Single
-                Object.assign(this, {single});
-                // Chart Multi
-                this.multi = multi.map((group: any) => {
-                  group.series = group.series.map((dataItem: any) => {
-                    dataItem.name = new Date(dataItem.name);
-                    return dataItem;
-                  });
-                  return group;
-                });
-                // Chart Multi2
-                this.multi2 = multi2.map((group: any) => {
-                  group.series = group.series.map((dataItem: any) => {
-                    dataItem.name = new Date(dataItem.name);
-                    return dataItem;
-                  });
-                  return group;
-                });
+    private _itemsService: ItemsService,
+    private _userService: UserService,
+    private _loadingService: TdLoadingService) {
+    // Chart Single
+    Object.assign(this, { single });
+    // Chart Multi
+    this.multi = multi.map((group: any) => {
+      group.series = group.series.map((dataItem: any) => {
+        dataItem.name = new Date(dataItem.name);
+        return dataItem;
+      });
+      return group;
+    });
+    // Chart Multi2
+    this.multi2 = multi2.map((group: any) => {
+      group.series = group.series.map((dataItem: any) => {
+        dataItem.name = new Date(dataItem.name);
+        return dataItem;
+      });
+      return group;
+    });
   }
 
   ngOnInit(): void {
-    this._titleService.setTitle( 'Product Name' );
+    this._titleService.setTitle('Product Name');
 
     this._loadingService.register('items.load');
     this._itemsService.query().subscribe((items: Object[]) => {

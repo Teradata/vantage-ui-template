@@ -49,7 +49,7 @@ export class UsersFormComponent implements OnInit {
   async load(): Promise<void> {
     try {
       this._loadingService.register('user.form');
-      let user: IUser = await this._userService.get(this.id).toPromise();
+      const user: IUser = await this._userService.get(this.id).toPromise();
       this.displayName = user.displayName;
       this.email = user.email;
       this.admin = (user.siteAdmin === 1 ? true : false);
@@ -63,8 +63,8 @@ export class UsersFormComponent implements OnInit {
   async save(): Promise<void> {
     try {
       this._loadingService.register('user.form');
-      let siteAdmin: number = (this.admin ? 1 : 0);
-      let now: Date = new Date();
+      const siteAdmin: number = (this.admin ? 1 : 0);
+      const now: Date = new Date();
       this.user = {
         displayName: this.displayName,
         email: this.email,

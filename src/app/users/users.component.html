@@ -1,14 +1,19 @@
 <td-layout-nav logo="assets:covalent">
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
+  </button>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Product Name</span>
     <span flex></span>
-    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank">
+      <md-icon>chrome_reader_mode</md-icon>
+    </a>
+    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank">
+      <md-icon svgIcon="assets:github"></md-icon>
+    </a>
   </div>
-  <td-layout-manage-list #manageList
-                        [opened]="media.registerQuery('gt-sm') | async"
-                        [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
-                        [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+  <td-layout-manage-list #manageList [opened]="media.registerQuery('gt-sm') | async" [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
+    [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '80%'">
     <md-toolbar td-sidenav-content>
       <span>Users</span>
     </md-toolbar>
@@ -34,14 +39,19 @@
         Archived
       </a>
     </md-nav-list>
-    <div td-toolbar-content layout="row" layout-align="start center" flex>
-      <span>All Users</span>
-      <span flex></span>
-      <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
-    </div>
+    <md-toolbar>
+      <div td-toolbar-content layout="row" layout-align="start center" flex>
+        <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <md-icon>apps</md-icon>
+        </button>
+        <span>All Users</span>
+        <span flex></span>
+        <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
+      </div>
+    </md-toolbar>
     <md-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
       <md-divider></md-divider>
@@ -80,7 +90,7 @@
         </md-list>
       </ng-template>
     </md-card>
-  </td-layout-manage-list>   
+  </td-layout-manage-list>
 </td-layout-nav>
 <a md-fab color="accent" class="mat-fab-bottom-right" [routerLink]="['add']">
   <md-icon>add</md-icon>
