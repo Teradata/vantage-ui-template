@@ -1,6 +1,5 @@
 import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
-
+import { Title } from '@angular/platform-browser';
 import { TdLoadingService, TdMediaService } from '@covalent/core';
 
 import { ItemsService, ProductsService } from '../../services';
@@ -9,7 +8,7 @@ import { ItemsService, ProductsService } from '../../services';
   selector: 'qs-logs',
   templateUrl: './logs.component.html',
   styleUrls: ['./logs.component.scss'],
-  viewProviders: [ ItemsService, ProductsService ],
+  viewProviders: [ItemsService, ProductsService],
 })
 export class LogsComponent implements AfterViewInit, OnInit {
 
@@ -17,16 +16,16 @@ export class LogsComponent implements AfterViewInit, OnInit {
   products: Object[];
 
   constructor(private _titleService: Title,
-              private _itemsService: ItemsService,
-              private _productsService: ProductsService,
-              private _loadingService: TdLoadingService,
-              private _changeDetectorRef: ChangeDetectorRef,
-              public media: TdMediaService) {
+    private _itemsService: ItemsService,
+    private _productsService: ProductsService,
+    private _loadingService: TdLoadingService,
+    private _changeDetectorRef: ChangeDetectorRef,
+    public media: TdMediaService) {
 
   }
 
   ngOnInit(): void {
-    this._titleService.setTitle( 'Covalent Logs' );
+    this._titleService.setTitle('Covalent Logs');
 
     this._loadingService.register('items.load');
     this._itemsService.query().subscribe((items: Object[]) => {

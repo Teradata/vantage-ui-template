@@ -13,7 +13,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('Component: DashboardProduct', () => {
 
-  let noop: () => void = () => {
+  const noop: () => void = () => {
     // noop method
   };
 
@@ -45,9 +45,9 @@ describe('Component: DashboardProduct', () => {
   }));
 
   it('should create the component', (done: any) => {
-    let fixture: ComponentFixture<any> = TestBed.createComponent(DashboardProductComponent);
-    let testComponent: DashboardProductComponent = fixture.debugElement.componentInstance;
-    let element: HTMLElement = fixture.nativeElement;
+    const fixture: ComponentFixture<any> = TestBed.createComponent(DashboardProductComponent);
+    const testComponent: DashboardProductComponent = fixture.debugElement.componentInstance;
+    const element: HTMLElement = fixture.nativeElement;
 
     testComponent.ngAfterViewInit();
     fixture.detectChanges();

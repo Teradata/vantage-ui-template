@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 
 import { TdLoadingService } from '@covalent/core';
 import { TdDialogService } from '@covalent/core';
@@ -10,7 +10,7 @@ import { FeaturesService, IFeature } from '../../../services';
   selector: 'qs-product-features',
   templateUrl: './features.component.html',
   styleUrls: ['./features.component.scss'],
-  viewProviders: [ FeaturesService ],
+  viewProviders: [FeaturesService],
 })
 export class ProductFeaturesComponent implements OnInit {
 
@@ -18,9 +18,9 @@ export class ProductFeaturesComponent implements OnInit {
   filteredFeatures: IFeature[];
 
   constructor(private _titleService: Title,
-              private _dialogService: TdDialogService,
-              private _featuresService: FeaturesService,
-              private _loadingService: TdLoadingService) {
+    private _dialogService: TdDialogService,
+    private _featuresService: FeaturesService,
+    private _loadingService: TdLoadingService) {
 
   }
   openConfirm(id: string): void {
@@ -38,7 +38,7 @@ export class ProductFeaturesComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this._titleService.setTitle( 'Product Features' );
+    this._titleService.setTitle('Product Features');
     this.loadFeatures();
   }
   filterFeatures(filterTitle: string = ''): void {

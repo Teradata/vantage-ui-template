@@ -22,7 +22,7 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.params.subscribe((params: {id: string}) => {
-      let itemId: string = params.id;
+      const itemId: string = params.id;
       this._itemsService.get(itemId).subscribe((item: Object) => {
         this.item = item;
       }, (error: Error) => {

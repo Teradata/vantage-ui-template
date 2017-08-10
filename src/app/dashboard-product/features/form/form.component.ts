@@ -31,7 +31,7 @@ export class FeaturesFormComponent implements OnInit  {
       this.action = (url.length > 1 ? url[1].path : 'add');
     });
     this._route.params.subscribe((params: {id: string}) => {
-      let featureId: string = params.id;
+      const featureId: string = params.id;
       this._featuresService.get(featureId).subscribe((feature: any) => {
         this.title = feature.title;
         this.user = feature.user;
@@ -42,8 +42,8 @@ export class FeaturesFormComponent implements OnInit  {
   }
 
   save(): void {
-    let enabled: number = (this.enabled ? 1 : 0);
-    let now: Date = new Date();
+    const enabled: number = (this.enabled ? 1 : 0);
+    const now: Date = new Date();
     this.feature = {
       title: this.title,
       user: this.user,

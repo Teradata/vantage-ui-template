@@ -19,11 +19,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 describe('Component: ProductOverview', () => {
 
-  let noop: () => void = () => {
+  const noop: () => void = () => {
     // noop method
   };
 
-  let generalResponses: Map<string, Response> = new Map<string, Response>();
+  const generalResponses: Map<string, Response> = new Map<string, Response>();
   generalResponses.set('assets/icons/covalent.svg', new Response(new ResponseOptions({
     status: 200, body: '<svg></svg>',
   })));
@@ -61,7 +61,7 @@ describe('Component: ProductOverview', () => {
 
   it('should create the component', (done: any) => {
     inject([MockBackend], (mockBackend: MockBackend) => {
-      let responses: Map<string, Response> = new Map<string, Response>(generalResponses);
+      const responses: Map<string, Response> = new Map<string, Response>(generalResponses);
       mockBackend.connections.subscribe((connection: any) => {
         connection.mockRespond(responses.get(connection.request.url));
       });
@@ -98,9 +98,9 @@ describe('Component: ProductOverview', () => {
         }]),
       })));
 
-      let fixture: ComponentFixture<any> = TestBed.createComponent(ProductOverviewComponent);
-      let testComponent: ProductOverviewComponent = fixture.debugElement.componentInstance;
-      let element: HTMLElement = fixture.nativeElement;
+      const fixture: ComponentFixture<any> = TestBed.createComponent(ProductOverviewComponent);
+      const testComponent: ProductOverviewComponent = fixture.debugElement.componentInstance;
+      const element: HTMLElement = fixture.nativeElement;
 
       expect(element.querySelector('.item-list')).toBeTruthy();
       expect(element.querySelector('.user-list')).toBeTruthy();

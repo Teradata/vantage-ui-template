@@ -1,10 +1,10 @@
 import { NgModule, Type } from '@angular/core';
-import { BrowserModule, Title }  from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
+import 'rxjs/add/operator/catch';
 
 import { AppComponent } from './app.component';
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
@@ -48,7 +48,6 @@ export function getAPI(): string {
       provide: USERS_API, useFactory: getAPI,
     }, USER_PROVIDER,
   ], // additional providers needed for this module
-  entryComponents: [ ],
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,1 +1,1 @@
-export const MOCK_API: string = 'http://localhost:8080';
+export const MOCK_API = 'http://localhost:8080';
