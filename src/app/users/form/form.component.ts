@@ -1,18 +1,20 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { ActivatedRoute } from '@angular/router';
+import { MdSnackBar } from '@angular/material';
 
-import { TdMediaService } from '@covalent/core';
+import { TdDialogService, TdLoadingService } from '@covalent/core';
 
-import { UsersService, IUser } from '../../../services';
+import { UserService, IUser } from '../services/user.service';
+
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'qs-user-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  viewProviders: [ UsersService ],
 })
-export class UsersFormComponent implements OnInit, AfterViewInit {
+export class UsersFormComponent implements OnInit {
 
   displayName: string;
   email: string;
@@ -21,17 +23,15 @@ export class UsersFormComponent implements OnInit, AfterViewInit {
   user: IUser;
   action: string;
 
-  constructor(private _usersService: UsersService,
+  constructor(private _userService: UserService,
+              private _router: Router,
               private _route: ActivatedRoute,
-              public media: TdMediaService) {}
+              private _snackBarService: MdSnackBar,
+              private _loadingService: TdLoadingService,
+              private _dialogService: TdDialogService) {}
 
   goBack(): void {
-    window.history.back();
-  }
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
+    this._router.navigate(['/users']);
   }
 
   ngOnInit(): void {
@@ -39,35 +39,51 @@ export class UsersFormComponent implements OnInit, AfterViewInit {
       this.action = (url.length > 1 ? url[1].path : 'add');
     });
     this._route.params.subscribe((params: {id: string}) => {
-      let userId: string = params.id;
-      this._usersService.get(userId).subscribe((user: any) => {
-        this.displayName = user.displayName;
-        this.email = user.email;
-        this.admin = (user.siteAdmin === 1 ? true : false);
-        this.id = user.id;
-      });
+      this.id = params.id;
+      if (this.id) {
+        this.load();
+      }
     });
   }
 
-  save(): void {
-    let siteAdmin: number = (this.admin ? 1 : 0);
-    let now: Date = new Date();
-    this.user = {
-      displayName: this.displayName,
-      email: this.email,
-      siteAdmin: siteAdmin,
-      id: this.id || this.displayName.replace(/\s+/g, '.'),
-      created: now,
-      lastAccess: now,
-    };
-    if (this.action === 'add') {
-      this._usersService.create(this.user).subscribe(() => {
-        this.goBack();
-      });
-    } else {
-      this._usersService.update(this.id, this.user).subscribe(() => {
-        this.goBack();
-      });
+  async load(): Promise<void> {
+    try {
+      this._loadingService.register('user.form');
+      let user: IUser = await this._userService.get(this.id).toPromise();
+      this.displayName = user.displayName;
+      this.email = user.email;
+      this.admin = (user.siteAdmin === 1 ? true : false);
+    } catch (error) {
+      this._dialogService.openAlert({message: 'There was an error loading the user'});
+    } finally {
+      this._loadingService.resolve('user.form');
+    }
+  }
+
+  async save(): Promise<void> {
+    try {
+      this._loadingService.register('user.form');
+      let siteAdmin: number = (this.admin ? 1 : 0);
+      let now: Date = new Date();
+      this.user = {
+        displayName: this.displayName,
+        email: this.email,
+        siteAdmin: siteAdmin,
+        id: this.id || this.displayName.replace(/\s+/g, '.'),
+        created: now,
+        lastAccess: now,
+      };
+      if (this.action === 'add') {
+        await this._userService.create(this.user).toPromise();
+      } else {
+        await this._userService.update(this.id, this.user).toPromise();
+      }
+      this._snackBarService.open('User Saved', 'Ok');
+      this.goBack();
+    } catch (error) {
+      this._dialogService.openAlert({message: 'There was an error saving the user'});
+    } finally {
+      this._loadingService.resolve('user.form');
     }
   }
 }

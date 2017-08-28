@@ -1,20 +1,22 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { single, multi, multi2 } from './data';
 import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
-import { ItemsService, UsersService } from '../../../services';
+import { UserService, IUser } from '../../users';
+
+import { ItemsService } from '../../../services';
 
 @Component({
   selector: 'qs-product-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
-  viewProviders: [ ItemsService, UsersService ],
+  viewProviders: [ ItemsService ],
 })
-export class ProductOverviewComponent implements AfterViewInit {
+export class ProductOverviewComponent implements OnInit {
 
   items: Object[];
-  users: Object[];
+  users: IUser[];
 
   // Chart
   single: any[];
@@ -46,7 +48,7 @@ export class ProductOverviewComponent implements AfterViewInit {
 
   constructor(private _titleService: Title,
               private _itemsService: ItemsService,
-              private _usersService: UsersService,
+              private _userService: UserService,
               private _loadingService: TdLoadingService) {
                 // Chart Single
                 Object.assign(this, {single});
@@ -68,7 +70,7 @@ export class ProductOverviewComponent implements AfterViewInit {
                 });
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this._titleService.setTitle( 'Product Name' );
 
     this._loadingService.register('items.load');
@@ -86,13 +88,13 @@ export class ProductOverviewComponent implements AfterViewInit {
       });
     });
     this._loadingService.register('users.load');
-    this._usersService.query().subscribe((users: Object[]) => {
+    this._userService.query().subscribe((users: IUser[]) => {
       this.users = users;
       setTimeout(() => {
         this._loadingService.resolve('users.load');
       }, 2000);
     }, (error: Error) => {
-      this._usersService.staticQuery().subscribe((users: Object[]) => {
+      this._userService.staticQuery().subscribe((users: IUser[]) => {
         this.users = users;
         setTimeout(() => {
           this._loadingService.resolve('users.load');

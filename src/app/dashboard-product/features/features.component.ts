@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService } from '@covalent/core';
@@ -12,7 +12,7 @@ import { FeaturesService, IFeature } from '../../../services';
   styleUrls: ['./features.component.scss'],
   viewProviders: [ FeaturesService ],
 })
-export class ProductFeaturesComponent implements AfterViewInit {
+export class ProductFeaturesComponent implements OnInit {
 
   features: IFeature[];
   filteredFeatures: IFeature[];
@@ -37,7 +37,7 @@ export class ProductFeaturesComponent implements AfterViewInit {
       }
     });
   }
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this._titleService.setTitle( 'Product Features' );
     this.loadFeatures();
   }

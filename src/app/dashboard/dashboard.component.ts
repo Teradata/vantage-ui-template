@@ -1,10 +1,12 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Title }     from '@angular/platform-browser';
 
 import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
 
-import { ItemsService, UsersService, ProductsService, AlertsService } from '../../services';
+import { UserService, IUser } from '../users';
+
+import { ItemsService, ProductsService, AlertsService } from '../../services';
 
 import { multi } from './data';
 
@@ -12,12 +14,12 @@ import { multi } from './data';
   selector: 'qs-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  viewProviders: [ ItemsService, UsersService, ProductsService, AlertsService ],
+  viewProviders: [ ItemsService, ProductsService, AlertsService ],
 })
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent implements OnInit {
 
   items: Object[];
-  users: Object[];
+  users: IUser[];
   products: Object[];
   alerts: Object[];
 
@@ -46,7 +48,7 @@ export class DashboardComponent implements AfterViewInit {
 
   constructor(private _titleService: Title,
               private _itemsService: ItemsService,
-              private _usersService: UsersService,
+              private _userService: UserService,
               private _alertsService: AlertsService,
               private _productsService: ProductsService,
               private _loadingService: TdLoadingService) {
@@ -60,7 +62,7 @@ export class DashboardComponent implements AfterViewInit {
                 });
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this._titleService.setTitle( 'Covalent Quickstart' );
     this._loadingService.register('items.load');
     this._itemsService.query().subscribe((items: Object[]) => {
@@ -98,13 +100,13 @@ export class DashboardComponent implements AfterViewInit {
       }, 750);
     });
     this._loadingService.register('users.load');
-    this._usersService.query().subscribe((users: Object[]) => {
+    this._userService.query().subscribe((users: IUser[]) => {
       this.users = users;
       setTimeout(() => {
         this._loadingService.resolve('users.load');
       }, 750);
     }, (error: Error) => {
-      this._usersService.staticQuery().subscribe((users: Object[]) => {
+      this._userService.staticQuery().subscribe((users: IUser[]) => {
         this.users = users;
         setTimeout(() => {
           this._loadingService.resolve('users.load');

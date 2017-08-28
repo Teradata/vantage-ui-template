@@ -4,17 +4,23 @@ import {
   async,
   ComponentFixture,
 } from '@angular/core/testing';
-import {APP_BASE_HREF} from '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { XHRBackend, Response, ResponseOptions } from '@angular/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockBackend } from '@angular/http/testing';
-import { CovalentCoreModule, TdLoadingService } from '@covalent/core';
+import { SharedModule } from '../../shared/shared.module';
+
+import { TdLoadingService } from '@covalent/core';
 import { CovalentHttpModule } from '@covalent/http';
 
+import { UsersModule } from '../../users/users.module';
+import { UserService, IUser } from '../../users/services/user.service';
 import { ProductOverviewComponent } from './overview.component';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+import { Observable } from 'rxjs/Observable';
 
 describe('Component: ProductOverview', () => {
 
@@ -32,33 +38,28 @@ describe('Component: ProductOverview', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      declarations: [
+        ProductOverviewComponent,
+      ],
       imports: [
-        CovalentCoreModule,
+        SharedModule,
+        UsersModule,
         CovalentHttpModule.forRoot(),
         RouterTestingModule,
         NgxChartsModule,
         NoopAnimationsModule,
       ],
-      declarations: [
-        ProductOverviewComponent,
-      ],
       providers: [
         MockBackend,
-        { provide: XHRBackend, useExisting: MockBackend },
         { provide: APP_BASE_HREF, useValue: '/' },
-        { provide: TdLoadingService, useValue: {
-            createComponent: noop,
-            createReplaceComponent: noop,
-            register: noop,
-            resolve: noop,
-          },
-        },
+        TdLoadingService,
+        { provide: XHRBackend, useExisting: MockBackend },
       ],
     });
     TestBed.compileComponents();
   }));
 
-  it('should create the component', (done: any) => {
+  it('should create the component', () => {
     inject([MockBackend], (mockBackend: MockBackend) => {
       let responses: Map<string, Response> = new Map<string, Response>(generalResponses);
       mockBackend.connections.subscribe((connection: any) => {
@@ -98,21 +99,19 @@ describe('Component: ProductOverview', () => {
       })));
 
       let fixture: ComponentFixture<any> = TestBed.createComponent(ProductOverviewComponent);
-      let testComponent: ProductOverviewComponent = fixture.debugElement.componentInstance;
+      let testComponent: ProductOverviewComponent = fixture.componentInstance;
       let element: HTMLElement = fixture.nativeElement;
 
       expect(element.querySelector('.item-list')).toBeTruthy();
       expect(element.querySelector('.user-list')).toBeTruthy();
-      testComponent.ngAfterViewInit();
+      testComponent.ngOnInit();
       fixture.detectChanges();
 
-      fixture.whenStable().then(() => {
-        expect(element.querySelectorAll('.item-list a[md-list-item]').length)
-        .toBe(testComponent.items.length);
-        expect(element.querySelectorAll('.user-list md-list-item').length)
+      expect(element.querySelectorAll('md-nav-list.item-list a[md-list-item]').length)
+      .toBe(testComponent.items.length);
+
+      expect(element.querySelectorAll('md-list.user-list md-list-item').length)
         .toBe(testComponent.users.length);
-        done();
-      });
     })();
   });
 });

@@ -4,6 +4,7 @@
 /dist
 /deploy
 /tmp
+/mock-api/.tmp
 
 # dependencies
 /node_modules
@@ -18,10 +19,10 @@
 
 # IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
 
 # misc
 /.sass-cache
@@ -32,6 +33,7 @@ npm-debug.log
 testem.log
 /typings
 /.vagrant
+yarn-error.log
 
 # e2e
 /e2e/*.js
