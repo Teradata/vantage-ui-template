@@ -1,15 +1,18 @@
 <td-layout-nav class="white" logo="assets:covalent">
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
+  </button>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Product Name</span>
     <span flex></span>
     <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
     <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
   </div>
-  <td-layout-manage-list #manageList
+  <td-layout-manage-list
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-nav-list td-sidenav-content (click)="!media.query('gt-sm') && manageList.close()">
+    <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a md-list-item>
         <md-icon>dashboard</md-icon>
         Dashboard
@@ -28,6 +31,9 @@
       </a>
     </md-nav-list>
     <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+        <md-icon>arrow_back</md-icon>
+      </button>
       <a md-icon-button [routerLink]="['/product']"><md-icon>arrow_back</md-icon></a>
       <span>New Item</span>
       <span flex></span>

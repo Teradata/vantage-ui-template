@@ -65,7 +65,7 @@
     "zone.js": "^0.8.5"
   },
   "devDependencies": {
-    "@angular/cli": "1.1.1",
+    "@angular/cli": "1.2.0",
     "@angular/compiler-cli": "^4.2.0",
     "@types/hammerjs": "2.0.30",
     "@types/jasmine": "2.5.38",
@@ -87,7 +87,7 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.1.0",
     "tslint": "^5.2.0",
-    "typescript": "~2.3.1"
+    "typescript": "2.3.2"
   },
   "optionalDependencies": {
     "@covalent/data": "0.7.0"
