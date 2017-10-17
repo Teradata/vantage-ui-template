@@ -15,10 +15,9 @@
     <md-toolbar td-sidenav-content>
       <span>Product Name</span>
     </md-toolbar>
-    <md-nav-list td-sidenav-content>
+    <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a md-list-item
         md-ripple class="block relative"
-        [tdLayoutManageListClose]="!media.query('gt-sm')"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/product']">
@@ -27,7 +26,6 @@
       </a>
       <a md-list-item
         md-ripple class="block relative"
-        [tdLayoutManageListClose]="!media.query('gt-sm')"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['stats']">
@@ -36,35 +34,39 @@
       </a>
       <a md-list-item
         md-ripple class="block relative"
-        [tdLayoutManageListClose]="!media.query('gt-sm')"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['features']">
         <md-icon md-list-icon>star</md-icon>
         Features
       </a>
-      <a md-list-item [tdLayoutManageListClose]="!media.query('gt-sm')" md-ripple class="block relative">
+      <a md-list-item md-ripple class="block relative">
         <md-icon md-list-icon>people</md-icon>
         Customers
       </a>
       <h3 md-subheader>Admin Menu</h3>
-      <a md-list-item [tdLayoutManageListClose]="!media.query('gt-sm')" md-ripple class="block relative">
+      <a md-list-item md-ripple class="block relative">
         <md-icon md-list-icon>receipt</md-icon>
         Log
       </a>
-      <a md-list-item [tdLayoutManageListClose]="!media.query('gt-sm')" md-ripple class="block relative">
+      <a md-list-item md-ripple class="block relative">
         <md-icon md-list-icon>settings</md-icon>
         Settings
       </a>
     </md-nav-list>
-    <div td-toolbar-content layout="row" layout-align="start center" flex>
-      <span>{{title}}</span>
-      <span flex></span>
-      <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-      <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
-    </div>
+    <md-toolbar>
+      <button md-icon-button tdLayoutManageListClose [hideWhenOpened]="true" (click)="goBack()">
+        <md-icon>arrow_back</md-icon>
+      </button>
+      <div td-toolbar-content layout="row" layout-align="start center" flex>
+        <span>{{title}}</span>
+        <span flex></span>
+        <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
+        <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
+      </div>
+    </md-toolbar>
     <router-outlet></router-outlet>
   </td-layout-manage-list>
 </td-layout-nav>

@@ -59,4 +59,8 @@ export class LogsComponent implements AfterViewInit, OnInit {
     this._changeDetectorRef.detectChanges();
   }
 
+  goBack(): void {
+    window.history.back();
+  }
+
 }

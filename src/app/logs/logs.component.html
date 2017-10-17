@@ -17,10 +17,15 @@
           <md-divider *ngIf="!last" md-inset></md-divider>
         </ng-template>
     </md-nav-list>
-    <div td-toolbar-content layout="row" layout-align="center center" flex>
-      <span>All Product Logs</span>
-      <span flex></span>
-    </div>
+    <md-toolbar>
+      <button md-icon-button tdLayoutNavListClose [hideWhenOpened]="true" (click)="goBack()">
+        <md-icon>arrow_back</md-icon>
+      </button>
+      <div td-toolbar-content layout="row" layout-align="center center" flex>
+        <span>All Product Logs</span>
+        <span flex></span>
+      </div>
+    </md-toolbar>
     <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <md-card-title>Logs</md-card-title>
       <md-divider></md-divider>
