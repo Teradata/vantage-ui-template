@@ -68,10 +68,6 @@ export class UsersComponent implements AfterViewInit, OnInit {
       });
   }
 
-  goBack(): void {
-    window.history.back();
-  }
-
   private async _delete(id: string): Promise<void> {
     try {
       this._loadingService.register('users.list');

@@ -28,8 +28,4 @@ export class DashboardProductComponent implements AfterViewInit, OnInit {
     // have finished when `ngAfterViewInit` is executed
     this._changeDetectorRef.detectChanges();
   }
-
-  goBack(): void {
-    window.history.back();
-  }
 }
