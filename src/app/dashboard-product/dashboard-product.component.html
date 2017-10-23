@@ -17,7 +17,6 @@
     </md-toolbar>
     <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a md-list-item
-        md-ripple class="block relative"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/product']">
@@ -25,7 +24,6 @@
         Dashboard
       </a>
       <a md-list-item
-        md-ripple class="block relative"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['stats']">
@@ -33,29 +31,28 @@
         Stats
       </a>
       <a md-list-item
-        md-ripple class="block relative"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['features']">
         <md-icon md-list-icon>star</md-icon>
         Features
       </a>
-      <a md-list-item md-ripple class="block relative">
+      <a md-list-item>
         <md-icon md-list-icon>people</md-icon>
         Customers
       </a>
       <h3 md-subheader>Admin Menu</h3>
-      <a md-list-item md-ripple class="block relative">
+      <a md-list-item>
         <md-icon md-list-icon>receipt</md-icon>
         Log
       </a>
-      <a md-list-item md-ripple class="block relative">
+      <a md-list-item>
         <md-icon md-list-icon>settings</md-icon>
         Settings
       </a>
     </md-nav-list>
     <md-toolbar>
-      <button md-icon-button tdLayoutManageListClose [hideWhenOpened]="true" (click)="goBack()">
+      <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <md-icon>arrow_back</md-icon>
       </button>
       <div td-toolbar-content layout="row" layout-align="start center" flex>
