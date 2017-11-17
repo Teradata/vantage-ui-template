@@ -35,7 +35,7 @@ md-nav-list {
             background-color: mat-color($accent);
             color: mat-color($accent, default-contrast)
         }
-        md-icon[md-list-icon] {
+        md-icon[mdListIcon] {
             color: mat-color($accent);
         }
     }

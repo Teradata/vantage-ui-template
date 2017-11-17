@@ -37,7 +37,7 @@
           </div>
           <ng-template let-item let-last="last" ngFor [ngForOf]="items">
             <md-list-item [title]="item.description">
-              <md-icon md-list-icon> {{item.icon}} </md-icon>
+              <md-icon mdListIcon> {{item.icon}} </md-icon>
               <h3 mdLine> {{item.description}} <span class="md-caption tc-grey-600">({{item.created}})</span> </h3>
               <p mdLine> {{item.name}} </p>
             </md-list-item>

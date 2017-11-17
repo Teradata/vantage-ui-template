@@ -8,7 +8,7 @@
             </div>
             <ng-template let-item let-last="last" ngFor [ngForOf]="filteredFeatures">
                 <md-list-item>
-                    <md-slide-toggle md-list-icon [(ngModel)]="item.enabled"></md-slide-toggle>
+                    <md-slide-toggle mdListIcon [(ngModel)]="item.enabled"></md-slide-toggle>
                     <h3 mdLine> {{item.title}} </h3>
                     <span flex></span>
                     <span flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
