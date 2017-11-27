@@ -46,8 +46,13 @@
                 <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
                     <h3>No results to display.</h3>
                 </div> 
-                <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
-                    <span td-paging-bar-label hide-xs>Row per page:</span>
+                <td-paging-bar #pagingBar [total]="filteredTotal" (change)="page($event)">
+                    <span hide-xs>Row per page:</span>
+                    <md-select [(ngModel)]="pageSize">
+                        <md-option *ngFor="let size of [5, 10, 15, 20]" [value]="size">
+                            {{size}}
+                        </md-option>
+                    </md-select>
                     {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
                 </td-paging-bar>
             </md-card>
