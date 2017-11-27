@@ -12,24 +12,24 @@
           <md-card-content>
             <form #loginForm="ngForm">
               <div layout="row">
-                <md-input-container flex> 
+                <md-form-field flex> 
                   <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
                   <span md-prefix><md-icon>person</md-icon></span>
                   <md-hint align="start">
                     <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
                   </md-hint>
                   <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
-                </md-input-container>
+                </md-form-field>
               </div>
               <div layout="row">
-                <md-input-container flex> 
+                <md-form-field flex> 
                   <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
                   <span md-prefix><md-icon>lock</md-icon></span>
                   <md-hint align="start">
                     <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
                   </md-hint>
                   <md-hint align="end">Something hard to guess</md-hint>
-                </md-input-container>
+                </md-form-field>
               </div>
             </form>
           </md-card-content>

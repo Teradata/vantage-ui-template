@@ -13,7 +13,7 @@
       <md-card-content class="push-bottom-none">
         <form #userForm="ngForm">
           <div layout="row">
-            <md-input-container flex> 
+            <md-form-field flex> 
               <input mdInput
                       #displayNameElement
                       #displayNameControl="ngModel"
@@ -29,10 +29,10 @@
                 </span>
               </md-hint>
               <md-hint align="end">{{displayNameElement.value.length}} / 20</md-hint>
-            </md-input-container>
+            </md-form-field>
           </div>
           <div layout="row" class="push-top">
-            <md-input-container flex> 
+            <md-form-field flex> 
               <input mdInput
                       #emailElement
                       #emailControl="ngModel"
@@ -50,7 +50,7 @@
                 </span>
               </md-hint>
               <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
-            </md-input-container>
+            </md-form-field>
           </div>
           <div layout="row">
             <md-slide-toggle [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>

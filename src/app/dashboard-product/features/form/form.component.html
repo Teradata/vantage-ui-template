@@ -6,7 +6,7 @@
   <md-card-content class="push-bottom-none">
     <form #featureForm="ngForm">
       <div layout="row">
-        <md-input-container flex>
+        <md-form-field flex>
           <input mdInput
                   #titleElement
                   #titleControl="ngModel" 
@@ -20,10 +20,10 @@
             <span [hidden]="titleControl.pristine || !titleControl.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
           <md-hint align="end">{{titleElement.value.length}} / 20</md-hint>
-        </md-input-container>
+        </md-form-field>
       </div>
       <div layout="row" class="push-top">
-        <md-input-container flex>
+        <md-form-field flex>
           <input mdInput
                   #userElement
                   #userControl="ngModel"
@@ -37,7 +37,7 @@
             <span [hidden]="userControl.pristine || !userControl.errors?.required" class="tc-red-600">Required</span>
           </md-hint>
           <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
-        </md-input-container>
+        </md-form-field>
       </div>
       <div layout="row">
         <md-slide-toggle [(ngModel)]="enabled" name="enabled">Enabled</md-slide-toggle>
