@@ -31,7 +31,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // Active icon color in list nav
 md-nav-list {
     [md-list-item].active {
-        md-icon[md-list-avatar] {
+        md-icon[mdListAvatar] {
             background-color: mat-color($accent);
             color: mat-color($accent, default-contrast)
         }

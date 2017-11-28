@@ -60,7 +60,7 @@
           </div>
           <ng-template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
             <md-list-item>
-              <md-icon md-list-avatar>person</md-icon>
+              <md-icon mdListAvatar>person</md-icon>
               <h3 mdLine> {{user.displayName}} </h3>
               <p mdLine> {{user.email}} </p>
               <p mdLine hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>

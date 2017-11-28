@@ -76,7 +76,7 @@
           <ng-template tdLoading="items.load">
             <ng-template let-item let-last="last" ngFor [ngForOf]="items">
               <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
-                <md-icon md-list-avatar> {{item.icon}} </md-icon>
+                <md-icon mdListAvatar> {{item.icon}} </md-icon>
                 <h3 mdLine> {{item.name}} </h3>
                 <p mdLine> {{item.description | truncate:50 }} </p>
                 <span flex></span>
@@ -97,7 +97,7 @@
           <ng-template tdLoading="alerts.load">
             <ng-template let-item let-last="last" ngFor [ngForOf]="alerts">
               <md-list-item layout-align="row">
-                <md-icon md-list-avatar class="bgc-amber-800">{{item.icon}}</md-icon>
+                <md-icon mdListAvatar class="bgc-amber-800">{{item.icon}}</md-icon>
                 <h3 mdLine> {{item.description}} </h3>
                 <p mdLine> {{item.name}} </p>
               </md-list-item>
@@ -120,7 +120,7 @@
           <ng-template tdLoading="favorites.load">
             <ng-template let-item let-last="last" ngFor [ngForOf]="products">
               <md-list-item layout-align="row" [routerLink]="['/product']">
-                <md-icon md-list-avatar>{{item.icon}}</md-icon>
+                <md-icon mdListAvatar>{{item.icon}}</md-icon>
                 <h3 mdLine> {{item.name}} </h3>
                 <p mdLine> {{item.description}} </p>
               </md-list-item>
