@@ -17,23 +17,23 @@
     </md-toolbar>
     <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a md-list-item>
-        <md-icon md-list-icon>account_circle</md-icon>
+        <md-icon mdListIcon>account_circle</md-icon>
         All Users
       </a>
       <a md-list-item>
-        <md-icon md-list-icon>star</md-icon>
+        <md-icon mdListIcon>star</md-icon>
         Favorites
       </a>
       <a md-list-item>
-        <md-icon md-list-icon>verified_user</md-icon>
+        <md-icon mdListIcon>verified_user</md-icon>
         Administrators
       </a>
       <a md-list-item>
-        <md-icon md-list-icon>supervisor_account</md-icon>
+        <md-icon mdListIcon>supervisor_account</md-icon>
         Non-Admins
       </a>
       <a md-list-item>
-        <md-icon md-list-icon>inbox</md-icon>
+        <md-icon mdListIcon>inbox</md-icon>
         Archived
       </a>
     </md-nav-list>
@@ -60,10 +60,10 @@
           </div>
           <ng-template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
             <md-list-item>
-              <md-icon md-list-avatar>person</md-icon>
-              <h3 md-line> {{user.displayName}} </h3>
-              <p md-line> {{user.email}} </p>
-              <p md-line hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
+              <md-icon mdListAvatar>person</md-icon>
+              <h3 mdLine> {{user.displayName}} </h3>
+              <p mdLine> {{user.email}} </p>
+              <p mdLine hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
               <span flex></span>
               <span hide-xs hide-sm hide-md flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
                   <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.created | date }} </div>

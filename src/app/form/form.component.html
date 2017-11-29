@@ -42,17 +42,17 @@
             <td-step #step1 label="Step 1" sublabel="simple metadata" [disabled]="disabled" (activated)="activeStep1Event()" (deactivated)="deactiveStep1Event()">
               <div layout-gt-xs="row">
                 <div class="pad">
-                  <md-input-container>
+                  <md-form-field>
                     <input mdInput placeholder="Entry name (10 max)" maxlength="10" #inputHint>
                     <md-hint align="end">{{inputHint.value.length}} / 10</md-hint>
-                  </md-input-container>
+                  </md-form-field>
                 </div>
                 <div class="pad">
-                  <md-input-container>
+                  <md-form-field>
                     <input mdInput type="number" placeholder="Budget" align="end">
                     <span md-prefix>$&nbsp;</span>
                     <span md-suffix>.00</span>
-                  </md-input-container>
+                  </md-form-field>
                 </div>
               </div>
             </td-step>
