@@ -65,8 +65,8 @@
                 Include Awesome
               </md-slide-toggle>
               <ng-template td-step-actions>
-                <button md-raised-button color="primary" (click)="toggleRequiredStep2()">Validate &amp; Proceed</button>
-                <button md-button (click)="step2.active = false">Cancel</button>
+                <button mat-raised-button color="primary" (click)="toggleRequiredStep2()">Validate &amp; Proceed</button>
+                <button mat-button (click)="step2.active = false">Cancel</button>
               </ng-template>
             </td-step>
             <td-step #step3 label="Step 3" sublabel="this step will toggle complete" [state]="stateStep3" [disabled]="disabled">
@@ -74,8 +74,8 @@
                 I agree to spread the word about Covalent
               </md-checkbox>
               <ng-template td-step-actions>
-                <button md-raised-button color="primary" (click)="toggleCompleteStep3()">Complete Step</button>
-                <button md-button (click)="step3.active = false">Cancel</button>
+                <button mat-raised-button color="primary" (click)="toggleCompleteStep3()">Complete Step</button>
+                <button mat-button (click)="step3.active = false">Cancel</button>
               </ng-template>
               <ng-template td-step-summary>
                 You can add a summary that shows after a step is saved.
@@ -84,8 +84,8 @@
           </td-steps>
           <mat-divider></mat-divider>
           <md-card-actions>
-            <button md-raised-button color="accent" [routerLink]="['/product']">Save &amp; Create</button>
-            <button md-button class="tc-grey-600"  [routerLink]="['/product']">Cancel</button>
+            <button mat-raised-button color="accent" [routerLink]="['/product']">Save &amp; Create</button>
+            <button mat-button class="tc-grey-600"  [routerLink]="['/product']">Cancel</button>
           </md-card-actions>
         </md-card>
       </form>

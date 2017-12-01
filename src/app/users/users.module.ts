@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { MdSnackBarModule, MatIconModule, MatListModule, MdTooltipModule, MdCardModule, MdButtonModule,
+import { MdSnackBarModule, MatIconModule, MatListModule, MdTooltipModule, MdCardModule, MatButtonModule,
          MatToolbarModule, MdInputModule, MdSlideToggleModule, MdMenuModule, MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 import { CovalentLoadingModule, CovalentDialogsModule, CovalentMediaModule, CovalentLayoutModule,
@@ -34,7 +34,7 @@ export { UsersComponent, UsersFormComponent, UserService, IUser, USER_PROVIDER, 
     MatListModule,
     MdTooltipModule,
     MdCardModule,
-    MdButtonModule,
+    MatButtonModule,
     MatToolbarModule,
     MdInputModule,
     MdSlideToggleModule,
