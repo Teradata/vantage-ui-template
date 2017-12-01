@@ -12,9 +12,9 @@
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-toolbar td-sidenav-content>
+    <mat-toolbar td-sidenav-content>
       <span>Product Name</span>
-    </md-toolbar>
+    </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a mat-list-item
         [routerLinkActive]="['active']"
@@ -51,7 +51,7 @@
         Settings
       </a>
     </mat-nav-list>
-    <md-toolbar>
+    <mat-toolbar>
       <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <mat-icon>arrow_back</mat-icon>
       </button>
@@ -63,7 +63,7 @@
         <button mat-icon-button><mat-icon class="md-24">settings</mat-icon></button>
         <button mat-icon-button><mat-icon class="md-24">more_vert</mat-icon></button>
       </div>
-    </md-toolbar>
+    </mat-toolbar>
     <router-outlet></router-outlet>
   </td-layout-manage-list>
 </td-layout-nav>

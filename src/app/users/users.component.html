@@ -12,9 +12,9 @@
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-toolbar td-sidenav-content>
+    <mat-toolbar td-sidenav-content>
       <span>Users</span>
-    </md-toolbar>
+    </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a mat-list-item>
         <mat-icon matListIcon>account_circle</mat-icon>
@@ -37,7 +37,7 @@
         Archived
       </a>
     </mat-nav-list>
-    <md-toolbar>
+    <mat-toolbar>
       <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <mat-icon>arrow_back</mat-icon>
       </button>
@@ -49,7 +49,7 @@
         <button mat-icon-button><mat-icon class="md-24">settings</mat-icon></button>
         <button mat-icon-button><mat-icon class="md-24">more_vert</mat-icon></button>
       </div>
-    </md-toolbar>
+    </mat-toolbar>
     <md-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
       <mat-divider></mat-divider>

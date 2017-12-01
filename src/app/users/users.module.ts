@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { MdSnackBarModule, MatIconModule, MatListModule, MdTooltipModule, MdCardModule, MdButtonModule,
-         MdToolbarModule, MdInputModule, MdSlideToggleModule, MdMenuModule, MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
+         MatToolbarModule, MdInputModule, MdSlideToggleModule, MdMenuModule, MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
 
 import { CovalentLoadingModule, CovalentDialogsModule, CovalentMediaModule, CovalentLayoutModule,
          CovalentSearchModule, CovalentCommonModule } from '@covalent/core';
@@ -35,7 +35,7 @@ export { UsersComponent, UsersFormComponent, UserService, IUser, USER_PROVIDER, 
     MdTooltipModule,
     MdCardModule,
     MdButtonModule,
-    MdToolbarModule,
+    MatToolbarModule,
     MdInputModule,
     MdSlideToggleModule,
     MdMenuModule,
