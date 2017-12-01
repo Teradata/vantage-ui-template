@@ -1,7 +1,7 @@
 <td-layout-nav>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
-    <button md-icon-button td-menu-button tdLayoutToggle>
-      <md-icon>menu</md-icon>
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+      <mat-icon>menu</mat-icon>
     </button>
     <span *ngIf="item">Activity > {{item.name}}</span>
     <span flex></span>
@@ -13,7 +13,7 @@
     <mat-list>
       <ng-template ngFor [ngForOf]="[0,1,2,3,4]">
         <mat-list-item layout-align="row">
-            <md-icon matListAvatar> receipt </md-icon>
+            <mat-icon matListAvatar> receipt </mat-icon>
             <h3 matLine> {{item.name}} </h3>
             <p matLine> activity description </p>            
           </mat-list-item>

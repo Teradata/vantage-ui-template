@@ -9,7 +9,7 @@ import {
   CovalentCommonModule, CovalentDialogsModule,
 } from '@covalent/core';
 import {
-  MdButtonModule, MdCardModule, MdIconModule,
+  MdButtonModule, MdCardModule, MatIconModule,
   MatListModule, MdMenuModule, MdTooltipModule,
   MdSlideToggleModule, MdInputModule, MdCheckboxModule,
   MdToolbarModule, MdSnackBarModule, MdSidenavModule,
@@ -26,7 +26,7 @@ const ANGULAR_MODULES: any[] = [
 ];
 
 const MATERIAL_MODULES: any[] = [
-  MdButtonModule, MdCardModule, MdIconModule,
+  MdButtonModule, MdCardModule, MatIconModule,
   MatListModule, MdMenuModule, MdTooltipModule,
   MdSlideToggleModule, MdInputModule, MdCheckboxModule,
   MdToolbarModule, MdSnackBarModule, MdSidenavModule,

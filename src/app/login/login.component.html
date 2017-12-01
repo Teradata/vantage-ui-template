@@ -6,7 +6,7 @@
     <div layout-gt-xs="row" layout-align-gt-xs="center start" class="margin">
       <div flex-gt-xs="50">
         <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
-          <md-card-title><md-icon class="md-icon-logo" svgIcon="assets:covalent"></md-icon> Login</md-card-title>
+          <md-card-title><mat-icon class="mat-icon-logo" svgIcon="assets:covalent"></mat-icon> Login</md-card-title>
           <md-card-subtitle>sign in via your current corporate account</md-card-subtitle>
           <mat-divider></mat-divider>
           <md-card-content>
@@ -14,7 +14,7 @@
               <div layout="row">
                 <md-form-field flex> 
                   <input mdInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
-                  <span md-prefix><md-icon>person</md-icon></span>
+                  <span md-prefix><mat-icon>person</mat-icon></span>
                   <md-hint align="start">
                     <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
                   </md-hint>
@@ -24,7 +24,7 @@
               <div layout="row">
                 <md-form-field flex> 
                   <input mdInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
-                  <span md-prefix><md-icon>lock</md-icon></span>
+                  <span md-prefix><mat-icon>lock</mat-icon></span>
                   <md-hint align="start">
                     <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
                   </md-hint>

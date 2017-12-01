@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 
 @Component({
   selector: 'qs-app',
@@ -9,7 +9,7 @@ import { MdIconRegistry } from '@angular/material';
 })
 export class AppComponent {
 
-  constructor(private _iconRegistry: MdIconRegistry,
+  constructor(private _iconRegistry: MatIconRegistry,
               private _domSanitizer: DomSanitizer) {
     this._iconRegistry.addSvgIconInNamespace('assets', 'teradata',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata.svg'));

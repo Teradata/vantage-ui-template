@@ -1,12 +1,12 @@
 <td-layout-nav logo="assets:covalent" navigationRoute="/">
-  <button md-icon-button td-menu-button tdLayoutToggle>
-    <md-icon>menu</md-icon>
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
   </button>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Quickstart</span>
     <span flex></span>
-    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+    <a mat-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
+    <a mat-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
   </div>
   <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
     <div flex-gt-sm="60">
@@ -34,8 +34,8 @@
         <div flex="33" layout="column">
           <md-card class="md-card-colored" flex>
             <md-card-content class="text-center">
-              <div class="md-headline">{{ '2341'| digits }} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
-              <md-icon class="icon tc-indigo-700">perm_contact_calendar</md-icon>
+              <div class="md-headline">{{ '2341'| digits }} <mat-icon class="tc-green-500 text-sm">arrow_upward</mat-icon></div>
+              <mat-icon class="icon tc-indigo-700">perm_contact_calendar</mat-icon>
               <div layout="column">
                 <div class="md-subhead">Active Users</div>
                 <div class="md-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
@@ -46,8 +46,8 @@
         <div flex="33" layout="column">
           <md-card class="md-card-colored" flex>
             <md-card-content class="text-center">
-              <div class="md-headline">{{ '72452903343' | bytes }} <md-icon class="tc-red-500 text-sm">arrow_downward</md-icon></div>
-              <md-icon class="icon tc-light-blue-700">sd_storage</md-icon>
+              <div class="md-headline">{{ '72452903343' | bytes }} <mat-icon class="tc-red-500 text-sm">arrow_downward</mat-icon></div>
+              <mat-icon class="icon tc-light-blue-700">sd_storage</mat-icon>
               <div layout="column">
                 <div class="md-subhead">User Disk Usage</div>
                 <div class="md-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
@@ -58,8 +58,8 @@
         <div flex="33" layout="column">
           <md-card class="md-card-colored" flex>
             <md-card-content class="text-center">
-              <div class="md-headline">{{ '324523' | digits}} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
-              <md-icon class="icon tc-cyan-700">receipt</md-icon>
+              <div class="md-headline">{{ '324523' | digits}} <mat-icon class="tc-green-500 text-sm">arrow_upward</mat-icon></div>
+              <mat-icon class="icon tc-cyan-700">receipt</mat-icon>
               <div layout="column">
                 <div class="md-subhead">Pages Viewed</div>
                 <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
@@ -76,7 +76,7 @@
           <ng-template tdLoading="items.load">
             <ng-template let-item let-last="last" ngFor [ngForOf]="items">
               <a mat-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
-                <md-icon matListAvatar> {{item.icon}} </md-icon>
+                <mat-icon matListAvatar> {{item.icon}} </mat-icon>
                 <h3 matLine> {{item.name}} </h3>
                 <p matLine> {{item.description | truncate:50 }} </p>
                 <span flex></span>
@@ -97,7 +97,7 @@
           <ng-template tdLoading="alerts.load">
             <ng-template let-item let-last="last" ngFor [ngForOf]="alerts">
               <mat-list-item layout-align="row">
-                <md-icon matListAvatar class="bgc-amber-800">{{item.icon}}</md-icon>
+                <mat-icon matListAvatar class="bgc-amber-800">{{item.icon}}</mat-icon>
                 <h3 matLine> {{item.description}} </h3>
                 <p matLine> {{item.name}} </p>
               </mat-list-item>
@@ -120,7 +120,7 @@
           <ng-template tdLoading="favorites.load">
             <ng-template let-item let-last="last" ngFor [ngForOf]="products">
               <mat-list-item layout-align="row" [routerLink]="['/product']">
-                <md-icon matListAvatar>{{item.icon}}</md-icon>
+                <mat-icon matListAvatar>{{item.icon}}</mat-icon>
                 <h3 matLine> {{item.name}} </h3>
                 <p matLine> {{item.description}} </p>
               </mat-list-item>
@@ -141,7 +141,7 @@
     <div layout="row" layout-align="start center">
       <span class="md-caption">Copyright &copy; 2016 Teradata. All rights reserved</span>
       <span flex></span>
-      <md-icon class="md-icon-ux" svgIcon="assets:teradata-ux"></md-icon>
+      <mat-icon class="mat-icon-ux" svgIcon="assets:teradata-ux"></mat-icon>
     </div>
   </td-layout-footer>
 </td-layout-nav>

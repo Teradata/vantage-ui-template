@@ -16,8 +16,8 @@
                         <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ item.modified | timeAgo }} </div>
                     </span>
                     <span>
-                        <button md-icon-button [md-menu-trigger-for]="menu">
-                        <md-icon>more_vert</md-icon>
+                        <button mat-icon-button [md-menu-trigger-for]="menu">
+                        <mat-icon>more_vert</mat-icon>
                         </button>
                         <md-menu x-position="before" #menu="mdMenu">
                             <a [routerLink]="[item.id + '/edit']" md-menu-item>Edit</a>
@@ -31,5 +31,5 @@
     </ng-template>
 </md-card>
 <a md-fab color="accent" class="mat-fab-bottom-right fixed" [routerLink]="['add']"> 
-    <md-icon>add</md-icon>
+    <mat-icon>add</mat-icon>
 </a>

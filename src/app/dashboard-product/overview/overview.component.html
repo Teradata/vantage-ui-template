@@ -67,7 +67,7 @@
                 <ng-template tdLoading="items.load">
                 <ng-template let-item let-last="last" ngFor [ngForOf]="items">
                     <a mat-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
-                    <md-icon matListAvatar> {{item.icon}} </md-icon>
+                    <mat-icon matListAvatar> {{item.icon}} </mat-icon>
                     <h3 matLine> {{item.name}} </h3>
                     <p matLine> {{item.description | truncate:40}} </p>
                     <span flex></span>
@@ -88,7 +88,7 @@
                 <ng-template tdLoading="users.load">
                 <ng-template let-user let-last="last" ngFor [ngForOf]="users">
                     <mat-list-item layout-align="row">
-                    <md-icon matListIcon>account_box</md-icon>
+                    <mat-icon matListIcon>account_box</mat-icon>
                     <h3 matLine> {{user.displayName}} </h3>
                     <p matLine> {{user.id}} </p>
                     </mat-list-item>
@@ -107,5 +107,5 @@
     </div>
 </div>
 <a md-fab color="accent" class="mat-fab-bottom-right fixed" [routerLink]="['/form']">
-    <md-icon>add</md-icon>
+    <mat-icon>add</mat-icon>
 </a>
