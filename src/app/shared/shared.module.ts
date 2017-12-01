@@ -13,7 +13,7 @@ import {
   MdListModule, MdMenuModule, MdTooltipModule,
   MdSlideToggleModule, MdInputModule, MdCheckboxModule,
   MdToolbarModule, MdSnackBarModule, MdSidenavModule,
-  MdTabsModule, MdSelectModule,
+  MdTabsModule, MdSelectModule, MATERIAL_COMPATIBILITY_MODE,
 } from '@angular/material';
 import { NgxChartsModule, } from '@swimlane/ngx-charts';
 
@@ -62,6 +62,9 @@ const CHART_MODULES: any[] = [
     COVALENT_MODULES,
     CHART_MODULES,
     FLEX_LAYOUT_MODULES,
-  ]
+  ],
+  providers: [
+    { provide: MATERIAL_COMPATIBILITY_MODE, useValue: true },
+  ],
 })
 export class SharedModule { }
