@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { MOCK_API } from '../config/api.config';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class ItemsService extends RESTService<any> {
