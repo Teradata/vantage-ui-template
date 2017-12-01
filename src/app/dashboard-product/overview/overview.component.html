@@ -3,7 +3,7 @@
         <div flex-gt-xs="50">
           <md-card>
               <md-card-title>Compute Usage</md-card-title>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <div class="chart-height push-top-sm">
                 <ngx-charts-line-chart
                   [scheme]="orangeColorScheme"
@@ -20,7 +20,7 @@
                   [yAxisTickFormatting]="axisDigits">
                 </ngx-charts-line-chart>
               </div>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-actions>
                 <a md-button color="accent">
                   <span class="text-upper">View Stats</span>
@@ -31,7 +31,7 @@
         <div flex-gt-xs="50">
           <md-card>
               <md-card-title>Ingest Usage</md-card-title>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <div class="chart-height push-top-sm">
                 <ngx-charts-line-chart
                   [scheme]="blueColorScheme"
@@ -48,7 +48,7 @@
                   [yAxisTickFormatting]="axisDigits">
                 </ngx-charts-line-chart>
               </div>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <md-card-actions>
                 <a md-button color="accent">
                   <span class="text-upper">View Stats</span>
@@ -62,41 +62,41 @@
             <md-card>
             <md-card-title>All Activity</md-card-title>
             <md-card-subtitle>for this product</md-card-subtitle>
-            <md-divider></md-divider>
-            <md-nav-list class="will-load item-list">
+            <mat-divider></mat-divider>
+            <mat-nav-list class="will-load item-list">
                 <ng-template tdLoading="items.load">
                 <ng-template let-item let-last="last" ngFor [ngForOf]="items">
-                    <a md-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
-                    <md-icon mdListAvatar> {{item.icon}} </md-icon>
-                    <h3 mdLine> {{item.name}} </h3>
-                    <p mdLine> {{item.description | truncate:40}} </p>
+                    <a mat-list-item layout-align="row" [routerLink]="['../item', item.item_id]">
+                    <md-icon matListAvatar> {{item.icon}} </md-icon>
+                    <h3 matLine> {{item.name}} </h3>
+                    <p matLine> {{item.description | truncate:40}} </p>
                     <span flex></span>
                     <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
                     </a>
-                    <md-divider *ngIf="!last" md-inset></md-divider>
+                    <mat-divider *ngIf="!last" matInset></mat-divider>
                 </ng-template>
                 </ng-template>
-            </md-nav-list>
+            </mat-nav-list>
             </md-card>
         </div>
         <div flex-gt-sm="40">
             <md-card>
             <md-card-title>Customers</md-card-title>
             <md-card-subtitle>for this product</md-card-subtitle>
-            <md-divider></md-divider>
-            <md-list class="will-load user-list">
+            <mat-divider></mat-divider>
+            <mat-list class="will-load user-list">
                 <ng-template tdLoading="users.load">
                 <ng-template let-user let-last="last" ngFor [ngForOf]="users">
-                    <md-list-item layout-align="row">
-                    <md-icon mdListIcon>account_box</md-icon>
-                    <h3 mdLine> {{user.displayName}} </h3>
-                    <p mdLine> {{user.id}} </p>
-                    </md-list-item>
-                    <md-divider *ngIf="!last" md-inset></md-divider>
+                    <mat-list-item layout-align="row">
+                    <md-icon matListIcon>account_box</md-icon>
+                    <h3 matLine> {{user.displayName}} </h3>
+                    <p matLine> {{user.id}} </p>
+                    </mat-list-item>
+                    <mat-divider *ngIf="!last" matInset></mat-divider>
                 </ng-template>
                 </ng-template>
-            </md-list>
-            <md-divider></md-divider>
+            </mat-list>
+            <mat-divider></mat-divider>
             <md-card-actions>
                 <a md-button color="accent" class="text-upper" [routerLink]="['/users']">
                 <span>View More</span>

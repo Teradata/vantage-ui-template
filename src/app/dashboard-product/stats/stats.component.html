@@ -3,7 +3,7 @@
         <div flex-gt-xs="100">
             <md-card>
               <md-card-title>Product Usage</md-card-title>
-              <md-divider></md-divider>
+              <mat-divider></mat-divider>
               <div class="chart-height push-top-sm pull-bottom">
                 <ngx-charts-line-chart
                   [scheme]="colorScheme"
@@ -33,7 +33,7 @@
                     <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
                     </td-search-box>
                 </div>
-                <md-divider></md-divider>
+                <mat-divider></mat-divider>
                 <td-data-table
                     #dataTable
                     [data]="filteredData"

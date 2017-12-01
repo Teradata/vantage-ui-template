@@ -15,28 +15,28 @@
     <md-toolbar td-sidenav-content>
       <span>Users</span>
     </md-toolbar>
-    <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
-      <a md-list-item>
-        <md-icon mdListIcon>account_circle</md-icon>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item>
+        <md-icon matListIcon>account_circle</md-icon>
         All Users
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>star</md-icon>
+      <a mat-list-item>
+        <md-icon matListIcon>star</md-icon>
         Favorites
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>verified_user</md-icon>
+      <a mat-list-item>
+        <md-icon matListIcon>verified_user</md-icon>
         Administrators
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>supervisor_account</md-icon>
+      <a mat-list-item>
+        <md-icon matListIcon>supervisor_account</md-icon>
         Non-Admins
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>inbox</md-icon>
+      <a mat-list-item>
+        <md-icon matListIcon>inbox</md-icon>
         Archived
       </a>
-    </md-nav-list>
+    </mat-nav-list>
     <md-toolbar>
       <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <md-icon>arrow_back</md-icon>
@@ -52,18 +52,18 @@
     </md-toolbar>
     <md-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
       <ng-template tdLoading="users.list">
-        <md-list class="will-load">
+        <mat-list class="will-load">
           <div class="md-padding" *ngIf="filteredUsers?.length === 0" layout="row" layout-align="center center">
             <h3>No users to display.</h3>
           </div>
           <ng-template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
-            <md-list-item>
-              <md-icon mdListAvatar>person</md-icon>
-              <h3 mdLine> {{user.displayName}} </h3>
-              <p mdLine> {{user.email}} </p>
-              <p mdLine hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
+            <mat-list-item>
+              <md-icon matListAvatar>person</md-icon>
+              <h3 matLine> {{user.displayName}} </h3>
+              <p matLine> {{user.email}} </p>
+              <p matLine hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
               <span flex></span>
               <span hide-xs hide-sm hide-md flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
                   <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.created | date }} </div>
@@ -82,10 +82,10 @@
                       </button>
                   </md-menu>
               </span>
-            </md-list-item>
-            <md-divider *ngIf="!last" md-inset></md-divider>
+            </mat-list-item>
+            <mat-divider *ngIf="!last" matInset></mat-divider>
           </ng-template>
-        </md-list>
+        </mat-list>
       </ng-template>
     </md-card>
   </td-layout-manage-list>   

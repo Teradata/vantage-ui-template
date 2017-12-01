@@ -15,42 +15,42 @@
     <md-toolbar td-sidenav-content>
       <span>Product Name</span>
     </md-toolbar>
-    <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
-      <a md-list-item
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/product']">
-        <md-icon mdListIcon>dashboard</md-icon>
+        <md-icon matListIcon>dashboard</md-icon>
         Dashboard
       </a>
-      <a md-list-item
+      <a mat-list-item
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['stats']">
-        <md-icon mdListIcon>insert_chart</md-icon>
+        <md-icon matListIcon>insert_chart</md-icon>
         Stats
       </a>
-      <a md-list-item
+      <a mat-list-item
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['features']">
-        <md-icon mdListIcon>star</md-icon>
+        <md-icon matListIcon>star</md-icon>
         Features
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>people</md-icon>
+      <a mat-list-item>
+        <md-icon matListIcon>people</md-icon>
         Customers
       </a>
       <h3 md-subheader>Admin Menu</h3>
-      <a md-list-item>
-        <md-icon mdListIcon>receipt</md-icon>
+      <a mat-list-item>
+        <md-icon matListIcon>receipt</md-icon>
         Log
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>settings</md-icon>
+      <a mat-list-item>
+        <md-icon matListIcon>settings</md-icon>
         Settings
       </a>
-    </md-nav-list>
+    </mat-nav-list>
     <md-toolbar>
       <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
         <md-icon>arrow_back</md-icon>

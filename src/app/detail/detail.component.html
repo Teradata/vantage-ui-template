@@ -9,17 +9,17 @@
   <td-layout-card-over  *ngIf="item">
        <md-card-title>{{item.name}}'s Activity Stream</md-card-title>
     <md-card-subtitle>Last activity: {{item.description}}</md-card-subtitle>
-    <md-divider></md-divider>
-    <md-list>
+    <mat-divider></mat-divider>
+    <mat-list>
       <ng-template ngFor [ngForOf]="[0,1,2,3,4]">
-        <md-list-item layout-align="row">
-            <md-icon mdListAvatar> receipt </md-icon>
-            <h3 mdLine> {{item.name}} </h3>
-            <p mdLine> activity description </p>            
-          </md-list-item>
+        <mat-list-item layout-align="row">
+            <md-icon matListAvatar> receipt </md-icon>
+            <h3 matLine> {{item.name}} </h3>
+            <p matLine> activity description </p>            
+          </mat-list-item>
       </ng-template>
-    </md-list>
-    <md-divider></md-divider>
+    </mat-list>
+    <mat-divider></mat-divider>
     <md-card-actions>
       <button md-button color="accent" class="text-upper" (click)="goBack()">
         Back

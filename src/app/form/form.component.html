@@ -12,24 +12,24 @@
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
-      <a md-list-item>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item>
         <md-icon>dashboard</md-icon>
         Dashboard
       </a>
-      <a md-list-item>
+      <a mat-list-item>
         <md-icon>people</md-icon>
         Customers
       </a>
-      <a md-list-item>
+      <a mat-list-item>
         <md-icon>receipt</md-icon>
         Log
       </a>
-      <a md-list-item>
+      <a mat-list-item>
         <md-icon>settings</md-icon>
         Settings
       </a>
-    </md-nav-list>
+    </mat-nav-list>
     <div td-toolbar-content layout="row" layout-align="start center" flex>
       <a md-icon-button [routerLink]="['/product']"><md-icon>arrow_back</md-icon></a>
       <span>New Item</span>
@@ -82,7 +82,7 @@
               </ng-template>
             </td-step>
           </td-steps>
-          <md-divider></md-divider>
+          <mat-divider></mat-divider>
           <md-card-actions>
             <button md-raised-button color="accent" [routerLink]="['/product']">Save &amp; Create</button>
             <button md-button class="tc-grey-600"  [routerLink]="['/product']">Cancel</button>

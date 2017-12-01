@@ -2,7 +2,7 @@
   <md-card-title>
     Feature Form
   </md-card-title>
-  <md-divider></md-divider>
+  <mat-divider></mat-divider>
   <md-card-content class="push-bottom-none">
     <form #featureForm="ngForm">
       <div layout="row">
@@ -44,7 +44,7 @@
       </div>
     </form>
     </md-card-content>
-    <md-divider></md-divider>
+    <mat-divider></mat-divider>
     <md-card-actions>
       <button md-button [disabled]="!featureForm.valid" color="primary" (click)="save()">SAVE</button>
       <button md-button (click)="goBack()">CANCEL</button>
