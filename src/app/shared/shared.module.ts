@@ -12,7 +12,7 @@ import {
   MdButtonModule, MdCardModule, MatIconModule,
   MatListModule, MdMenuModule, MdTooltipModule,
   MdSlideToggleModule, MdInputModule, MdCheckboxModule,
-  MdToolbarModule, MdSnackBarModule, MdSidenavModule,
+  MdToolbarModule, MdSnackBarModule, MatSidenavModule,
   MdTabsModule, MdSelectModule, MATERIAL_COMPATIBILITY_MODE,
 } from '@angular/material';
 import { NgxChartsModule, } from '@swimlane/ngx-charts';
@@ -29,7 +29,7 @@ const MATERIAL_MODULES: any[] = [
   MdButtonModule, MdCardModule, MatIconModule,
   MatListModule, MdMenuModule, MdTooltipModule,
   MdSlideToggleModule, MdInputModule, MdCheckboxModule,
-  MdToolbarModule, MdSnackBarModule, MdSidenavModule,
+  MdToolbarModule, MdSnackBarModule, MatSidenavModule,
   MdTabsModule, MdSelectModule,
 ];
 
