@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { MatSnackBarModule, MatIconModule, MatListModule, MatTooltipModule, MatCardModule, MatButtonModule,
-         MatToolbarModule, MatInputModule, MatSlideToggleModule, MatMenuModule, MATERIAL_COMPATIBILITY_MODE } from '@angular/material';
+         MatToolbarModule, MatInputModule, MatSlideToggleModule, MatMenuModule } from '@angular/material';
 
 import { CovalentLoadingModule, CovalentDialogsModule, CovalentMediaModule, CovalentLayoutModule,
          CovalentSearchModule, CovalentCommonModule } from '@covalent/core';
@@ -51,7 +51,6 @@ export { UsersComponent, UsersFormComponent, UserService, IUser, USER_PROVIDER, 
   ], // modules needed to run this module
   providers: [
     { provide: USERS_API, useValue: ''},
-    { provide: MATERIAL_COMPATIBILITY_MODE, useValue: true },
     USER_PROVIDER,
   ],
 })
