@@ -1,8 +1,8 @@
 <div class="md-content" class="inset">
     <div layout="column" layout-gt-xs="row">
         <div flex-gt-xs="100">
-            <md-card>
-              <md-card-title>Product Usage</md-card-title>
+            <mat-card>
+              <mat-card-title>Product Usage</mat-card-title>
               <mat-divider></mat-divider>
               <div class="chart-height push-top-sm pull-bottom">
                 <ngx-charts-line-chart
@@ -20,12 +20,12 @@
                   [yAxisTickFormatting]="axisDigits">
                 </ngx-charts-line-chart>
               </div>
-          </md-card>
+          </mat-card>
         </div>
     </div>
     <div layout="column" layout-gt-sm="row">
         <div flex-gt-sm="100">
-            <md-card>
+            <mat-card>
                 <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
                     <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
                         <span class="md-title">Product Stats</span>
@@ -48,14 +48,14 @@
                 </div> 
                 <td-paging-bar #pagingBar [total]="filteredTotal" (change)="page($event)">
                     <span hide-xs>Row per page:</span>
-                    <md-select [(ngModel)]="pageSize">
-                        <md-option *ngFor="let size of [5, 10, 15, 20]" [value]="size">
+                    <mat-select [(ngModel)]="pageSize">
+                        <mat-option *ngFor="let size of [5, 10, 15, 20]" [value]="size">
                             {{size}}
-                        </md-option>
-                    </md-select>
+                        </mat-option>
+                    </mat-select>
                     {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
                 </td-paging-bar>
-            </md-card>
+            </mat-card>
         </div>
     </div>
 </div>

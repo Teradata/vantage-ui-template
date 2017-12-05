@@ -1,8 +1,8 @@
 <div class="md-content" class="inset">
     <div layout-gt-xs="row">
         <div flex-gt-xs="50">
-          <md-card>
-              <md-card-title>Compute Usage</md-card-title>
+          <mat-card>
+              <mat-card-title>Compute Usage</mat-card-title>
               <mat-divider></mat-divider>
               <div class="chart-height push-top-sm">
                 <ngx-charts-line-chart
@@ -21,16 +21,16 @@
                 </ngx-charts-line-chart>
               </div>
               <mat-divider></mat-divider>
-              <md-card-actions>
+              <mat-card-actions>
                 <a mat-button color="accent">
                   <span class="text-upper">View Stats</span>
                 </a>
-              </md-card-actions>
-          </md-card>
+              </mat-card-actions>
+          </mat-card>
         </div>
         <div flex-gt-xs="50">
-          <md-card>
-              <md-card-title>Ingest Usage</md-card-title>
+          <mat-card>
+              <mat-card-title>Ingest Usage</mat-card-title>
               <mat-divider></mat-divider>
               <div class="chart-height push-top-sm">
                 <ngx-charts-line-chart
@@ -49,19 +49,19 @@
                 </ngx-charts-line-chart>
               </div>
               <mat-divider></mat-divider>
-              <md-card-actions>
+              <mat-card-actions>
                 <a mat-button color="accent">
                   <span class="text-upper">View Stats</span>
                 </a>
-              </md-card-actions>
-          </md-card>
+              </mat-card-actions>
+          </mat-card>
         </div>
     </div>
     <div layout-gt-sm="row">
         <div flex-gt-sm="60">
-            <md-card>
-            <md-card-title>All Activity</md-card-title>
-            <md-card-subtitle>for this product</md-card-subtitle>
+            <mat-card>
+            <mat-card-title>All Activity</mat-card-title>
+            <mat-card-subtitle>for this product</mat-card-subtitle>
             <mat-divider></mat-divider>
             <mat-nav-list class="will-load item-list">
                 <ng-template tdLoading="items.load">
@@ -77,12 +77,12 @@
                 </ng-template>
                 </ng-template>
             </mat-nav-list>
-            </md-card>
+            </mat-card>
         </div>
         <div flex-gt-sm="40">
-            <md-card>
-            <md-card-title>Customers</md-card-title>
-            <md-card-subtitle>for this product</md-card-subtitle>
+            <mat-card>
+            <mat-card-title>Customers</mat-card-title>
+            <mat-card-subtitle>for this product</mat-card-subtitle>
             <mat-divider></mat-divider>
             <mat-list class="will-load user-list">
                 <ng-template tdLoading="users.load">
@@ -97,12 +97,12 @@
                 </ng-template>
             </mat-list>
             <mat-divider></mat-divider>
-            <md-card-actions>
+            <mat-card-actions>
                 <a mat-button color="accent" class="text-upper" [routerLink]="['/users']">
                 <span>View More</span>
                 </a>
-            </md-card-actions>
-            </md-card>
+            </mat-card-actions>
+            </mat-card>
         </div>
     </div>
 </div>

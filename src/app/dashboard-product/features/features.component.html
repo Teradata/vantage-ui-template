@@ -1,4 +1,4 @@
-<md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+<mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
     <ng-template tdLoading="features.load">
         <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterFeatures($event)"></td-search-box>
         <mat-divider></mat-divider>
@@ -8,7 +8,7 @@
             </div>
             <ng-template let-item let-last="last" ngFor [ngForOf]="filteredFeatures">
                 <mat-list-item>
-                    <md-slide-toggle matListIcon [(ngModel)]="item.enabled"></md-slide-toggle>
+                    <mat-slide-toggle matListIcon [(ngModel)]="item.enabled"></mat-slide-toggle>
                     <h3 matLine> {{item.title}} </h3>
                     <span flex></span>
                     <span flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
@@ -16,20 +16,20 @@
                         <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ item.modified | timeAgo }} </div>
                     </span>
                     <span>
-                        <button mat-icon-button [md-menu-trigger-for]="menu">
+                        <button mat-icon-button [mat-menu-trigger-for]="menu">
                         <mat-icon>more_vert</mat-icon>
                         </button>
-                        <md-menu x-position="before" #menu="mdMenu">
-                            <a [routerLink]="[item.id + '/edit']" md-menu-item>Edit</a>
-                            <button (click)="openConfirm(item.id)" md-menu-item>Delete</button>
-                        </md-menu>
+                        <mat-menu x-position="before" #menu="matMenu">
+                            <a [routerLink]="[item.id + '/edit']" mat-menu-item>Edit</a>
+                            <button (click)="openConfirm(item.id)" mat-menu-item>Delete</button>
+                        </mat-menu>
                     </span>
                 </mat-list-item>
                 <mat-divider *ngIf="!last"></mat-divider>
             </ng-template>
         </mat-list>
     </ng-template>
-</md-card>
+</mat-card>
 <a mat-fab color="accent" class="mat-fab-bottom-right fixed" [routerLink]="['add']"> 
     <mat-icon>add</mat-icon>
 </a>

@@ -1,13 +1,13 @@
-<md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
-  <md-card-title>
+<mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+  <mat-card-title>
     Feature Form
-  </md-card-title>
+  </mat-card-title>
   <mat-divider></mat-divider>
-  <md-card-content class="push-bottom-none">
+  <mat-card-content class="push-bottom-none">
     <form #featureForm="ngForm">
       <div layout="row">
-        <md-form-field flex>
-          <input mdInput
+        <mat-form-field flex>
+          <input matInput
                   #titleElement
                   #titleControl="ngModel" 
                   type="text" 
@@ -16,15 +16,15 @@
                   name="title" 
                   maxlength="20" 
                   required>
-          <md-hint align="start">
+          <mat-hint align="start">
             <span [hidden]="titleControl.pristine || !titleControl.errors?.required" class="tc-red-600">Required</span>
-          </md-hint>
-          <md-hint align="end">{{titleElement.value.length}} / 20</md-hint>
-        </md-form-field>
+          </mat-hint>
+          <mat-hint align="end">{{titleElement.value.length}} / 20</mat-hint>
+        </mat-form-field>
       </div>
       <div layout="row" class="push-top">
-        <md-form-field flex>
-          <input mdInput
+        <mat-form-field flex>
+          <input matInput
                   #userElement
                   #userControl="ngModel"
                   type="text" 
@@ -33,20 +33,20 @@
                   name="user"
                   maxlength="30"
                   required>
-          <md-hint align="start">
+          <mat-hint align="start">
             <span [hidden]="userControl.pristine || !userControl.errors?.required" class="tc-red-600">Required</span>
-          </md-hint>
-          <md-hint align="end">{{userElement.value.length}} / 30</md-hint>
-        </md-form-field>
+          </mat-hint>
+          <mat-hint align="end">{{userElement.value.length}} / 30</mat-hint>
+        </mat-form-field>
       </div>
       <div layout="row">
-        <md-slide-toggle [(ngModel)]="enabled" name="enabled">Enabled</md-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="enabled" name="enabled">Enabled</mat-slide-toggle>
       </div>
     </form>
-    </md-card-content>
+    </mat-card-content>
     <mat-divider></mat-divider>
-    <md-card-actions>
+    <mat-card-actions>
       <button mat-button [disabled]="!featureForm.valid" color="primary" (click)="save()">SAVE</button>
       <button mat-button (click)="goBack()">CANCEL</button>
-    </md-card-actions>
-  </md-card>
+    </mat-card-actions>
+  </mat-card>

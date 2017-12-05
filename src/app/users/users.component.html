@@ -5,8 +5,8 @@
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Quickstart</span>
     <span flex></span>
-    <a mat-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
-    <a mat-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
+    <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
+    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
   </div>
   <td-layout-manage-list
                         [opened]="media.registerQuery('gt-sm') | async"
@@ -50,7 +50,7 @@
         <button mat-icon-button><mat-icon class="md-24">more_vert</mat-icon></button>
       </div>
     </mat-toolbar>
-    <md-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+    <mat-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
       <mat-divider></mat-divider>
       <ng-template tdLoading="users.list">
@@ -70,24 +70,24 @@
                   <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.lastAccess | timeAgo }} </div>
               </span>
               <span>
-                  <button mat-icon-button [md-menu-trigger-for]="menu">
+                  <button mat-icon-button [mat-menu-trigger-for]="menu">
                   <mat-icon>more_vert</mat-icon>
                   </button>
-                  <md-menu x-position="before" #menu="mdMenu">
-                      <a [routerLink]="[user.id, 'edit']" md-menu-item>
+                  <mat-menu x-position="before" #menu="matMenu">
+                      <a [routerLink]="[user.id, 'edit']" mat-menu-item>
                         <mat-icon>edit</mat-icon> Edit
                       </a>
-                      <button md-menu-item (click)="delete(user.id)">
+                      <button mat-menu-item (click)="delete(user.id)">
                         <mat-icon>delete</mat-icon> Delete
                       </button>
-                  </md-menu>
+                  </mat-menu>
               </span>
             </mat-list-item>
             <mat-divider *ngIf="!last" matInset></mat-divider>
           </ng-template>
         </mat-list>
       </ng-template>
-    </md-card>
+    </mat-card>
   </td-layout-manage-list>   
 </td-layout-nav>
 <a mat-fab color="accent" class="mat-fab-bottom-right" [routerLink]="['add']">

@@ -7,8 +7,8 @@
     <span flex></span>
   </div>
   <td-layout-card-over  *ngIf="item">
-       <md-card-title>{{item.name}}'s Activity Stream</md-card-title>
-    <md-card-subtitle>Last activity: {{item.description}}</md-card-subtitle>
+       <mat-card-title>{{item.name}}'s Activity Stream</mat-card-title>
+    <mat-card-subtitle>Last activity: {{item.description}}</mat-card-subtitle>
     <mat-divider></mat-divider>
     <mat-list>
       <ng-template ngFor [ngForOf]="[0,1,2,3,4]">
@@ -20,10 +20,10 @@
       </ng-template>
     </mat-list>
     <mat-divider></mat-divider>
-    <md-card-actions>
+    <mat-card-actions>
       <button mat-button color="accent" class="text-upper" (click)="goBack()">
         Back
       </button>
-    </md-card-actions>
+    </mat-card-actions>
   </td-layout-card-over>   
 </td-layout-nav>

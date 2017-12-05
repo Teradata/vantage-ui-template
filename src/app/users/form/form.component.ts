@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 import { TdDialogService, TdLoadingService } from '@covalent/core';
 
@@ -26,7 +26,7 @@ export class UsersFormComponent implements OnInit {
   constructor(private _userService: UserService,
               private _router: Router,
               private _route: ActivatedRoute,
-              private _snackBarService: MdSnackBar,
+              private _snackBarService: MatSnackBar,
               private _loadingService: TdLoadingService,
               private _dialogService: TdDialogService) {}
 

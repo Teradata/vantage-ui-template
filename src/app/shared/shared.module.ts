@@ -9,11 +9,11 @@ import {
   CovalentCommonModule, CovalentDialogsModule,
 } from '@covalent/core';
 import {
-  MatButtonModule, MdCardModule, MatIconModule,
-  MatListModule, MdMenuModule, MdTooltipModule,
-  MdSlideToggleModule, MdInputModule, MdCheckboxModule,
-  MatToolbarModule, MdSnackBarModule, MatSidenavModule,
-  MdTabsModule, MdSelectModule, MATERIAL_COMPATIBILITY_MODE,
+  MatButtonModule, MatCardModule, MatIconModule,
+  MatListModule, MatMenuModule, MatTooltipModule,
+  MatSlideToggleModule, MatInputModule, MatCheckboxModule,
+  MatToolbarModule, MatSnackBarModule, MatSidenavModule,
+  MatTabsModule, MatSelectModule, MATERIAL_COMPATIBILITY_MODE,
 } from '@angular/material';
 import { NgxChartsModule, } from '@swimlane/ngx-charts';
 
@@ -26,11 +26,11 @@ const ANGULAR_MODULES: any[] = [
 ];
 
 const MATERIAL_MODULES: any[] = [
-  MatButtonModule, MdCardModule, MatIconModule,
-  MatListModule, MdMenuModule, MdTooltipModule,
-  MdSlideToggleModule, MdInputModule, MdCheckboxModule,
-  MatToolbarModule, MdSnackBarModule, MatSidenavModule,
-  MdTabsModule, MdSelectModule,
+  MatButtonModule, MatCardModule, MatIconModule,
+  MatListModule, MatMenuModule, MatTooltipModule,
+  MatSlideToggleModule, MatInputModule, MatCheckboxModule,
+  MatToolbarModule, MatSnackBarModule, MatSidenavModule,
+  MatTabsModule, MatSelectModule,
 ];
 
 const COVALENT_MODULES: any[] = [

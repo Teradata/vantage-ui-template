@@ -5,14 +5,14 @@
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Quickstart</span>
     <span flex></span>
-    <a mat-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
-    <a mat-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
+    <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
+    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
   </div>
   <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
     <div flex-gt-sm="60">
-      <md-card>
-        <md-card-title>Products Sales</md-card-title>
-        <md-card-subtitle>usage stats for our products</md-card-subtitle>
+      <mat-card>
+        <mat-card-title>Products Sales</mat-card-title>
+        <mat-card-subtitle>usage stats for our products</mat-card-subtitle>
         <mat-divider></mat-divider>
         <div class="chart-height push-top push-right-sm">
           <ngx-charts-area-chart-stacked
@@ -29,48 +29,48 @@
             [yAxisTickFormatting]="axisDigits">
           </ngx-charts-area-chart-stacked>
         </div>
-      </md-card>
+      </mat-card>
       <div layout="row">
         <div flex="33" layout="column">
-          <md-card class="md-card-colored" flex>
-            <md-card-content class="text-center">
+          <mat-card class="mat-card-colored" flex>
+            <mat-card-content class="text-center">
               <div class="md-headline">{{ '2341'| digits }} <mat-icon class="tc-green-500 text-sm">arrow_upward</mat-icon></div>
               <mat-icon class="icon tc-indigo-700">perm_contact_calendar</mat-icon>
               <div layout="column">
                 <div class="md-subhead">Active Users</div>
                 <div class="md-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
               </div>
-            </md-card-content>
-          </md-card>
+            </mat-card-content>
+          </mat-card>
         </div>
         <div flex="33" layout="column">
-          <md-card class="md-card-colored" flex>
-            <md-card-content class="text-center">
+          <mat-card class="mat-card-colored" flex>
+            <mat-card-content class="text-center">
               <div class="md-headline">{{ '72452903343' | bytes }} <mat-icon class="tc-red-500 text-sm">arrow_downward</mat-icon></div>
               <mat-icon class="icon tc-light-blue-700">sd_storage</mat-icon>
               <div layout="column">
                 <div class="md-subhead">User Disk Usage</div>
                 <div class="md-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
               </div>
-            </md-card-content>
-          </md-card>
+            </mat-card-content>
+          </mat-card>
         </div>
         <div flex="33" layout="column">
-          <md-card class="md-card-colored" flex>
-            <md-card-content class="text-center">
+          <mat-card class="mat-card-colored" flex>
+            <mat-card-content class="text-center">
               <div class="md-headline">{{ '324523' | digits}} <mat-icon class="tc-green-500 text-sm">arrow_upward</mat-icon></div>
               <mat-icon class="icon tc-cyan-700">receipt</mat-icon>
               <div layout="column">
                 <div class="md-subhead">Pages Viewed</div>
                 <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
               </div>
-            </md-card-content>
-          </md-card>
+            </mat-card-content>
+          </mat-card>
         </div>
       </div>
-      <md-card>
-        <md-card-title>Customer Activity</md-card-title>
-        <md-card-subtitle>Recent activity from select members</md-card-subtitle>
+      <mat-card>
+        <mat-card-title>Customer Activity</mat-card-title>
+        <mat-card-subtitle>Recent activity from select members</mat-card-subtitle>
         <mat-divider></mat-divider>
         <mat-nav-list class="will-load item-list">
           <ng-template tdLoading="items.load">
@@ -86,12 +86,12 @@
             </ng-template>
           </ng-template>
         </mat-nav-list>
-      </md-card>
+      </mat-card>
     </div>
     <div flex-gt-sm="40">
-      <md-card>
-        <md-card-title>Alerts</md-card-title>
-        <md-card-subtitle>Items requiring attention</md-card-subtitle>
+      <mat-card>
+        <mat-card-title>Alerts</mat-card-title>
+        <mat-card-subtitle>Items requiring attention</mat-card-subtitle>
         <mat-divider></mat-divider>
         <mat-list class="will-load alert-list">
           <ng-template tdLoading="alerts.load">
@@ -106,15 +106,15 @@
           </ng-template>
         </mat-list>
         <mat-divider></mat-divider>
-        <md-card-actions>
+        <mat-card-actions>
           <a mat-button color="accent" class="text-upper" [routerLink]="['/logs']">
             <span>View More</span>
           </a>
-        </md-card-actions>
-      </md-card>
-      <md-card id="dashboard-favorites-card" class="push-top">
-        <md-card-title>Favorites</md-card-title>
-        <md-card-subtitle>Your favorite products</md-card-subtitle>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card id="dashboard-favorites-card" class="push-top">
+        <mat-card-title>Favorites</mat-card-title>
+        <mat-card-subtitle>Your favorite products</mat-card-subtitle>
         <mat-divider></mat-divider>
         <mat-nav-list class="will-load favorite-list">
           <ng-template tdLoading="favorites.load">
@@ -129,12 +129,12 @@
           </ng-template>
         </mat-nav-list>
         <mat-divider></mat-divider>
-        <md-card-actions>
+        <mat-card-actions>
           <a mat-button color="accent" class="text-upper" [routerLink]="['/product']">
             <span>View More</span>
           </a>
-        </md-card-actions>
-      </md-card>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
   <td-layout-footer>
