@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { MdSnackBarModule, MdIconModule, MdListModule, MdTooltipModule, MdCardModule, MdButtonModule,
-         MdToolbarModule, MdInputModule, MdSlideToggleModule, MdMenuModule } from '@angular/material';
+import { MatSnackBarModule, MatIconModule, MatListModule, MatTooltipModule, MatCardModule, MatButtonModule,
+         MatToolbarModule, MatInputModule, MatSlideToggleModule, MatMenuModule } from '@angular/material';
 
 import { CovalentLoadingModule, CovalentDialogsModule, CovalentMediaModule, CovalentLayoutModule,
          CovalentSearchModule, CovalentCommonModule } from '@covalent/core';
@@ -29,16 +29,16 @@ export { UsersComponent, UsersFormComponent, UserService, IUser, USER_PROVIDER, 
     FormsModule,
     RouterModule,
     // material modules
-    MdSnackBarModule,
-    MdIconModule,
-    MdListModule,
-    MdTooltipModule,
-    MdCardModule,
-    MdButtonModule,
-    MdToolbarModule,
-    MdInputModule,
-    MdSlideToggleModule,
-    MdMenuModule,
+    MatSnackBarModule,
+    MatIconModule,
+    MatListModule,
+    MatTooltipModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatSlideToggleModule,
+    MatMenuModule,
     // covalent modules
     CovalentLoadingModule,
     CovalentDialogsModule,

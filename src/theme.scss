@@ -29,13 +29,13 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-highlight-theme();
 
 // Active icon color in list nav
-md-nav-list {
-    [md-list-item].active {
-        md-icon[mdListAvatar] {
+mat-nav-list {
+    [mat-list-item].active {
+        mat-icon[matListAvatar] {
             background-color: mat-color($accent);
             color: mat-color($accent, default-contrast)
         }
-        md-icon[mdListIcon] {
+        mat-icon[matListIcon] {
             color: mat-color($accent);
         }
     }

@@ -1,95 +1,95 @@
 <td-layout-nav logo="assets:covalent" navigationRoute="/">
-  <button md-icon-button td-menu-button tdLayoutToggle>
-    <md-icon>menu</md-icon>
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
   </button>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Quickstart</span>
     <span flex></span>
-    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+    <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
+    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
   </div>
   <td-layout-manage-list
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-toolbar td-sidenav-content>
+    <mat-toolbar td-sidenav-content>
       <span>Users</span>
-    </md-toolbar>
-    <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
-      <a md-list-item>
-        <md-icon mdListIcon>account_circle</md-icon>
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item>
+        <mat-icon matListIcon>account_circle</mat-icon>
         All Users
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>star</md-icon>
+      <a mat-list-item>
+        <mat-icon matListIcon>star</mat-icon>
         Favorites
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>verified_user</md-icon>
+      <a mat-list-item>
+        <mat-icon matListIcon>verified_user</mat-icon>
         Administrators
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>supervisor_account</md-icon>
+      <a mat-list-item>
+        <mat-icon matListIcon>supervisor_account</mat-icon>
         Non-Admins
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>inbox</md-icon>
+      <a mat-list-item>
+        <mat-icon matListIcon>inbox</mat-icon>
         Archived
       </a>
-    </md-nav-list>
-    <md-toolbar>
-      <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-        <md-icon>arrow_back</md-icon>
+    </mat-nav-list>
+    <mat-toolbar>
+      <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+        <mat-icon>arrow_back</mat-icon>
       </button>
       <div td-toolbar-content layout="row" layout-align="start center" flex>
         <span>All Users</span>
         <span flex></span>
-        <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
+        <button mat-icon-button><mat-icon >view_module</mat-icon></button>
+        <button mat-icon-button><mat-icon >sort</mat-icon></button>
+        <button mat-icon-button><mat-icon >settings</mat-icon></button>
+        <button mat-icon-button><mat-icon >more_vert</mat-icon></button>
       </div>
-    </md-toolbar>
-    <md-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+    </mat-toolbar>
+    <mat-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
-      <md-divider></md-divider>
+      <mat-divider></mat-divider>
       <ng-template tdLoading="users.list">
-        <md-list class="will-load">
+        <mat-list class="will-load">
           <div class="md-padding" *ngIf="filteredUsers?.length === 0" layout="row" layout-align="center center">
             <h3>No users to display.</h3>
           </div>
           <ng-template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
-            <md-list-item>
-              <md-icon mdListAvatar>person</md-icon>
-              <h3 mdLine> {{user.displayName}} </h3>
-              <p mdLine> {{user.email}} </p>
-              <p mdLine hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
+            <mat-list-item>
+              <mat-icon matListAvatar>person</mat-icon>
+              <h3 matLine> {{user.displayName}} </h3>
+              <p matLine> {{user.email}} </p>
+              <p matLine hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
               <span flex></span>
               <span hide-xs hide-sm hide-md flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
                   <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.created | date }} </div>
                   <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.lastAccess | timeAgo }} </div>
               </span>
               <span>
-                  <button md-icon-button [md-menu-trigger-for]="menu">
-                  <md-icon>more_vert</md-icon>
+                  <button mat-icon-button [mat-menu-trigger-for]="menu">
+                  <mat-icon>more_vert</mat-icon>
                   </button>
-                  <md-menu x-position="before" #menu="mdMenu">
-                      <a [routerLink]="[user.id, 'edit']" md-menu-item>
-                        <md-icon>edit</md-icon> Edit
+                  <mat-menu x-position="before" #menu="matMenu">
+                      <a [routerLink]="[user.id, 'edit']" mat-menu-item>
+                        <mat-icon>edit</mat-icon> Edit
                       </a>
-                      <button md-menu-item (click)="delete(user.id)">
-                        <md-icon>delete</md-icon> Delete
+                      <button mat-menu-item (click)="delete(user.id)">
+                        <mat-icon>delete</mat-icon> Delete
                       </button>
-                  </md-menu>
+                  </mat-menu>
               </span>
-            </md-list-item>
-            <md-divider *ngIf="!last" md-inset></md-divider>
+            </mat-list-item>
+            <mat-divider *ngIf="!last" matInset></mat-divider>
           </ng-template>
-        </md-list>
+        </mat-list>
       </ng-template>
-    </md-card>
+    </mat-card>
   </td-layout-manage-list>   
 </td-layout-nav>
-<a md-fab color="accent" class="mat-fab-bottom-right" [routerLink]="['add']">
-  <md-icon>add</md-icon>
+<a mat-fab color="accent" class="mat-fab-bottom-right" [routerLink]="['add']">
+  <mat-icon>add</mat-icon>
 </a>

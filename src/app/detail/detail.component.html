@@ -1,29 +1,29 @@
 <td-layout-nav>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
-    <button md-icon-button td-menu-button tdLayoutToggle>
-      <md-icon>menu</md-icon>
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+      <mat-icon>menu</mat-icon>
     </button>
     <span *ngIf="item">Activity > {{item.name}}</span>
     <span flex></span>
   </div>
   <td-layout-card-over  *ngIf="item">
-       <md-card-title>{{item.name}}'s Activity Stream</md-card-title>
-    <md-card-subtitle>Last activity: {{item.description}}</md-card-subtitle>
-    <md-divider></md-divider>
-    <md-list>
+       <mat-card-title>{{item.name}}'s Activity Stream</mat-card-title>
+    <mat-card-subtitle>Last activity: {{item.description}}</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-list>
       <ng-template ngFor [ngForOf]="[0,1,2,3,4]">
-        <md-list-item layout-align="row">
-            <md-icon mdListAvatar> receipt </md-icon>
-            <h3 mdLine> {{item.name}} </h3>
-            <p mdLine> activity description </p>            
-          </md-list-item>
+        <mat-list-item layout-align="row">
+            <mat-icon matListAvatar> receipt </mat-icon>
+            <h3 matLine> {{item.name}} </h3>
+            <p matLine> activity description </p>            
+          </mat-list-item>
       </ng-template>
-    </md-list>
-    <md-divider></md-divider>
-    <md-card-actions>
-      <button md-button color="accent" class="text-upper" (click)="goBack()">
+    </mat-list>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <button mat-button color="accent" class="text-upper" (click)="goBack()">
         Back
       </button>
-    </md-card-actions>
+    </mat-card-actions>
   </td-layout-card-over>   
 </td-layout-nav>

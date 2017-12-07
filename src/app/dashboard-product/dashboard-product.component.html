@@ -1,69 +1,69 @@
 <td-layout-nav logo="assets:covalent" navigationRoute="/">
-  <button md-icon-button td-menu-button tdLayoutToggle>
-    <md-icon>menu</md-icon>
+  <button mat-icon-button td-menu-button tdLayoutToggle>
+    <mat-icon>menu</mat-icon>
   </button>
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span>Quickstart</span>
     <span flex></span>
-    <a md-icon-button mdTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><md-icon>chrome_reader_mode</md-icon></a>
-    <a md-icon-button mdTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><md-icon svgIcon="assets:github"></md-icon></a>
+    <a mat-icon-button matTooltip="Docs" href="https://teradata.github.io/covalent/" target="_blank"><mat-icon>chrome_reader_mode</mat-icon></a>
+    <a mat-icon-button matTooltip="Github" href="https://github.com/teradata/covalent" target="_blank"><mat-icon svgIcon="assets:github"></mat-icon></a>
   </div>
   <td-layout-manage-list
                         [opened]="media.registerQuery('gt-sm') | async"
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-toolbar td-sidenav-content>
+    <mat-toolbar td-sidenav-content>
       <span>Product Name</span>
-    </md-toolbar>
-    <md-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
-      <a md-list-item
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
+      <a mat-list-item
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/product']">
-        <md-icon mdListIcon>dashboard</md-icon>
+        <mat-icon matListIcon>dashboard</mat-icon>
         Dashboard
       </a>
-      <a md-list-item
+      <a mat-list-item
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['stats']">
-        <md-icon mdListIcon>insert_chart</md-icon>
+        <mat-icon matListIcon>insert_chart</mat-icon>
         Stats
       </a>
-      <a md-list-item
+      <a mat-list-item
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['features']">
-        <md-icon mdListIcon>star</md-icon>
+        <mat-icon matListIcon>star</mat-icon>
         Features
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>people</md-icon>
+      <a mat-list-item>
+        <mat-icon matListIcon>people</mat-icon>
         Customers
       </a>
-      <h3 md-subheader>Admin Menu</h3>
-      <a md-list-item>
-        <md-icon mdListIcon>receipt</md-icon>
+      <h3 matSubheader>Admin Menu</h3>
+      <a mat-list-item>
+        <mat-icon matListIcon>receipt</mat-icon>
         Log
       </a>
-      <a md-list-item>
-        <md-icon mdListIcon>settings</md-icon>
+      <a mat-list-item>
+        <mat-icon matListIcon>settings</mat-icon>
         Settings
       </a>
-    </md-nav-list>
-    <md-toolbar>
-      <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-        <md-icon>arrow_back</md-icon>
+    </mat-nav-list>
+    <mat-toolbar>
+      <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+        <mat-icon>arrow_back</mat-icon>
       </button>
       <div td-toolbar-content layout="row" layout-align="start center" flex>
         <span>{{title}}</span>
         <span flex></span>
-        <button md-icon-button><md-icon class="md-24">view_module</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">sort</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">settings</md-icon></button>
-        <button md-icon-button><md-icon class="md-24">more_vert</md-icon></button>
+        <button mat-icon-button><mat-icon >view_module</mat-icon></button>
+        <button mat-icon-button><mat-icon >sort</mat-icon></button>
+        <button mat-icon-button><mat-icon >settings</mat-icon></button>
+        <button mat-icon-button><mat-icon >more_vert</mat-icon></button>
       </div>
-    </md-toolbar>
+    </mat-toolbar>
     <router-outlet></router-outlet>
   </td-layout-manage-list>
 </td-layout-nav>

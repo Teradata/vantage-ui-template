@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 import { TdLoadingService, TdDialogService, TdMediaService } from '@covalent/core';
 
@@ -21,7 +21,7 @@ export class UsersComponent implements AfterViewInit, OnInit {
   constructor(private _titleService: Title,
               private _loadingService: TdLoadingService,
               private _dialogService: TdDialogService,
-              private _snackBarService: MdSnackBar,
+              private _snackBarService: MatSnackBar,
               private _userService: UserService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {

@@ -107,10 +107,10 @@ describe('Component: ProductOverview', () => {
       testComponent.ngOnInit();
       fixture.detectChanges();
 
-      expect(element.querySelectorAll('md-nav-list.item-list a[md-list-item]').length)
+      expect(element.querySelectorAll('mat-nav-list.item-list a[mat-list-item]').length)
       .toBe(testComponent.items.length);
 
-      expect(element.querySelectorAll('md-list.user-list md-list-item').length)
+      expect(element.querySelectorAll('mat-list.user-list mat-list-item').length)
         .toBe(testComponent.users.length);
     })();
   });

@@ -1,6 +1,7 @@
 import { Provider, SkipSelf, Optional, InjectionToken } from '@angular/core';
 import { Response, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 
