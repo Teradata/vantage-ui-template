@@ -1,5 +1,5 @@
-/* :host /deep/ lets shadowdom style child elements */
-:host /deep/ {
+/* :host ::ng-deep lets shadowdom style child elements */
+:host ::ng-deep {
     /**
     * CSS Overrides for bug fixes
     */
@@ -10,7 +10,7 @@
 
     /* Manage list custom styles */
     .md-sort-item {
-        /deep/ {
+        ::ng-deep {
             .mat-list-item-content {
                 padding: 0;
             }
