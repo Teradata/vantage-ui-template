@@ -50,11 +50,11 @@
     "@angular/platform-browser-dynamic": "5.0.0",
     "@angular/platform-server": "5.0.0",
     "@angular/router": "5.0.0",
-    "@covalent/core": "1.0.0-beta.8-1",
-    "@covalent/dynamic-forms": "1.0.0-beta.8-1",
-    "@covalent/highlight": "1.0.0-beta.8-1",
-    "@covalent/http": "1.0.0-beta.8-1",
-    "@covalent/markdown": "1.0.0-beta.8-1",
+    "@covalent/core": "1.0.0-rc.0",
+    "@covalent/dynamic-forms": "1.0.0-rc.0",
+    "@covalent/highlight": "1.0.0-rc.0",
+    "@covalent/http": "1.0.0-rc.0",
+    "@covalent/markdown": "1.0.0-rc.0",
     "@swimlane/ngx-charts": "^6.1.0",
     "core-js": "^2.4.1",
     "d3": "^4.9.0",
@@ -87,7 +87,7 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.1.0",
     "tslint": "^5.2.0",
-    "typescript": "2.3.2"
+    "typescript": "2.4.2"
   },
   "optionalDependencies": {
     "@covalent/data": "0.7.0"
