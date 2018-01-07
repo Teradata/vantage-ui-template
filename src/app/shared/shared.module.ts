@@ -1,5 +1,7 @@
 import { NgModule, } from '@angular/core';
 import { CommonModule, } from '@angular/common';
+import { Http, HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
 import { FlexLayoutModule, } from '@angular/flex-layout';
 import {
@@ -13,7 +15,7 @@ import {
   MatListModule, MatMenuModule, MatTooltipModule,
   MatSlideToggleModule, MatInputModule, MatCheckboxModule,
   MatToolbarModule, MatSnackBarModule, MatSidenavModule,
-  MatTabsModule, MatSelectModule,
+  MatTabsModule, MatSelectModule, MatRadioModule,
 } from '@angular/material';
 import { NgxChartsModule, } from '@swimlane/ngx-charts';
 
@@ -22,7 +24,7 @@ const FLEX_LAYOUT_MODULES: any[] = [
 ];
 
 const ANGULAR_MODULES: any[] = [
-  FormsModule, ReactiveFormsModule,
+  FormsModule, ReactiveFormsModule, HttpModule, HttpClientModule,
 ];
 
 const MATERIAL_MODULES: any[] = [
@@ -30,7 +32,7 @@ const MATERIAL_MODULES: any[] = [
   MatListModule, MatMenuModule, MatTooltipModule,
   MatSlideToggleModule, MatInputModule, MatCheckboxModule,
   MatToolbarModule, MatSnackBarModule, MatSidenavModule,
-  MatTabsModule, MatSelectModule,
+  MatTabsModule, MatSelectModule, MatRadioModule,
 ];
 
 const COVALENT_MODULES: any[] = [

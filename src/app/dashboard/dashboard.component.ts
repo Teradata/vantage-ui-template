@@ -18,6 +18,9 @@ import { multi } from './data';
 })
 export class DashboardComponent implements OnInit {
 
+  // Current date
+  year: any = new Date().getFullYear();
+
   items: Object[];
   users: IUser[];
   products: Object[];

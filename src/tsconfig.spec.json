@@ -22,10 +22,8 @@
     "allowUnreachableCode": false,
     "pretty": true
   },
-  "files": [
-    "test.ts"
-  ],
   "include": [
+    "test.ts",
     "**/*.spec.ts"
   ]
 }
