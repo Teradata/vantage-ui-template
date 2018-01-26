@@ -3,7 +3,6 @@ import { CommonModule, } from '@angular/common';
 import { Http, HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
-import { FlexLayoutModule, } from '@angular/flex-layout';
 import {
   CovalentDataTableModule, CovalentMediaModule, CovalentLoadingModule,
   CovalentNotificationsModule, CovalentLayoutModule, CovalentMenuModule,
@@ -18,10 +17,6 @@ import {
   MatTabsModule, MatSelectModule, MatRadioModule,
 } from '@angular/material';
 import { NgxChartsModule, } from '@swimlane/ngx-charts';
-
-const FLEX_LAYOUT_MODULES: any[] = [
-  FlexLayoutModule,
-];
 
 const ANGULAR_MODULES: any[] = [
   FormsModule, ReactiveFormsModule, HttpModule, HttpClientModule,
@@ -53,7 +48,6 @@ const CHART_MODULES: any[] = [
     MATERIAL_MODULES,
     COVALENT_MODULES,
     CHART_MODULES,
-    FLEX_LAYOUT_MODULES,
   ],
   declarations: [
 
