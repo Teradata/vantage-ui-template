@@ -3,8 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { MatSnackBarModule, MatIconModule, MatListModule, MatTooltipModule, MatCardModule, MatButtonModule,
-         MatToolbarModule, MatInputModule, MatSlideToggleModule, MatMenuModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { CovalentLoadingModule, CovalentDialogsModule, CovalentMediaModule, CovalentLayoutModule,
          CovalentSearchModule, CovalentCommonModule } from '@covalent/core';
@@ -32,6 +41,7 @@ export { UsersComponent, UsersFormComponent, UserService, IUser, USER_PROVIDER, 
     MatSnackBarModule,
     MatIconModule,
     MatListModule,
+    MatDividerModule,
     MatTooltipModule,
     MatCardModule,
     MatButtonModule,

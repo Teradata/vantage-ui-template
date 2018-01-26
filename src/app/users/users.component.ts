@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { TdLoadingService, TdDialogService, TdMediaService } from '@covalent/core';
 
