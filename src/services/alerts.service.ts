@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpInterceptorService } from '@covalent/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AlertsService {

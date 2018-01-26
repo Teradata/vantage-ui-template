@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { single, multi } from './data';
-import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent,
-          TdDigitsPipe } from '@covalent/core';
-import { IPageChangeEvent } from '@covalent/core';
+import { TdDataTableSortingOrder, TdDataTableService, ITdDataTableSortChangeEvent } from '@covalent/core/data-table';
+import { TdDigitsPipe } from '@covalent/core/common';
+import { IPageChangeEvent } from '@covalent/core/paging';
 
 const NUMBER_FORMAT: any = (v: {value: number}) => v.value;
 const DECIMAL_FORMAT: any = (v: {value: number}) => v.value.toFixed(2);

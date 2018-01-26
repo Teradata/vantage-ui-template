@@ -1,7 +1,8 @@
-import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
-import { TdLoadingService, TdMediaService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
+import { TdMediaService } from '@covalent/core/media';
 
 import { ItemsService, ProductsService } from '../../services';
 
@@ -11,7 +12,7 @@ import { ItemsService, ProductsService } from '../../services';
   styleUrls: ['./logs.component.scss'],
   viewProviders: [ ItemsService, ProductsService ],
 })
-export class LogsComponent implements AfterViewInit, OnInit {
+export class LogsComponent implements OnInit {
 
   items: Object[];
   products: Object[];
@@ -50,13 +51,4 @@ export class LogsComponent implements AfterViewInit, OnInit {
       }, 2000);
     });
   }
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
-    // force a new change detection cycle since change detections
-    // have finished when `ngAfterViewInit` is executed
-    this._changeDetectorRef.detectChanges();
-  }
-
 }

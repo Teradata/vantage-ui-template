@@ -1,5 +1,5 @@
-:host /deep/ {
-    md-divider {
+:host ::ng-deep {
+    mat-divider {
         display: block;
         border-top-style: solid;
         border-top-width: 1px;

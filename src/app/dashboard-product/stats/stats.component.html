@@ -1,9 +1,9 @@
-<div class="md-content" class="inset">
+<div class="mat-content" class="inset">
     <div layout="column" layout-gt-xs="row">
         <div flex-gt-xs="100">
-            <md-card>
-              <md-card-title>Product Usage</md-card-title>
-              <md-divider></md-divider>
+            <mat-card>
+              <mat-card-title>Product Usage</mat-card-title>
+              <mat-divider></mat-divider>
               <div class="chart-height push-top-sm pull-bottom">
                 <ngx-charts-line-chart
                   [scheme]="colorScheme"
@@ -20,20 +20,20 @@
                   [yAxisTickFormatting]="axisDigits">
                 </ngx-charts-line-chart>
               </div>
-          </md-card>
+          </mat-card>
         </div>
     </div>
     <div layout="column" layout-gt-sm="row">
         <div flex-gt-sm="100">
-            <md-card>
+            <mat-card>
                 <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
                     <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                        <span class="md-title">Product Stats</span>
+                        <span class="mat-title">Product Stats</span>
                     </span>
                     <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
                     </td-search-box>
                 </div>
-                <md-divider></md-divider>
+                <mat-divider></mat-divider>
                 <td-data-table
                     #dataTable
                     [data]="filteredData"
@@ -43,19 +43,19 @@
                     [sortOrder]="sortOrder"
                     (sortChange)="sort($event)">
                 </td-data-table>
-                <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+                <div class="pad" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
                     <h3>No results to display.</h3>
                 </div> 
                 <td-paging-bar #pagingBar [total]="filteredTotal" (change)="page($event)">
                     <span hide-xs>Row per page:</span>
-                    <md-select [(ngModel)]="pageSize">
-                        <md-option *ngFor="let size of [5, 10, 15, 20]" [value]="size">
+                    <mat-select [(ngModel)]="pageSize">
+                        <mat-option *ngFor="let size of [5, 10, 15, 20]" [value]="size">
                             {{size}}
-                        </md-option>
-                    </md-select>
+                        </mat-option>
+                    </mat-select>
                     {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
                 </td-paging-bar>
-            </md-card>
+            </mat-card>
         </div>
     </div>
 </div>

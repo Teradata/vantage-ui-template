@@ -1,8 +1,10 @@
-import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { TdLoadingService, TdDialogService, TdMediaService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
+import { TdDialogService } from '@covalent/core/dialogs';
+import { TdMediaService } from '@covalent/core/media';
 
 import { UserService, IUser } from './services/user.service';
 
@@ -13,7 +15,7 @@ import 'rxjs/add/operator/toPromise';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
 })
-export class UsersComponent implements AfterViewInit, OnInit {
+export class UsersComponent implements OnInit {
 
   users: IUser[];
   filteredUsers: IUser[];
@@ -21,7 +23,7 @@ export class UsersComponent implements AfterViewInit, OnInit {
   constructor(private _titleService: Title,
               private _loadingService: TdLoadingService,
               private _dialogService: TdDialogService,
-              private _snackBarService: MdSnackBar,
+              private _snackBarService: MatSnackBar,
               private _userService: UserService,
               private _changeDetectorRef: ChangeDetectorRef,
               public media: TdMediaService) {
@@ -30,14 +32,6 @@ export class UsersComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this._titleService.setTitle('Covalent Users');
     this.load();
-  }
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
-    // force a new change detection cycle since change detections
-    // have finished when `ngAfterViewInit` is executed
-    this._changeDetectorRef.detectChanges();
   }
 
   filterUsers(displayName: string = ''): void {

@@ -1,36 +1,50 @@
 import { NgModule, } from '@angular/core';
 import { CommonModule, } from '@angular/common';
+import { Http, HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
-import { FlexLayoutModule, } from '@angular/flex-layout';
-import {
-  CovalentDataTableModule, CovalentMediaModule, CovalentLoadingModule,
-  CovalentNotificationsModule, CovalentLayoutModule, CovalentMenuModule,
-  CovalentPagingModule, CovalentSearchModule, CovalentStepsModule,
-  CovalentCommonModule, CovalentDialogsModule,
-} from '@covalent/core';
-import {
-  MdButtonModule, MdCardModule, MdIconModule,
-  MdListModule, MdMenuModule, MdTooltipModule,
-  MdSlideToggleModule, MdInputModule, MdCheckboxModule,
-  MdToolbarModule, MdSnackBarModule, MdSidenavModule,
-  MdTabsModule, MdSelectModule,
-} from '@angular/material';
+
+import { CovalentCommonModule } from '@covalent/core/common';
+import { CovalentSearchModule } from '@covalent/core/search';
+import { CovalentLayoutModule } from '@covalent/core/layout';
+import { CovalentDialogsModule } from '@covalent/core/dialogs';
+import { CovalentMediaModule } from '@covalent/core/media';
+import { CovalentLoadingModule } from '@covalent/core/loading';
+import { CovalentDataTableModule } from '@covalent/core/data-table';
+import { CovalentNotificationsModule } from '@covalent/core/notifications';
+import { CovalentMenuModule } from '@covalent/core/menu';
+import { CovalentPagingModule } from '@covalent/core/paging';
+import { CovalentStepsModule } from '@covalent/core/steps';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+
 import { NgxChartsModule, } from '@swimlane/ngx-charts';
 
-const FLEX_LAYOUT_MODULES: any[] = [
-  FlexLayoutModule,
-];
-
 const ANGULAR_MODULES: any[] = [
-  FormsModule, ReactiveFormsModule,
+  FormsModule, ReactiveFormsModule, HttpModule, HttpClientModule,
 ];
 
 const MATERIAL_MODULES: any[] = [
-  MdButtonModule, MdCardModule, MdIconModule,
-  MdListModule, MdMenuModule, MdTooltipModule,
-  MdSlideToggleModule, MdInputModule, MdCheckboxModule,
-  MdToolbarModule, MdSnackBarModule, MdSidenavModule,
-  MdTabsModule, MdSelectModule,
+  MatButtonModule, MatCardModule, MatIconModule,
+  MatListModule, MatDividerModule, MatMenuModule, MatTooltipModule,
+  MatSlideToggleModule, MatInputModule, MatCheckboxModule,
+  MatToolbarModule, MatSnackBarModule, MatSidenavModule,
+  MatTabsModule, MatSelectModule, MatRadioModule,
 ];
 
 const COVALENT_MODULES: any[] = [
@@ -51,7 +65,6 @@ const CHART_MODULES: any[] = [
     MATERIAL_MODULES,
     COVALENT_MODULES,
     CHART_MODULES,
-    FLEX_LAYOUT_MODULES,
   ],
   declarations: [
 
@@ -61,7 +74,6 @@ const CHART_MODULES: any[] = [
     MATERIAL_MODULES,
     COVALENT_MODULES,
     CHART_MODULES,
-    FLEX_LAYOUT_MODULES,
-  ]
+  ],
 })
 export class SharedModule { }

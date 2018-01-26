@@ -11,7 +11,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockBackend } from '@angular/http/testing';
 import { SharedModule } from '../../shared/shared.module';
 
-import { TdLoadingService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
 import { CovalentHttpModule } from '@covalent/http';
 
 import { UsersModule } from '../../users/users.module';
@@ -107,10 +107,10 @@ describe('Component: ProductOverview', () => {
       testComponent.ngOnInit();
       fixture.detectChanges();
 
-      expect(element.querySelectorAll('md-nav-list.item-list a[md-list-item]').length)
+      expect(element.querySelectorAll('mat-nav-list.item-list a[mat-list-item]').length)
       .toBe(testComponent.items.length);
 
-      expect(element.querySelectorAll('md-list.user-list md-list-item').length)
+      expect(element.querySelectorAll('mat-list.user-list mat-list-item').length)
         .toBe(testComponent.users.length);
     })();
   });

@@ -1,13 +1,14 @@
-import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 
-import { StepState, TdMediaService } from '@covalent/core';
+import { StepState } from '@covalent/core/steps';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'qs-product-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })
-export class FormComponent implements AfterViewInit {
+export class FormComponent {
 
   activeDeactiveStep1Msg: string = 'No select/deselect detected yet';
   stateStep2: StepState = StepState.Required;
@@ -16,14 +17,6 @@ export class FormComponent implements AfterViewInit {
 
   constructor(public media: TdMediaService,
               private _changeDetectorRef: ChangeDetectorRef) { }
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
-    // force a new change detection cycle since change detections
-    // have finished when `ngAfterViewInit` is executed
-    this._changeDetectorRef.detectChanges();
-  }
 
   toggleRequiredStep2(): void {
     this.stateStep2 = (this.stateStep2 === StepState.Required ? StepState.None : StepState.Required);
