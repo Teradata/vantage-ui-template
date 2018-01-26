@@ -49,7 +49,6 @@ describe('Component: DashboardProduct', () => {
     let testComponent: DashboardProductComponent = fixture.debugElement.componentInstance;
     let element: HTMLElement = fixture.nativeElement;
 
-    testComponent.ngAfterViewInit();
     fixture.detectChanges();
     expect(element.querySelector('td-layout-manage-list')).toBeTruthy();
     fixture.whenStable().then(() => {
