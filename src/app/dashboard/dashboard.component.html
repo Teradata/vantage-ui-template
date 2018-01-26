@@ -82,7 +82,7 @@
                 <span flex></span>
                 <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
               </a>
-              <mat-divider *ngIf="!last" matInset></mat-divider>
+              <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
             </ng-template>
           </ng-template>
         </mat-nav-list>
@@ -101,7 +101,7 @@
                 <h3 matLine> {{item.description}} </h3>
                 <p matLine> {{item.name}} </p>
               </mat-list-item>
-              <mat-divider *ngIf="!last" matInset></mat-divider>
+              <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
             </ng-template>
           </ng-template>
         </mat-list>
@@ -124,7 +124,7 @@
                 <h3 matLine> {{item.name}} </h3>
                 <p matLine> {{item.description}} </p>
               </mat-list-item>
-              <mat-divider *ngIf="!last" matInset></mat-divider>
+              <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
             </ng-template>
           </ng-template>
         </mat-nav-list>
