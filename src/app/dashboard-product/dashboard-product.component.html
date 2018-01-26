@@ -13,7 +13,9 @@
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
     <mat-toolbar td-sidenav-content>
-      <span>Product Name</span>
+      <mat-toolbar-row>
+        <span>Product Name</span>
+      </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a mat-list-item
@@ -52,17 +54,19 @@
       </a>
     </mat-nav-list>
     <mat-toolbar>
-      <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-        <mat-icon>arrow_back</mat-icon>
-      </button>
-      <div td-toolbar-content layout="row" layout-align="start center" flex>
-        <span>{{title}}</span>
-        <span flex></span>
-        <button mat-icon-button><mat-icon >view_module</mat-icon></button>
-        <button mat-icon-button><mat-icon >sort</mat-icon></button>
-        <button mat-icon-button><mat-icon >settings</mat-icon></button>
-        <button mat-icon-button><mat-icon >more_vert</mat-icon></button>
-      </div>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>{{title}}</span>
+          <span flex></span>
+          <button mat-icon-button><mat-icon >view_module</mat-icon></button>
+          <button mat-icon-button><mat-icon >sort</mat-icon></button>
+          <button mat-icon-button><mat-icon >settings</mat-icon></button>
+          <button mat-icon-button><mat-icon >more_vert</mat-icon></button>
+        </div>
+      </mat-toolbar-row>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </td-layout-manage-list>
