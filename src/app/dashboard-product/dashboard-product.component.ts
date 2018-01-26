@@ -1,15 +1,15 @@
-import { Component, AfterViewInit, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 
 import { Title } from '@angular/platform-browser';
 
-import { TdMediaService } from '@covalent/core';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'qs-dashboard-product',
   templateUrl: './dashboard-product.component.html',
   styleUrls: ['./dashboard-product.component.scss'],
 })
-export class DashboardProductComponent implements AfterViewInit, OnInit {
+export class DashboardProductComponent implements OnInit {
 
   title: string;
   constructor(private _titleService: Title,
@@ -19,13 +19,5 @@ export class DashboardProductComponent implements AfterViewInit, OnInit {
   ngOnInit(): void {
     this._titleService.setTitle( 'Product Dashboard' );
     this.title = this._titleService.getTitle();
-  }
-
-  ngAfterViewInit(): void {
-    // broadcast to all listener observables when loading the page
-    this.media.broadcast();
-    // force a new change detection cycle since change detections
-    // have finished when `ngAfterViewInit` is executed
-    this._changeDetectorRef.detectChanges();
   }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 
-import { TdLoadingService } from '@covalent/core';
-import { TdDialogService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
+import { TdDialogService } from '@covalent/core/dialogs';
 
 import { FeaturesService, IFeature } from '../../../services';
 

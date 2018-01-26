@@ -1,8 +1,10 @@
 <div layout="column" layout-fill>
-  <mat-toolbar color="primary" class="md-whiteframe-z1">
-    <span>Login</span>
+  <mat-toolbar color="primary" class="mat-whiteframe-z1">
+    <mat-toolbar-row>
+      <span>Login</span>
+    </mat-toolbar-row>
   </mat-toolbar>
-  <div class="md-content" layout-padding flex>
+  <div class="mat-content" layout-padding flex>
     <div layout-gt-xs="row" layout-align-gt-xs="center start" class="margin">
       <div flex-gt-xs="50">
         <mat-card tdMediaToggle="gt-xs" [mediaClasses]="['push-top-lg']">
@@ -14,7 +16,7 @@
               <div layout="row">
                 <mat-form-field flex> 
                   <input matInput #userElement #userControl="ngModel" placeholder="Username" type="text" maxlength="30" name="username" [(ngModel)]="username" required>
-                  <span md-prefix><mat-icon>person</mat-icon></span>
+                  <span matPrefix><mat-icon>person</mat-icon></span>
                   <mat-hint align="start">
                     <span [hidden]="!userControl.errors?.required || userControl.pristine" class="tc-red-600">Required</span>
                   </mat-hint>
@@ -24,7 +26,7 @@
               <div layout="row">
                 <mat-form-field flex> 
                   <input matInput #passElement #passControl="ngModel" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
-                  <span md-prefix><mat-icon>lock</mat-icon></span>
+                  <span matPrefix><mat-icon>lock</mat-icon></span>
                   <mat-hint align="start">
                     <span [hidden]="!passControl.errors?.required || passControl.pristine" class="tc-red-600">Required</span>
                   </mat-hint>

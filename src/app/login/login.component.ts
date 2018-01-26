@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { TdLoadingService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
 
 @Component({
   selector: 'qs-login',

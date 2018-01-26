@@ -13,7 +13,9 @@
                         [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'"
                         [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
     <mat-toolbar td-sidenav-content>
-      <span>Users</span>
+      <mat-toolbar-row>
+        <span>Users</span>
+      </mat-toolbar-row>
     </mat-toolbar>
     <mat-nav-list td-sidenav-content [tdLayoutManageListClose]="!media.query('gt-sm')">
       <a mat-list-item>
@@ -38,24 +40,26 @@
       </a>
     </mat-nav-list>
     <mat-toolbar>
-      <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-        <mat-icon>arrow_back</mat-icon>
-      </button>
-      <div td-toolbar-content layout="row" layout-align="start center" flex>
-        <span>All Users</span>
-        <span flex></span>
-        <button mat-icon-button><mat-icon >view_module</mat-icon></button>
-        <button mat-icon-button><mat-icon >sort</mat-icon></button>
-        <button mat-icon-button><mat-icon >settings</mat-icon></button>
-        <button mat-icon-button><mat-icon >more_vert</mat-icon></button>
-      </div>
+      <mat-toolbar-row>
+        <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div td-toolbar-content layout="row" layout-align="start center" flex>
+          <span>All Users</span>
+          <span flex></span>
+          <button mat-icon-button><mat-icon >view_module</mat-icon></button>
+          <button mat-icon-button><mat-icon >sort</mat-icon></button>
+          <button mat-icon-button><mat-icon >settings</mat-icon></button>
+          <button mat-icon-button><mat-icon >more_vert</mat-icon></button>
+        </div>
+      </mat-toolbar-row>
     </mat-toolbar>
     <mat-card class="push-bottom-xxl" tdMediaToggle="gt-xs" [mediaClasses]="['push']">
       <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
       <mat-divider></mat-divider>
       <ng-template tdLoading="users.list">
         <mat-list class="will-load">
-          <div class="md-padding" *ngIf="filteredUsers?.length === 0" layout="row" layout-align="center center">
+          <div class="pad" *ngIf="filteredUsers?.length === 0" layout="row" layout-align="center center">
             <h3>No users to display.</h3>
           </div>
           <ng-template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
@@ -63,11 +67,11 @@
               <mat-icon matListAvatar>person</mat-icon>
               <h3 matLine> {{user.displayName}} </h3>
               <p matLine> {{user.email}} </p>
-              <p matLine hide-gt-md class="md-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
+              <p matLine hide-gt-md class="mat-caption"> last login: {{ user.lastAccess | timeAgo }} </p>
               <span flex></span>
               <span hide-xs hide-sm hide-md flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
-                  <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.created | date }} </div>
-                  <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.lastAccess | timeAgo }} </div>
+                  <div class="mat-caption tc-grey-500" flex-gt-xs="50"> {{ user.created | date }} </div>
+                  <div class="mat-caption tc-grey-500" flex-gt-xs="50"> {{ user.lastAccess | timeAgo }} </div>
               </span>
               <span>
                   <button mat-icon-button [mat-menu-trigger-for]="menu">
@@ -83,7 +87,7 @@
                   </mat-menu>
               </span>
             </mat-list-item>
-            <mat-divider *ngIf="!last" matInset></mat-divider>
+            <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
           </ng-template>
         </mat-list>
       </ng-template>

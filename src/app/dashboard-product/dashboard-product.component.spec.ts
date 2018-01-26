@@ -7,7 +7,7 @@ import {
 import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SharedModule } from '../shared/shared.module';
-import { TdMediaService } from '@covalent/core';
+import { TdMediaService } from '@covalent/core/media';
 import { DashboardProductComponent } from './dashboard-product.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -49,7 +49,6 @@ describe('Component: DashboardProduct', () => {
     let testComponent: DashboardProductComponent = fixture.debugElement.componentInstance;
     let element: HTMLElement = fixture.nativeElement;
 
-    testComponent.ngAfterViewInit();
     fixture.detectChanges();
     expect(element.querySelector('td-layout-manage-list')).toBeTruthy();
     fixture.whenStable().then(() => {

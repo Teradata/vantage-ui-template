@@ -3,7 +3,7 @@
         <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterFeatures($event)"></td-search-box>
         <mat-divider></mat-divider>
         <mat-list class="will-load">
-            <div class="md-padding" *ngIf="!filteredFeatures || filteredFeatures.length === 0" layout="row" layout-align="center center">
+            <div class="pad" *ngIf="!filteredFeatures || filteredFeatures.length === 0" layout="row" layout-align="center center">
                 <h3>No feature to display.</h3>
             </div>
             <ng-template let-item let-last="last" ngFor [ngForOf]="filteredFeatures">
@@ -12,8 +12,8 @@
                     <h3 matLine> {{item.title}} </h3>
                     <span flex></span>
                     <span flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
-                        <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ item.user }} </div>
-                        <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ item.modified | timeAgo }} </div>
+                        <div class="mat-caption tc-grey-500" flex-gt-xs="50"> {{ item.user }} </div>
+                        <div class="mat-caption tc-grey-500" flex-gt-xs="50"> {{ item.modified | timeAgo }} </div>
                     </span>
                     <span>
                         <button mat-icon-button [mat-menu-trigger-for]="menu">
