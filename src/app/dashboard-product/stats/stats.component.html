@@ -1,4 +1,4 @@
-<div class="md-content" class="inset">
+<div class="mat-content" class="inset">
     <div layout="column" layout-gt-xs="row">
         <div flex-gt-xs="100">
             <mat-card>
@@ -28,7 +28,7 @@
             <mat-card>
                 <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
                     <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-                        <span class="md-title">Product Stats</span>
+                        <span class="mat-title">Product Stats</span>
                     </span>
                     <td-search-box #searchBox backIcon="arrow_back" class="push-right-sm" placeholder="Search here" (searchDebounce)="search($event)" flex>
                     </td-search-box>
@@ -43,7 +43,7 @@
                     [sortOrder]="sortOrder"
                     (sortChange)="sort($event)">
                 </td-data-table>
-                <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+                <div class="pad" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
                     <h3>No results to display.</h3>
                 </div> 
                 <td-paging-bar #pagingBar [total]="filteredTotal" (change)="page($event)">

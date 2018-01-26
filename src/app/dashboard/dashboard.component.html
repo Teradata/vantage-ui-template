@@ -34,11 +34,11 @@
         <div flex-gt-xs="33">
           <mat-card>
             <mat-card-content class="text-center">
-              <div class="md-headline">{{ '2341'| digits }} <mat-icon class="tc-green-500 text-sm">arrow_upward</mat-icon></div>
+              <div class="mat-headline push-bottom-none">{{ '2341'| digits }} <mat-icon class="tc-green-500 text-sm">arrow_upward</mat-icon></div>
               <mat-icon class="icon tc-indigo-700">perm_contact_calendar</mat-icon>
               <div>
-                <div class="md-subhead">Active Users</div>
-                <div class="md-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
+                <div class="mat-subheading-2 push-bottom-none">Active Users</div>
+                <div class="mat-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
               </div>
             </mat-card-content>
           </mat-card>
@@ -46,11 +46,11 @@
         <div flex-gt-xs="33">
           <mat-card>
             <mat-card-content class="text-center">
-              <div class="md-headline">{{ '72452903343' | bytes }} <mat-icon class="tc-red-500 text-sm">arrow_downward</mat-icon></div>
+              <div class="mat-headline push-bottom-none">{{ '72452903343' | bytes }} <mat-icon class="tc-red-500 text-sm">arrow_downward</mat-icon></div>
               <mat-icon class="icon tc-light-blue-700">sd_storage</mat-icon>
               <div>
-                <div class="md-subhead">User Disk Usage</div>
-                <div class="md-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
+                <div class="mat-subheading-2 push-bottom-none">User Disk Usage</div>
+                <div class="mat-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
               </div>
             </mat-card-content>
           </mat-card>
@@ -58,11 +58,11 @@
         <div flex-gt-xs="33">
           <mat-card>
             <mat-card-content class="text-center">
-              <div class="md-headline">{{ '324523' | digits}} <mat-icon class="tc-green-500 text-sm">arrow_upward</mat-icon></div>
+              <div class="mat-headline push-bottom-none">{{ '324523' | digits}} <mat-icon class="tc-green-500 text-sm">arrow_upward</mat-icon></div>
               <mat-icon class="icon tc-cyan-700">receipt</mat-icon>
               <div>
-                <div class="md-subhead">Pages Viewed</div>
-                <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
+                <div class="mat-subheading-2 push-bottom-none">Pages Viewed</div>
+                <div class="mat-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
               </div>
             </mat-card-content>
           </mat-card>
@@ -80,7 +80,7 @@
                 <h3 matLine> {{item.name}} </h3>
                 <p matLine> {{item.description | truncate:50 }} </p>
                 <span flex></span>
-                <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
+                <span class="mat-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
               </a>
               <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
             </ng-template>
@@ -139,7 +139,7 @@
   </div>
   <td-layout-footer>
     <div layout="row" layout-align="start center">
-      <span class="md-caption">Copyright &copy; {{year}} Teradata. All rights reserved</span>
+      <span class="mat-caption">Copyright &copy; {{year}} Teradata. All rights reserved</span>
       <span flex></span>
       <mat-icon class="mat-icon-ux" svgIcon="assets:teradata-ux"></mat-icon>
     </div>

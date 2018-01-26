@@ -1,4 +1,4 @@
-<div class="md-content" class="inset">
+<div class="mat-content" class="inset">
     <div layout-gt-xs="row">
         <div flex-gt-xs="50">
           <mat-card>
@@ -71,7 +71,7 @@
                     <h3 matLine> {{item.name}} </h3>
                     <p matLine> {{item.description | truncate:40}} </p>
                     <span flex></span>
-                    <span class="md-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
+                    <span class="mat-caption text-right" flex="20"> {{item.created | timeAgo }} </span>
                     </a>
                     <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
                 </ng-template>
