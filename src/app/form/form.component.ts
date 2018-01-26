@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 
-import { StepState, TdMediaService } from '@covalent/core';
+import { StepState } from '@covalent/core/steps';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'qs-product-form',

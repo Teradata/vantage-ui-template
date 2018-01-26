@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { single, multi, multi2 } from './data';
-import { TdLoadingService, TdDigitsPipe } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
+import { TdDigitsPipe } from '@covalent/core/common';
 
 import { UserService, IUser } from '../../users';
 

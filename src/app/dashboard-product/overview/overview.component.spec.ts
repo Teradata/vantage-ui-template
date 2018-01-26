@@ -11,7 +11,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockBackend } from '@angular/http/testing';
 import { SharedModule } from '../../shared/shared.module';
 
-import { TdLoadingService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
 import { CovalentHttpModule } from '@covalent/http';
 
 import { UsersModule } from '../../users/users.module';

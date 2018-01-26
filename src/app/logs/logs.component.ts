@@ -1,7 +1,8 @@
 import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 
-import { TdLoadingService, TdMediaService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
+import { TdMediaService } from '@covalent/core/media';
 
 import { ItemsService, ProductsService } from '../../services';
 

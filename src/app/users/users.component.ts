@@ -2,7 +2,9 @@ import { Component, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/co
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { TdLoadingService, TdDialogService, TdMediaService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
+import { TdDialogService } from '@covalent/core/dialogs';
+import { TdMediaService } from '@covalent/core/media';
 
 import { UserService, IUser } from './services/user.service';
 

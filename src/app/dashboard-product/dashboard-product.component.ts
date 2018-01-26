@@ -2,7 +2,7 @@ import { Component, AfterViewInit, ChangeDetectorRef, OnInit } from '@angular/co
 
 import { Title } from '@angular/platform-browser';
 
-import { TdMediaService } from '@covalent/core';
+import { TdMediaService } from '@covalent/core/media';
 
 @Component({
   selector: 'qs-dashboard-product',

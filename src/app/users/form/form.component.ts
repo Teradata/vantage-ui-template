@@ -3,7 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { TdDialogService, TdLoadingService } from '@covalent/core';
+import { TdLoadingService } from '@covalent/core/loading';
+import { TdDialogService } from '@covalent/core/dialogs';
 
 import { UserService, IUser } from '../services/user.service';
 

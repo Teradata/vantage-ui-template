@@ -15,8 +15,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { CovalentLoadingModule, CovalentDialogsModule, CovalentMediaModule, CovalentLayoutModule,
-         CovalentSearchModule, CovalentCommonModule } from '@covalent/core';
+import { CovalentCommonModule } from '@covalent/core/common';
+import { CovalentSearchModule } from '@covalent/core/search';
+import { CovalentLayoutModule } from '@covalent/core/layout';
+import { CovalentDialogsModule } from '@covalent/core/dialogs';
+import { CovalentMediaModule } from '@covalent/core/media';
+import { CovalentLoadingModule } from '@covalent/core/loading';
 
 import { UsersComponent } from './users.component';
 import { UsersFormComponent } from './form/form.component';
