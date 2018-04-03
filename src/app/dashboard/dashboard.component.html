@@ -10,26 +10,30 @@
   </div>
   <div layout-gt-sm="row" tdMediaToggle="gt-xs" [mediaClasses]="['push-sm']">
     <div flex-gt-sm="60">
-      <mat-card>
-        <mat-card-title>Products Sales</mat-card-title>
-        <mat-card-subtitle>usage stats for our products</mat-card-subtitle>
-        <mat-divider></mat-divider>
-        <div class="chart-height push-top push-right-sm">
-          <ngx-charts-area-chart-stacked
-            [scheme]="colorScheme"
-            [results]="multi"
-            [gradient]="gradient"
-            [xAxis]="showXAxis"
-            [yAxis]="showYAxis"
-            [legend]="showLegend"
-            [showXAxisLabel]="showXAxisLabel"
-            [showYAxisLabel]="showYAxisLabel"
-            [xAxisLabel]="xAxisLabel"
-            [yAxisLabel]="yAxisLabel"
-            [yAxisTickFormatting]="axisDigits">
-          </ngx-charts-area-chart-stacked>
+      <div layout-gt-xs="row">
+        <div flex-gt-xs="100">
+          <mat-card>
+            <mat-card-title>Products Sales</mat-card-title>
+            <mat-card-subtitle>usage stats for our products</mat-card-subtitle>
+            <mat-divider></mat-divider>
+            <div class="chart-height push-top push-right-sm">
+              <ngx-charts-area-chart-stacked
+                [scheme]="colorScheme"
+                [results]="multi"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="showLegend"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                [yAxisTickFormatting]="axisDigits">
+              </ngx-charts-area-chart-stacked>
+            </div>
+          </mat-card>
         </div>
-      </mat-card>
+      </div>
       <div layout-gt-xs="row">
         <div flex-gt-xs="33">
           <mat-card>
