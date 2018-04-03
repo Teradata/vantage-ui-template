@@ -16,7 +16,7 @@ import { FormComponent } from './form/form.component';
 const routes: Routes = [
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
     },
     {
         path: '',
@@ -32,46 +32,46 @@ const routes: Routes = [
                 children: [
                     {
                         path: '',
-                        component: ProductOverviewComponent
+                        component: ProductOverviewComponent,
                     },
                     {
                         path: 'stats',
-                        component: ProductStatsComponent
+                        component: ProductStatsComponent,
                     },
                     {
                         path: 'features',
                         children: [
                             {
                                 path: '',
-                                component: ProductFeaturesComponent
+                                component: ProductFeaturesComponent,
                             },
                             {
                                 path: 'add',
-                                component: FeaturesFormComponent
+                                component: FeaturesFormComponent,
                             },
                             {
                                 path: ':id/delete',
-                                component: FeaturesFormComponent
+                                component: FeaturesFormComponent,
                             },
                             {
                                 path: ':id/edit',
-                                component: FeaturesFormComponent
+                                component: FeaturesFormComponent,
                             },
-                        ]
+                        ],
                     },
-                ]
+                ],
             },
             {
                 path: 'item/:id',
-                component: DetailComponent
+                component: DetailComponent,
             },
             {
                 path: 'logs',
-                component: LogsComponent
+                component: LogsComponent,
             },
             {
                 path: 'form',
-                component: FormComponent
+                component: FormComponent,
             },
             { path: '', loadChildren: './users/users.module#UsersModule' },
         ],
@@ -84,7 +84,7 @@ const routes: Routes = [
     ],
     exports: [
         RouterModule,
-    ]
+    ],
 })
 export class AppRoutingModule { }
 export const routedComponents: any[] = [
