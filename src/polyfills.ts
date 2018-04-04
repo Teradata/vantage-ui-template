@@ -70,3 +70,5 @@ import 'zone.js/dist/zone';  // Included with Angular-CLI.
 
 // rxjs imports
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';

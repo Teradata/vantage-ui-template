@@ -8,8 +8,6 @@ import { TdDialogService } from '@covalent/core/dialogs';
 
 import { UserService, IUser } from '../services/user.service';
 
-import 'rxjs/add/operator/toPromise';
-
 @Component({
   selector: 'qs-user-form',
   templateUrl: './form.component.html',

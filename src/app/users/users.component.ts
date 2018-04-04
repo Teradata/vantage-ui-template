@@ -8,8 +8,6 @@ import { TdMediaService } from '@covalent/core/media';
 
 import { UserService, IUser } from './services/user.service';
 
-import 'rxjs/add/operator/toPromise';
-
 @Component({
   selector: 'qs-users',
   templateUrl: './users.component.html',
