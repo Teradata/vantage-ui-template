@@ -1,20 +1,38 @@
 import { NgModule, Type } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule, Title }  from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+import { CovalentCommonModule } from '@covalent/core/common';
+import { CovalentLayoutModule } from '@covalent/core/layout';
+import { CovalentMediaModule } from '@covalent/core/media';
+import { CovalentLoadingModule } from '@covalent/core/loading';
+
 import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentMarkdownModule } from '@covalent/markdown';
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+import { appRoutes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 import { MOCK_API } from '../config/api.config';
 
-import { routedComponents, AppRoutingModule } from './app-routing.module';
-
-import { SharedModule } from './shared/shared.module';
-
 import { USER_PROVIDER, USERS_API } from './users';
+import { MainComponent } from './main.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const httpInterceptorProviders: Type<any>[] = [
   RequestInterceptor,
@@ -27,20 +45,40 @@ export function getAPI(): string {
 @NgModule({
   declarations: [
     AppComponent,
-    routedComponents,
+    MainComponent,
+    LoginComponent,
+    DashboardComponent,
   ], // directives, components, and pipes owned by this NgModule
   imports: [
-    AppRoutingModule,
+    // angular modules
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    SharedModule,
+    FormsModule,
+    HttpClientModule,
+    HttpModule,
+    // material modules
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatListModule,
+    MatDividerModule,
+    MatInputModule,
+    MatToolbarModule,
+    // covalent modules
+    CovalentCommonModule,
+    CovalentLayoutModule,
+    CovalentMediaModule,
+    CovalentLoadingModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
         interceptor: RequestInterceptor, paths: ['**'],
       }],
     }),
-    CovalentHighlightModule,
-    CovalentMarkdownModule,
+    // external modules
+    NgxChartsModule,
+    // routes
+    appRoutes,
   ], // modules needed to run this module
   providers: [
     httpInterceptorProviders,

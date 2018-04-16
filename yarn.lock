@@ -173,7 +173,7 @@
   dependencies:
     tslib "^1.7.1"
 
-"@covalent/core@1.0.0", "@covalent/core@^1.0.0-rc.5":
+"@covalent/core@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@covalent/core/-/core-1.0.0.tgz#64978a74029635408a55bd462fcf13a682e2d6d2"
   dependencies:
@@ -183,31 +183,10 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@covalent/data/-/data-0.7.0.tgz#a9722bf649894ce98360ea224a6868c9ad20d710"
 
-"@covalent/dynamic-forms@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@covalent/dynamic-forms/-/dynamic-forms-1.0.0.tgz#857aa61152dd8e426f78bb00c934416f12228f4d"
-  dependencies:
-    "@covalent/core" "^1.0.0-rc.5"
-    tslib "^1.7.1"
-
-"@covalent/highlight@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@covalent/highlight/-/highlight-1.0.0.tgz#b9ed29cd1a14c37f3faa5e5a574f48d6efb6edf0"
-  dependencies:
-    highlight.js "9.11.0"
-    tslib "^1.7.1"
-
 "@covalent/http@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@covalent/http/-/http-1.0.0.tgz#a5a787375926f2902798fda5b9e8b8fc939e1404"
   dependencies:
-    tslib "^1.7.1"
-
-"@covalent/markdown@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@covalent/markdown/-/markdown-1.0.0.tgz#5ae2c4d1e210bc8ef9c799c07083dce910636792"
-  dependencies:
-    showdown "1.6.4"
     tslib "^1.7.1"
 
 "@ngtools/json-schema@1.1.0", "@ngtools/json-schema@^1.1.0":
@@ -3129,10 +3108,6 @@ he@1.1.x:
 highlight.js@9.10.0:
   version "9.10.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.10.0.tgz#f9f0b14c0be00f0e4fb1e577b749fed9e6f52f55"
-
-highlight.js@9.11.0:
-  version "9.11.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.11.0.tgz#47f98c7399918700db2caf230ded12cec41a84ae"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
