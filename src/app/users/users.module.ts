@@ -27,10 +27,7 @@ import { UsersFormComponent } from './form/form.component';
 
 import { userRoutes } from './users.routes';
 
-import { UserService, IUser, USER_PROVIDER, USERS_API } from './services/user.service';
-
-export { UsersComponent, UsersFormComponent, UserService, IUser, USER_PROVIDER, USERS_API };
-
+import { USER_PROVIDER, USERS_API } from './services/user.service';
 @NgModule({
   declarations: [
     UsersComponent,
