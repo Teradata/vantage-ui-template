@@ -1,6 +1,8 @@
 import { Provider, SkipSelf, Optional, InjectionToken } from '@angular/core';
 import { Response, Http } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 
@@ -24,9 +26,11 @@ export class UserService extends RESTService<IUser> {
 
   staticQuery(): Observable<IUser[]> {
     return this._http.get('data/users.json')
-    .map((res: Response) => {
-      return res.json();
-    });
+    .pipe(
+      map((res: Response) => {
+        return res.json();
+      }),
+    );
   }
 }
 
