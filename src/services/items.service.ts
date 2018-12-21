@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
-import { HttpInterceptorService, RESTService } from '@covalent/http';
+import { HttpInterceptorService, RESTService } from '@covalent/http-deprec';
 import { MOCK_API } from '../config/api.config';
 
 import { map } from 'rxjs/operators';

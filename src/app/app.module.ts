@@ -1,6 +1,5 @@
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule, Title }  from '@angular/platform-browser';
@@ -19,7 +18,7 @@ import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentMediaModule } from '@covalent/core/media';
 import { CovalentLoadingModule } from '@covalent/core/loading';
 
-import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
+import { CovalentHttpModule } from '@covalent/http-deprec';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
@@ -56,7 +55,6 @@ export function getAPI(): string {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    HttpModule,
     // material modules
     MatButtonModule,
     MatCardModule,

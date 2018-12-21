@@ -1,10 +1,10 @@
 import { Provider, SkipSelf, Optional, InjectionToken } from '@angular/core';
-import { Response, Http } from '@angular/http';
+import { Response } from '@angular/http';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { HttpInterceptorService, RESTService } from '@covalent/http';
+import { HttpInterceptorService, RESTService } from '@covalent/http-deprec';
 
 export interface IUser {
   displayName: string;
