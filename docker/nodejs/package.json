@@ -1,0 +1,15 @@
+{
+  "name": "covalent-nodejs-docker-app",
+  "version": "1.0.0",
+  "description": "Covalent running in Node.js on Docker",
+  "license": "MIT",
+  "author": "Teradata UI Team",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "request": "2.81.0"
+  }
+}

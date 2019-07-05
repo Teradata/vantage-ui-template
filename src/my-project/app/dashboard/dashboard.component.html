@@ -1,0 +1,18 @@
+<div flex>
+  <mat-toolbar>
+    <div flex layout="row" layout-align="start center">
+      <mat-icon class="push-left-sm push-right">dashboard</mat-icon>
+      <span class="push-left-xs">{{'DASHBOARD' | translate}}</span>
+      <span flex></span>
+    </div>
+  </mat-toolbar>
+  <div tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+    <ng-template tdLoading="overview.dashboard">
+      <div layout-gt-xs="row" layout-wrap>
+        <div flex-gt-xs="100">
+          TEST CONTENT
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../out-tsc/app",
+    "types": [
+      "hammerjs"
+    ],
+    "paths": {
+      "@shared/*": ["../lib/*"],
+    },
+  },
+  "files": [
+    "../polyfills.ts",
+    "../typings.d.ts",
+    "main.ts"
+  ],
+  "exclude": [
+    "test.ts",
+    "**/*.spec.*"
+  ]
+}

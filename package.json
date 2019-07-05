@@ -1,0 +1,88 @@
+{
+  "name": "vantage-ui-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vantage UI Template with Covalent + Vantage UI Platform",
+  "keywords": [
+    "vantage",
+    "template",
+    "ui"
+  ],
+  "scripts": {
+    "e2e": "./node_modules/.bin/ng e2e",
+    "serve": "./node_modules/.bin/ng serve --proxy-config proxy.conf.js",
+    "serve:dhc": "npm run serve -- --host 0.0.0.0 --disable-host-check",
+    "serve:prod": "node --max_old_space_size=8192 ./node_modules/.bin/ng serve  --aot --prod --source-map=false --optimization --proxy-config proxy.conf.js",
+    "lint": "npm run tslint && npm run stylelint",
+    "tslint": "ng lint --format codeFrame",
+    "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/assets/**' --config .stylelintrc.json --syntax scss",
+    "preinstall": "rm -rf node_modules tmp deploy dist",
+    "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
+    "test": "./node_modules/.bin/ng test --code-coverage --source-map=false --watch=false",
+    "build:prod": "rm -rf ./dist && node --max_old_space_size=8192 ./node_modules/.bin/ng build --aot --prod --source-map=false --optimization"
+  },
+  "engines": {
+    "node": ">=10.15.3",
+    "npm": ">=6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Teradata/vantage-ui-template"
+  },
+  "bugs": {
+    "url": "https://github.com/Teradata/vantage-ui-template/issues"
+  },
+  "license": "MIT",
+  "author": "Teradata UI Team",
+  "dependencies": {
+    "@angular/animations": "8.0.2",
+    "@angular/cdk": "8.0.1",
+    "@angular/common": "8.0.2",
+    "@angular/compiler": "8.0.2",
+    "@angular/core": "8.0.2",
+    "@angular/forms": "8.0.2",
+    "@angular/material": "8.0.1",
+    "@angular/platform-browser": "8.0.2",
+    "@angular/platform-browser-dynamic": "8.0.2",
+    "@angular/platform-server": "8.0.2",
+    "@angular/router": "8.0.2",
+    "@covalent/core": "^2.0.2",
+    "@covalent/echarts": "^2.0.0",
+    "@covalent/highlight": "^2.0.2",
+    "@covalent/http": "^2.0.2",
+    "@ngx-translate/core": "11.0.1",
+    "@ngx-translate/http-loader": "4.0.0",
+    "@td-vantage/ui-platform": "^1.0.0-beta.0",
+    "core-js": "2.5.7",
+    "echarts": "4.2.1",
+    "hammerjs": "^2.0.8",
+    "rxjs": "6.5.2",
+    "tslib": "^1.9.3",
+    "web-animations-js": "2.3.1",
+    "zone.js": "^0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.800.0",
+    "@angular/cli": "~8.0.3",
+    "@angular/compiler-cli": "~8.0.2",
+    "@angular/language-service": "~8.0.2",
+    "@covalent/tools": "2.0.1",
+    "@types/hammerjs": "^2.0.30",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "^5.0.0",
+    "jasmine-core": "~3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "protractor": "~5.4.0",
+    "stylelint": "10.1.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.4.3"
+  }
+}

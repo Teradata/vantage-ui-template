@@ -1,0 +1,10 @@
+{
+    "APP_TITLE": "UI Template",
+    "SESSION_EXPIRED": "The session has expired. Please log in again",
+    "ENTITY_TOO_LARGE": "Entity too large.",
+    "SERVICE_DOWN": "Services might be down (Request timeout)",
+    "THERE_WAS_A_PROBLEM": "There was a problem",
+    "CLOSE": "Close",
+    "DASHBOARD": "Dashboard",
+    "SIGN_OUT": "Sign Out"
+}

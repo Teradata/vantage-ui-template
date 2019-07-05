@@ -1,0 +1,39 @@
+<td-layout #layout>
+  <td-navigation-drawer [logo]="'teradata-dark'"
+                        [sidenavTitle]="'APP_TITLE' | translate"
+                        [name]="user?.display_name"
+                        [email]="user?.email"
+                        flex>
+    <mat-nav-list dense>
+      <ng-template let-item
+                    let-last="last"
+                    ngFor
+                    [ngForOf]="routes">
+        <a mat-list-item
+            [routerLink]="[item.route]"
+            (click)="layout.close()">
+          <mat-icon matListIcon>{{item.icon}}</mat-icon>
+          {{item.title | translate}}
+        </a>
+      </ng-template>
+    </mat-nav-list>
+    <mat-nav-list td-navigation-drawer-menu dense>
+      <a mat-list-item (click)="logout()">
+        <mat-icon matListIcon>exit_to_app</mat-icon>
+        {{'SIGN_OUT' | translate }}
+      </a>
+    </mat-nav-list>
+  </td-navigation-drawer>
+  <td-layout-nav logo="teradata" [toolbarTitle]="'APP_TITLE' | translate">
+    <button mat-icon-button td-menu-button tdLayoutToggle>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div td-toolbar-content layout="row" layout-align="start center" flex>
+      <span flex></span>
+      <button mat-icon-button>
+        <mat-icon>help</mat-icon>
+      </button>
+    </div>
+    <router-outlet></router-outlet>
+  </td-layout-nav>
+</td-layout>

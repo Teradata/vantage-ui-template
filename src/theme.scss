@@ -1,0 +1,125 @@
+@import '~@angular/material/theming';
+@import '~@covalent/core/theming/all-theme';
+@import '~@covalent/highlight/highlight-theme';
+
+// Plus imports for other components in your app.
+
+// Custom typography
+$custom-typography: mat-typography-config(
+  $button: mat-typography-level(14px, 14px, 400),
+  $font-family: 'Arial, Helvetica, sans-serif'
+);
+
+// Include the base styles for Angular Material core. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+@include mat-core($custom-typography);
+
+@import './teradata-branding';
+
+// Include the core styles for Covalent
+@include covalent-core();
+
+// Include material-icons
+@import '../node_modules/@covalent/core/common/material-icons.css';
+
+// Include covalent utility classes
+@include covalent-utilities();
+
+// Include flex layout classes
+@include covalent-layout();
+
+// Include covalent color classes
+@include covalent-colors();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$primary: mat-palette($td-slate, 700, 100, 900);
+$accent:  mat-palette($td-blue, 800, 200, 900);
+$warn:    mat-palette($mat-deep-orange, 800, 100, 900);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+@include covalent-theme($theme);
+@include covalent-highlight-theme();
+@include teradata-brand($theme);
+
+/* ------------------------------------------------------------------------------- */
+$foreground: map-get($theme, foreground);
+$background: map-get($theme, background);
+
+// Default theme
+.tc-primary {
+  color: mat-color($primary);
+}
+.tc-accent {
+  color: mat-color($accent);
+}
+.tc-warn {
+  color: mat-color($warn);
+}
+.bgc-primary {
+  background-color: mat-color($primary);
+}
+.bgc-accent {
+  background-color: mat-color($accent);
+}
+.bgc-warn {
+  background-color: mat-color($warn);
+}
+.bgc-white,
+.bgc {
+  background-color: white;
+}
+.tc-faded {
+  color: rgba(0, 0, 0, 0.5);
+}
+.bgc-dark {
+  background-color: mat-color($background, app-bar);
+}
+.bgc-contrast {
+  background-color: #ececec;
+}
+
+// State colors
+.tc-positive {
+  color: map-get($td-positive, foreground-light) !important;
+}
+.tc-caution {
+  color: map-get($td-caution, foreground-light) !important;
+}
+.tc-negative {
+  color: map-get($td-negative, foreground-light) !important;
+}
+.tc-neutral {
+  color: map-get($td-neutral, foreground-light) !important;
+}
+.tc-emphasis-1 {
+  color: map-get($td-emphasis1, foreground-light) !important;
+}
+.tc-emphasis-2 {
+  color: map-get($td-emphasis2, foreground-light) !important;
+}
+.bgc-positive {
+  background-color: map-get($td-positive, background-light) !important;
+}
+.bgc-caution {
+  background-color: map-get($td-caution, background-light) !important;
+}
+.bgc-negative {
+  background-color: map-get($td-negative, background-light) !important;
+}
+.bgc-neutral {
+  background-color: map-get($td-neutral, background-light) !important;
+}
+.bgc-emphasis-1 {
+  background-color: map-get($td-emphasis1, background-light) !important;
+}
+.bgc-emphasis-2 {
+  background-color: map-get($td-emphasis2, background-light) !important;
+}

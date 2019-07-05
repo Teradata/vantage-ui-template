@@ -1,0 +1,12 @@
+// Custom style for loading elements without height
+.will-load {
+  min-height: 80px;
+}
+// Href line height wasn't right for mat-icon-button
+a[mat-icon-button] {
+  line-height: 36px;
+}
+// Capitalize
+.text-capital {
+  text-transform: capitalize;
+}
