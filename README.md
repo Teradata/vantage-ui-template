@@ -1,9 +1,6 @@
 ## Vantage UI Template
-
-### With Covalent & Vantage UI Platform
-
-## Information
-
+###### Create Apps for Vantage using the Covalent UI Framework
+----
 ### Setup
 
 * Ensure you have **Node 10.15.3** (on a Mac use Homebrew and `brew install node@10.15.3`)
