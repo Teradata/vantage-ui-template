@@ -1,5 +1,5 @@
-## Vantage UI Template
-###### Create Apps for Vantage using the Covalent UI Framework
+## Teradata Vantage UI Template
+###### Create Apps for Teradata Vantage using the Covalent UI Framework
 ----
 ### Setup
 
