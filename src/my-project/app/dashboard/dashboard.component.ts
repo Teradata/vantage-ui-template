@@ -12,21 +12,19 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-
   systems: ISystem[];
 
-  constructor(private _changeDetectorRef: ChangeDetectorRef,
-              private _systemService: VantageSystemService,
-              private _loadingService: TdLoadingService,
-              private _errorService: VantageErrorService) {
-  }
+  constructor(
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _systemService: VantageSystemService,
+    private _loadingService: TdLoadingService,
+    private _errorService: VantageErrorService,
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this._loadingService.register('overview.dashboard');
     try {
-      await forkJoin([
-        this.loadSystems(),
-      ]).toPromise();
+      await forkJoin([this.loadSystems()]).toPromise();
     } catch (error) {
       this._errorService.open(error);
     }
@@ -34,8 +32,7 @@ export class DashboardComponent implements OnInit {
   }
 
   async loadSystems(): Promise<void> {
-    let response: {data: ISystem[]} = await this._systemService.query().toPromise();
+    let response: { data: ISystem[] } = await this._systemService.query().toPromise();
     this.systems = response.data;
   }
-
 }

@@ -35,13 +35,8 @@
                 "output": "/"
               }
             ],
-            "styles": [
-              "src/theme.scss",
-              "src/my-project/styles.scss"
-            ],
-            "scripts": [
-              "node_modules/hammerjs/hammer.min.js"
-            ]
+            "styles": ["src/theme.scss", "src/my-project/styles.scss"],
+            "scripts": ["node_modules/hammerjs/hammer.min.js"]
           },
           "configurations": {
             "production": {
@@ -96,13 +91,8 @@
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/my-project/tsconfig.spec.json",
-            "scripts": [
-              "node_modules/hammerjs/hammer.min.js"
-            ],
-            "styles": [
-              "src/theme.scss",
-              "src/my-project/styles.scss"
-            ],
+            "scripts": ["node_modules/hammerjs/hammer.min.js"],
+            "styles": ["src/theme.scss", "src/my-project/styles.scss"],
             "assets": [
               "src/assets",
               {
@@ -121,13 +111,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/my-project/tsconfig.app.json",
-              "src/my-project/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["src/my-project/tsconfig.app.json", "src/my-project/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {

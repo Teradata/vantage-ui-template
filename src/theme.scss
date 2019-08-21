@@ -7,7 +7,7 @@
 // Custom typography
 $custom-typography: mat-typography-config(
   $button: mat-typography-level(14px, 14px, 400),
-  $font-family: 'Arial, Helvetica, sans-serif'
+  $font-family: 'Arial, Helvetica, sans-serif',
 );
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -35,8 +35,8 @@ $custom-typography: mat-typography-config(
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $primary: mat-palette($td-slate, 700, 100, 900);
-$accent:  mat-palette($td-blue, 800, 200, 900);
-$warn:    mat-palette($mat-deep-orange, 800, 100, 900);
+$accent: mat-palette($td-blue, 800, 200, 900);
+$warn: mat-palette($mat-deep-orange, 800, 100, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: mat-light-theme($primary, $accent, $warn);
