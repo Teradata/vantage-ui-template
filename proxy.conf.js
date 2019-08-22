@@ -5,9 +5,13 @@ const vantageLoginProxyConfig = require('@td-vantage/ui-platform/auth/config/van
 /* Vantage and local development environments */
 /* * * * * * * * * * * */
 
-const serverUrl = 'https://vantage.url.io'; // REPLACE WITH VANTAGE BASE URL
-const localUrl = "localhost:4200";
-const localProto = "http"; // http or https
+const serverUrl = undefined; // Replace with Vantage base url. Ex: https://vantage.url.io
+const localUrl = 'localhost:4200';
+const localProto = 'http'; // http or https
+
+if (!serverUrl) {
+  throw Error('Update the serverUrl variable in the proxy.conf.js to point to your vantage env.');
+}
 
 /* * * * * * * * * * * */
 /* This section contains the routes proxied through */
