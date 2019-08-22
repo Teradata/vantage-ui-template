@@ -1,4 +1,3 @@
-
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { CommonModule } from '@angular/common';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +19,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DashboardComponent } from './dashboard.component';
 
 describe('Dashboard Component', () => {
-
   let fixture: ComponentFixture<DashboardComponent>;
   let comp: DashboardComponent;
 
@@ -38,18 +36,19 @@ describe('Dashboard Component', () => {
         CovalentLoadingModule,
         CovalentDialogsModule,
         VantageUserFeedbackModule,
-        VantageSystemModule, 
+        VantageSystemModule,
       ],
-      declarations: [ DashboardComponent ],
-    }).compileComponents().then(() => {
-      fixture = TestBed.createComponent(DashboardComponent);
-      comp = fixture.componentInstance;
-    });
+      declarations: [DashboardComponent],
+    })
+      .compileComponents()
+      .then(() => {
+        fixture = TestBed.createComponent(DashboardComponent);
+        comp = fixture.componentInstance;
+      });
   }));
 
   it('checks if component was instantiated', async(() => {
     fixture.detectChanges();
     expect(comp).toBeTruthy();
   }));
-
 });

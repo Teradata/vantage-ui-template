@@ -9,7 +9,6 @@ import { VantageSessionService } from '@td-vantage/ui-platform/auth';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-
   // Current date
   year: any = new Date().getFullYear();
 
@@ -17,17 +16,16 @@ export class MainComponent implements OnInit {
   user: IUser;
 
   // Sidenav routes
-  routes: any[] = [{
-    title: 'DASHBOARD',
-    route: '/',
-    icon: 'dashboard',
-    show: true,
-  }];
+  routes: any[] = [
+    {
+      title: 'DASHBOARD',
+      route: '/',
+      icon: 'dashboard',
+      show: true,
+    },
+  ];
 
-  constructor(
-    private _vantageSessionService: VantageSessionService,
-  ) {
-  }
+  constructor(private _vantageSessionService: VantageSessionService) {}
 
   ngOnInit(): void {
     this.user = this._vantageSessionService.user;
@@ -37,5 +35,4 @@ export class MainComponent implements OnInit {
     this.user = undefined;
     await this._vantageSessionService.logout();
   }
-
 }

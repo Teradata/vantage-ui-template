@@ -38,21 +38,20 @@ import { AppComponent } from './app.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
-import { getSelectedLanguage, getSelectedLocale, createTranslateLoader, SUPPORTED_LANGS } from '@shared/utils/translate';
+import {
+  getSelectedLanguage,
+  getSelectedLocale,
+  createTranslateLoader,
+  SUPPORTED_LANGS,
+} from '@shared/utils/translate';
 
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [
-  VantageAuthenticationInterceptor,
-];
+const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticationInterceptor];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainComponent,
-    DashboardComponent,
-  ], // directives, components, and pipes owned by this NgModule
+  declarations: [AppComponent, MainComponent, DashboardComponent], // directives, components, and pipes owned by this NgModule
   imports: [
     appRoutes,
     /** Angular Modules */
@@ -91,20 +90,19 @@ const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [
     CovalentBaseEchartsModule,
     TranslateModule.forRoot(),
     CovalentHttpModule.forRoot({
-      interceptors: [{
-        interceptor: VantageAuthenticationInterceptor, paths: ['**'],
-      }],
+      interceptors: [
+        {
+          interceptor: VantageAuthenticationInterceptor,
+          paths: ['**'],
+        },
+      ],
     }),
   ], // modules needed to run this module
-  providers: [
-    appRoutingProviders,
-    httpInterceptorProviders,
-  ], // additional providers needed for this module
-  bootstrap: [ AppComponent ],
+  providers: [appRoutingProviders, httpInterceptorProviders], // additional providers needed for this module
+  bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor(translateService: TranslateService) {
-
     // set the default language
     translateService.setDefaultLang('en');
     translateService.addLangs(SUPPORTED_LANGS);

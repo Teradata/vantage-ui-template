@@ -5,6 +5,4 @@ import { NgModule } from '@angular/core';
   imports: [],
   exports: [],
 })
-export class CoreModule {
-
-}
+export class CoreModule {}
