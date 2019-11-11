@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   }
 
   async loadSystems(): Promise<void> {
-    let response: { data: ISystem[] } = await this._systemService.query().toPromise();
+    const response: { data: ISystem[] } = await this._systemService.query().toPromise();
     this.systems = response.data;
   }
 }

@@ -108,8 +108,7 @@ export class AppModule {
     translateService.addLangs(SUPPORTED_LANGS);
 
     // Get selected language and load it
-    let selectedLocale: string = getSelectedLocale(translateService);
-    let selectedLanguage: string = getSelectedLanguage(translateService);
+    const selectedLanguage: string = getSelectedLanguage(translateService);
 
     // using require here so can avoid making an http request ajax to get the language files
     // this prevents the language keys from flashing on the screen for a second before the actual

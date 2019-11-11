@@ -15,7 +15,7 @@
     "serve:prod": "node --max_old_space_size=8192 ./node_modules/.bin/ng serve  --aot --prod --source-map=false --optimization",
     "lint": "npm run tslint && npm run stylelint",
     "tslint": "ng lint --format codeFrame",
-    "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/assets/**' --config .stylelint.config.js --syntax scss",
+    "stylelint": "./node_modules/.bin/stylelint 'src/**/*.scss' '!**/assets/**' --config stylelint.config.js --syntax scss",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "test": "./node_modules/.bin/ng test --code-coverage --source-map=false --watch=false",
     "build:prod": "rm -rf ./dist && node --max_old_space_size=8192 ./node_modules/.bin/ng build --aot --prod --source-map=false --optimization",
