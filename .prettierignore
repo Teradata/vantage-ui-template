@@ -3,5 +3,5 @@ package-lock.json
 yarn.lock
 /bin
 /deploy
-/**/dist
 /coverage
+/dist

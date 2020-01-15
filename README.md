@@ -12,12 +12,11 @@
 - Install Angular CLI `npm i -g @angular/cli`
 - Install Typescript `npm i -g typescript`
 - Install TSLint `npm i -g tslint`
-- Install Protractor for e2e testing `npm i -g protractor`
-- Install Node packages `npm install`
+- Install Node packages `npm ci`
 
 ### Development
 
-1. Update the `serverUrl` variable in the `proxy.conf.js` to point to your vantage environment.
+1. Update the `serverUrl` variable in the `proxy.conf.js` & `loginUrl` `cypress.env.json` to point to your vantage environment.
 
 2. Run local webserver `npm run serve`
 

@@ -33,6 +33,6 @@ export class MainComponent implements OnInit {
 
   async logout(): Promise<void> {
     this.user = undefined;
-    await this._vantageSessionService.logout();
+    this._vantageSessionService.logout();
   }
 }

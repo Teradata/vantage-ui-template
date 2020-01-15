@@ -14,6 +14,10 @@ module.exports = function(config) {
     ],
     client: {
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
+      jasmine: {
+        random: false,
+        stopOnFailure: true,
+      },
     },
     customLaunchers: {
       ChromeCustom: {
@@ -22,14 +26,10 @@ module.exports = function(config) {
       },
     },
     files: [
-      { pattern: './karma.shim.js', watched: true, included: true, served: true },
       { pattern: './config.js.default' },
       { pattern: './node_modules/hammerjs/hammer.min.js' },
       { pattern: './node_modules/@angular/material/prebuilt-themes/indigo-pink.css', included: true, watched: true },
     ],
-    client: {
-      clearContext: false, // leave Jasmine Spec Runner output visible in browser
-    },
     preprocessors: {},
     mime: {
       'text/x-typescript': ['ts', 'tsx'],

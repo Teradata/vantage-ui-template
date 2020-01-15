@@ -9,7 +9,7 @@ COPY nodejs/docker-start.sh /
 # For npm@5 or later, copy package-lock.json as well
 # COPY package.json package-lock.json .
 
-RUN npm install
+RUN npm ci
 
 # Bundle app source
 COPY nodejs/server.js .
