@@ -21,7 +21,7 @@ var config = {
 };
 EOF
 # Replace href before deploying
-sed -i -e "s|<base href=\"/\" />|<base href=\"$contextPath\" />|g" /usr/share/nginx/html/
+sed -i -e "s|<base href=\"/\" />|<base href=\"$contextPath\" />|g" /usr/share/nginx/html/index.html
 # Filter the BaseURL into nginx.conf
 sed -i -e "s|VANTAGEBASEURL|$APPCENTER_BASE_URL|g" /etc/nginx/conf.d/default.conf
 
