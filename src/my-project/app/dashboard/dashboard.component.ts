@@ -1,9 +1,7 @@
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TdLoadingService } from '@covalent/core/loading';
-
 import { VantageErrorService } from '@td-vantage/ui-platform/utilities';
 import { VantageSystemService, ISystem } from '@td-vantage/ui-platform/system';
-
 import { forkJoin } from 'rxjs';
 
 @Component({
@@ -15,7 +13,6 @@ export class DashboardComponent implements OnInit {
   systems: ISystem[];
 
   constructor(
-    private _changeDetectorRef: ChangeDetectorRef,
     private _systemService: VantageSystemService,
     private _loadingService: TdLoadingService,
     private _errorService: VantageErrorService,

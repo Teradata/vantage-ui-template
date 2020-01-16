@@ -1,11 +1,9 @@
 import { NgModule, Type } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,42 +17,33 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
 import { CovalentCommonModule } from '@covalent/core/common';
 import { CovalentLayoutModule } from '@covalent/core/layout';
 import { CovalentMediaModule } from '@covalent/core/media';
 import { CovalentLoadingModule } from '@covalent/core/loading';
 import { CovalentDialogsModule } from '@covalent/core/dialogs';
-
 import { CovalentHttpModule, ITdHttpInterceptor } from '@covalent/http';
 import { CovalentBaseEchartsModule } from '@covalent/echarts';
-
 import { VantageUserModule } from '@td-vantage/ui-platform/user';
 import { VantageSystemModule } from '@td-vantage/ui-platform/system';
 import { VantageAuthenticationModule, VantageAuthenticationInterceptor } from '@td-vantage/ui-platform/auth';
 import { VantageUserFeedbackModule } from '@td-vantage/ui-platform/utilities';
-
 import { AppComponent } from './app.component';
 import { appRoutes, appRoutingProviders } from './app.routes';
-
-import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
-import {
-  getSelectedLanguage,
-  getSelectedLocale,
-  createTranslateLoader,
-  SUPPORTED_LANGS,
-} from '@shared/utils/translate';
-
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { getSelectedLanguage, SUPPORTED_LANGS } from '@shared/utils/translate';
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CovalentNavLinksModule } from '@covalent/core/nav-links';
 
 const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticationInterceptor];
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, DashboardComponent], // directives, components, and pipes owned by this NgModule
+  // directives, components, and pipes owned by this NgModule
+  declarations: [AppComponent, MainComponent, DashboardComponent],
   imports: [
     appRoutes,
-    /** Angular Modules */
+    // Angular Modules
     HttpClientModule,
     HttpClientXsrfModule.withOptions(),
     FormsModule,
@@ -62,7 +51,7 @@ const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticat
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    /** Material Modules */
+    // Material Modules
     MatButtonModule,
     MatListModule,
     MatIconModule,
@@ -76,18 +65,19 @@ const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticat
     MatTabsModule,
     MatSidenavModule,
     MatTooltipModule,
-    /** Vantege UI Platform */
+    // Vantage UI Platform
     VantageAuthenticationModule,
     VantageUserModule,
     VantageSystemModule,
     VantageUserFeedbackModule,
-    /** Covalent Modules */
+    // Covalent Modules
     CovalentCommonModule,
     CovalentLayoutModule,
     CovalentMediaModule,
     CovalentDialogsModule,
     CovalentLoadingModule,
     CovalentBaseEchartsModule,
+    CovalentNavLinksModule,
     TranslateModule.forRoot(),
     CovalentHttpModule.forRoot({
       interceptors: [
@@ -97,8 +87,9 @@ const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticat
         },
       ],
     }),
-  ], // modules needed to run this module
-  providers: [appRoutingProviders, httpInterceptorProviders], // additional providers needed for this module
+  ],
+  // additional providers needed for this module
+  providers: [appRoutingProviders, httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {
