@@ -1,43 +1,63 @@
 import { Injectable, Renderer2, Inject, RendererFactory2 } from '@angular/core';
-import { fromEvent, Subscription } from 'rxjs';
+import { fromEvent, BehaviorSubject, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 
 const THEME_LOCAL_STORAGE_KEY: string = 'vantage.theme';
-const DARK_THEME: string = 'dark-theme';
-const LIGHT_THEME: string = 'light-theme';
 
+export enum VantageTheme {
+  DARK = 'dark-theme',
+  LIGHT = 'light-theme',
+}
+
+// TODO: MOVE TO UI-PLATFORM
 @Injectable({
   providedIn: 'root',
 })
-export class ThemeService {
+export class VantageThemeService {
   private _renderer2: Renderer2;
-  activeTheme: string = localStorage.getItem(THEME_LOCAL_STORAGE_KEY);
+
+  private readonly _activeThemeSubject: BehaviorSubject<VantageTheme> = new BehaviorSubject<VantageTheme>(
+    <VantageTheme>localStorage.getItem(THEME_LOCAL_STORAGE_KEY),
+  );
+  readonly activeTheme$: Observable<VantageTheme> = this._activeThemeSubject.asObservable();
 
   constructor(@Inject(DOCUMENT) private _document: any, private rendererFactory: RendererFactory2) {
     this._renderer2 = rendererFactory.createRenderer(undefined, undefined);
-    const subscription: Subscription = fromEvent(window, 'storage')
+    fromEvent(window, 'storage')
       .pipe(filter((event: StorageEvent) => event.key === THEME_LOCAL_STORAGE_KEY))
-      .subscribe((event: StorageEvent) => this.applyTheme(event.newValue));
+      .subscribe((event: StorageEvent) => this.applyTheme(<VantageTheme>event.newValue));
+  }
+
+  private get activeTheme(): VantageTheme {
+    return this._activeThemeSubject.getValue();
+  }
+
+  private set activeTheme(theme: VantageTheme) {
+    this._activeThemeSubject.next(theme);
   }
 
   public get darkThemeIsActive(): boolean {
-    return this.activeTheme === DARK_THEME;
+    return this.activeTheme === VantageTheme.DARK;
   }
   public get lightThemeIsActive(): boolean {
-    return this.activeTheme === LIGHT_THEME;
+    return this.activeTheme === VantageTheme.LIGHT;
   }
 
   public applyLightTheme(): void {
-    this.applyTheme(LIGHT_THEME);
+    this.applyTheme(VantageTheme.LIGHT);
   }
   public applyDarkTheme(): void {
-    this.applyTheme(DARK_THEME);
+    this.applyTheme(VantageTheme.DARK);
   }
-  private applyTheme(theme: string): void {
-    this._renderer2.removeClass(this._document.querySelector('body'), theme === DARK_THEME ? LIGHT_THEME : DARK_THEME);
+
+  private applyTheme(theme: VantageTheme): void {
+    this._renderer2.removeClass(
+      this._document.querySelector('html'),
+      theme === VantageTheme.DARK ? VantageTheme.LIGHT : VantageTheme.DARK,
+    );
     localStorage.setItem(THEME_LOCAL_STORAGE_KEY, theme);
-    this._renderer2.addClass(this._document.querySelector('body'), theme);
-    this.activeTheme = localStorage.getItem(THEME_LOCAL_STORAGE_KEY);
+    this._renderer2.addClass(this._document.querySelector('html'), theme);
+    this.activeTheme = <VantageTheme>localStorage.getItem(THEME_LOCAL_STORAGE_KEY);
   }
 }

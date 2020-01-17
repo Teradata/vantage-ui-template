@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from '@td-vantage/ui-platform';
 import { VantageSessionService } from '@td-vantage/ui-platform/auth';
 import { ITdLink } from '@covalent/core/nav-links';
-import { ThemeService } from '../theme.service';
+import { VantageThemeService, VantageTheme } from '../theme.service';
 
 @Component({
   selector: 'covalent-app',
@@ -27,7 +27,7 @@ export class MainComponent implements OnInit {
     },
   ];
 
-  constructor(private _vantageSessionService: VantageSessionService, private _themeService: ThemeService) {}
+  constructor(private _vantageSessionService: VantageSessionService, private _themeService: VantageThemeService) {}
 
   ngOnInit(): void {
     this.user = this._vantageSessionService.user;

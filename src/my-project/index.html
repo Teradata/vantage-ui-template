@@ -46,6 +46,7 @@
       /* LOGO */
       #pre-loader .teradata-logo {
         overflow: visible;
+        max-width: 95%;
       }
 
       #pre-loader .teradata-logo .teradata-logo-letters path {
@@ -256,7 +257,7 @@
       var themeLSKey = 'vantage.theme';
       var defaultTheme = 'light-theme';
       localStorage.setItem(themeLSKey, localStorage.getItem(themeLSKey) || defaultTheme);
-      document.querySelector('body').classList.add(localStorage.getItem(themeLSKey));
+      document.querySelector('html').classList.add(localStorage.getItem(themeLSKey));
     </script>
     <script src="config.js"></script>
   </body>
