@@ -1,0 +1,158 @@
+// TODO: import variables to use
+// @import '@angular/material/theming';
+// @import '@td-vantage/ui-platform/theming';
+
+#td-pre-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10000;
+
+  /* light-theme */
+  background-color: rgb(236, 236, 236);
+
+  /* LOGO */
+  .teradata-logo {
+    overflow: visible;
+    max-width: 95%;
+  }
+
+  .teradata-logo .teradata-logo-letters path {
+    /* light-theme */
+    stroke: #354145;
+    fill: #354145;
+  }
+
+  /* SPINNER */
+  .mat-spinner {
+    margin-top: 1em;
+  }
+
+  .mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode='indeterminate'] {
+    animation: mat-progress-spinner-linear-rotate 2s linear infinite;
+  }
+
+  .mat-progress-spinner {
+    display: block;
+    position: relative;
+  }
+
+  .mat-progress-spinner svg {
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    overflow: visible;
+  }
+
+  .mat-progress-spinner.mat-progress-spinner-indeterminate-animation[mode='indeterminate'] circle {
+    transition-property: stroke;
+    animation-duration: 4s;
+    animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+    animation-iteration-count: infinite;
+  }
+  .mat-progress-spinner circle {
+    fill: transparent;
+    transform-origin: center;
+    transition: stroke-dashoffset 225ms linear;
+    transition-property: stroke-dashoffset;
+  }
+
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: #f2724b;
+  }
+
+  @keyframes mat-progress-spinner-linear-rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes mat-progress-spinner-stroke-rotate-100 {
+    0% {
+      stroke-dashoffset: 268.60617px;
+      transform: rotate(0);
+    }
+    12.5% {
+      stroke-dashoffset: 56.54867px;
+      transform: rotate(0);
+    }
+    12.5001% {
+      stroke-dashoffset: 56.54867px;
+      transform: rotateX(180deg) rotate(72.5deg);
+    }
+    25% {
+      stroke-dashoffset: 268.60617px;
+      transform: rotateX(180deg) rotate(72.5deg);
+    }
+    25.0001% {
+      stroke-dashoffset: 268.60617px;
+      transform: rotate(270deg);
+    }
+    37.5% {
+      stroke-dashoffset: 56.54867px;
+      transform: rotate(270deg);
+    }
+    37.5001% {
+      stroke-dashoffset: 56.54867px;
+      transform: rotateX(180deg) rotate(161.5deg);
+    }
+    50% {
+      stroke-dashoffset: 268.60617px;
+      transform: rotateX(180deg) rotate(161.5deg);
+    }
+    50.0001% {
+      stroke-dashoffset: 268.60617px;
+      transform: rotate(180deg);
+    }
+    62.5% {
+      stroke-dashoffset: 56.54867px;
+      transform: rotate(180deg);
+    }
+    62.5001% {
+      stroke-dashoffset: 56.54867px;
+      transform: rotateX(180deg) rotate(251.5deg);
+    }
+    75% {
+      stroke-dashoffset: 268.60617px;
+      transform: rotateX(180deg) rotate(251.5deg);
+    }
+    75.0001% {
+      stroke-dashoffset: 268.60617px;
+      transform: rotate(90deg);
+    }
+    87.5% {
+      stroke-dashoffset: 56.54867px;
+      transform: rotate(90deg);
+    }
+    87.5001% {
+      stroke-dashoffset: 56.54867px;
+      transform: rotateX(180deg) rotate(341.5deg);
+    }
+    100% {
+      stroke-dashoffset: 268.60617px;
+      transform: rotateX(180deg) rotate(341.5deg);
+    }
+  }
+}
+
+.dark-theme #td-pre-loader {
+  /* dark-theme */
+  background-color: rgb(28, 37, 42);
+
+  /* dark-theme */
+  .teradata-logo .teradata-logo-letters path {
+    stroke: white;
+    fill: white;
+  }
+}
