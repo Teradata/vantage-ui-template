@@ -5,7 +5,7 @@ import { ITdLink } from '@covalent/core/nav-links';
 import { VantageThemeService, VantageTheme } from '../theme.service';
 
 @Component({
-  selector: 'covalent-app',
+  selector: 'td-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
