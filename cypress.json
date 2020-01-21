@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:4200/",
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 10000,
+  "integrationFolder": "./cypress/integration/"
+}

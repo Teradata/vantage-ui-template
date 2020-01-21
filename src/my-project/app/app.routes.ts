@@ -1,8 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
-
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 import { VantageAuthenticationGuard } from '@td-vantage/ui-platform/auth';
 
 const routes: Routes = [

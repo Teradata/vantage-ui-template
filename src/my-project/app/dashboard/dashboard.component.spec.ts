@@ -13,9 +13,7 @@ import { CovalentDialogsModule } from '@covalent/core/dialogs';
 
 import { VantageSystemModule } from '@td-vantage/ui-platform/system';
 import { VantageUserFeedbackModule } from '@td-vantage/ui-platform/utilities';
-
 import { TranslateModule } from '@ngx-translate/core';
-
 import { DashboardComponent } from './dashboard.component';
 
 describe('Dashboard Component', () => {

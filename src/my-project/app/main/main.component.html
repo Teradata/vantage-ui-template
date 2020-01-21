@@ -1,35 +1,47 @@
 <td-layout #layout>
   <td-navigation-drawer
-    [logo]="'teradata-dark'"
+    [logo]="logo"
     [sidenavTitle]="'APP_TITLE' | translate"
     [name]="user?.display_name"
     [email]="user?.email"
     flex
   >
-    <mat-nav-list dense>
-      <ng-template let-item let-last="last" ngFor [ngForOf]="routes">
-        <a mat-list-item [routerLink]="[item.route]" (click)="layout.close()">
-          <mat-icon matListIcon>{{ item.icon }}</mat-icon>
-          {{ item.title | translate }}
-        </a>
-      </ng-template>
-    </mat-nav-list>
-    <mat-nav-list td-navigation-drawer-menu dense>
+    <td-nav-links [links]="links"></td-nav-links>
+    <mat-nav-list td-navigation-drawer-menu>
       <a mat-list-item (click)="logout()">
         <mat-icon matListIcon>exit_to_app</mat-icon>
         {{ 'SIGN_OUT' | translate }}
       </a>
     </mat-nav-list>
   </td-navigation-drawer>
+  <div td-sidenav-content class="td-layout-footer pad">
+    Footer
+  </div>
   <td-layout-nav logo="teradata" [toolbarTitle]="'APP_TITLE' | translate">
     <button mat-icon-button td-menu-button tdLayoutToggle>
       <mat-icon>menu</mat-icon>
     </button>
     <div td-toolbar-content layout="row" layout-align="start center" flex>
       <span flex></span>
-      <button mat-icon-button>
-        <mat-icon>help</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="moreMenu">
+        <mat-icon>
+          more_vert
+        </mat-icon>
       </button>
+      <mat-menu #moreMenu>
+        <ng-container *ngIf="!lightThemeIsActive">
+          <button mat-menu-item (click)="applyLightTheme()">
+            <mat-icon matListIcon>brightness_high</mat-icon>
+            {{ 'LIGHT_MODE' | translate }}
+          </button>
+        </ng-container>
+        <ng-container *ngIf="!darkThemeIsActive">
+          <button mat-menu-item (click)="applyDarkTheme()">
+            <mat-icon matListIcon>brightness_low</mat-icon>
+            {{ 'DARK_MODE' | translate }}
+          </button>
+        </ng-container>
+      </mat-menu>
     </div>
     <router-outlet></router-outlet>
   </td-layout-nav>

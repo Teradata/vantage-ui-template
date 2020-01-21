@@ -14,7 +14,7 @@ $custom-typography: mat-typography-config(
 // have to load a single css file for Angular Material in your app.
 @include mat-core($custom-typography);
 
-@import './teradata-branding';
+@import '~@td-vantage/ui-platform/theming';
 
 // Include the core styles for Covalent
 @include covalent-core();
@@ -34,9 +34,9 @@ $custom-typography: mat-typography-config(
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: mat-palette($td-slate, 700, 100, 900);
-$accent: mat-palette($td-blue, 800, 200, 900);
-$warn: mat-palette($mat-deep-orange, 800, 100, 900);
+$primary: mat-palette($td-teal, 800, 100, 900);
+$accent: mat-palette($td-orange, 800, 100, 900);
+$warn: mat-palette($mat-red, 900);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: mat-light-theme($primary, $accent, $warn);
@@ -47,79 +47,28 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 @include covalent-theme($theme);
 @include covalent-highlight-theme();
+// Include Teradata brand
 @include teradata-brand($theme);
 
-/* ------------------------------------------------------------------------------- */
-$foreground: map-get($theme, foreground);
-$background: map-get($theme, background);
+/* ------------------------------------- DARK THEME ------------------------------------------ */
 
-// Default theme
-.tc-primary {
-  color: mat-color($primary);
-}
-.tc-accent {
-  color: mat-color($accent);
-}
-.tc-warn {
-  color: mat-color($warn);
-}
-.bgc-primary {
-  background-color: mat-color($primary);
-}
-.bgc-accent {
-  background-color: mat-color($accent);
-}
-.bgc-warn {
-  background-color: mat-color($warn);
-}
-.bgc-white,
-.bgc {
-  background-color: white;
-}
-.tc-faded {
-  color: rgba(0, 0, 0, 0.5);
-}
-.bgc-dark {
-  background-color: mat-color($background, app-bar);
-}
-.bgc-contrast {
-  background-color: #ececec;
-}
+.dark-theme {
+  $dark-primary: mat-palette($td-teal, 700, 100, 800);
+  $dark-accent: mat-palette($td-orange, 800, 200, 900);
+  $dark-warn: mat-palette($mat-red, 300);
 
-// State colors
-.tc-positive {
-  color: map-get($td-positive, foreground-light) !important;
-}
-.tc-caution {
-  color: map-get($td-caution, foreground-light) !important;
-}
-.tc-negative {
-  color: map-get($td-negative, foreground-light) !important;
-}
-.tc-neutral {
-  color: map-get($td-neutral, foreground-light) !important;
-}
-.tc-emphasis-1 {
-  color: map-get($td-emphasis1, foreground-light) !important;
-}
-.tc-emphasis-2 {
-  color: map-get($td-emphasis2, foreground-light) !important;
-}
-.bgc-positive {
-  background-color: map-get($td-positive, background-light) !important;
-}
-.bgc-caution {
-  background-color: map-get($td-caution, background-light) !important;
-}
-.bgc-negative {
-  background-color: map-get($td-negative, background-light) !important;
-}
-.bgc-neutral {
-  background-color: map-get($td-neutral, background-light) !important;
-}
-.bgc-emphasis-1 {
-  background-color: map-get($td-emphasis1, background-light) !important;
-}
-.bgc-emphasis-2 {
-  background-color: map-get($td-emphasis2, background-light) !important;
+  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+  @include angular-material-theme($dark-theme);
+  @include covalent-theme($dark-theme);
+  // Include Teradata brand
+  @include teradata-brand($dark-theme);
+
+  [class^='tc-grey-'],
+  [class*=' tc-grey-'] {
+    color: white !important;
+  }
+  .mat-focused:not(.mat-form-field-invalid) .mat-form-field-placeholder {
+    color: mat-color($dark-primary, lighter);
+  }
 }

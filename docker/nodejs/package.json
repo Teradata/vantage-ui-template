@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Covalent running in Node.js on Docker",
   "license": "MIT",
-  "author": "Teradata UI Team",
+  "author": "Teradata UI",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
