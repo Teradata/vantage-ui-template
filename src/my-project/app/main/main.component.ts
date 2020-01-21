@@ -33,7 +33,7 @@ export class MainComponent implements OnInit {
     this.user = this._vantageSessionService.user;
   }
 
-  async logout(): Promise<void> {
+  logout(): void {
     this.user = undefined;
     this._vantageSessionService.logout();
   }
