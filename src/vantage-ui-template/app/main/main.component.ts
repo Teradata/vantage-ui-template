@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '@td-vantage/ui-platform';
+import { IUser, VantageThemeService } from '@td-vantage/ui-platform';
 import { VantageSessionService } from '@td-vantage/ui-platform/auth';
 import { ITdLink } from '@covalent/core/nav-links';
-import { VantageThemeService, VantageTheme } from '../theme.service';
 
 @Component({
   selector: 'td-main',
@@ -39,18 +38,12 @@ export class MainComponent implements OnInit {
   }
 
   get logo(): string {
-    return this.darkThemeIsActive ? 'teradata' : 'teradata-dark';
-  }
-  get darkThemeIsActive(): boolean {
-    return this._themeService.darkThemeIsActive;
+    return this.lightThemeIsActive ? 'teradata-dark' : 'teradata';
   }
   get lightThemeIsActive(): boolean {
     return this._themeService.lightThemeIsActive;
   }
-  applyLightTheme(): void {
-    this._themeService.applyLightTheme();
-  }
-  applyDarkTheme(): void {
-    this._themeService.applyDarkTheme();
+  toggleTheme(): void {
+    this._themeService.toggleTheme();
   }
 }

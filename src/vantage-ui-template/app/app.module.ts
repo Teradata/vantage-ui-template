@@ -23,7 +23,7 @@ import { CovalentMediaModule } from '@covalent/core/media';
 import { CovalentLoadingModule } from '@covalent/core/loading';
 import { CovalentDialogsModule } from '@covalent/core/dialogs';
 import { CovalentHttpModule, ITdHttpInterceptor } from '@covalent/http';
-import { CovalentBaseEchartsModule } from '@covalent/echarts';
+import { CovalentBaseEchartsModule } from '@covalent/echarts/base';
 import { VantageUserModule } from '@td-vantage/ui-platform/user';
 import { VantageSystemModule } from '@td-vantage/ui-platform/system';
 import { VantageAuthenticationModule, VantageAuthenticationInterceptor } from '@td-vantage/ui-platform/auth';
@@ -35,6 +35,7 @@ import { getSelectedLanguage, SUPPORTED_LANGS } from '@shared/utils/translate';
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CovalentNavLinksModule } from '@covalent/core/nav-links';
+import { VantageThemeModule } from '@td-vantage/ui-platform';
 
 const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticationInterceptor];
 
@@ -70,6 +71,7 @@ const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticat
     VantageUserModule,
     VantageSystemModule,
     VantageUserFeedbackModule,
+    VantageThemeModule,
     // Covalent Modules
     CovalentCommonModule,
     CovalentLayoutModule,
