@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser, VantageThemeService } from '@td-vantage/ui-platform';
+import { VantageThemeService } from '@td-vantage/ui-platform/theme';
+import { IUser } from '@td-vantage/ui-platform/user';
+
 import { VantageSessionService } from '@td-vantage/ui-platform/auth';
 import { ITdLink } from '@covalent/core/nav-links';
 

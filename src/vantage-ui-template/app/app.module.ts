@@ -35,7 +35,7 @@ import { getSelectedLanguage, SUPPORTED_LANGS } from '@shared/utils/translate';
 import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CovalentNavLinksModule } from '@covalent/core/nav-links';
-import { VantageThemeModule } from '@td-vantage/ui-platform';
+import { VantageThemeModule } from '@td-vantage/ui-platform/theme';
 
 const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticationInterceptor];
 
