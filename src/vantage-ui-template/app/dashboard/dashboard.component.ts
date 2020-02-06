@@ -11,6 +11,7 @@ import { forkJoin } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
   systems: ISystem[];
+  trim: string = '';
 
   constructor(
     private _systemService: VantageSystemService,

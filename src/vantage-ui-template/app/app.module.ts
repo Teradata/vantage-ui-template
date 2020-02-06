@@ -36,6 +36,7 @@ import { MainComponent } from './main/main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CovalentNavLinksModule } from '@covalent/core/nav-links';
 import { VantageThemeModule } from '@td-vantage/ui-platform/theme';
+import { CovalentPagingModule } from '@covalent/core/paging';
 
 const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticationInterceptor];
 
@@ -80,6 +81,7 @@ const httpInterceptorProviders: Type<ITdHttpInterceptor>[] = [VantageAuthenticat
     CovalentLoadingModule,
     CovalentBaseEchartsModule,
     CovalentNavLinksModule,
+    CovalentPagingModule,
     TranslateModule.forRoot(),
     CovalentHttpModule.forRoot({
       interceptors: [

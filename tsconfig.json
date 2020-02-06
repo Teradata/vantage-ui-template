@@ -21,5 +21,8 @@
     "noUnusedLocals": false,
     "allowUnreachableCode": false,
     "pretty": true
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true
   }
 }
