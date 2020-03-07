@@ -1,6 +1,6 @@
 <td-layout #layout>
   <td-navigation-drawer
-    [logo]="logo"
+    [logo]="_themeService.map({ 'dark-theme': 'teradata', 'light-theme': 'teradata-dark' }) | async"
     [sidenavTitle]="'APP_TITLE' | translate"
     [name]="user?.display_name"
     [email]="user?.email"
@@ -29,9 +29,11 @@
         </mat-icon>
       </button>
       <mat-menu #moreMenu>
-        <button mat-menu-item (click)="toggleTheme()">
-          <mat-icon matListIcon>{{ lightThemeIsActive ? 'brightness_low' : 'brightness_high' }}</mat-icon>
-          {{ (lightThemeIsActive ? 'DARK_MODE' : 'LIGHT_MODE') | translate }}
+        <button mat-menu-item (click)="_themeService.toggleTheme()">
+          <mat-icon matListIcon>
+            {{ _themeService.map({ 'dark-theme': 'brightness_high', 'light-theme': 'brightness_low' }) | async }}
+          </mat-icon>
+          {{ _themeService.map({ 'dark-theme': 'LIGHT_MODE', 'light-theme': 'DARK_MODE' }) | async | translate }}
         </button>
       </mat-menu>
     </div>

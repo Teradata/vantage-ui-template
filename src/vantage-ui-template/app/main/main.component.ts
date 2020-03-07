@@ -28,7 +28,7 @@ export class MainComponent implements OnInit {
     },
   ];
 
-  constructor(private _vantageSessionService: VantageSessionService, private _themeService: VantageThemeService) {}
+  constructor(private _vantageSessionService: VantageSessionService, public _themeService: VantageThemeService) {}
 
   ngOnInit(): void {
     this.user = this._vantageSessionService.user;
@@ -37,15 +37,5 @@ export class MainComponent implements OnInit {
   logout(): void {
     this.user = undefined;
     this._vantageSessionService.logout();
-  }
-
-  get logo(): string {
-    return this.lightThemeIsActive ? 'teradata-dark' : 'teradata';
-  }
-  get lightThemeIsActive(): boolean {
-    return this._themeService.lightThemeIsActive;
-  }
-  toggleTheme(): void {
-    this._themeService.toggleTheme();
   }
 }
