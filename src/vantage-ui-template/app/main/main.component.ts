@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IUser } from '@td-vantage/ui-platform';
+import { VantageThemeService } from '@td-vantage/ui-platform/theme';
+import { IUser } from '@td-vantage/ui-platform/user';
+
 import { VantageSessionService } from '@td-vantage/ui-platform/auth';
 import { ITdLink } from '@covalent/core/nav-links';
-import { VantageThemeService, VantageTheme } from '../theme.service';
 
 @Component({
   selector: 'td-main',
@@ -27,7 +28,7 @@ export class MainComponent implements OnInit {
     },
   ];
 
-  constructor(private _vantageSessionService: VantageSessionService, private _themeService: VantageThemeService) {}
+  constructor(private _vantageSessionService: VantageSessionService, public _themeService: VantageThemeService) {}
 
   ngOnInit(): void {
     this.user = this._vantageSessionService.user;
@@ -36,21 +37,5 @@ export class MainComponent implements OnInit {
   logout(): void {
     this.user = undefined;
     this._vantageSessionService.logout();
-  }
-
-  get logo(): string {
-    return this.darkThemeIsActive ? 'teradata' : 'teradata-dark';
-  }
-  get darkThemeIsActive(): boolean {
-    return this._themeService.darkThemeIsActive;
-  }
-  get lightThemeIsActive(): boolean {
-    return this._themeService.lightThemeIsActive;
-  }
-  applyLightTheme(): void {
-    this._themeService.applyLightTheme();
-  }
-  applyDarkTheme(): void {
-    this._themeService.applyDarkTheme();
   }
 }

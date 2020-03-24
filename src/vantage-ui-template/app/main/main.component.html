@@ -1,6 +1,6 @@
 <td-layout #layout>
   <td-navigation-drawer
-    [logo]="logo"
+    [logo]="_themeService.map({ 'dark-theme': 'teradata', 'light-theme': 'teradata-dark' }) | async"
     [sidenavTitle]="'APP_TITLE' | translate"
     [name]="user?.display_name"
     [email]="user?.email"
@@ -29,18 +29,12 @@
         </mat-icon>
       </button>
       <mat-menu #moreMenu>
-        <ng-container *ngIf="!lightThemeIsActive">
-          <button mat-menu-item (click)="applyLightTheme()">
-            <mat-icon matListIcon>brightness_high</mat-icon>
-            {{ 'LIGHT_MODE' | translate }}
-          </button>
-        </ng-container>
-        <ng-container *ngIf="!darkThemeIsActive">
-          <button mat-menu-item (click)="applyDarkTheme()">
-            <mat-icon matListIcon>brightness_low</mat-icon>
-            {{ 'DARK_MODE' | translate }}
-          </button>
-        </ng-container>
+        <button mat-menu-item (click)="_themeService.toggleTheme()">
+          <mat-icon matListIcon>
+            {{ _themeService.map({ 'dark-theme': 'brightness_high', 'light-theme': 'brightness_low' }) | async }}
+          </mat-icon>
+          {{ _themeService.map({ 'dark-theme': 'LIGHT_MODE', 'light-theme': 'DARK_MODE' }) | async | translate }}
+        </button>
       </mat-menu>
     </div>
     <router-outlet></router-outlet>
