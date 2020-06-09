@@ -16,7 +16,7 @@
 
 ### Development
 
-1. Update the `serverUrl` variable in the `proxy.conf.js` & `loginUrl` `cypress.env.json` to point to your vantage environment.
+1. Update the `serverUrl` variable in the `proxy.conf.js` and `loginUrl` variable in the `cypress.env.json` to point to your vantage environment.
 
 2. Run local webserver `npm run serve`
 
